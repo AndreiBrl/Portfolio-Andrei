@@ -37,7 +37,7 @@ body {
     border-radius: 10px;
     /* background: rgb(228, 19, 118); */
     /* background: linear-gradient(160deg, rgba(228, 19, 118, 1) 0%, rgba(163, 59, 186, 1) 50%); */
-    transition: all 0.4s linear;
+    transition: all 0.3s linear;
     rotate: 45deg;
     -webkit-box-shadow: 3px 3px 15px -6.5px #1d1d1d;
     -moz-box-shadow: 3px 3px 15px -6.5px #1d1d1d;
