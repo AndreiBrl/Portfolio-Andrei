@@ -27,8 +27,8 @@ body {
 
 #sobre {
     /* clip-path: polygon(100% 0%, 0% 0%, 0% 100%); */
-    width: 20vw;
-    height: 30vw;
+    width: 18vw;
+    height: 23vw;
     position: absolute;
     top: -14vw;
     left: -8vw;
@@ -49,13 +49,13 @@ body {
 #sobre:hover {
     rotate: 20deg;
     
-    width: 25vw;
-    height:30vw;
+    width: 22vw;
+    height:27vw;
 }
 
 #sobre h1 {
     padding-top: 12vw;
-    font-size: 3vw;
+    font-size: 1.5vw;
     transform: rotate(-90deg);
     
 }
@@ -68,8 +68,8 @@ body {
     position: absolute;
     top: -20vw;
     left: -10vw;
-    width: 26vw;
-    height: 45vw;
+    width: 21vw;
+    height: 40vw;
     background-color: #f48c06;
     /* background: rgb(228, 19, 118); */
     /* background: linear-gradient(160deg, rgba(228, 19, 118, 1) 0%, rgba(163, 59, 186, 1) 25%, rgba(104, 95, 248, 1) 50%); */
@@ -90,10 +90,10 @@ body {
     top: -6vw;
     left: -2vw;
     
-    rotate: 20deg;
+    rotate: 10deg;
     
-    width: 22vw;
-    height:23vw;
+    width: 15vw;
+    height:21vw;
 }
 
 #carreira {
@@ -103,8 +103,8 @@ body {
     position: absolute;
     top: -20vw;
     left: -10vw;
-    width: 27vw;
-    height: 55vw;
+    width: 20.7vw;
+    height: 48.7vw;
     background-color: #e85d04;
     /* background: rgb(228, 19, 118); */
     /* background: linear-gradient(160deg, rgba(228, 19, 118, 1) 0%, rgba(163, 59, 186, 1) 16%, rgba(104, 95, 248, 1) 32%, rgba(0, 184, 255, 1) 50%); */
@@ -126,10 +126,10 @@ body {
     top: -6vw;
     left: -2vw;
     
-    rotate: 8deg;
+    rotate: 10deg;
     
-    width: 25vw;
-    height:28vw;
+    width: 18vw;
+    height:22vw;
 }
 
 
@@ -141,8 +141,8 @@ body {
     position: absolute;
     top: -30vw;
     left: -10vw;
-    width: 37vw;
-    height: 65vw;
+    width: 29vw;
+    height: 57vw;
     background-color: #dc2f02;
     /* background: rgb(228, 19, 118); */
     /* background: linear-gradient(160deg, rgba(228, 19, 118, 1) 0%, rgba(163, 59, 186, 1) 12%, rgba(104, 95, 248, 1) 24%, rgba(0, 184, 255, 1) 37%, rgba(16, 27, 55, 1) 52%); */
@@ -160,13 +160,13 @@ body {
 
     width: 100vw;
     height: 80vw; */
-    top: -6vw;
-    left: -2vw;
+    top: -5vw;
+    left: 0vw;
    
     rotate: 8deg;
 
-    width: 30vw;
-    height:33vw;
+    width: 18vw;
+    height:24vw;
 }
 
 /* .linha{
