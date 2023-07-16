@@ -1,8 +1,13 @@
 /*  FONTES*/
 
 @font-face {
-    font-family: CodeNext;
-    src: url('../fontes/Instruction.otf');
+    font-family: Louis;
+    src: url('../fontes/Louis\ George\ Cafe\ Light.ttf');
+}
+
+@font-face {
+    font-family: Code;
+    src: url('../fontes/CodeNext-ExtraBold.otf');
 }
 
 /* fim FONTES */
@@ -12,7 +17,8 @@ html {
 }
 
 body {
-    background-color: #03071e;
+    background-color: #101010;
+    /* background-color: #03071e; */
     padding: 0;
     margin: 0;
     overflow: hidden;
@@ -22,7 +28,8 @@ body {
 .container {
     position: relative;
 }
-.flex{
+
+.flex {
     display: flex;
 }
 
@@ -38,7 +45,7 @@ body {
 }
 
 #nav h1 {
-    font-family: CodeNext;
+    font-family: Louis;
 }
 
 #sobre {
@@ -49,7 +56,7 @@ body {
     top: -14vw;
     left: -8vw;
     z-index: 5;
-    background-color: #faa307;
+    background-color: #a86b56;
     border-radius: 10px;
     /* background: rgb(228, 19, 118); */
     /* background: linear-gradient(160deg, rgba(228, 19, 118, 1) 0%, rgba(163, 59, 186, 1) 50%); */
@@ -59,6 +66,7 @@ body {
     -moz-box-shadow: 3px 3px 15px -6.5px #1d1d1d;
     box-shadow: 3px 3px 15px -6.5px #1d1d1d;
     cursor: pointer;
+   
 
 }
 
@@ -76,6 +84,7 @@ body {
     font-size: 1.5vw;
     transform: rotate(-90deg);
     transition: all 0.6s linear;
+    color: #414040;
 
 }
 
@@ -89,13 +98,14 @@ body {
     left: -10vw;
     width: 21vw;
     height: 40vw;
-    background-color: #f48c06;
+    background-color: #edbc81;
     /* background: rgb(228, 19, 118); */
     /* background: linear-gradient(160deg, rgba(228, 19, 118, 1) 0%, rgba(163, 59, 186, 1) 25%, rgba(104, 95, 248, 1) 50%); */
     transition: all 0.6s linear;
     -webkit-box-shadow: 3px 3px 15px -6.5px #1d1d1d;
     -moz-box-shadow: 3px 3px 15px -6.5px #1d1d1d;
     box-shadow: 3px 3px 15px -6.5px #1d1d1d;
+   
 }
 
 #projetos:hover {
@@ -118,10 +128,11 @@ body {
 #projetos h1 {
     position: absolute;
     top: 19vw;
-    left: 15.8vw;
+    left: 16.3vw;
     font-size: 1.5vw;
     transform: rotate(-90deg);
     transition: all 0.6s linear;
+    color: #414040;
 }
 
 #carreira {
@@ -133,7 +144,7 @@ body {
     left: -10vw;
     width: 20.7vw;
     height: 48.7vw;
-    background-color: #e85d04;
+    background-color: #7e8072;
     /* background: rgb(228, 19, 118); */
     /* background: linear-gradient(160deg, rgba(228, 19, 118, 1) 0%, rgba(163, 59, 186, 1) 16%, rgba(104, 95, 248, 1) 32%, rgba(0, 184, 255, 1) 50%); */
     transition: all 0.6s linear;
@@ -141,15 +152,17 @@ body {
     -webkit-box-shadow: 3px 3px 15px -6.5px #1d1d1d;
     -moz-box-shadow: 3px 3px 15px -6.5px #1d1d1d;
     box-shadow: 3px 3px 15px -6.5px #1d1d1d;
+    
 }
 
 #carreira h1 {
     position: absolute;
     top: 20vw;
-    left: 15.4vw;
+    left: 16vw;
     font-size: 1.5vw;
     transform: rotate(-90deg);
     transition: all 0.6s linear;
+    color: #414040;
 }
 
 #carreira:hover {
@@ -171,6 +184,7 @@ body {
 
 
 #visao {
+    
     border-radius: 10px;
     cursor: pointer;
     rotate: 45deg;
@@ -180,13 +194,13 @@ body {
     left: -10vw;
     width: 29vw;
     height: 57vw;
-    background-color: #dc2f02;
+    background-color: #808c98;
     /* background: rgb(228, 19, 118); */
     /* background: linear-gradient(160deg, rgba(228, 19, 118, 1) 0%, rgba(163, 59, 186, 1) 12%, rgba(104, 95, 248, 1) 24%, rgba(0, 184, 255, 1) 37%, rgba(16, 27, 55, 1) 52%); */
     transition: all 0.6s linear;
-    -webkit-box-shadow: 3px 3px 15px -6.5px #1d1d1d;
-    -moz-box-shadow: 3px 3px 15px -6.5px #1d1d1d;
-    box-shadow: 3px 3px 15px -6.5px #1d1d1d;
+    -webkit-box-shadow: 3px 3px 15px -6.5px #8f8f8f;
+    -moz-box-shadow: 3px 3px 15px -6.5px #8f8f8f;
+    box-shadow: 3px 3px 15px -6.5px #8f8f8f;
 
 }
 
@@ -209,10 +223,11 @@ body {
 #visao h1 {
     position: absolute;
     top: 31vw;
-    left: 25vw;
+    left: 25.6vw;
     font-size: 1.5vw;
     transform: rotate(-90deg);
     transition: all 0.6s linear;
+    color: #414040;
 }
 
 /* .linha{
@@ -280,18 +295,21 @@ body {
     top: 40vw !important;
     font-size: 5vw !important;
 }
+
 .h1CliqueProjetos {
     transform: rotate(45deg) !important;
     left: 52vw !important;
     top: 45vw !important;
     font-size: 5vw !important;
 }
+
 .h1CliqueCarreira {
     transform: rotate(45deg) !important;
     left: 52vw !important;
     top: 45vw !important;
     font-size: 5vw !important;
 }
+
 .h1CliqueVisao {
     transform: rotate(45deg) !important;
     left: 56vw !important;
@@ -302,18 +320,202 @@ body {
 /* FIM SECTION 1 */
 
 /* SECTION 2 */
+.principal {
+    padding-top: 10vw;
+    margin-left: 10vw;
+    gap: 10vw;
+}
 
-.principal h1{
-    font-size: 5vw;
-    color: aliceblue;
+.principal h1 {
+    font-size: 4vw;
+
+    font-family: Code;
+    color: #fae8b2;
+
 }
-.principal h2{
-    font-size: 5vw;
-    color: aliceblue;
+
+.principal h2 {
+    font-family: Louis;
+    font-size: 4vw;
+
+    color: #c84b31;
 }
-.principal img{
-    border-radius: 10px;
+
+.principal img {
+
+    border-radius: 30%;
     width: 20vw;
     
+    filter: brightness(80%);
+    z-index: 2;
+}
 
+.neonPerfil {
+    position: absolute;
+    width: 5vw;
+    height: 8vw;
+    top: 10vw;
+        right: 11vw;
+    border-radius: 5px;
+    background-color: #fae8b2;
+    transform: rotate(135deg);
+    transition: all 0.2s linear;
+
+    -webkit-box-shadow: 3px 3px 32px 0 white;
+    -moz-box-shadow: 3px 3px 32px 0 white;
+    box-shadow: 3px 3px 32px 0 white;
+}
+
+.neonPerfil2 {
+    position: absolute;
+    width: 5vw;
+    height: 8vw;
+    top: 10vw;
+        right: 11vw;
+    border-radius: 5px;
+    background-color: #fae8b2;
+    transform: rotate(135deg);
+    transition: all 0.2s linear;
+
+    -webkit-box-shadow: 3px 3px 32px 0 white;
+    -moz-box-shadow: 3px 3px 32px 0 white;
+    box-shadow: 3px 3px 32px 0 white;
+}
+.neonPerfil3 {
+    position: absolute;
+    width: 5vw;
+    height: 8vw;
+    top: 10vw;
+        right: 11vw;
+    border-radius: 5px;
+    background-color: #fae8b2;
+    transform: rotate(135deg);
+    transition: all 0.2s linear;
+
+    -webkit-box-shadow: 3px 3px 32px 0 white;
+    -moz-box-shadow: 3px 3px 32px 0 white;
+    box-shadow: 3px 3px 32px 0 white;
+}
+.neonPerfil4 {
+    position: absolute;
+    width: 5vw;
+    height: 8vw;
+    top: 10vw;
+    right: 11vw;
+    border-radius: 5px;
+    background-color: #fae8b2;
+    transform: rotate(135deg);
+    transition: all 0.2s linear;
+
+    -webkit-box-shadow: 3px 3px 32px 0 white;
+    -moz-box-shadow: 3px 3px 32px 0 white;
+    box-shadow: 3px 3px 32px 0 white;
+}
+.neonPerfil5 {
+    position: absolute;
+    width: 5vw;
+    height: 8vw;
+    top: 10vw;
+    right: 11vw;
+    border-radius: 5px;
+    background-color: #fae8b2;
+    transform: rotate(135deg);
+    transition: all 0.2s linear;
+
+    -webkit-box-shadow: 3px 3px 32px 0 white;
+    -moz-box-shadow: 3px 3px 32px 0 white;
+    box-shadow: 3px 3px 32px 0 white;
+}
+.neonPerfil6 {
+    position: absolute;
+    width: 5vw;
+    height: 8vw;
+    top: 10vw;
+    right: 11vw;
+    border-radius: 5px;
+    background-color: #fae8b2;
+    transform: rotate(135deg);
+    
+
+    -webkit-box-shadow: 3px 3px 32px 0 white;
+    -moz-box-shadow: 3px 3px 32px 0 white;
+    box-shadow: 3px 3px 32px 0 white;
+    transition: all 0.2s linear;
+}
+.neonPerfil:hover{
+    scale: 2;
+}
+.neonPerfil2:hover{
+    scale: 2;
+}
+.neonPerfil3:hover{
+    scale: 2;
+}
+.neonPerfil4:hover{
+    scale: 2;
+}
+.neonPerfil5:hover{
+    scale: 2;
+}
+.neonPerfil6:hover{
+    scale: 2;
+}
+
+.neonRosa{
+    animation: moveLinhaRosa 2.5s linear infinite;
+}
+.neonAzul{
+    animation: moveLinhaAzul 2.5s linear infinite;
+}
+@keyframes moveLinhaRosa {
+
+    0% {
+        
+        z-index: 2;
+        
+    }
+
+    50% {
+        top: 37vw;
+        right: 37vw;
+        width: 0vw;
+        background-color: rgb(255, 0, 230);
+        -webkit-box-shadow: 3px 3px 32px 0 rgb(255, 0, 230);
+        -moz-box-shadow: 3px 3px 32px 0 rgb(255, 0, 230);
+        box-shadow: 3px 3px 32px 0 rgb(255, 0, 230);
+        height: 2vw;
+        
+    }
+    
+    100% {
+        z-index: 1;
+        top: 10vw;
+        right: 11vw;
+    }
+}
+@keyframes moveLinhaAzul {
+
+    0% {
+        
+        
+        z-index: 2;
+    }
+
+    50% {
+        
+        top: 37vw;
+        right: 37vw;
+        width: 0vw;
+        background-color: #00ffff;
+        -webkit-box-shadow: 3px 3px 32px 0 #00ffff;
+        -moz-box-shadow: 3px 3px 32px 0 #00ffff;
+        box-shadow: 3px 3px 32px 0 #00ffff;
+        height: 2vw;
+    }
+    
+    100% {
+        z-index: 1;
+        top: 10vw;
+        right: 11vw;
+    }
 }

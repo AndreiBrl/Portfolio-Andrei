@@ -103,3 +103,31 @@ visao.addEventListener("click", function () {
 })
 // ---------------------
 
+// LOGICA NEON PERFIL
+
+let neonPerfil = document.querySelector(".neonPerfil")
+let neonPerfil2 = document.querySelector(".neonPerfil2")
+let neonPerfil3= document.querySelector(".neonPerfil3")
+let neonPerfil4 = document.querySelector(".neonPerfil4")
+let neonPerfil5 = document.querySelector(".neonPerfil5")
+let neonPerfil6 = document.querySelector(".neonPerfil6")
+
+function neon (){
+neonPerfil.classList.add("neonRosa");
+setTimeout(() => {
+    neonPerfil2.classList.add("neonAzul");
+}, 400);
+setTimeout(() => {
+    neonPerfil3.classList.add("neonRosa");
+}, 800);
+setTimeout(() => {
+    neonPerfil4.classList.add("neonAzul");
+}, 1200);
+setTimeout(() => {
+    neonPerfil5.classList.add("neonRosa");
+}, 1600);
+setTimeout(() => {
+    neonPerfil6.classList.add("neonAzul");
+}, 2000);
+}
+neon();
