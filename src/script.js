@@ -2,6 +2,7 @@
 // SOBRE
 let sobre = document.querySelector("#sobre");
 let h1Sobre = document.querySelector("#sobre h1");
+let pSobre = document.querySelector("#sobre p");
 
 sobre.addEventListener('mouseover', function () {
 
@@ -19,6 +20,7 @@ sobre.addEventListener("click", function () {
 
     sobre.classList.toggle('abreNav');
     h1Sobre.classList.toggle('h1CliqueSobre');
+    pSobre.classList.toggle('visible');
 
 
 })
@@ -111,23 +113,31 @@ let neonPerfil3= document.querySelector(".neonPerfil3")
 let neonPerfil4 = document.querySelector(".neonPerfil4")
 let neonPerfil5 = document.querySelector(".neonPerfil5")
 let neonPerfil6 = document.querySelector(".neonPerfil6")
+let neonPerfil7 = document.querySelector(".neonPerfil7")
+let neonPerfil8 = document.querySelector(".neonPerfil8")
 
 function neon (){
 neonPerfil.classList.add("neonRosa");
 setTimeout(() => {
     neonPerfil2.classList.add("neonAzul");
-}, 400);
+}, 600);
 setTimeout(() => {
     neonPerfil3.classList.add("neonRosa");
-}, 800);
-setTimeout(() => {
-    neonPerfil4.classList.add("neonAzul");
 }, 1200);
 setTimeout(() => {
+    neonPerfil4.classList.add("neonAzul");
+}, 1800);
+setTimeout(() => {
     neonPerfil5.classList.add("neonRosa");
-}, 1600);
+}, 2400);
 setTimeout(() => {
     neonPerfil6.classList.add("neonAzul");
-}, 2000);
+}, 3000);
+setTimeout(() => {
+    neonPerfil7.classList.add("neonRosa");
+}, 3600);
+setTimeout(() => {
+    neonPerfil8.classList.add("neonAzul");
+}, 4200);
 }
 neon();
