@@ -3,6 +3,7 @@
 let sobre = document.querySelector("#sobre");
 let h1Sobre = document.querySelector("#sobre h1");
 let pSobre = document.querySelector("#sobre p");
+let flag = 0;
 
 sobre.addEventListener('mouseover', function () {
 
@@ -17,10 +18,26 @@ sobre.addEventListener('mouseleave', function () {
 // logica nav CLIQUE
 
 sobre.addEventListener("click", function () {
-
-    sobre.classList.toggle('abreNav');
-    h1Sobre.classList.toggle('h1CliqueSobre');
-    pSobre.classList.toggle('visible');
+    flag++;
+   
+    if(flag%2!=0){
+        sobre.classList.add('abreNav');
+        h1Sobre.classList.add('h1CliqueSobre');
+        pSobre.classList.add('visible');
+        setTimeout(() => {
+            pSobre.classList.add('opacidade');
+            
+        }, 600);
+    }
+    else{
+        pSobre.classList.remove('opacidade');
+        setTimeout(() => {
+            pSobre.classList.remove('visible');
+            sobre.classList.remove('abreNav');
+            h1Sobre.classList.remove('h1CliqueSobre');
+            
+        }, 350);
+    }
 
 
 })
@@ -141,3 +158,45 @@ setTimeout(() => {
 }, 4200);
 }
 neon();
+
+// SCROOL REVEAL
+// 	/* ---- Scroll smooth reveal ---- */
+window.sr = ScrollReveal({reset:false});
+
+
+ScrollReveal().reveal('#sobre',{
+
+	distance: '300px',
+	duration: 2000,
+
+	delay: 600
+});
+ScrollReveal().reveal('#projetos',{
+
+	distance: '300px',
+	duration: 2000,
+
+	delay: 700
+});
+ScrollReveal().reveal('#carreira',{
+
+	distance: '300px',
+	duration: 2000,
+
+	delay: 800
+});
+ScrollReveal().reveal('#visao',{
+
+	distance: '300px',
+	duration: 2000,
+
+	delay: 900
+});
+ScrollReveal().reveal('.principal',{
+
+	distance: '100px',
+	duration: 2000,
+
+	delay: 50
+});
+

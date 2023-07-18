@@ -9,6 +9,10 @@
     font-family: Code;
     src: url('../fontes/CodeNext-ExtraBold.otf');
 }
+@font-face {
+    font-family: Fut;
+    src: url('../fontes/SmallTypeWritingMedium.ttf');
+}
 
 /* fim FONTES */
 
@@ -36,6 +40,9 @@ body {
 .visible{
    visibility: visible !important;
 }
+.opacidade{
+    opacity: 100% !important;
+}
 /* SECTION 1 */
 #nav {
     max-width: 100vw;
@@ -60,7 +67,7 @@ body {
     left: -8vw;
     z-index: 5;
     background-color: #FBD9AC;
-    border-radius: 10px;
+    border-radius: 10vw;
     /* background: rgb(228, 19, 118); */
     /* background: linear-gradient(160deg, rgba(228, 19, 118, 1) 0%, rgba(163, 59, 186, 1) 50%); */
     transition: all 0.6s linear;
@@ -82,29 +89,33 @@ body {
 
 #sobre h1 {
     position: absolute;
-    top: 13vw;
-    left: 13.5vw;
+    top: 11vw;
+    left: 12.5vw;
     font-size: 1.5vw;
     transform: rotate(-90deg);
     transition: all 0.6s linear;
     color: #414040;
+    letter-spacing: 0.5vw;
 
 }
 #sobre p{
     position: absolute;
     top: 40vw;
     left: 20vw;
-    
+    opacity: 0;
     width: 40%;
     transform: rotate(45deg);
     visibility: hidden;
-    font-size: 2vw;
+    font-size: 1.8vw;
     color: black;
+    text-align: justify;
+    transition: all 0.2s linear;
+    font-family: Louis;
 
 }
 #projetos {
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 70%;
     rotate: 45deg;
     z-index: 4;
     position: absolute;
@@ -141,9 +152,10 @@ body {
 }
 
 #projetos h1 {
+    letter-spacing: 0.5vw;
     position: absolute;
-    top: 19vw;
-    left: 16.3vw;
+    top: 18vw;
+    left: 14vw;
     font-size: 1.5vw;
     transform: rotate(-90deg);
     transition: all 0.6s linear;
@@ -152,7 +164,7 @@ body {
 
 #carreira {
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 70%;
     z-index: 3;
     position: absolute;
     top: -20vw;
@@ -171,9 +183,10 @@ body {
 }
 
 #carreira h1 {
+    letter-spacing: 0.5vw;
     position: absolute;
-    top: 20vw;
-    left: 16vw;
+    top: 19.5vw;
+    left: 14vw;
     font-size: 1.5vw;
     transform: rotate(-90deg);
     transition: all 0.6s linear;
@@ -200,7 +213,7 @@ body {
 
 #visao {
 
-    border-radius: 10px;
+    border-radius: 40%;
     cursor: pointer;
     rotate: 45deg;
     z-index: 2;
@@ -236,9 +249,10 @@ body {
 }
 
 #visao h1 {
+    letter-spacing: 0.5vw;
     position: absolute;
-    top: 31vw;
-    left: 25.6vw;
+    top: 29.5vw;
+    left: 24.3vw;
     font-size: 1.5vw;
     transform: rotate(-90deg);
     transition: all 0.6s linear;
@@ -306,8 +320,8 @@ body {
 
 .h1CliqueSobre {
     transform: rotate(45deg) !important;
-    left: 50vw !important;
-    top: 40vw !important;
+    left: 45vw !important;
+    top: 35vw !important;
     font-size: 5vw !important;
 }
 
@@ -362,7 +376,7 @@ body {
     border-radius: 30%;
     width: 20vw;
 
-    filter: brightness(80%);
+    filter: brightness(70%);
     z-index: 2;
 }
 
@@ -582,4 +596,10 @@ body {
         top: 10vw;
         right: 11vw;
     }
+}
+
+/* SCROLL REVEAL */
+
+#sobre,#projetos,#carreira,#visao,.principal{
+    visibility: hidden;
 }
