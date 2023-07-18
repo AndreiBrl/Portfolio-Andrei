@@ -67,7 +67,7 @@ body {
     left: -8vw;
     z-index: 5;
     background-color: #FBD9AC;
-    border-radius: 10vw;
+    border-radius: 32% 65% 78% 0% / 25% 54% 30% 70%;
     /* background: rgb(228, 19, 118); */
     /* background: linear-gradient(160deg, rgba(228, 19, 118, 1) 0%, rgba(163, 59, 186, 1) 50%); */
     transition: all 0.6s linear;
@@ -96,6 +96,7 @@ body {
     transition: all 0.6s linear;
     color: #414040;
     letter-spacing: 0.5vw;
+    opacity: 80%;
 
 }
 #sobre p{
@@ -109,13 +110,13 @@ body {
     font-size: 1.8vw;
     color: black;
     text-align: justify;
-    transition: all 0.2s linear;
+    transition: all 0.1s linear;
     font-family: Louis;
 
 }
 #projetos {
     cursor: pointer;
-    border-radius: 70%;
+    border-radius: 72% 85% 80% 0% / 5% 64% 65% 75%;
     rotate: 45deg;
     z-index: 4;
     position: absolute;
@@ -155,23 +156,61 @@ body {
     letter-spacing: 0.5vw;
     position: absolute;
     top: 18vw;
-    left: 14vw;
-    font-size: 1.5vw;
+    left: 14.8vw;
+    font-size: 1.3vw;
     transform: rotate(-90deg);
     transition: all 0.6s linear;
     color: #414040;
+    opacity: 80%;
 }
+.projetos{
+    transform: rotate(45deg);
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.1s linear;
+    width: 10vw;
+    top: 33vw;
+    left: 30vw;
+    text-align: center;
+    gap: 3vw;
+}
+
+.arquetipo img{
+    width: 10vw;
+    transition: all 0.2s linear;
+}
+.arquetipo h2{
+    font-family: Louis;
+    font-size: 1.3vw;
+}
+.arquetipo img:hover{
+    scale: 1.2;
+}
+.calculadora img{
+    width: 5vw;
+    border-radius: 10px;
+    transition: all 0.2s linear;
+}
+.calculadora h2{
+    font-size: 1.3vw;
+    font-family: Louis;
+}
+.calculadora img:hover{
+    scale: 1.2;
+}
+
 
 #carreira {
     cursor: pointer;
-    border-radius: 70%;
+    border-radius: 12% 85% 68% 80% / 75% 54% 90% 70%;
     z-index: 3;
     position: absolute;
     top: -20vw;
     left: -10vw;
     width: 20.7vw;
     height: 48.7vw;
-    background-color: #F9E0C4;
+    background-color: #f7d6af;
     /* background: rgb(228, 19, 118); */
     /* background: linear-gradient(160deg, rgba(228, 19, 118, 1) 0%, rgba(163, 59, 186, 1) 16%, rgba(104, 95, 248, 1) 32%, rgba(0, 184, 255, 1) 50%); */
     transition: all 0.6s linear;
@@ -185,12 +224,13 @@ body {
 #carreira h1 {
     letter-spacing: 0.5vw;
     position: absolute;
-    top: 19.5vw;
-    left: 14vw;
-    font-size: 1.5vw;
+    top: 18.5vw;
+    left: 14.5vw;
+    font-size: 1.3vw;
     transform: rotate(-90deg);
     transition: all 0.6s linear;
     color: #414040;
+    opacity: 80%;
 }
 
 #carreira:hover {
@@ -213,7 +253,7 @@ body {
 
 #visao {
 
-    border-radius: 40%;
+    border-radius: 32% 65% 78% 0% / 25% 54% 30% 70%;
     cursor: pointer;
     rotate: 45deg;
     z-index: 2;
@@ -222,7 +262,7 @@ body {
     left: -10vw;
     width: 29vw;
     height: 57vw;
-    background-color: #f7eace;
+    background-color: #fbe0af;
     /* background: rgb(228, 19, 118); */
     /* background: linear-gradient(160deg, rgba(228, 19, 118, 1) 0%, rgba(163, 59, 186, 1) 12%, rgba(104, 95, 248, 1) 24%, rgba(0, 184, 255, 1) 37%, rgba(16, 27, 55, 1) 52%); */
     transition: all 0.6s linear;
@@ -251,12 +291,13 @@ body {
 #visao h1 {
     letter-spacing: 0.5vw;
     position: absolute;
-    top: 29.5vw;
-    left: 24.3vw;
-    font-size: 1.5vw;
+    top: 30.5vw;
+    left: 24.6vw;
+    font-size: 1.3vw;
     transform: rotate(-90deg);
     transition: all 0.6s linear;
     color: #414040;
+    opacity: 80%;
 }
 
 /* .linha{
@@ -278,22 +319,22 @@ body {
 
 .h1SobreHover {
 
-    top: 18vw !important;
-    left: 14vw !important;
+    top: 16vw !important;
+    left: 13vw !important;
 
     transform: rotate(-52deg) !important;
 }
 
 .h1ProjetosHover {
     top: 13vw !important;
-    left: 7vw !important;
+    left: 5vw !important;
 
     transform: rotate(-52deg) !important;
 }
 
 .h1CarreiraHover {
-    top: 15vw !important;
-    left: 10.5vw !important;
+    top: 13vw !important;
+    left: 8.5vw !important;
 
     transform: rotate(-52deg) !important;
 }
@@ -309,6 +350,7 @@ body {
 /* Classes para clique nav */
 
 .abreNav {
+    /* border-radius: 21% 52% 24% 66% / 46% 25% 90% 30% !important; */
     top: -35vw !important;
     left: -30vw !important;
     rotate: -45deg !important;
@@ -319,6 +361,7 @@ body {
 }
 
 .h1CliqueSobre {
+    
     transform: rotate(45deg) !important;
     left: 45vw !important;
     top: 35vw !important;

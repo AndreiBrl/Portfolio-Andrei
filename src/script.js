@@ -3,7 +3,7 @@
 let sobre = document.querySelector("#sobre");
 let h1Sobre = document.querySelector("#sobre h1");
 let pSobre = document.querySelector("#sobre p");
-let flag = 0;
+let flagSobre = 0;
 
 sobre.addEventListener('mouseover', function () {
 
@@ -18,25 +18,25 @@ sobre.addEventListener('mouseleave', function () {
 // logica nav CLIQUE
 
 sobre.addEventListener("click", function () {
-    flag++;
-   
-    if(flag%2!=0){
+    flagSobre++;
+
+    if (flagSobre % 2 != 0) {
         sobre.classList.add('abreNav');
         h1Sobre.classList.add('h1CliqueSobre');
         pSobre.classList.add('visible');
         setTimeout(() => {
             pSobre.classList.add('opacidade');
-            
+
         }, 600);
     }
-    else{
+    else {
         pSobre.classList.remove('opacidade');
         setTimeout(() => {
             pSobre.classList.remove('visible');
             sobre.classList.remove('abreNav');
             h1Sobre.classList.remove('h1CliqueSobre');
-            
-        }, 350);
+
+        }, 100);
     }
 
 
@@ -46,7 +46,8 @@ sobre.addEventListener("click", function () {
 // PROJETOS
 let projetos = document.querySelector("#projetos");
 let h1Projetos = document.querySelector("#projetos h1");
-
+let flagProjetos = 0;
+let projetosClasse = document.querySelector(".projetos");
 projetos.addEventListener('mouseover', function () {
 
     h1Projetos.classList.add('h1ProjetosHover');
@@ -61,8 +62,27 @@ projetos.addEventListener('mouseleave', function () {
 
 projetos.addEventListener("click", function () {
 
-    projetos.classList.toggle('abreNav');
-    h1Projetos.classList.toggle('h1CliqueProjetos');
+    flagProjetos++;
+
+    if (flagProjetos % 2 != 0) {
+
+        projetos.classList.add('abreNav');
+        h1Projetos.classList.add('h1CliqueProjetos');
+        projetosClasse.classList.add('visible');
+        setTimeout(() => {
+            projetosClasse.classList.add('opacidade');
+            
+        }, 600);
+    }
+    else {
+        projetosClasse.classList.remove('opacidade');
+        setTimeout(() => {
+            projetosClasse.classList.remove('visible');
+            projetos.classList.remove('abreNav');
+            h1Projetos.classList.remove('h1CliqueProjetos');
+
+        }, 100);
+    }
 
 
 })
@@ -115,8 +135,8 @@ visao.addEventListener("click", function () {
 
     visao.classList.toggle('abreNav');
     h1Visao.classList.toggle('h1CliqueVisao');
-    
-    
+
+
 
 
 })
@@ -126,77 +146,77 @@ visao.addEventListener("click", function () {
 
 let neonPerfil = document.querySelector(".neonPerfil")
 let neonPerfil2 = document.querySelector(".neonPerfil2")
-let neonPerfil3= document.querySelector(".neonPerfil3")
+let neonPerfil3 = document.querySelector(".neonPerfil3")
 let neonPerfil4 = document.querySelector(".neonPerfil4")
 let neonPerfil5 = document.querySelector(".neonPerfil5")
 let neonPerfil6 = document.querySelector(".neonPerfil6")
 let neonPerfil7 = document.querySelector(".neonPerfil7")
 let neonPerfil8 = document.querySelector(".neonPerfil8")
 
-function neon (){
-neonPerfil.classList.add("neonRosa");
-setTimeout(() => {
-    neonPerfil2.classList.add("neonAzul");
-}, 600);
-setTimeout(() => {
-    neonPerfil3.classList.add("neonRosa");
-}, 1200);
-setTimeout(() => {
-    neonPerfil4.classList.add("neonAzul");
-}, 1800);
-setTimeout(() => {
-    neonPerfil5.classList.add("neonRosa");
-}, 2400);
-setTimeout(() => {
-    neonPerfil6.classList.add("neonAzul");
-}, 3000);
-setTimeout(() => {
-    neonPerfil7.classList.add("neonRosa");
-}, 3600);
-setTimeout(() => {
-    neonPerfil8.classList.add("neonAzul");
-}, 4200);
+function neon() {
+    neonPerfil.classList.add("neonRosa");
+    setTimeout(() => {
+        neonPerfil2.classList.add("neonAzul");
+    }, 600);
+    setTimeout(() => {
+        neonPerfil3.classList.add("neonRosa");
+    }, 1200);
+    setTimeout(() => {
+        neonPerfil4.classList.add("neonAzul");
+    }, 1800);
+    setTimeout(() => {
+        neonPerfil5.classList.add("neonRosa");
+    }, 2400);
+    setTimeout(() => {
+        neonPerfil6.classList.add("neonAzul");
+    }, 3000);
+    setTimeout(() => {
+        neonPerfil7.classList.add("neonRosa");
+    }, 3600);
+    setTimeout(() => {
+        neonPerfil8.classList.add("neonAzul");
+    }, 4200);
 }
 neon();
 
 // SCROOL REVEAL
 // 	/* ---- Scroll smooth reveal ---- */
-window.sr = ScrollReveal({reset:false});
+window.sr = ScrollReveal({ reset: false });
 
 
-ScrollReveal().reveal('#sobre',{
+ScrollReveal().reveal('#sobre', {
 
-	distance: '300px',
-	duration: 2000,
+    distance: '300px',
+    duration: 2000,
 
-	delay: 600
+    delay: 600
 });
-ScrollReveal().reveal('#projetos',{
+ScrollReveal().reveal('#projetos', {
 
-	distance: '300px',
-	duration: 2000,
+    distance: '300px',
+    duration: 2000,
 
-	delay: 700
+    delay: 700
 });
-ScrollReveal().reveal('#carreira',{
+ScrollReveal().reveal('#carreira', {
 
-	distance: '300px',
-	duration: 2000,
+    distance: '300px',
+    duration: 2000,
 
-	delay: 800
+    delay: 800
 });
-ScrollReveal().reveal('#visao',{
+ScrollReveal().reveal('#visao', {
 
-	distance: '300px',
-	duration: 2000,
+    distance: '300px',
+    duration: 2000,
 
-	delay: 900
+    delay: 900
 });
-ScrollReveal().reveal('.principal',{
+ScrollReveal().reveal('.principal', {
 
-	distance: '100px',
-	duration: 2000,
+    distance: '100px',
+    duration: 2000,
 
-	delay: 50
+    delay: 50
 });
 
