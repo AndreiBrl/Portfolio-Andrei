@@ -57,7 +57,7 @@ body {
 #nav h1 {
     font-family: Louis;
 }
-
+/*  INICIO SOBRE */
 #sobre {
     /* clip-path: polygon(100% 0%, 0% 0%, 0% 100%); */
     width: 18vw;
@@ -114,7 +114,10 @@ body {
     font-family: Louis;
 
 }
-#projetos {
+/*  fim SOBRE */
+
+/*  INICIO CARREIRA */
+#carreira {
     cursor: pointer;
     border-radius: 72% 85% 80% 0% / 5% 64% 65% 75%;
     rotate: 45deg;
@@ -135,7 +138,7 @@ body {
 
 }
 
-#projetos:hover {
+#carreira:hover {
     /* top: -35vw;
     left: -30vw;
     rotate: -45deg;
@@ -152,7 +155,7 @@ body {
     height: 21vw;
 }
 
-#projetos h1 {
+#carreira h1 {
     letter-spacing: 0.5vw;
     position: absolute;
     top: 18vw;
@@ -163,45 +166,14 @@ body {
     color: #414040;
     opacity: 80%;
 }
-.projetos{
-    transform: rotate(45deg);
-    position: absolute;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.1s linear;
-    width: 10vw;
-    top: 33vw;
-    left: 30vw;
-    text-align: center;
-    gap: 3vw;
-}
 
-.arquetipo img{
-    width: 10vw;
-    transition: all 0.2s linear;
-}
-.arquetipo h2{
-    font-family: Louis;
-    font-size: 1.3vw;
-}
-.arquetipo img:hover{
-    scale: 1.2;
-}
-.calculadora img{
-    width: 5vw;
-    border-radius: 10px;
-    transition: all 0.2s linear;
-}
-.calculadora h2{
-    font-size: 1.3vw;
-    font-family: Louis;
-}
-.calculadora img:hover{
-    scale: 1.2;
-}
+/*  FIM  CARREIRA */
+
+/*  INICIO VISAO */
 
 
-#carreira {
+
+#visao {
     cursor: pointer;
     border-radius: 12% 85% 68% 80% / 75% 54% 90% 70%;
     z-index: 3;
@@ -221,11 +193,11 @@ body {
 
 }
 
-#carreira h1 {
+#visao h1 {
     letter-spacing: 0.5vw;
     position: absolute;
     top: 18.5vw;
-    left: 14.5vw;
+    left: 16.5vw;
     font-size: 1.3vw;
     transform: rotate(-90deg);
     transition: all 0.6s linear;
@@ -233,14 +205,14 @@ body {
     opacity: 80%;
 }
 
-#carreira:hover {
+#visao:hover {
     /*     
     top: -35vw;
     left: -30vw;
     rotate: -45deg;
     
     width: 100vw;
-    height: 80vw; */
+    height: 80vw; */    
     top: -6vw;
     left: -2vw;
 
@@ -250,8 +222,9 @@ body {
     height: 22vw;
 }
 
-
-#visao {
+/*  FIM  VISAO */
+/*  INICIO projetos */
+#projetos {
 
     border-radius: 32% 65% 78% 0% / 25% 54% 30% 70%;
     cursor: pointer;
@@ -272,7 +245,7 @@ body {
 
 }
 
-#visao:hover {
+#projetos:hover {
     /* top: -35vw;
     left: -30vw;
     rotate: -45deg;
@@ -288,18 +261,57 @@ body {
     height: 24vw;
 }
 
-#visao h1 {
+#projetos h1 {
     letter-spacing: 0.5vw;
     position: absolute;
     top: 30.5vw;
-    left: 24.6vw;
+    left: 22.6vw;
     font-size: 1.3vw;
     transform: rotate(-90deg);
     transition: all 0.6s linear;
     color: #414040;
     opacity: 80%;
 }
+.projetos{
+    transform: rotate(45deg);
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.1s linear;
+    width: 10vw;
+    top: 39vw;
+    left: 35vw;
+    text-align: center;
+    gap: 3vw;
+}
+.arquetipo img{
+    width: 10vw;
+    transition: all 0.2s linear;
+    opacity: 80%;
+}
+.arquetipo h2{
+    margin-top: 1.7vw;
+    font-family: Louis;
+    font-size: 1.3vw;
+}
+.arquetipo img:hover{
+    scale: 1.2;
+}
+.calculadora img{
+    width: 5vw;
+    border-radius: 10px;
+    transition: all 0.2s linear;
+    opacity: 80%;
+}
+.calculadora h2{
+    font-size: 1.3vw;
+    font-family: Louis;
+}
+.calculadora img:hover{
+    scale: 1.2;
+}
 
+/*  FIM projetos */
 /* .linha{
     position: absolute;
     bottom: -138%;
@@ -325,23 +337,23 @@ body {
     transform: rotate(-52deg) !important;
 }
 
-.h1ProjetosHover {
-    top: 13vw !important;
-    left: 5vw !important;
+.h1ProjetosHover  {
+    top: 15vw !important;
+    left: 8vw !important;
 
     transform: rotate(-52deg) !important;
 }
 
 .h1CarreiraHover {
     top: 13vw !important;
-    left: 8.5vw !important;
+    left: 5vw !important;
 
     transform: rotate(-52deg) !important;
 }
 
 .h1VisaoHover {
-    top: 16vw !important;
-    left: 10.5vw !important;
+    top: 13.5vw !important;
+    left: 10vw !important;
 
     transform: rotate(-52deg) !important;
 }
@@ -640,6 +652,12 @@ body {
         right: 11vw;
     }
 }
+@media (max-width: 780px) {
+    
+    
+}
+
+
 
 /* SCROLL REVEAL */
 
