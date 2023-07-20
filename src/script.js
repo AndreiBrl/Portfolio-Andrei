@@ -156,26 +156,26 @@ let neonPerfil8 = document.querySelector(".neonPerfil8")
 function neon() {
     neonPerfil.classList.add("neonRosa");
     setTimeout(() => {
-        neonPerfil2.classList.add("neonAzul");
-    }, 600);
+        neonPerfil2.classList.add("neonRosa");
+    }, 1000);
     setTimeout(() => {
         neonPerfil3.classList.add("neonRosa");
-    }, 1200);
+    }, 2000);
     setTimeout(() => {
-        neonPerfil4.classList.add("neonAzul");
-    }, 1800);
-    setTimeout(() => {
-        neonPerfil5.classList.add("neonRosa");
-    }, 2400);
-    setTimeout(() => {
-        neonPerfil6.classList.add("neonAzul");
+        neonPerfil4.classList.add("neonRosa");
     }, 3000);
     setTimeout(() => {
-        neonPerfil7.classList.add("neonRosa");
-    }, 3600);
+        neonPerfil5.classList.add("neonRosa");
+    }, 4000);
     setTimeout(() => {
-        neonPerfil8.classList.add("neonAzul");
-    }, 4200);
+        neonPerfil6.classList.add("neonRosa");
+    }, 5000);
+    setTimeout(() => {
+        neonPerfil7.classList.add("neonRosa");
+    }, 6000);
+    setTimeout(() => {
+        neonPerfil8.classList.add("neonRosa");
+    }, 7000);
 }
 neon();
 
