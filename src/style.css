@@ -415,6 +415,40 @@ body {
     font-size: 5vw !important;
 }
 
+@media (max-width: 780px) {
+
+    #sobre {
+        width: 30vw;
+        height: 43vw;
+        border-radius: 72% 35% 78% 10% / 35% 84% 20% 20%;
+    }
+
+    #sobre:hover {
+        width: 30vw;
+        height: 43vw;
+        rotate: 45deg;
+        
+    }
+    #sobre h1{
+        top: 15vw;
+        transform: rotate(-93deg);
+        font-size: 4vw;
+    }
+    .h1SobreHover {
+
+        top: 15vw !important;
+        left: 12.5vw !important;
+    
+        transform: rotate(-93deg) !important;
+    }
+
+    .abreNav{
+width: 130vw !important;
+left: -20vw !important;
+    }
+    
+}
+
 /* FIM SECTION 1 */
 
 /* SECTION 2 */
