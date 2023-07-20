@@ -157,25 +157,36 @@ function neon() {
     neonPerfil.classList.add("neonRosa");
     setTimeout(() => {
         neonPerfil2.classList.add("neonRosa");
+        neonPerfil.style.visibility="visible"
     }, 1000);
     setTimeout(() => {
+        neonPerfil2.style.visibility="visible"
         neonPerfil3.classList.add("neonRosa");
     }, 2000);
     setTimeout(() => {
+        neonPerfil3.style.visibility="visible"
         neonPerfil4.classList.add("neonRosa");
     }, 3000);
     setTimeout(() => {
+        neonPerfil4.style.visibility="visible"
         neonPerfil5.classList.add("neonRosa");
     }, 4000);
     setTimeout(() => {
+        neonPerfil5.style.visibility="visible"
         neonPerfil6.classList.add("neonRosa");
     }, 5000);
     setTimeout(() => {
+        neonPerfil6.style.visibility="visible"
         neonPerfil7.classList.add("neonRosa");
     }, 6000);
     setTimeout(() => {
+        neonPerfil7.style.visibility="visible"
         neonPerfil8.classList.add("neonRosa");
     }, 7000);
+    setTimeout(() => {
+        neonPerfil8.style.visibility="visible"
+
+    }, 8000);
 }
 neon();
 
