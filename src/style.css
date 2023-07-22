@@ -432,7 +432,14 @@ body {
 }
 
 @media (max-width: 780px) {
-
+    .abreNav {
+        rotate: 0deg !important;
+        width: 150vw !important;
+        height: 130vw !important;
+        left: -10vw !important;
+        top: -50vw !important;
+    }
+    /* SOBRE */
     #sobre {
         width: 30vw;
         height: 43vw;
@@ -460,13 +467,7 @@ body {
         transform: rotate(-93deg) !important;
     }
 
-    .abreNav {
-        rotate: 0deg !important;
-        width: 150vw !important;
-        height: 130vw !important;
-        left: -10vw !important;
-        top: -50vw !important;
-    }
+    
     .h1CliqueSobre {
 
         transform: rotate(0deg) !important;
@@ -481,8 +482,48 @@ body {
         font-size: 3.5vw;
         width: 60%;
     }
+/* FIM SOBRE */
+/* VISAO */
+
+#carreira {
+    width: 40vw;
+    height: 73vw;
+    top: -20vw !important;
+    left: -10vw !important;
+    border-radius: 0% 35% 78% 70px / 35% 84% 20% 20%;
+}
+
+#carreira:hover {
+    width: 40vw;
+    height: 73vw;
+    top: -20vw !important;
+    left: -10vw !important;
+    rotate: 45deg;
 
 }
+
+#carreira h1 {
+    top: 27vw !important;
+    left: 22vw !important;
+    transform: rotate(-93deg);
+    font-size: 4vw;
+}
+.h1CarreiraHover {
+
+     top: 27vw !important;
+    left: 22vw !important;
+    transform: rotate(-93deg) !important; 
+    font-size: 4vw;
+}
+.h1CliqueCarreira {
+
+    transform: rotate(0deg) !important;
+    left: 45vw !important;
+    top: 45vw !important;
+    font-size: 10vw !important;
+}
+}
+
 
 /* FIM SECTION 1 */
 
