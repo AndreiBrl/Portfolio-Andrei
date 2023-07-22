@@ -19,6 +19,7 @@
 
 html {
     scroll-behavior: initial;
+    overflow: hidden;
 }
 
 body {
@@ -30,6 +31,7 @@ body {
     overflow: hidden;
 
 }
+
 
 .container {
     position: relative;
@@ -420,33 +422,51 @@ body {
     #sobre {
         width: 30vw;
         height: 43vw;
-        border-radius: 72% 35% 78% 10% / 35% 84% 20% 20%;
+        border-radius: 0% 35% 78% 70px / 35% 84% 20% 20%;
     }
 
     #sobre:hover {
         width: 30vw;
         height: 43vw;
         rotate: 45deg;
-        
+
     }
-    #sobre h1{
+
+    #sobre h1 {
         top: 15vw;
         transform: rotate(-93deg);
         font-size: 4vw;
     }
+
     .h1SobreHover {
 
         top: 15vw !important;
         left: 12.5vw !important;
-    
+
         transform: rotate(-93deg) !important;
     }
 
-    .abreNav{
-width: 130vw !important;
-left: -20vw !important;
+    .abreNav {
+        rotate: -55deg !important;
+        width: 150vw !important;
+        height: 130vw !important;
+        left: 5vw !important;
+        top: -70vw !important;
     }
-    
+    .h1CliqueSobre {
+
+        transform: rotate(55deg) !important;
+        left: 35vw !important;
+        top: 35vw !important;
+        font-size: 10vw !important;
+    }
+    #sobre p{
+        left: 3vw;
+        transform: rotate(55deg) !important;
+        top: 50vw !important;
+        font-size: 2.5vw;
+    }
+
 }
 
 /* FIM SECTION 1 */
@@ -658,7 +678,7 @@ left: -20vw !important;
         justify-content: center;
         align-items: center;
         margin-left: 0vw;
-        padding-top: 20vw;
+        padding-top: 30vw;
 
     }
 
