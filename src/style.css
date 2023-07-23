@@ -19,14 +19,16 @@
 
 html {
     scroll-behavior: initial;
-    
-    
+    -webkit-tap-highlight-color: transparent;
+
+
 }
-@media (max-width: 780px)  {
-    html{
+
+@media (max-width: 780px) {
+    html {
         overflow: hidden;
     }
-    
+
 }
 
 
@@ -69,11 +71,12 @@ body {
 }
 
 @media (max-width:780px) {
-    
-    #nav{
+
+    #nav {
         /* display: none !important; */
     }
 }
+
 #nav h1 {
     font-family: Louis;
 }
@@ -432,6 +435,11 @@ body {
 }
 
 @media (max-width: 780px) {
+    #nav {
+        display: flex;
+        gap: 5vw;
+    }
+
     .abreNav {
         rotate: 0deg !important;
         width: 150vw !important;
@@ -439,11 +447,18 @@ body {
         left: -10vw !important;
         top: -50vw !important;
     }
+
     /* SOBRE */
     #sobre {
+
+        rotate: 0deg !important;
         width: 30vw;
-        height: 43vw;
-        border-radius: 0% 35% 78% 70px / 35% 84% 20% 20%;
+        height: 10vw;
+        
+        position: static !important;
+        /* border-radius: 0% 35% 78% 70px / 35% 84% 20% 20%; */
+        border-radius: 0 !important;
+
     }
 
     #sobre:hover {
@@ -454,8 +469,8 @@ body {
     }
 
     #sobre h1 {
-        top: 15vw;
-        transform: rotate(-93deg);
+        position: static !important;
+        transform: rotate(0deg);
         font-size: 4vw;
     }
 
@@ -467,7 +482,7 @@ body {
         transform: rotate(-93deg) !important;
     }
 
-    
+
     .h1CliqueSobre {
 
         transform: rotate(0deg) !important;
@@ -475,53 +490,114 @@ body {
         top: 45vw !important;
         font-size: 10vw !important;
     }
-    #sobre p{
+
+    #sobre p {
         left: 15vw;
         transform: rotate(0deg) !important;
         top: 70vw !important;
         font-size: 3.5vw;
         width: 60%;
     }
-/* FIM SOBRE */
-/* VISAO */
 
-#carreira {
-    width: 40vw;
-    height: 73vw;
-    top: -20vw !important;
-    left: -10vw !important;
-    border-radius: 0% 35% 78% 70px / 35% 84% 20% 20%;
-}
+    /* FIM SOBRE */
+    /* VISAO */
 
-#carreira:hover {
-    width: 40vw;
-    height: 73vw;
-    top: -20vw !important;
-    left: -10vw !important;
-    rotate: 45deg;
+    #carreira {
+        position: static !important;
+        rotate: 0deg !important;
+        width: 15vw !important;
+        height: 10vw !important;
+        /* position: relative !important; */
+        /* border-radius: 0% 35% 78% 70px / 35% 84% 20% 20%; */
+        border-radius: 0 !important;
+    }
 
-}
+    #carreira:hover {
+        width: 0vw;
+        height: 0vw;
+        top: 0vw !important;
+        left: 0vw !important;
+        rotate: 0deg;
 
-#carreira h1 {
-    top: 27vw !important;
-    left: 22vw !important;
-    transform: rotate(-93deg);
-    font-size: 4vw;
-}
-.h1CarreiraHover {
+    }
 
-     top: 27vw !important;
-    left: 22vw !important;
-    transform: rotate(-93deg) !important; 
-    font-size: 4vw;
-}
-.h1CliqueCarreira {
+    #carreira h1 {
 
-    transform: rotate(0deg) !important;
-    left: 45vw !important;
-    top: 45vw !important;
-    font-size: 10vw !important;
-}
+       position: static !important;
+        transform: rotate(0deg) !important;
+        font-size: 3vw;
+    }
+
+    .h1CarreiraHover {
+
+        top: 27vw !important;
+        left: 22vw !important;
+        transform: rotate(-93deg) !important;
+        font-size: 4vw;
+    }
+
+    .h1CliqueCarreira {
+
+        transform: rotate(0deg) !important;
+        left: 45vw !important;
+        top: 45vw !important;
+        font-size: 10vw !important;
+    }
+    /* visao */
+
+    #visao {
+        position: static !important;
+        rotate: 0deg !important;
+        width: 15vw !important;
+        height: 10vw !important;
+        /* position: relative !important; */
+        /* border-radius: 0% 35% 78% 70px / 35% 84% 20% 20%; */
+        border-radius: 0 !important;
+    }
+
+    #visao:hover {
+        width: 0vw;
+        height: 0vw;
+        top: 0vw !important;
+        left: 0vw !important;
+        rotate: 0deg;
+
+    }
+
+    #visao h1 {
+
+       position: static !important;
+        transform: rotate(0deg) !important;
+        font-size: 3vw;
+    }
+    /* fim VISAO */
+    /* projetos */
+    #projetos {
+        position: static !important;
+        rotate: 0deg !important;
+        width: 15vw !important;
+        height: 10vw !important;
+        /* position: relative !important; */
+        /* border-radius: 0% 35% 78% 70px / 35% 84% 20% 20%; */
+        border-radius: 0 !important;
+    }
+
+    #projetos:hover {
+        width: 0vw;
+        height: 0vw;
+        top: 0vw !important;
+        left: 0vw !important;
+        rotate: 0deg;
+
+    }
+
+    #projetos h1 {
+
+       position: static !important;
+        transform: rotate(0deg) !important;
+        font-size: 3vw;
+    }
+    /* fim projetos */
 }
 
 
