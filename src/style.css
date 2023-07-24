@@ -436,8 +436,15 @@ body {
 
 @media (max-width: 780px) {
     #nav {
+        left: 5vw;
+        position: absolute;
+        width: 90vw;
         display: flex;
-        gap: 5vw;
+        gap: 0vw;
+        justify-content: center;
+        background-color: #f7d6af;
+        border-bottom-right-radius: 10px ;
+        border-bottom-left-radius: 10px ;
     }
 
     .abreNav {
@@ -450,11 +457,12 @@ body {
 
     /* SOBRE */
     #sobre {
-
+        box-shadow: none;
         rotate: 0deg !important;
-        width: 30vw;
+        width: 15vw;
         height: 10vw;
         
+        background-color: transparent;
         position: static !important;
         /* border-radius: 0% 35% 78% 70px / 35% 84% 20% 20%; */
         border-radius: 0 !important;
@@ -462,90 +470,97 @@ body {
     }
 
     #sobre:hover {
-        width: 30vw;
-        height: 43vw;
-        rotate: 45deg;
+        width: 0vw !important;
+        height: 0vw !important;
+        rotate: 0deg !important;
 
     }
 
     #sobre h1 {
+        color: black;
         position: static !important;
         transform: rotate(0deg);
         font-size: 4vw;
+        opacity: 100;
+        letter-spacing: 0;
     }
-
+    
     .h1SobreHover {
 
-        top: 15vw !important;
-        left: 12.5vw !important;
-
-        transform: rotate(-93deg) !important;
+        
+        
+        transform: rotate(0deg) !important;
     }
-
+    
 
     .h1CliqueSobre {
-
+        
         transform: rotate(0deg) !important;
         left: 45vw !important;
         top: 45vw !important;
         font-size: 10vw !important;
     }
-
+    
     #sobre p {
         left: 15vw;
         transform: rotate(0deg) !important;
         top: 70vw !important;
-        font-size: 3.5vw;
+        font-size: 4vw;
         width: 60%;
     }
-
+    
     /* FIM SOBRE */
     /* VISAO */
-
+    
     #carreira {
+        box-shadow: none;
+        background-color: transparent;
         position: static !important;
         rotate: 0deg !important;
-        width: 15vw !important;
+        width: 20vw !important;
         height: 10vw !important;
         /* position: relative !important; */
         /* border-radius: 0% 35% 78% 70px / 35% 84% 20% 20%; */
         border-radius: 0 !important;
     }
-
+    
     #carreira:hover {
         width: 0vw;
         height: 0vw;
         top: 0vw !important;
         left: 0vw !important;
         rotate: 0deg;
-
+        
     }
-
+    
     #carreira h1 {
-
-       position: static !important;
+        color: black;
+        position: static !important;
         transform: rotate(0deg) !important;
-        font-size: 3vw;
+        font-size: 4vw;
+        opacity: 100;
+        letter-spacing: 0;
     }
-
+    
     .h1CarreiraHover {
-
+        
         top: 27vw !important;
         left: 22vw !important;
         transform: rotate(-93deg) !important;
         font-size: 4vw;
     }
-
+    
     .h1CliqueCarreira {
-
+        
         transform: rotate(0deg) !important;
         left: 45vw !important;
         top: 45vw !important;
         font-size: 10vw !important;
     }
     /* visao */
-
+    
     #visao {
+        background-color: transparent;
         position: static !important;
         rotate: 0deg !important;
         width: 15vw !important;
@@ -553,26 +568,30 @@ body {
         /* position: relative !important; */
         /* border-radius: 0% 35% 78% 70px / 35% 84% 20% 20%; */
         border-radius: 0 !important;
+        box-shadow: none;
     }
-
+    
     #visao:hover {
         width: 0vw;
         height: 0vw;
         top: 0vw !important;
         left: 0vw !important;
         rotate: 0deg;
-
+        
     }
-
+    
     #visao h1 {
-
-       position: static !important;
+        color: black;
+        position: static !important;
         transform: rotate(0deg) !important;
-        font-size: 3vw;
+        font-size: 4vw;
+        opacity: 100;
+        letter-spacing: 0;
     }
     /* fim VISAO */
     /* projetos */
     #projetos {
+        background-color: transparent;
         position: static !important;
         rotate: 0deg !important;
         width: 15vw !important;
@@ -580,8 +599,9 @@ body {
         /* position: relative !important; */
         /* border-radius: 0% 35% 78% 70px / 35% 84% 20% 20%; */
         border-radius: 0 !important;
+        box-shadow: none;
     }
-
+    
     #projetos:hover {
         width: 0vw;
         height: 0vw;
@@ -592,13 +612,17 @@ body {
     }
 
     #projetos h1 {
-
-       position: static !important;
+        
+        position: static !important;
         transform: rotate(0deg) !important;
-        font-size: 3vw;
+        font-size: 4vw;
+        opacity: 100;
+        letter-spacing: 0;
+        color: black;
     }
     /* fim projetos */
 }
+
 
 
 /* FIM SECTION 1 */
@@ -613,22 +637,22 @@ body {
 
 .principal h1 {
     font-size: 4vw;
-
+    
     font-family: Code;
     color: #fae8b2;
-
+    
 }
 
 .principal h2 {
     font-family: Louis;
     font-size: 4vw;
-
+    
     color: #c84b31;
 }
 
 
 .principal img {
-
+    
     border-radius: 30%;
     width: 20vw;
 
