@@ -436,23 +436,22 @@ body {
 
 @media (max-width: 780px) {
     #nav {
-        left: 5vw;
+        left: 5vw !important;
         position: absolute;
         width: 90vw;
         display: flex;
-        gap: 0vw;
+        gap: 3vw;
         justify-content: center;
-        background-color: #f7d6af;
+        /* background-color: #f7d6af; */
         border-bottom-right-radius: 10px ;
         border-bottom-left-radius: 10px ;
     }
 
     .abreNav {
         rotate: 0deg !important;
-        width: 150vw !important;
-        height: 130vw !important;
-        left: -10vw !important;
-        top: -50vw !important;
+        width: 0vw !important;
+        height: 0vw !important;
+        
     }
 
     /* SOBRE */
@@ -477,18 +476,19 @@ body {
     }
 
     #sobre h1 {
-        color: black;
+        color:white;
         position: static !important;
         transform: rotate(0deg);
-        font-size: 4vw;
+        font-size: 5vw !important;
         opacity: 100;
         letter-spacing: 0;
+        width: 21vw;  
     }
     
     .h1SobreHover {
 
-        
-        
+        left: 0 !important;
+        top: 0 !important;
         transform: rotate(0deg) !important;
     }
     
@@ -496,17 +496,21 @@ body {
     .h1CliqueSobre {
         
         transform: rotate(0deg) !important;
-        left: 45vw !important;
-        top: 45vw !important;
-        font-size: 10vw !important;
+        left: 0 !important;
+        top: 0 !important;
+        font-size: 5vw !important;
+        border-bottom: 1px solid white;
+        box-shadow: 1px 13.5px 16px -8px white;
     }
     
     #sobre p {
-        left: 15vw;
+        position: static !important;
+        left: 0vw !important;
         transform: rotate(0deg) !important;
-        top: 70vw !important;
+        top: 0vw !important;
         font-size: 4vw;
         width: 60%;
+        color: white;
     }
     
     /* FIM SOBRE */
@@ -534,19 +538,21 @@ body {
     }
     
     #carreira h1 {
-        color: black;
+        color:white;
         position: static !important;
         transform: rotate(0deg) !important;
-        font-size: 4vw;
+        font-size: 5vw;
         opacity: 100;
         letter-spacing: 0;
+        width: 21vw;    
+        
     }
     
     .h1CarreiraHover {
         
-        top: 27vw !important;
-        left: 22vw !important;
-        transform: rotate(-93deg) !important;
+        top: 0vw !important;
+        left: 0vw !important;
+        transform: rotate(0deg) !important;
         font-size: 4vw;
     }
     
@@ -555,7 +561,10 @@ body {
         transform: rotate(0deg) !important;
         left: 45vw !important;
         top: 45vw !important;
-        font-size: 10vw !important;
+        background-color: transparent;
+        font-size: 5vw !important;
+        border-bottom: 1px solid white;
+        box-shadow: 1px 13.5px 16px -8px white;
     }
     /* visao */
     
@@ -581,12 +590,27 @@ body {
     }
     
     #visao h1 {
-        color: black;
+        color:white;
         position: static !important;
         transform: rotate(0deg) !important;
-        font-size: 4vw;
+        font-size: 5vw;
         opacity: 100;
         letter-spacing: 0;
+        width: 13vw;  
+    }
+    .h1VisaoHover {
+        top: 0vw !important;
+        left: 0vw !important;
+    
+        transform: rotate(0deg) !important;
+    }
+    .h1CliqueVisao {
+        transform: rotate(0deg) !important;
+        left: 0vw !important;
+        top: 0vw !important;
+        font-size: 5vw !important;
+        border-bottom: 1px solid white;
+        box-shadow: 1px 13.5px 16px -8px white;
     }
     /* fim VISAO */
     /* projetos */
@@ -615,10 +639,25 @@ body {
         
         position: static !important;
         transform: rotate(0deg) !important;
-        font-size: 4vw;
+        font-size: 5vw;
         opacity: 100;
         letter-spacing: 0;
-        color: black;
+        color:white;
+        width: 22vw;  
+    }
+    .h1ProjetosHover {
+        top: 0vw !important;
+        left: 0vw !important;
+    
+        transform: rotate(0deg) !important;
+    }
+    .h1CliqueProjetos {
+        transform: rotate(0deg) !important;
+        left: 0vw !important;
+        top: 0vw !important;
+        font-size: 5vw !important;
+        border-bottom: 1px solid white;
+        box-shadow: 1px 13.5px 16px -8px white;
     }
     /* fim projetos */
 }
