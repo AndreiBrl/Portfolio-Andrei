@@ -60,10 +60,47 @@ body {
 }
 
 /* SECTION 1 */
-#nav {
-    max-width: 100vw;
-    max-height: 30vw;
 
+.menu-mobile {
+    display: none;
+}
+
+@media (max-width:780px) {
+
+    .mostra {
+        opacity: 100% !important;
+    }
+
+    .menu-mobile {
+        position: absolute;
+
+        width: 100vw;
+        top: 10vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 3;
+        gap: 2vw;
+        transition: all 0.8s linear;
+    }
+
+    .menu-mobile hr {
+
+
+
+        box-shadow: 0px 0px 5px 0 #FADDB8;
+        transition: all 0.8s linear;
+        border: 1px solid white;
+        margin: 0;
+        width: 10vw;
+    }
+
+
+    #nav {
+        max-width: 100vw;
+        max-height: 30vw;
+
+    }
 
     /* clip-path: polygon(100% 0%, 0% 0%, 0% 100%); */
     /* background-color: lightblue;    */
@@ -438,63 +475,69 @@ body {
     #nav {
         left: 5vw !important;
         position: absolute;
+        top: 16vw;
         width: 90vw;
+        z-index: 2;
         display: flex;
         gap: 3vw;
         justify-content: center;
         /* background-color: #f7d6af; */
-        border-bottom-right-radius: 10px ;
-        border-bottom-left-radius: 10px ;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
     }
 
     .abreNav {
         rotate: 0deg !important;
         width: 0vw !important;
         height: 0vw !important;
-        
+
     }
 
     /* SOBRE */
     #sobre {
         box-shadow: none;
         rotate: 0deg !important;
-        width: 15vw;
+        width: 15vw !important;
         height: 10vw;
-        
+
         background-color: transparent;
         position: static !important;
         /* border-radius: 0% 35% 78% 70px / 35% 84% 20% 20%; */
         border-radius: 0 !important;
+        opacity: 0;
 
     }
 
     #sobre:hover {
-        width: 0vw !important;
+        width: 15vw !important;
         height: 0vw !important;
         rotate: 0deg !important;
 
     }
 
     #sobre h1 {
-        color:white;
+        color: white;
         position: static !important;
         transform: rotate(0deg);
         font-size: 5vw !important;
         opacity: 100;
         letter-spacing: 0;
-        width: 21vw;  
+        width: 15vw;
+
+
     }
-    
+
     .h1SobreHover {
 
         left: 0 !important;
         top: 0 !important;
         transform: rotate(0deg) !important;
     }
-    
+
 
     .h1CliqueSobre {
-        
+
+
         transform: rotate(0deg) !important;
         left: 0 !important;
         top: 0 !important;
@@ -502,7 +545,7 @@ body {
         border-bottom: 1px solid white;
         box-shadow: 1px 13.5px 16px -8px white;
     }
-    
+
     #sobre p {
         position: static !important;
         left: 0vw !important;
@@ -512,11 +555,12 @@ body {
         width: 60%;
         color: white;
     }
-    
+
     /* FIM SOBRE */
     /* VISAO */
-    
+
     #carreira {
+        opacity: 0;
         box-shadow: none;
         background-color: transparent;
         position: static !important;
@@ -526,38 +570,39 @@ body {
         /* position: relative !important; */
         /* border-radius: 0% 35% 78% 70px / 35% 84% 20% 20%; */
         border-radius: 0 !important;
+
     }
-    
+
     #carreira:hover {
         width: 0vw;
         height: 0vw;
         top: 0vw !important;
         left: 0vw !important;
         rotate: 0deg;
-        
+
     }
-    
+
     #carreira h1 {
-        color:white;
+        color: white;
         position: static !important;
         transform: rotate(0deg) !important;
         font-size: 5vw;
         opacity: 100;
         letter-spacing: 0;
-        width: 21vw;    
-        
+        width: 21vw;
+
     }
-    
+
     .h1CarreiraHover {
-        
+
         top: 0vw !important;
         left: 0vw !important;
         transform: rotate(0deg) !important;
         font-size: 4vw;
     }
-    
+
     .h1CliqueCarreira {
-        
+
         transform: rotate(0deg) !important;
         left: 45vw !important;
         top: 45vw !important;
@@ -566,9 +611,11 @@ body {
         border-bottom: 1px solid white;
         box-shadow: 1px 13.5px 16px -8px white;
     }
+
     /* visao */
-    
+
     #visao {
+        opacity: 0;
         background-color: transparent;
         position: static !important;
         rotate: 0deg !important;
@@ -578,32 +625,35 @@ body {
         /* border-radius: 0% 35% 78% 70px / 35% 84% 20% 20%; */
         border-radius: 0 !important;
         box-shadow: none;
+
     }
-    
+
     #visao:hover {
         width: 0vw;
         height: 0vw;
         top: 0vw !important;
         left: 0vw !important;
         rotate: 0deg;
-        
+
     }
-    
+
     #visao h1 {
-        color:white;
+        color: white;
         position: static !important;
         transform: rotate(0deg) !important;
         font-size: 5vw;
         opacity: 100;
         letter-spacing: 0;
-        width: 13vw;  
+        width: 13vw;
     }
+
     .h1VisaoHover {
         top: 0vw !important;
         left: 0vw !important;
-    
+
         transform: rotate(0deg) !important;
     }
+
     .h1CliqueVisao {
         transform: rotate(0deg) !important;
         left: 0vw !important;
@@ -612,9 +662,11 @@ body {
         border-bottom: 1px solid white;
         box-shadow: 1px 13.5px 16px -8px white;
     }
+
     /* fim VISAO */
     /* projetos */
     #projetos {
+        opacity: 0;
         background-color: transparent;
         position: static !important;
         rotate: 0deg !important;
@@ -624,8 +676,9 @@ body {
         /* border-radius: 0% 35% 78% 70px / 35% 84% 20% 20%; */
         border-radius: 0 !important;
         box-shadow: none;
+
     }
-    
+
     #projetos:hover {
         width: 0vw;
         height: 0vw;
@@ -636,21 +689,23 @@ body {
     }
 
     #projetos h1 {
-        
+
         position: static !important;
         transform: rotate(0deg) !important;
         font-size: 5vw;
         opacity: 100;
         letter-spacing: 0;
-        color:white;
-        width: 22vw;  
+        color: white;
+        width: 22vw;
     }
+
     .h1ProjetosHover {
         top: 0vw !important;
         left: 0vw !important;
-    
+
         transform: rotate(0deg) !important;
     }
+
     .h1CliqueProjetos {
         transform: rotate(0deg) !important;
         left: 0vw !important;
@@ -659,6 +714,7 @@ body {
         border-bottom: 1px solid white;
         box-shadow: 1px 13.5px 16px -8px white;
     }
+
     /* fim projetos */
 }
 
@@ -676,22 +732,22 @@ body {
 
 .principal h1 {
     font-size: 4vw;
-    
+
     font-family: Code;
     color: #fae8b2;
-    
+
 }
 
 .principal h2 {
     font-family: Louis;
     font-size: 4vw;
-    
+
     color: #c84b31;
 }
 
 
 .principal img {
-    
+
     border-radius: 30%;
     width: 20vw;
 

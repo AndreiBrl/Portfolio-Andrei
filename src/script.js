@@ -231,3 +231,46 @@ ScrollReveal().reveal('.principal', {
     delay: 50
 });
 
+// LOGICA MENU MOBILE
+let contaMenu=0;
+let menuMobile = document.querySelector(".menu-mobile");
+let linha1 = document.querySelector(".linha1")
+let linha2 = document.querySelector(".linha2")
+let linha3 = document.querySelector(".linha3")
+
+// grau random para menu
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  
+  
+  menuMobile.addEventListener('click',function(){
+    const randomAngle1 = getRandomInt(0, 560);
+    const randomAngle2= getRandomInt(0, 850);
+    const randomAngle3 = getRandomInt(0, 560);
+contaMenu++;
+if (contaMenu%2!=0) {
+        
+    // linha1.style.rotate=""+randomAngle1+"deg";
+    linha2.style.rotate=""+randomAngle2+"deg";
+    // linha3.style.rotate=""+randomAngle3+"deg";
+    
+    sobre.classList.add("mostra");
+    carreira.classList.add("mostra");
+    visao.classList.add("mostra");
+    projetos.classList.add("mostra");
+    
+}
+else{
+    
+    sobre.classList.remove("mostra");
+    carreira.classList.remove("mostra");
+    visao.classList.remove("mostra");
+    projetos.classList.remove("mostra");
+    
+    linha1.style.rotate="deg";
+    linha2.style.rotate="0deg";
+    linha3.style.rotate="0deg";
+    // linha3.style.opacity="100%";
+}
+})
