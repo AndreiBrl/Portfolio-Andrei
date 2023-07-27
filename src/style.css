@@ -473,14 +473,14 @@ body {
 
 @media (max-width: 780px) {
     #nav {
-        left: 5vw !important;
+        left: 1vw !important;
         position: absolute;
         top: 16vw;
         width: 90vw;
         z-index: 2;
         display: flex;
-        gap: 3vw;
-        justify-content: center;
+        justify-content: space-between;
+
         /* background-color: #f7d6af; */
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
@@ -547,13 +547,19 @@ body {
     }
 
     #sobre p {
+        font-family: Georgia, 'Times New Roman', Times, serif !important;
+        width: 90vw !important;
+        height: 112vw;
         position: static !important;
         left: 0vw !important;
         transform: rotate(0deg) !important;
-        top: 0vw !important;
-        font-size: 4vw;
-        width: 60%;
-        color: white;
+        padding: 4vw;
+        font-size: 5vw;
+        color: black;
+        background-color: white;
+        border-radius: 5px;
+        margin: 0 !important;
+        transition: all 1s linear;
     }
 
     /* FIM SOBRE */
@@ -1063,10 +1069,10 @@ body {
 
 /* SCROLL REVEAL */
 
-#sobre,
+/* #sobre,
 #projetos,
 #carreira,
 #visao,
 .principal {
     visibility: hidden;
-}
+} */

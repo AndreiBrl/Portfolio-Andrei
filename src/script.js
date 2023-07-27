@@ -28,6 +28,7 @@ sobre.addEventListener("click", function () {
             pSobre.classList.add('opacidade');
 
         }, 600);
+
     }
     else {
         pSobre.classList.remove('opacidade');
@@ -109,6 +110,7 @@ carreira.addEventListener("click", function () {
 
     carreira.classList.toggle('abreNav');
     h1Carreira.classList.toggle('h1CliqueCarreira');
+    
 
 
 })
@@ -192,44 +194,44 @@ neon();
 
 // SCROOL REVEAL
 // 	/* ---- Scroll smooth reveal ---- */
-window.sr = ScrollReveal({ reset: false });
+// window.sr = ScrollReveal({ reset: false });
 
 
-ScrollReveal().reveal('#sobre', {
+// ScrollReveal().reveal('#sobre', {
 
-    distance: '300px',
-    duration: 2000,
+//     distance: '300px',
+//     duration: 2000,
 
-    delay: 600
-});
-ScrollReveal().reveal('#projetos', {
+//     delay: 600
+// });
+// ScrollReveal().reveal('#projetos', {
 
-    distance: '300px',
-    duration: 2000,
+//     distance: '300px',
+//     duration: 2000,
 
-    delay: 700
-});
-ScrollReveal().reveal('#carreira', {
+//     delay: 700
+// });
+// ScrollReveal().reveal('#carreira', {
 
-    distance: '300px',
-    duration: 2000,
+//     distance: '300px',
+//     duration: 2000,
 
-    delay: 800
-});
-ScrollReveal().reveal('#visao', {
+//     delay: 800
+// });
+// ScrollReveal().reveal('#visao', {
 
-    distance: '300px',
-    duration: 2000,
+//     distance: '300px',
+//     duration: 2000,
 
-    delay: 900
-});
-ScrollReveal().reveal('.principal', {
+//     delay: 900
+// });
+// ScrollReveal().reveal('.principal', {
 
-    distance: '100px',
-    duration: 2000,
+//     distance: '100px',
+//     duration: 2000,
 
-    delay: 50
-});
+//     delay: 50
+// });
 
 // LOGICA MENU MOBILE
 let contaMenu=0;
@@ -245,9 +247,9 @@ function getRandomInt(min, max) {
   
   
   menuMobile.addEventListener('click',function(){
-    const randomAngle1 = getRandomInt(0, 560);
-    const randomAngle2= getRandomInt(0, 850);
-    const randomAngle3 = getRandomInt(0, 560);
+    const randomAngle1 = getRandomInt(0, 360);
+    const randomAngle2= getRandomInt(0, 360);
+    const randomAngle3 = getRandomInt(0, 360);
 contaMenu++;
 if (contaMenu%2!=0) {
         
