@@ -239,6 +239,7 @@ let menuMobile = document.querySelector(".menu-mobile");
 let linha1 = document.querySelector(".linha1")
 let linha2 = document.querySelector(".linha2")
 let linha3 = document.querySelector(".linha3")
+let principal = document.querySelector(".principal")
 
 // grau random para menu
 function getRandomInt(min, max) {
@@ -261,6 +262,7 @@ if (contaMenu%2!=0) {
     carreira.classList.add("mostra");
     visao.classList.add("mostra");
     projetos.classList.add("mostra");
+    principal.style.opacity="0";
     
 }
 else{

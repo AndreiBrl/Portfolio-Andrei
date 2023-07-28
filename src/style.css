@@ -25,9 +25,7 @@ html {
 }
 
 @media (max-width: 780px) {
-    html {
-        overflow: hidden;
-    }
+    
 
 }
 
@@ -555,8 +553,8 @@ body {
         transform: rotate(0deg) !important;
         padding: 4vw;
         font-size: 5vw;
-        color: black;
-        background-color: white;
+        color: white;
+        /* background-color: white; */
         border-radius: 5px;
         margin: 0 !important;
         transition: all 1s linear;
@@ -705,6 +703,44 @@ body {
         width: 22vw;
     }
 
+    .projetos {
+        width: 100vw;
+        left: -75vw;
+        top: 20;
+        transform: rotate(0deg);
+        flex-direction: column;
+        justify-content: cente;
+        align-items: center;
+
+    }
+
+
+
+    .arquetipo h2 {
+
+        width: 40vw;
+        padding-top: 1vw;
+        margin: 0;
+        font-size: 4vw !important;
+        color: white !important;
+    }
+
+    .arquetipo img {
+        width: 30vw;
+    }
+
+    .calculadora h2 {
+        width: 40vw;
+        padding-top: 1vw;
+        margin: 0;
+        font-size: 4vw !important;
+        color: white !important;
+    }
+
+    .calculadora img {
+        width: 20vw
+    }
+
     .h1ProjetosHover {
         top: 0vw !important;
         left: 0vw !important;
@@ -734,6 +770,7 @@ body {
     margin-left: 10vw;
     gap: 10vw;
     display: flex;
+    transition: all 0.5s linear;
 }
 
 .principal h1 {
@@ -760,6 +797,11 @@ body {
     filter: brightness(70%);
     z-index: 0;
 }
+
+
+@media (max-width:780px) {}
+
+
 
 .neonPerfil,
 .neonPerfil2,
