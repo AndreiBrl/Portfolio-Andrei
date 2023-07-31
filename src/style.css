@@ -108,14 +108,12 @@ body {
 }
 
 #nav {
-
-    width: 15vw;
+background-color: red;
+    width: 25vw;
     height: 5vw;
     display: flex;
     margin-left: 45vw;
     border-radius: 50px;
-    background-color:whitesmoke;
-    justify-content: space-around;
     align-items: center;
     
 }
@@ -128,7 +126,11 @@ body {
 
 /*  INICIO SOBRE */
 #sobre {
-    
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background-color: whitesmoke;
+    width: 3vw;
+    text-align: center;
     /* border-radius: 32% 65% 78% 0% / 25% 54% 30% 70%; */
     /* background: rgb(228, 19, 118); */
     /* background: linear-gradient(160deg, rgba(228, 19, 118, 1) 0%, rgba(163, 59, 186, 1) 50%); */
@@ -174,6 +176,9 @@ background-color: red;
 
 /*  INICIO CARREIRA */
 #carreira {
+    background-color: whitesmoke;
+    width: 3vw;
+    text-align: center;
     cursor: pointer;
     /* border-radius: 72% 85% 80% 0% / 5% 64% 65% 75%; */
 
@@ -190,20 +195,7 @@ background-color: red;
 }
 
 #carreira:hover {
-    /* top: -35vw;
-    left: -30vw;
-    rotate: -45deg;
-    
-    width: 100vw;
-    height: 80vw; */
-
-    top: -6vw;
-    left: -2vw;
-
-    rotate: 10deg;
-
-    width: 15vw;
-    height: 21vw;
+ background-color: red;
 }
 
 #carreira h1 {
@@ -220,6 +212,9 @@ background-color: red;
 
 
 #visao {
+    background-color: whitesmoke;
+    width: 3vw;
+    text-align: center;
     cursor: pointer;
     /* border-radius: 12% 85% 68% 80% / 75% 54% 90% 70%; */
     
@@ -239,26 +234,15 @@ background-color: red;
 }
 
 #visao:hover {
-    /*     
-    top: -35vw;
-    left: -30vw;
-    rotate: -45deg;
-    
-    width: 100vw;
-    height: 80vw; */
-    top: -6vw;
-    left: -2vw;
-
-    rotate: 10deg;
-
-    width: 18vw;
-    height: 22vw;
+    background-color: red;
 }
 
 /*  FIM  VISAO */
 /*  INICIO projetos */
 #projetos {
-
+    background-color: whitesmoke;
+    width: 3vw;
+    text-align: center;
     /* border-radius: 32% 65% 78% 0% / 25% 54% 30% 70%; */
     cursor: pointer;
     /* background: rgb(228, 19, 118); */
@@ -271,19 +255,7 @@ background-color: red;
 }
 
 #projetos:hover {
-    /* top: -35vw;
-    left: -30vw;
-    rotate: -45deg;
-
-    width: 100vw;
-    height: 80vw; */
-    top: -5vw;
-    left: 0vw;
-
-    rotate: 8deg;
-
-    width: 18vw;
-    height: 24vw;
+ background-color: red;
 }
 
 #projetos h1 {
@@ -293,6 +265,8 @@ background-color: red;
 }
 
 .projetos {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
     transform: rotate(45deg);
     position: absolute;
     opacity: 0;
