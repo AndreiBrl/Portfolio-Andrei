@@ -3,6 +3,9 @@
 let sobre = document.querySelector("#sobre");
 let h1Sobre = document.querySelector("#sobre h1");
 let pSobre = document.querySelector("#sobre p");
+let principal = document.querySelector(".principal")
+
+
 let flagSobre = 0;
 
 sobre.addEventListener('mouseover', function () {
@@ -24,14 +27,16 @@ sobre.addEventListener("click", function () {
         sobre.classList.add('abreNav');
         h1Sobre.classList.add('h1CliqueSobre');
         pSobre.classList.add('visible');
+        principal.classList.add('opacidade');
         setTimeout(() => {
-            pSobre.classList.add('opacidade');
+            pSobre.style.opacity="100%";
 
         }, 600);
 
     }
     else {
-        pSobre.classList.remove('opacidade');
+        principal.classList.remove('opacidade');
+        pSobre.style.opacity="0";
         setTimeout(() => {
             pSobre.classList.remove('visible');
             sobre.classList.remove('abreNav');
@@ -66,10 +71,11 @@ projetos.addEventListener("click", function () {
     flagProjetos++;
 
     if (flagProjetos % 2 != 0) {
-
+        pSobre.style.opacity="0";
         projetos.classList.add('abreNav');
         h1Projetos.classList.add('h1CliqueProjetos');
         projetosClasse.classList.add('visible');
+        
         setTimeout(() => {
             projetosClasse.classList.add('opacidade');
             
@@ -96,6 +102,7 @@ let h1Carreira = document.querySelector("#carreira h1");
 carreira.addEventListener('mouseover', function () {
 
     h1Carreira.classList.add('h1CarreiraHover');
+    pSobre.style.opacity="0";
 
 })
 carreira.addEventListener('mouseleave', function () {
@@ -123,6 +130,7 @@ let h1Visao = document.querySelector("#visao h1");
 visao.addEventListener('mouseover', function () {
 
     h1Visao.classList.add('h1VisaoHover');
+    pSobre.style.opacity="0";
 
 })
 visao.addEventListener('mouseleave', function () {
@@ -239,7 +247,6 @@ let menuMobile = document.querySelector(".menu-mobile");
 let linha1 = document.querySelector(".linha1")
 let linha2 = document.querySelector(".linha2")
 let linha3 = document.querySelector(".linha3")
-let principal = document.querySelector(".principal")
 
 // grau random para menu
 function getRandomInt(min, max) {
@@ -261,8 +268,7 @@ if (contaMenu%2!=0) {
     sobre.classList.add("mostra");
     carreira.classList.add("mostra");
     visao.classList.add("mostra");
-    projetos.classList.add("mostra");
-    principal.style.opacity="0";
+    projetos.classList.add("mostra");  
     
 }
 else{
