@@ -1,21 +1,26 @@
 // Lógica hover menu
+let fechaCortinha = document.querySelector(".fechaCortina");
+let nomeMenu = document.querySelector(".nomeMenu h1")
 // SOBRE
 let sobre = document.querySelector("#sobre");
 let h1Sobre = document.querySelector("#sobre h1");
 let pSobre = document.querySelector("#sobre p");
 let principal = document.querySelector(".principal")
-
+let cortina = document.querySelector(".cortina")
 
 let flagSobre = 0;
 
 sobre.addEventListener('mouseover', function () {
 
-    h1Sobre.classList.add('h1SobreHover');
-
+    // h1Sobre.classList.add('h1SobreHover');
+    nomeMenu.textContent="sobre";
+    nomeMenu.style.opacity="100%";
+    
 })
 sobre.addEventListener('mouseleave', function () {
-
-    h1Sobre.classList.remove('h1SobreHover');
+    
+    // h1Sobre.classList.remove('h1SobreHover');
+    nomeMenu.style.opacity="0";
 
 })
 // logica nav CLIQUE
@@ -23,27 +28,32 @@ sobre.addEventListener('mouseleave', function () {
 sobre.addEventListener("click", function () {
     flagSobre++;
 
-    if (flagSobre % 2 != 0) {
-        sobre.classList.add('abreNav');
-        h1Sobre.classList.add('h1CliqueSobre');
-        pSobre.classList.add('visible');
-        principal.classList.add('opacidade');
+    // if (flagSobre % 2 != 0) {
+        // sobre.classList.add('abreNav');
+        // h1Sobre.classList.add('h1CliqueSobre');
+        // pSobre.classList.add('visible');
+        // principal.classList.add('opacidade');
+
+        cortina.classList.add('abreCortina');
+        cortina.style.backgroundColor="green";
+        fechaCortinha.classList.add("visible");
         setTimeout(() => {
             pSobre.style.opacity="100%";
+            
+        }, 300);
+        
+    // }
+    // else {
 
-        }, 600);
+    //     principal.classList.remove('opacidade');
+    //     pSobre.style.opacity="0";
+    //     setTimeout(() => {
+    //         pSobre.classList.remove('visible');
+    //         sobre.classList.remove('abreNav');
+    //         h1Sobre.classList.remove('h1CliqueSobre');
 
-    }
-    else {
-        principal.classList.remove('opacidade');
-        pSobre.style.opacity="0";
-        setTimeout(() => {
-            pSobre.classList.remove('visible');
-            sobre.classList.remove('abreNav');
-            h1Sobre.classList.remove('h1CliqueSobre');
-
-        }, 100);
-    }
+    //     }, 100);
+    // }
 
 
 })
@@ -56,13 +66,16 @@ let flagProjetos = 0;
 let projetosClasse = document.querySelector(".projetos");
 projetos.addEventListener('mouseover', function () {
 
-    h1Projetos.classList.add('h1ProjetosHover');
+    // h1Projetos.classList.add('h1ProjetosHover');
 
+    nomeMenu.textContent="projetos";
+    nomeMenu.style.opacity="100%";
 })
 projetos.addEventListener('mouseleave', function () {
 
-    h1Projetos.classList.remove('h1ProjetosHover');
-
+    // h1Projetos.classList.remove('h1ProjetosHover');
+    nomeMenu.style.opacity="0";
+    
 })
 // logica nav CLIQUE
 
@@ -70,26 +83,29 @@ projetos.addEventListener("click", function () {
 
     flagProjetos++;
 
-    if (flagProjetos % 2 != 0) {
-        pSobre.style.opacity="0";
-        projetos.classList.add('abreNav');
-        h1Projetos.classList.add('h1CliqueProjetos');
-        projetosClasse.classList.add('visible');
+    // if (flagProjetos % 2 != 0) {
+        // pSobre.style.opacity="0";
+        // projetos.classList.add('abreNav');
+        // h1Projetos.classList.add('h1CliqueProjetos');
+        // projetosClasse.classList.add('visible');
         
+        cortina.style.backgroundColor="blue";
+        cortina.classList.add('abreCortina');
+        fechaCortinha.classList.add("visible");
         setTimeout(() => {
             projetosClasse.classList.add('opacidade');
             
         }, 600);
-    }
-    else {
-        projetosClasse.classList.remove('opacidade');
-        setTimeout(() => {
-            projetosClasse.classList.remove('visible');
-            projetos.classList.remove('abreNav');
-            h1Projetos.classList.remove('h1CliqueProjetos');
+    // }
+    // else {
+    //     projetosClasse.classList.remove('opacidade');
+    //     setTimeout(() => {
+    //         projetosClasse.classList.remove('visible');
+    //         projetos.classList.remove('abreNav');
+    //         h1Projetos.classList.remove('h1CliqueProjetos');
 
-        }, 100);
-    }
+    //     }, 100);
+    // }
 
 
 })
@@ -101,22 +117,27 @@ let h1Carreira = document.querySelector("#carreira h1");
 
 carreira.addEventListener('mouseover', function () {
 
-    h1Carreira.classList.add('h1CarreiraHover');
-    pSobre.style.opacity="0";
-
+    // h1Carreira.classList.add('h1CarreiraHover');
+    // pSobre.style.opacity="0";
+    nomeMenu.textContent="carreira";
+    nomeMenu.style.opacity="100%";
+    
 })
 carreira.addEventListener('mouseleave', function () {
-
-    h1Carreira.classList.remove('h1CarreiraHover');
+    
+    nomeMenu.style.opacity="0";
+    // h1Carreira.classList.remove('h1CarreiraHover');
 
 })
 
 // logica nav CLIQUE
 
 carreira.addEventListener("click", function () {
-
-    carreira.classList.toggle('abreNav');
-    h1Carreira.classList.toggle('h1CliqueCarreira');
+    cortina.style.backgroundColor="orange";
+    cortina.classList.add('abreCortina');
+    fechaCortinha.classList.add("visible");
+    // carreira.classList.toggle('abreNav');
+    // h1Carreira.classList.toggle('h1CliqueCarreira');
     
 
 
@@ -128,23 +149,27 @@ let visao = document.querySelector("#visao");
 let h1Visao = document.querySelector("#visao h1");
 
 visao.addEventListener('mouseover', function () {
-
-    h1Visao.classList.add('h1VisaoHover');
-    pSobre.style.opacity="0";
-
+    nomeMenu.textContent="visão";
+    nomeMenu.style.opacity="100%";
+    // h1Visao.classList.add('h1VisaoHover');
+    // pSobre.style.opacity="0";
+    
 })
 visao.addEventListener('mouseleave', function () {
-
-    h1Visao.classList.remove('h1VisaoHover');
+    
+    nomeMenu.style.opacity="0";
+    // h1Visao.classList.remove('h1VisaoHover');
 
 })
 
 // logica nav CLIQUE
 
 visao.addEventListener("click", function () {
-
-    visao.classList.toggle('abreNav');
-    h1Visao.classList.toggle('h1CliqueVisao');
+    cortina.style.backgroundColor="white";
+    cortina.classList.add('abreCortina');
+    fechaCortinha.classList.add("visible");
+    // visao.classList.toggle('abreNav');
+    // h1Visao.classList.toggle('h1CliqueVisao');
 
 
 
@@ -241,6 +266,17 @@ neon();
 //     delay: 50
 // });
 
+
+// FECHA CORTINA
+
+
+fechaCortinha.addEventListener("click", function(){
+
+    cortina.classList.remove('abreCortina');
+    fechaCortinha.classList.remove("visible");
+    console.log(1);
+
+})
 // LOGICA MENU MOBILE
 let contaMenu=0;
 let menuMobile = document.querySelector(".menu-mobile");

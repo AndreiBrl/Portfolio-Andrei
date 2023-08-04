@@ -122,12 +122,68 @@ body {
     font-size: 1.5vw;
 
 }
+.nomeMenu{
+    display: flex;
+    justify-content: center;
+}
+.nomeMenu h1{
+    color: white;
+    font-family: Louis;
+    text-transform: uppercase;
+    letter-spacing: 0.3vw;
+    opacity: 0;
+
+}
+.cortina{
+    position: absolute;
+    
+    z-index: 3;
+    width: 100vw;
+    
+    height: 0vw;
+    left: -45vw;
+    top: -37vw;
+    transition: all 3s ease;
+}
+.abreCortina{
+    animation: efeitoCortina 0.5s ease-in-out forwards;
+}
+.fechaCortina{
+    width: 4vw;
+    height:2vw;
+background-color: red;
+    position: absolute;
+    top: -3vw;
+    left: 5vw;
+    z-index: 5;
+    visibility: hidden;
+    cursor: pointer;
+    /* transition: all 0.2s linear; */
+}
+@keyframes efeitoCortina{
+    
+    13%{
+        height: 36vw;
+    }
+    25%{
+        height: 30vw;
+    }
+    50%{
+        height: 36vw;
+    }
+    75%{
+        height: 32vw;
+    }
+    100%{
+        height: 36vw;
+    }
+}
 
 /*  INICIO SOBRE */
 #sobre {
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
-
+margin-top: 5vw;
     width: 6vw;
     text-align: center;
     /* border-radius: 32% 65% 78% 0% / 25% 54% 30% 70%; */
@@ -183,7 +239,7 @@ body {
 
 /*  INICIO CARREIRA */
 #carreira {
-
+    margin-top: 5vw;
     width: 6vw;
     text-align: center;
     cursor: pointer;
@@ -227,7 +283,7 @@ transform: scale(1.3);
 
 
 #visao {
-
+    margin-top: 5vw;
     width: 6vw;
     text-align: center;
     cursor: pointer;
@@ -255,7 +311,7 @@ transform: scale(1.3);
 
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
-
+    margin-top: 5vw;
     width: 3vw;
     text-align: center;
     /* border-radius: 32% 65% 78% 0% / 25% 54% 30% 70%; */
@@ -270,7 +326,7 @@ transform: scale(1.3);
 }
 
 .rocket {
-    top: 1vw;
+    top: 3vw;
     left: 17vw;
     position: absolute;
     width: 4vw;
