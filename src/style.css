@@ -69,7 +69,7 @@ body {
         opacity: 100% !important;
     }
 
-    .menu-mobile {
+    /* .menu-mobile {
         position: absolute;
 
         width: 100vw;
@@ -91,15 +91,10 @@ body {
         border: 1px solid white;
         margin: 0;
         width: 10vw;
-    }
+    } */
 
 
-    #nav {
-        background-color: red;
-        max-width: 50vw;
-        max-height: 30vw;
 
-    }
 
     /* clip-path: polygon(100% 0%, 0% 0%, 0% 100%); */
     /* background-color: lightblue;    */
@@ -349,7 +344,8 @@ body {
     z-index: 5;
 }
 
-.rocket:hover,.pousaFoguete:hover {
+.rocket:hover,
+.pousaFoguete:hover {
     filter: saturate(1);
     width: 4vw;
     transform: rotate(-45deg);
@@ -366,30 +362,34 @@ body {
     /* filter: saturate(0); */
     transition: all 0.3s linear;
     opacity: 0;
-    
+
 }
-.lancaFoguete{
+
+.lancaFoguete {
     animation: lançaFoguete 5s linear forwards;
-    
+
 }
-.pousaFoguete{
+
+.pousaFoguete {
     animation: pousaFoguete 5s linear forwards;
 }
 
-.acendeChama{
+.acendeChama {
     animation: acendeChama 5s linear forwards;
-    
+
 }
-.apagaChama{
+
+.apagaChama {
     animation: apagaChama 5s linear forwards;
-    
+
 }
+
 @keyframes lançaFoguete {
     0% {}
 
     5% {
         filter: saturate(1);
-        
+
         transform: rotate(-45deg);
 
     }
@@ -399,7 +399,7 @@ body {
         top: -8vw;
         transform: rotate(-45deg);
     }
-    
+
     40% {
         filter: saturate(1);
         top: -7vw;
@@ -429,82 +429,82 @@ body {
         transform: rotate(-45deg);
         top: -7vw;
     }
-    
+
     /* 100% {
         transform: rotate(-45deg);
         top: 0vw;
     } */
 }
 
-@keyframes pousaFoguete{
-    0%{
+@keyframes pousaFoguete {
+    0% {
         filter: saturate(1);
         transform: rotate(-45deg);
         top: -7vw;
     }
-    70%{
+
+    70% {
         filter: saturate(1);
         transform: rotate(-45deg);
         top: 0vw;
     }
-    100%{
+
+    100% {
         top: 0vw;
         filter: saturate(0);
         transform: rotate(-45deg);
-        
+
     }
 }
+
 @keyframes acendeChama {
-    0% {
-        
-    
-    }
+    0% {}
 
     5% {
-       opacity: 50%; 
-       transform: scale(1.1vw);
-       
+        opacity: 50%;
+        transform: scale(1.1vw);
+
     }
-    
+
     25% {
         width: 3vw;
         left: 17.5vw;
-        opacity: 100%; 
+        opacity: 100%;
         top: -4vw;
         transform: scale(1.2);
     }
-    
+
     40% {
         width: 2vw;
         left: 18vw;
-        opacity: 100%; 
+        opacity: 100%;
         top: -3.1vw;
         transform: scale(1.3);
     }
-    
+
     55% {
-        
-        opacity: 100%; 
+
+        opacity: 100%;
         top: -4vw;
         transform: scale(1);
     }
-    
+
     70% {
-        opacity: 100%; 
-        
+        opacity: 100%;
+
         top: -3.1vw;
         transform: scale(1);
     }
 
     85% {
-        
+
         top: -4vw;
         transform: scale(1);
-        opacity: 100%; 
+        opacity: 100%;
     }
-    
+
     100% {
-        opacity: 100%; 
+        opacity: 100%;
         transform: rotate(-45deg);
         transform: scale(1);
         top: -3.1vw;
@@ -516,14 +516,16 @@ body {
         top: 0vw;
     } */
 }
-@keyframes apagaChama{
-    0%{
+
+@keyframes apagaChama {
+    0% {
         opacity: 100%;
         filter: saturate(1);
         transform: rotate(-45deg);
         top: -3.1vw;
     }
-    70%{
+
+    70% {
         opacity: 100%;
         filter: saturate(1);
         transform: rotate(-45deg);
@@ -531,13 +533,14 @@ body {
         left: 18.5vw;
         width: 1vw;
     }
-    100%{
+
+    100% {
         top: 4vw;
         left: 18.9vw;
         width: 0vw;
         filter: saturate(0);
         transform: rotate(0deg);
-        
+
     }
 }
 
@@ -672,15 +675,16 @@ body {
 @media (max-width: 780px) {
     #nav {
         width: 90vw;
+        height: 20vw;
         z-index: 2;
         display: flex;
-        justify-content: space-between;
+        margin-left: 0vw;
+        justify-content: center;
 
-        /* background-color: #f7d6af; */
-        border-bottom-right-radius: 10px;
-        border-bottom-left-radius: 10px;
     }
-
+    .nomeMenu{
+        display: none;
+    }
     .abreNav {
         rotate: 0deg !important;
         width: 0vw !important;
@@ -699,8 +703,12 @@ body {
         position: static !important;
         /* border-radius: 0% 35% 78% 70px / 35% 84% 20% 20%; */
         border-radius: 0 !important;
-        
 
+
+    }
+
+    #sobre img {
+        width: 13vw;
     }
 
     #sobre:hover {
@@ -722,28 +730,11 @@ body {
 
     }
 
-    .h1SobreHover {
+    #sobre img {}
 
-        left: 0 !important;
-        top: 0 !important;
-        transform: rotate(0deg) !important;
-    }
-
-
-    .h1CliqueSobre {
-
-
-        transform: rotate(0deg) !important;
-        left: 0 !important;
-        top: 0 !important;
-        font-size: 5vw !important;
-        border-bottom: 1px solid white;
-        box-shadow: 1px 13.5px 16px -8px white;
-    }
-    
     .sobreConteudo p {
         /* font-family: Georgia, 'Times New Roman', Times, serif !important; */
-        width: 90vw !important;
+        width: 20vw !important;
         height: 112vw;
         position: static !important;
         left: 0vw !important;
@@ -782,76 +773,28 @@ body {
 
     }
 
-    #carreira h1 {
-        color: white;
-        position: static !important;
-        transform: rotate(0deg) !important;
-        font-size: 5vw;
-        opacity: 100;
-        letter-spacing: 0;
-        width: 21vw;
-
-    }
-
-    .h1CarreiraHover {
-
-        top: 0vw !important;
-        left: 0vw !important;
-        transform: rotate(0deg) !important;
-        font-size: 4vw;
-    }
-
-    .h1CliqueCarreira {
-
-        transform: rotate(0deg) !important;
-        left: 45vw !important;
-        top: 45vw !important;
-        background-color: transparent;
-        font-size: 5vw !important;
-        border-bottom: 1px solid white;
-        box-shadow: 1px 13.5px 16px -8px white;
-    }
+#carreira img{
+    width: 13vw;
+}
 
     /* visao */
 
     #visao {
-        background-color: transparent;
-        position: static !important;
-        rotate: 0deg !important;
+        
         width: 15vw !important;
         height: 10vw !important;
-        /* position: relative !important; */
-        /* border-radius: 0% 35% 78% 70px / 35% 84% 20% 20%; */
-        border-radius: 0 !important;
-        box-shadow: none;
-
-    }
-
-    #visao:hover {
-        width: 0vw;
-        height: 0vw;
-        top: 0vw !important;
-        left: 0vw !important;
-        rotate: 0deg;
 
     }
 
     #visao h1 {
+        margin: 0;
+        padding: 0;
         color: white;
-        position: static !important;
-        transform: rotate(0deg) !important;
-        font-size: 5vw;
-        opacity: 100;
-        letter-spacing: 0;
-        width: 13vw;
+        font-size: 10vw;
+        
+        
     }
 
-    .h1VisaoHover {
-        top: 0vw !important;
-        left: 0vw !important;
-
-        transform: rotate(0deg) !important;
-    }
 
     .h1CliqueVisao {
         transform: rotate(0deg) !important;
@@ -907,8 +850,14 @@ body {
         align-items: center;
 
     }
-
-
+    .rocket{
+        width: 13vw;
+        left: 5vw;
+    }
+.chama{
+    width: 13vw;
+    left: 6vw;
+}
 
     .arquetipo h2 {
 
@@ -1170,7 +1119,7 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-left: 7vw;
+        margin-left: 0vw;
         padding-top: 20vw;
 
     }
