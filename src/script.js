@@ -4,7 +4,7 @@ let nomeMenu = document.querySelector(".nomeMenu h1")
 // SOBRE
 let sobre = document.querySelector("#sobre");
 let h1Sobre = document.querySelector("#sobre h1");
-let pSobre = document.querySelector("#sobre p");
+let sobreConteudo = document.querySelector(".sobreConteudo");
 let principal = document.querySelector(".principal")
 let cortina = document.querySelector(".cortina")
 
@@ -13,14 +13,14 @@ let flagSobre = 0;
 sobre.addEventListener('mouseover', function () {
 
     // h1Sobre.classList.add('h1SobreHover');
-    nomeMenu.textContent="sobre";
-    nomeMenu.style.opacity="100%";
-    
+    nomeMenu.textContent = "sobre";
+    nomeMenu.style.opacity = "100%";
+
 })
 sobre.addEventListener('mouseleave', function () {
-    
+
     // h1Sobre.classList.remove('h1SobreHover');
-    nomeMenu.style.opacity="0";
+    nomeMenu.style.opacity = "0";
 
 })
 // logica nav CLIQUE
@@ -29,26 +29,28 @@ sobre.addEventListener("click", function () {
     flagSobre++;
 
     // if (flagSobre % 2 != 0) {
-        // sobre.classList.add('abreNav');
-        // h1Sobre.classList.add('h1CliqueSobre');
-        // pSobre.classList.add('visible');
-        // principal.classList.add('opacidade');
+    // sobre.classList.add('abreNav');
+    // h1Sobre.classList.add('h1CliqueSobre');
+    // sobreConteudo.classList.add('visible');
+    // principal.classList.add('opacidade');
 
-        cortina.classList.add('abreCortina');
-        cortina.style.backgroundColor="green";
-        fechaCortinha.classList.add("visible");
-        setTimeout(() => {
-            pSobre.style.opacity="100%";
-            
-        }, 300);
-        
+    cortina.classList.add('abreCortina');
+    cortina.style.backgroundColor = "wheat";
+    fechaCortinha.classList.add("visible");
+    rocket.classList.replace("lancaFoguete","pousaFoguete");
+    chama.classList.replace("acendeChama","apagaChama");
+    sobreConteudo.style.opacity = "100%";
+    projetosClasse.style.opacity = "0";
+
+
+
     // }
     // else {
 
     //     principal.classList.remove('opacidade');
-    //     pSobre.style.opacity="0";
+    //     sobreConteudo.style.opacity="0";
     //     setTimeout(() => {
-    //         pSobre.classList.remove('visible');
+    //         sobreConteudo.classList.remove('visible');
     //         sobre.classList.remove('abreNav');
     //         h1Sobre.classList.remove('h1CliqueSobre');
 
@@ -64,18 +66,20 @@ let projetos = document.querySelector("#projetos");
 let h1Projetos = document.querySelector("#projetos h1");
 let flagProjetos = 0;
 let projetosClasse = document.querySelector(".projetos");
+let rocket = document.querySelector(".rocket");
+let chama = document.querySelector(".chama");
 projetos.addEventListener('mouseover', function () {
 
     // h1Projetos.classList.add('h1ProjetosHover');
 
-    nomeMenu.textContent="projetos";
-    nomeMenu.style.opacity="100%";
+    nomeMenu.textContent = "projetos";
+    nomeMenu.style.opacity = "100%";
 })
 projetos.addEventListener('mouseleave', function () {
 
     // h1Projetos.classList.remove('h1ProjetosHover');
-    nomeMenu.style.opacity="0";
-    
+    nomeMenu.style.opacity = "0";
+
 })
 // logica nav CLIQUE
 
@@ -84,18 +88,19 @@ projetos.addEventListener("click", function () {
     flagProjetos++;
 
     // if (flagProjetos % 2 != 0) {
-        // pSobre.style.opacity="0";
-        // projetos.classList.add('abreNav');
-        // h1Projetos.classList.add('h1CliqueProjetos');
-        // projetosClasse.classList.add('visible');
-        
-        cortina.style.backgroundColor="blue";
-        cortina.classList.add('abreCortina');
-        fechaCortinha.classList.add("visible");
-        setTimeout(() => {
-            projetosClasse.classList.add('opacidade');
-            
-        }, 600);
+    // sobreConteudo.style.opacity="0";
+    // projetos.classList.add('abreNav');
+    // h1Projetos.classList.add('h1CliqueProjetos');
+    // projetosClasse.classList.add('visible');
+    rocket.classList.remove("pousaFoguete");
+    rocket.classList.add("lancaFoguete");
+    chama.classList.remove("apagaChama");
+    chama.classList.add("acendeChama");
+    sobreConteudo.style.opacity = "0";
+    cortina.style.backgroundColor = "lightblue";
+    cortina.classList.add('abreCortina');
+    fechaCortinha.classList.add("visible");
+    projetosClasse.style.opacity = "100%";
     // }
     // else {
     //     projetosClasse.classList.remove('opacidade');
@@ -118,14 +123,14 @@ let h1Carreira = document.querySelector("#carreira h1");
 carreira.addEventListener('mouseover', function () {
 
     // h1Carreira.classList.add('h1CarreiraHover');
-    // pSobre.style.opacity="0";
-    nomeMenu.textContent="carreira";
-    nomeMenu.style.opacity="100%";
-    
+    // sobreConteudo.style.opacity="0";
+    nomeMenu.textContent = "carreira";
+    nomeMenu.style.opacity = "100%";
+
 })
 carreira.addEventListener('mouseleave', function () {
-    
-    nomeMenu.style.opacity="0";
+
+    nomeMenu.style.opacity = "0";
     // h1Carreira.classList.remove('h1CarreiraHover');
 
 })
@@ -133,12 +138,16 @@ carreira.addEventListener('mouseleave', function () {
 // logica nav CLIQUE
 
 carreira.addEventListener("click", function () {
-    cortina.style.backgroundColor="orange";
+    cortina.style.backgroundColor = "lightgray";
     cortina.classList.add('abreCortina');
     fechaCortinha.classList.add("visible");
+    sobreConteudo.style.opacity = "0";
+    projetosClasse.style.opacity = "0";
+    rocket.classList.replace("lancaFoguete", "pousaFoguete");
+    chama.classList.replace("acendeChama", "apagaChama");
     // carreira.classList.toggle('abreNav');
     // h1Carreira.classList.toggle('h1CliqueCarreira');
-    
+
 
 
 })
@@ -149,15 +158,15 @@ let visao = document.querySelector("#visao");
 let h1Visao = document.querySelector("#visao h1");
 
 visao.addEventListener('mouseover', function () {
-    nomeMenu.textContent="visão";
-    nomeMenu.style.opacity="100%";
+    nomeMenu.textContent = "visão";
+    nomeMenu.style.opacity = "100%";
     // h1Visao.classList.add('h1VisaoHover');
-    // pSobre.style.opacity="0";
-    
+    // sobreConteudo.style.opacity="0";
+
 })
 visao.addEventListener('mouseleave', function () {
-    
-    nomeMenu.style.opacity="0";
+
+    nomeMenu.style.opacity = "0";
     // h1Visao.classList.remove('h1VisaoHover');
 
 })
@@ -165,9 +174,13 @@ visao.addEventListener('mouseleave', function () {
 // logica nav CLIQUE
 
 visao.addEventListener("click", function () {
-    cortina.style.backgroundColor="white";
+    cortina.style.backgroundColor = "white";
     cortina.classList.add('abreCortina');
     fechaCortinha.classList.add("visible");
+    sobreConteudo.style.opacity = "0";
+    projetosClasse.style.opacity = "0";
+    rocket.classList.replace("lancaFoguete", "pousaFoguete");
+    chama.classList.replace("acendeChama", "apagaChama");
     // visao.classList.toggle('abreNav');
     // h1Visao.classList.toggle('h1CliqueVisao');
 
@@ -192,34 +205,34 @@ function neon() {
     neonPerfil.classList.add("neonRosa");
     setTimeout(() => {
         neonPerfil2.classList.add("neonRosa");
-        neonPerfil.style.visibility="visible"
+        neonPerfil.style.visibility = "visible"
     }, 1000);
     setTimeout(() => {
-        neonPerfil2.style.visibility="visible"
+        neonPerfil2.style.visibility = "visible"
         neonPerfil3.classList.add("neonRosa");
     }, 2000);
     setTimeout(() => {
-        neonPerfil3.style.visibility="visible"
+        neonPerfil3.style.visibility = "visible"
         neonPerfil4.classList.add("neonRosa");
     }, 3000);
     setTimeout(() => {
-        neonPerfil4.style.visibility="visible"
+        neonPerfil4.style.visibility = "visible"
         neonPerfil5.classList.add("neonRosa");
     }, 4000);
     setTimeout(() => {
-        neonPerfil5.style.visibility="visible"
+        neonPerfil5.style.visibility = "visible"
         neonPerfil6.classList.add("neonRosa");
     }, 5000);
     setTimeout(() => {
-        neonPerfil6.style.visibility="visible"
+        neonPerfil6.style.visibility = "visible"
         neonPerfil7.classList.add("neonRosa");
     }, 6000);
     setTimeout(() => {
-        neonPerfil7.style.visibility="visible"
+        neonPerfil7.style.visibility = "visible"
         neonPerfil8.classList.add("neonRosa");
     }, 7000);
     setTimeout(() => {
-        neonPerfil8.style.visibility="visible"
+        neonPerfil8.style.visibility = "visible"
 
     }, 8000);
 }
@@ -270,53 +283,57 @@ neon();
 // FECHA CORTINA
 
 
-fechaCortinha.addEventListener("click", function(){
+fechaCortinha.addEventListener("click", function () {
 
     cortina.classList.remove('abreCortina');
     fechaCortinha.classList.remove("visible");
+    sobreConteudo.style.opacity = "0";
+    projetosClasse.style.opacity = "0";
+    rocket.classList.replace("lancaFoguete", "pousaFoguete");
+    chama.classList.replace("acendeChama", "apagaChama");
     console.log(1);
 
 })
 // LOGICA MENU MOBILE
-let contaMenu=0;
+let contaMenu = 0;
 let menuMobile = document.querySelector(".menu-mobile");
 let linha1 = document.querySelector(".linha1")
 let linha2 = document.querySelector(".linha2")
 let linha3 = document.querySelector(".linha3")
 
 // grau random para menu
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-  
-  
-  menuMobile.addEventListener('click',function(){
-    const randomAngle1 = getRandomInt(0, 360);
-    const randomAngle2= getRandomInt(0, 360);
-    const randomAngle3 = getRandomInt(0, 360);
-contaMenu++;
-if (contaMenu%2!=0) {
-        
-    // linha1.style.rotate=""+randomAngle1+"deg";
-    linha2.style.rotate=""+randomAngle2+"deg";
-    // linha3.style.rotate=""+randomAngle3+"deg";
-    
-    sobre.classList.add("mostra");
-    carreira.classList.add("mostra");
-    visao.classList.add("mostra");
-    projetos.classList.add("mostra");  
-    
-}
-else{
-    
-    sobre.classList.remove("mostra");
-    carreira.classList.remove("mostra");
-    visao.classList.remove("mostra");
-    projetos.classList.remove("mostra");
-    
-    linha1.style.rotate="deg";
-    linha2.style.rotate="0deg";
-    linha3.style.rotate="0deg";
-    // linha3.style.opacity="100%";
-}
-})
+// function getRandomInt(min, max) {
+//     return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
+
+
+// menuMobile.addEventListener('click', function () {
+//     const randomAngle1 = getRandomInt(0, 360);
+//     const randomAngle2 = getRandomInt(0, 360);
+//     const randomAngle3 = getRandomInt(0, 360);
+//     contaMenu++;
+//     if (contaMenu % 2 != 0) {
+
+        // linha1.style.rotate=""+randomAngle1+"deg";
+        // linha2.style.rotate = "" + randomAngle2 + "deg";
+        // linha3.style.rotate=""+randomAngle3+"deg";
+
+    //     sobre.classList.add("mostra");
+    //     carreira.classList.add("mostra");
+    //     visao.classList.add("mostra");
+    //     projetos.classList.add("mostra");
+
+    // }
+    // else {
+
+    //     sobre.classList.remove("mostra");
+    //     carreira.classList.remove("mostra");
+    //     visao.classList.remove("mostra");
+    //     projetos.classList.remove("mostra");
+
+    //     linha1.style.rotate = "deg";
+    //     linha2.style.rotate = "0deg";
+    //     linha3.style.rotate = "0deg";
+        // linha3.style.opacity="100%";
+//     }
+// })

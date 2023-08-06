@@ -95,7 +95,8 @@ body {
 
 
     #nav {
-        max-width: 100vw;
+        background-color: red;
+        max-width: 50vw;
         max-height: 30vw;
 
     }
@@ -111,7 +112,7 @@ body {
     width: 25vw;
     height: 5vw;
     display: flex;
-    margin-left: 45vw;
+    margin-left: 40vw;
     border-radius: 50px;
     align-items: center;
 
@@ -122,11 +123,13 @@ body {
     font-size: 1.5vw;
 
 }
-.nomeMenu{
+
+.nomeMenu {
     display: flex;
     justify-content: center;
 }
-.nomeMenu h1{
+
+.nomeMenu h1 {
     color: white;
     font-family: Louis;
     text-transform: uppercase;
@@ -134,47 +137,57 @@ body {
     opacity: 0;
 
 }
-.cortina{
+
+.cortina {
     position: absolute;
-    
+
     z-index: 3;
     width: 100vw;
-    
+
     height: 0vw;
-    left: -45vw;
-    top: -37vw;
-    transition: all 3s ease;
+    /* left: -45vw;
+    top: -37vw; */
+    transition: all 1s ease;
 }
-.abreCortina{
-    animation: efeitoCortina 0.5s ease-in-out forwards;
+
+.abreCortina {
+    /* animation: efeitoCortina 1s linear forwards; */
+    height: 36vw;
 }
-.fechaCortina{
+
+.fechaCortina {
     width: 4vw;
-    height:2vw;
-background-color: red;
+    height: 2vw;
+    background-color: red;
     position: absolute;
-    top: -3vw;
-    left: 5vw;
+    bottom: 1vw;
+    left: 47vw;
     z-index: 5;
+
     visibility: hidden;
     cursor: pointer;
     /* transition: all 0.2s linear; */
 }
-@keyframes efeitoCortina{
-    
-    13%{
+
+@keyframes efeitoCortina {
+
+    13% {
         height: 36vw;
     }
-    25%{
+
+    25% {
         height: 30vw;
     }
-    50%{
+
+    50% {
         height: 36vw;
     }
-    75%{
+
+    75% {
         height: 32vw;
     }
-    100%{
+
+    100% {
         height: 36vw;
     }
 }
@@ -183,7 +196,7 @@ background-color: red;
 #sobre {
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
-margin-top: 5vw;
+
     width: 6vw;
     text-align: center;
     /* border-radius: 32% 65% 78% 0% / 25% 54% 30% 70%; */
@@ -211,35 +224,35 @@ margin-top: 5vw;
 }
 
 
-#sobre h1 {
-
-    transition: all 0.6s linear;
-    color: #414040;
-    opacity: 80%;
-
+.sobreConteudo {
+    position: absolute;
+    left: 20vw;
+    top: -2vw;
+    width: 60%;
+    transition: all 0.5s linear;
+    text-align: center;
+    opacity: 0;
 }
 
-#sobre p {
-    position: absolute;
-    top: 40vw;
-    left: 20vw;
-    opacity: 0;
-    width: 40%;
-    transform: rotate(45deg);
-    visibility: hidden;
+.sobreConteudo p {
     font-size: 1.8vw;
     color: black;
     text-align: justify;
-    transition: all 0.1s linear;
+    transition: all 0.5s linear;
     font-family: Louis;
+}
 
+.sobreConteudo H1 {
+    color: black;
+    font-size: 3vw;
+    font-family: Louis;
 }
 
 /*  fim SOBRE */
 
 /*  INICIO CARREIRA */
 #carreira {
-    margin-top: 5vw;
+
     width: 6vw;
     text-align: center;
     cursor: pointer;
@@ -265,8 +278,9 @@ margin-top: 5vw;
     opacity: 70%;
     transition: all 0.3s linear;
 }
+
 .keyboard:hover {
-transform: scale(1.3);
+    transform: scale(1.3);
 }
 
 #carreira h1 {
@@ -283,7 +297,7 @@ transform: scale(1.3);
 
 
 #visao {
-    margin-top: 5vw;
+
     width: 6vw;
     text-align: center;
     cursor: pointer;
@@ -311,7 +325,7 @@ transform: scale(1.3);
 
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
-    margin-top: 5vw;
+
     width: 3vw;
     text-align: center;
     /* border-radius: 32% 65% 78% 0% / 25% 54% 30% 70%; */
@@ -326,40 +340,215 @@ transform: scale(1.3);
 }
 
 .rocket {
-    top: 3vw;
+    top: 0.1vw;
     left: 17vw;
     position: absolute;
     width: 4vw;
     filter: saturate(0);
     transition: all 0.3s linear;
+    z-index: 5;
 }
 
-.rocket:hover {
+.rocket:hover,.pousaFoguete:hover {
     filter: saturate(1);
     width: 4vw;
     transform: rotate(-45deg);
-    top: -1vw;
+
 
 }
 
-#projetos h1 {
-    transition: all 0.6s linear;
-    color: #414040;
-    opacity: 80%;
+.chama {
+    transform: rotate(-45deg) !important;
+    top: 4vw;
+    left: 18vw;
+    position: absolute;
+    width: 2vw;
+    /* filter: saturate(0); */
+    transition: all 0.3s linear;
+    opacity: 0;
+    
+}
+.lancaFoguete{
+    animation: lançaFoguete 5s linear forwards;
+    
+}
+.pousaFoguete{
+    animation: pousaFoguete 5s linear forwards;
+}
+
+.acendeChama{
+    animation: acendeChama 5s linear forwards;
+    
+}
+.apagaChama{
+    animation: apagaChama 5s linear forwards;
+    
+}
+@keyframes lançaFoguete {
+    0% {}
+
+    5% {
+        filter: saturate(1);
+        
+        transform: rotate(-45deg);
+
+    }
+
+    25% {
+        filter: saturate(1);
+        top: -8vw;
+        transform: rotate(-45deg);
+    }
+    
+    40% {
+        filter: saturate(1);
+        top: -7vw;
+        transform: rotate(-45deg);
+    }
+
+    55% {
+        filter: saturate(1);
+        top: -8vw;
+        transform: rotate(-45deg);
+    }
+
+    70% {
+        filter: saturate(1);
+        top: -7vw;
+        transform: rotate(-45deg);
+    }
+
+    85% {
+        filter: saturate(1);
+        top: -8vw;
+        transform: rotate(-45deg);
+    }
+
+    100% {
+        filter: saturate(1);
+        transform: rotate(-45deg);
+        top: -7vw;
+    }
+    
+    /* 100% {
+        transform: rotate(-45deg);
+        top: 0vw;
+    } */
+}
+
+@keyframes pousaFoguete{
+    0%{
+        filter: saturate(1);
+        transform: rotate(-45deg);
+        top: -7vw;
+    }
+    70%{
+        filter: saturate(1);
+        transform: rotate(-45deg);
+        top: 0vw;
+    }
+    100%{
+        top: 0vw;
+        filter: saturate(0);
+        transform: rotate(-45deg);
+        
+    }
+}
+@keyframes acendeChama {
+    0% {
+        
+    
+    }
+
+    5% {
+       opacity: 50%; 
+       transform: scale(1.1vw);
+       
+    }
+    
+    25% {
+        width: 3vw;
+        left: 17.5vw;
+        opacity: 100%; 
+        top: -4vw;
+        transform: scale(1.2);
+    }
+    
+    40% {
+        width: 2vw;
+        left: 18vw;
+        opacity: 100%; 
+        top: -3.1vw;
+        transform: scale(1.3);
+    }
+    
+    55% {
+        
+        opacity: 100%; 
+        top: -4vw;
+        transform: scale(1);
+    }
+    
+    70% {
+        opacity: 100%; 
+        
+        top: -3.1vw;
+        transform: scale(1);
+    }
+
+    85% {
+        
+        top: -4vw;
+        transform: scale(1);
+        opacity: 100%; 
+    }
+    
+    100% {
+        opacity: 100%; 
+        transform: rotate(-45deg);
+        transform: scale(1);
+        top: -3.1vw;
+    }
+
+    /* 100% {
+        
+        transform: scale(1);
+        top: 0vw;
+    } */
+}
+@keyframes apagaChama{
+    0%{
+        opacity: 100%;
+        filter: saturate(1);
+        transform: rotate(-45deg);
+        top: -3.1vw;
+    }
+    70%{
+        opacity: 100%;
+        filter: saturate(1);
+        transform: rotate(-45deg);
+        top: 4vw;
+        left: 18.5vw;
+        width: 1vw;
+    }
+    100%{
+        top: 4vw;
+        left: 18.9vw;
+        width: 0vw;
+        filter: saturate(0);
+        transform: rotate(0deg);
+        
+    }
 }
 
 .projetos {
-    transform: rotate(45deg);
-    position: absolute;
     opacity: 0;
-    visibility: hidden;
-    transition: all 0.1s linear;
-    width: 10vw;
-    top: 39vw;
-    left: 35vw;
+    transition: all 0.5s linear;
     text-align: center;
-    gap: 3vw;
+    position: absolute;
+
 }
+
 
 .arquetipo img {
     width: 10vw;
@@ -482,9 +671,6 @@ transform: scale(1.3);
 
 @media (max-width: 780px) {
     #nav {
-        left: 1vw !important;
-        position: absolute;
-        top: 16vw;
         width: 90vw;
         z-index: 2;
         display: flex;
@@ -513,7 +699,7 @@ transform: scale(1.3);
         position: static !important;
         /* border-radius: 0% 35% 78% 70px / 35% 84% 20% 20%; */
         border-radius: 0 !important;
-        opacity: 0;
+        
 
     }
 
@@ -524,7 +710,7 @@ transform: scale(1.3);
 
     }
 
-    #sobre h1 {
+    .sobreConteudo h1 {
         color: white;
         position: static !important;
         transform: rotate(0deg);
@@ -554,8 +740,8 @@ transform: scale(1.3);
         border-bottom: 1px solid white;
         box-shadow: 1px 13.5px 16px -8px white;
     }
-
-    #sobre p {
+    
+    .sobreConteudo p {
         /* font-family: Georgia, 'Times New Roman', Times, serif !important; */
         width: 90vw !important;
         height: 112vw;
@@ -575,7 +761,6 @@ transform: scale(1.3);
     /* VISAO */
 
     #carreira {
-        opacity: 0;
         box-shadow: none;
         background-color: transparent;
         position: static !important;
@@ -630,7 +815,6 @@ transform: scale(1.3);
     /* visao */
 
     #visao {
-        opacity: 0;
         background-color: transparent;
         position: static !important;
         rotate: 0deg !important;
@@ -681,7 +865,6 @@ transform: scale(1.3);
     /* fim VISAO */
     /* projetos */
     #projetos {
-        opacity: 0;
         background-color: transparent;
         position: static !important;
         rotate: 0deg !important;
@@ -987,8 +1170,8 @@ transform: scale(1.3);
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-left: 0vw;
-        padding-top: 30vw;
+        margin-left: 7vw;
+        padding-top: 20vw;
 
     }
 
