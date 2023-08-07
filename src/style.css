@@ -191,9 +191,23 @@ body {
 
 
     .abreCortina {
-        height: 145vw;
+        height: 133vw;
         z-index: 2;
     }
+    .fechaCortina {
+        width: 8vw;
+        height: 4vw;
+        background-color: red;
+        position: absolute;
+        bottom: 8.3vw;
+        left: 47vw;
+        z-index: 5;
+    
+        visibility: hidden;
+        cursor: pointer;
+        /* transition: all 0.2s linear; */
+    }
+    
 
 }
 
@@ -690,6 +704,7 @@ body {
         display: flex;
         margin-left: 0vw;
         justify-content: center;
+        
 
     }
 
@@ -722,12 +737,12 @@ body {
     #sobre img {
         width: 13vw;
     }
+    
 
-    #sobre:hover {
-        width: 15vw !important;
-        height: 0vw !important;
-        rotate: 0deg !important;
 
+    .sobreConteudo {
+        left: 0;
+        top: 5vw;
     }
 
     .sobreConteudo h1 {
@@ -737,6 +752,7 @@ body {
         letter-spacing: 0;
         width: 90vw;
         margin: 0;
+
 
 
     }
@@ -750,6 +766,8 @@ body {
         color: black;
         margin: 0;
         padding: 0;
+        padding-left: 5vw;
+        padding-top: 5vw;
         transition: all 1s linear;
     }
 
@@ -847,11 +865,10 @@ body {
 
     .projetos {
         width: 100vw;
-        left: -75vw;
-        top: 20;
+        left: 0vw;
+        top: 10vw;
         transform: rotate(0deg);
-        flex-direction: column;
-        justify-content: cente;
+        justify-content: center;
         align-items: center;
 
     }
@@ -972,7 +989,7 @@ body {
 
         40% {
             width: 6vw;
-            left: 7.5vw;
+            left: 7.2vw;
             opacity: 100%;
             top: -8vw;
             transform: scale(1.3);
@@ -983,7 +1000,7 @@ body {
             opacity: 100%;
             top: -9vw;
             transform: scale(1);
-            left: 7.5vw;
+            left: 7.2vw;
         }
 
         70% {
@@ -991,7 +1008,7 @@ body {
             width: 6vw;
             top: -8vw;
             transform: scale(1);
-            left: 7.5vw;
+            left: 7.2vw;
         }
 
         85% {
@@ -999,7 +1016,7 @@ body {
             top: -9vw;
             transform: scale(1);
             opacity: 100%;
-            left: 7.5vw;
+            left: 7.2vw;
         }
 
         100% {
@@ -1007,7 +1024,7 @@ body {
             opacity: 100%;
             transform: rotate(-45deg);
             transform: scale(1);
-            left: 7.5vw;
+            left: 7.2vw;
             top: -8vw;
         }
 
@@ -1051,7 +1068,7 @@ body {
         padding-top: 1vw;
         margin: 0;
         font-size: 4vw !important;
-        color: white !important;
+        color: black !important;
     }
 
     .arquetipo img {
@@ -1063,11 +1080,11 @@ body {
         padding-top: 1vw;
         margin: 0;
         font-size: 4vw !important;
-        color: white !important;
+        color: black !important;
     }
 
     .calculadora img {
-        width: 20vw
+        width: 14vw
     }
 
     .h1ProjetosHover {
