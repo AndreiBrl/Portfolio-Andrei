@@ -702,9 +702,10 @@ body {
         height: 20vw;
         z-index: 2;
         display: flex;
-        margin-left: 0vw;
+        margin-left: 4vw;
         justify-content: center;
-        
+        /* background-color: red; */
+        border-radius: 0px;
 
     }
 
@@ -980,8 +981,8 @@ body {
         }
 
         25% {
-            width: 8vw;
-            left: 6.5vw;
+            width: 8.5vw;
+            left: 6vw;
             opacity: 100%;
             top: -9vw;
             transform: scale(1.2);
