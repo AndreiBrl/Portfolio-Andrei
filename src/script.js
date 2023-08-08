@@ -7,6 +7,7 @@ let h1Sobre = document.querySelector("#sobre h1");
 let sobreConteudo = document.querySelector(".sobreConteudo");
 let principal = document.querySelector(".principal")
 let cortina = document.querySelector(".cortina")
+let arrow = document.querySelector(".fechaCortina img")
 
 let flagSobre = 0;
 
@@ -41,8 +42,11 @@ sobre.addEventListener("click", function () {
     chama.classList.replace("acendeChama","apagaChama");
     sobreConteudo.style.opacity = "100%";
     projetosClasse.style.opacity = "0";
-
-
+    
+    setTimeout(() => {
+        
+        arrow.style.opacity="80%";
+    }, 1000);
 
     // }
     // else {
@@ -101,6 +105,10 @@ projetos.addEventListener("click", function () {
     cortina.classList.add('abreCortina');
     fechaCortinha.classList.add("visible");
     projetosClasse.style.opacity = "100%";
+    setTimeout(() => {
+        
+        arrow.style.opacity="80%";
+    }, 1000);
     // }
     // else {
     //     projetosClasse.classList.remove('opacidade');
@@ -145,6 +153,10 @@ carreira.addEventListener("click", function () {
     projetosClasse.style.opacity = "0";
     rocket.classList.replace("lancaFoguete", "pousaFoguete");
     chama.classList.replace("acendeChama", "apagaChama");
+    setTimeout(() => {
+        
+        arrow.style.opacity="80%";
+    }, 1000);
     // carreira.classList.toggle('abreNav');
     // h1Carreira.classList.toggle('h1CliqueCarreira');
 
@@ -181,6 +193,10 @@ visao.addEventListener("click", function () {
     projetosClasse.style.opacity = "0";
     rocket.classList.replace("lancaFoguete", "pousaFoguete");
     chama.classList.replace("acendeChama", "apagaChama");
+    setTimeout(() => {
+        
+        arrow.style.opacity="80%";
+    }, 1000);
     // visao.classList.toggle('abreNav');
     // h1Visao.classList.toggle('h1CliqueVisao');
 
@@ -287,6 +303,7 @@ fechaCortinha.addEventListener("click", function () {
 
     cortina.classList.remove('abreCortina');
     fechaCortinha.classList.remove("visible");
+    arrow.style.opacity="0";
     sobreConteudo.style.opacity = "0";
     projetosClasse.style.opacity = "0";
     rocket.classList.replace("lancaFoguete", "pousaFoguete");
