@@ -218,14 +218,14 @@ body {
     }
 
     .fechaCortina {
-        width: 8vw;
+        width: 90vw;
         height: 4vw;
-
         position: absolute;
         bottom: 12.3vw;
-        left: 40vw;
+        left: 4.5vw;
         z-index: 5;
-
+        justify-content: center;
+        text-align: center;
         visibility: hidden;
         cursor: pointer;
         /* transition: all 0.2s linear; */
@@ -304,14 +304,14 @@ body {
     width: 6vw;
     text-align: center;
     cursor: pointer;
+    transition: all 0.6s linear;
+    z-index: 4;
     /* border-radius: 72% 85% 80% 0% / 5% 64% 65% 75%; */
 
-    z-index: 4;
 
 
     /* background: rgb(228, 19, 118); */
     /* background: linear-gradient(160deg, rgba(228, 19, 118, 1) 0%, rgba(163, 59, 186, 1) 25%, rgba(104, 95, 248, 1) 50%); */
-    transition: all 0.6s linear;
     /* -webkit-box-shadow: 3px 3px 15px -6.5px #1d1d1d;
     -moz-box-shadow: 3px 3px 15px -6.5px #1d1d1d;
     box-shadow: 3px 3px 15px -6.5px #1d1d1d; */
@@ -321,6 +321,7 @@ body {
 
 
 .keyboard {
+    margin-top: 0.5vw;
     width: 4vw;
     filter: invert(1);
     opacity: 70%;
@@ -362,7 +363,7 @@ body {
 }
 
 #visao h1 {
-    padding-top: 1vw;
+    padding-top: 2vw;
     padding-right: 1vw;
     font-size: 2.5vw;
     transition: all 0.3s linear;
@@ -399,28 +400,27 @@ body {
 }
 
 .rocket {
-    top: 0.1vw;
-    left: 17vw;
+    top: 1vw;
+    left: 18vw;
     position: absolute;
-    width: 4vw;
+    width: 3.5vw;
     filter: saturate(0);
     transition: all 0.3s linear;
     z-index: 5;
+    transform: rotate(-45deg);
 }
 
-.rocket:hover,
-.pousaFoguete:hover {
+.rocket:hover {
     filter: saturate(1);
-    width: 4vw;
-    transform: rotate(-45deg);
+    
 
 
 }
 
 .chama {
     transform: rotate(-45deg) !important;
-    top: 4vw;
-    left: 18vw;
+    top: 4.3vw;
+    left: 18.7vw;
     position: absolute;
     width: 2vw;
     /* filter: saturate(0); */
@@ -510,11 +510,11 @@ body {
     70% {
         filter: saturate(1);
         transform: rotate(-45deg);
-        top: 0vw;
+        top: 1vw;
     }
 
     100% {
-        top: 0vw;
+        top: 1vw;
         filter: saturate(0);
         transform: rotate(-45deg);
 
@@ -532,37 +532,37 @@ body {
 
     25% {
         width: 3vw;
-        left: 17.5vw;
+        left: 18.2vw;
         opacity: 100%;
-        top: -4vw;
+        top: -5vw;
         transform: scale(1.2);
     }
 
     40% {
         width: 2vw;
-        left: 18vw;
+        left: 18.7vw;
         opacity: 100%;
-        top: -3.1vw;
+        top: -3.8vw;
         transform: scale(1.3);
     }
 
     55% {
 
         opacity: 100%;
-        top: -4vw;
+        top: -4.8vw;
         transform: scale(1);
     }
 
     70% {
         opacity: 100%;
 
-        top: -3.1vw;
+        top: -3.8vw;
         transform: scale(1);
     }
 
     85% {
 
-        top: -4vw;
+        top: -4.8vw;
         transform: scale(1);
         opacity: 100%;
     }
@@ -571,7 +571,7 @@ body {
         opacity: 100%;
         transform: rotate(-45deg);
         transform: scale(1);
-        top: -3.1vw;
+        top: -3.8vw;
     }
 
     /* 100% {
@@ -586,21 +586,21 @@ body {
         opacity: 100%;
         filter: saturate(1);
         transform: rotate(-45deg);
-        top: -3.1vw;
+        top: -3.8vw;
     }
 
     70% {
         opacity: 100%;
         filter: saturate(1);
         transform: rotate(-45deg);
-        top: 4vw;
-        left: 18.5vw;
+        top: 4.3vw;
+        left: 19.2vw;
         width: 1vw;
     }
 
     100% {
-        top: 4vw;
-        left: 18.9vw;
+        top: 4.3vw;
+        left: 19.7vw;
         width: 0vw;
         filter: saturate(0);
         transform: rotate(0deg);
@@ -838,6 +838,7 @@ body {
     }
 
     #carreira img {
+        padding-top: 1.5vw;
         width: 13vw;
     }
 
@@ -852,7 +853,7 @@ body {
 
     #visao h1 {
         margin: 0;
-        padding: 0;
+        padding-top: 5vw;
         color: white;
         font-size: 10vw;
 
@@ -917,13 +918,15 @@ body {
     .rocket {
         width: 11vw;
         left: 5vw;
+        top: 5vw;
     }
 
     .chama {
         width: 6vw;
         left: 6vw;
-        top: 13vw;
-        left: 7.5vw;
+        top: 15vw;
+        left: 7vw;
+        opacity: 100%;
     }
 
     @keyframes lançaFoguete {
@@ -999,12 +1002,12 @@ body {
             width: 11vw;
             filter: saturate(1);
             transform: rotate(-45deg);
-            top: 2vw;
+            top: 5vw;
         }
 
         100% {
             width: 11vw;
-            top: 2vw;
+            top: 5vw;
             filter: saturate(0);
             transform: rotate(-45deg);
 
@@ -1021,27 +1024,27 @@ body {
         }
 
         25% {
-            width: 8.5vw;
-            left: 6vw;
+            width: 12vw;
+            left: 4.5vw;
             opacity: 100%;
             top: -9vw;
             transform: scale(1.2);
         }
 
         40% {
-            width: 6vw;
-            left: 7.2vw;
+            width: 10vw;
+            left: 5.1vw;
             opacity: 100%;
             top: -8vw;
             transform: scale(1.3);
         }
 
         55% {
-            width: 6vw;
+            width: 8vw;
             opacity: 100%;
             top: -9vw;
             transform: scale(1);
-            left: 7.2vw;
+            left: 6.3vw;
         }
 
         70% {
