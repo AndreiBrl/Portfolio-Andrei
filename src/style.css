@@ -1025,8 +1025,8 @@ body {
         }
 
         25% {
-            width: 12vw;
-            left: 4.3vw;
+            width: 10vw;
+            left: 5.3vw;
             opacity: 100%;
             top: -9vw;
             transform: scale(1.2);
