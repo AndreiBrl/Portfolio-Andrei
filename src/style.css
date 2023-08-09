@@ -854,8 +854,10 @@ body {
     #visao h1 {
         margin: 0;
         padding-top: 5vw;
+        padding-left: 3vw;
         color: white;
         font-size: 10vw;
+        
 
 
     }
@@ -1024,15 +1026,15 @@ body {
 
         25% {
             width: 12vw;
-            left: 4.1vw;
+            left: 4.3vw;
             opacity: 100%;
             top: -9vw;
             transform: scale(1.2);
         }
 
         40% {
-            width: 10vw;
-            left: 5.3vw;
+            width: 8vw;
+            left: 6.2vw;
             opacity: 100%;
             top: -8vw;
             transform: scale(1.3);
