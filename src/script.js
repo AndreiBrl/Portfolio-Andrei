@@ -36,7 +36,7 @@ sobre.addEventListener("click", function () {
     // principal.classList.add('opacidade');
 
     cortina.classList.add('abreCortina');
-    cortina.style.backgroundColor = "wheat";
+    // cortina.style.backgroundColor = "wheat";
     fechaCortinha.classList.add("visible");
     rocket.classList.replace("lancaFoguete","pousaFoguete");
     chama.classList.replace("acendeChama","apagaChama");
@@ -101,7 +101,7 @@ projetos.addEventListener("click", function () {
     chama.classList.remove("apagaChama");
     chama.classList.add("acendeChama");
     sobreConteudo.style.opacity = "0";
-    cortina.style.backgroundColor = "lightblue";
+    // cortina.style.backgroundColor = "lightblue";
     cortina.classList.add('abreCortina');
     fechaCortinha.classList.add("visible");
     projetosClasse.style.opacity = "100%";
@@ -146,7 +146,7 @@ carreira.addEventListener('mouseleave', function () {
 // logica nav CLIQUE
 
 carreira.addEventListener("click", function () {
-    cortina.style.backgroundColor = "lightgray";
+    // cortina.style.backgroundColor = "lightgray";
     cortina.classList.add('abreCortina');
     fechaCortinha.classList.add("visible");
     sobreConteudo.style.opacity = "0";
@@ -186,7 +186,7 @@ visao.addEventListener('mouseleave', function () {
 // logica nav CLIQUE
 
 visao.addEventListener("click", function () {
-    cortina.style.backgroundColor = "white";
+    // cortina.style.backgroundColor = "white";
     cortina.classList.add('abreCortina');
     fechaCortinha.classList.add("visible");
     sobreConteudo.style.opacity = "0";

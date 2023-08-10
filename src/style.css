@@ -139,7 +139,8 @@ body {
 
 .cortina {
     position: absolute;
-
+    background-color: rgb(240, 240, 240);
+    
     z-index: 3;
     width: 100vw;
     top: 0;
@@ -1163,13 +1164,15 @@ body {
     gap: 10vw;
     display: flex;
     transition: all 0.5s linear;
+    height: 22vw;
 }
 
 .principal h1 {
     font-size: 4vw;
 
     font-family: Code;
-    color: #fae8b2;
+    color: #ffce6b;
+    text-shadow: 0 0 6px #ffce6b;
 
 }
 
@@ -1185,9 +1188,32 @@ body {
 
     border-radius: 30%;
     width: 20vw;
-
+    cursor: pointer;
     filter: brightness(70%);
     z-index: 0;
+}
+.redes{
+    position: relative;
+    margin-left: 10vw;
+    display: flex;
+    gap: 1.5vw;
+}
+.redes img{
+    transition: all 0.5s linear;
+    width: 3vw;
+    
+}
+.redes img:hover{
+    transform: scale(1.1);
+    filter:sepia(1);
+    
+
+}
+.git{
+    width: 3.1vw !important;
+    left: 3vw;
+    position: absolute;
+    
 }
 
 
