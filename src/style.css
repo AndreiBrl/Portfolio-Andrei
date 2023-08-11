@@ -1188,6 +1188,7 @@ body {
 
     border-radius: 30%;
     width: 20vw;
+    height: 25vw;
     cursor: pointer;
     filter: brightness(70%);
     z-index: 0;
