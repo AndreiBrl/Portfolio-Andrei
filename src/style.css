@@ -141,7 +141,7 @@ body {
 .cortina {
     position: absolute;
     background-color: white;
-
+    visibility: hidden;
     z-index: 3;
     width: 100vw;
     top: 0;
@@ -155,7 +155,7 @@ body {
 .abreCortina {
     /* animation: efeitoCortina 1s linear forwards; */
     height: 36vw;
-
+    visibility: visible;
 
 }
 
@@ -357,8 +357,10 @@ body {
 #visao {
 
     width: 6vw;
+    
     text-align: center;
     cursor: pointer;
+
     /* border-radius: 12% 85% 68% 80% / 75% 54% 90% 70%; */
 
     /* background: rgb(228, 19, 118); */
@@ -370,7 +372,6 @@ body {
 }
 
 #visao h1 {
-    padding-top: 2vw;
     padding-right: 1vw;
     font-size: 2.5vw;
     transition: all 0.3s linear;
@@ -857,6 +858,7 @@ body {
 
         width: 15vw !important;
         height: 10vw !important;
+        margin-bottom: 3vw;
 
     }
 
