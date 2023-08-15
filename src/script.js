@@ -5,6 +5,7 @@ let nomeMenu = document.querySelector(".nomeMenu h1")
 let sobre = document.querySelector("#sobre");
 let h1Sobre = document.querySelector("#sobre h1");
 let sobreConteudo = document.querySelector(".sobreConteudo");
+let minhaCarreira =document.querySelector(".minhaCarreira");
 let principal = document.querySelector(".principal")
 let cortina = document.querySelector(".cortina")
 let arrow = document.querySelector(".fechaCortina img")
@@ -42,6 +43,7 @@ sobre.addEventListener("click", function () {
     chama.classList.replace("acendeChama","apagaChama");
     sobreConteudo.style.opacity = "100%";
     projetosClasse.style.opacity = "0";
+    minhaCarreira.style.opacity = "0";
     
     setTimeout(() => {
         
@@ -101,6 +103,7 @@ projetos.addEventListener("click", function () {
     chama.classList.remove("apagaChama");
     chama.classList.add("acendeChama");
     sobreConteudo.style.opacity = "0";
+    minhaCarreira.style.opacity = "0";
     // cortina.style.backgroundColor = "lightblue";
     cortina.classList.add('abreCortina');
     fechaCortinha.classList.add("visible");
@@ -127,7 +130,7 @@ projetos.addEventListener("click", function () {
 // CARREIRA
 let carreira = document.querySelector("#carreira");
 let h1Carreira = document.querySelector("#carreira h1");
-
+let linha = document.querySelectorAll(".linha");
 carreira.addEventListener('mouseover', function () {
 
     // h1Carreira.classList.add('h1CarreiraHover');
@@ -153,6 +156,11 @@ carreira.addEventListener("click", function () {
     projetosClasse.style.opacity = "0";
     rocket.classList.replace("lancaFoguete", "pousaFoguete");
     chama.classList.replace("acendeChama", "apagaChama");
+    minhaCarreira.style.opacity = "100%";
+    linha.forEach(element => {
+        
+        // element.classList.add("criaLinha");
+    });
     setTimeout(() => {
         
         arrow.style.opacity="80%";
@@ -190,6 +198,7 @@ visao.addEventListener("click", function () {
     cortina.classList.add('abreCortina');
     fechaCortinha.classList.add("visible");
     sobreConteudo.style.opacity = "0";
+    minhaCarreira.style.opacity = "0";
     projetosClasse.style.opacity = "0";
     rocket.classList.replace("lancaFoguete", "pousaFoguete");
     chama.classList.replace("acendeChama", "apagaChama");
