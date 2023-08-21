@@ -27,7 +27,6 @@ html {
 
 }
 
-@media (max-width: 780px) {}
 
 
 body {
@@ -348,15 +347,51 @@ body {
     opacity: 80%;
 }
 .minhaCarreira{
+
+    margin-top: 8vw;
     opacity: 0;
-    transition: all 0.5s linear ;
+    transition: all 0.2s linear ;
     justify-content: center;
     position: relative;
     
 }
+.minhaCarreira img{
+    width: 3vw;
+}
+.minhaCarreira .box-carreira:nth-child(1) img{
+    
+    padding-left: 4vw;
+}
+.minhaCarreira .box-carreira:nth-child(3) img{
+    
+    padding-left: 1.5vw;
+}
+.minhaCarreira .box-carreira:nth-child(5) img{
+    
+    padding-left: 9vw;
+}
+.minhaCarreira .box-carreira:nth-child(7) img{
+    
+    padding-left: 7vw;
+}
 .minhaCarreira h1, .minhaCarreira h2{
+    text-align: center;
     font-family: Louis;
     font-size: 1.3vw;
+}
+.box-carreira{
+    transition: all 0.5s linear ;
+    border-radius: 5px;
+    padding: 1vw;
+}
+
+.minhaCarreira p{
+    transition: all 0.2s linear ;
+    position: absolute;
+    font-family: Louis;
+    color: black;
+    font-size: 2vw;
+    bottom: -10vw;
 }
 .linha{
     margin-top: 5vw;
@@ -364,27 +399,7 @@ body {
     margin-right: 2vw;
     width: 3vw;
     height: 0.11vw;
-    background-color:black;
-    /* transform: rotate(90deg); */
-}
-.linhaSetaCima{
-    transform: rotate(45deg);
-    left: 26.7vw;
-    position: absolute;
-    top: 4.75vw;
-    width: 0.8vw;
-    height: 0.1vw;
-    background-color:black;
-    /* transform: rotate(90deg); */
-}
-.linhaSetaBaixo{
-    transform: rotate(-45deg);
-    left: 26.7vw;
-    position: absolute;
-    top: 5.3vw;
-    width: 0.8vw;
-    height: 0.1vw;
-    background-color:black;
+    background-color:rgba(17, 17, 17, 0.815);
     /* transform: rotate(90deg); */
 }
 

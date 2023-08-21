@@ -171,6 +171,59 @@ carreira.addEventListener("click", function () {
 
 
 })
+let boxCarreira = document.querySelectorAll(".box-carreira, .box-carreira h1, .box-carreira h2");
+
+boxCarreira.forEach(element => {
+    let sobreCarreira = document.querySelector(".minhaCarreira p");
+    element.addEventListener("mouseover",function(){
+        
+        if(element.getAttribute('alt')=="bacharel"){
+            sobreCarreira.style.opacity="0%"
+            setTimeout(() => {
+                
+                sobreCarreira.style.opacity="100%"
+                sobreCarreira.textContent="bacha"
+            }, 200);
+        }
+        else if(element.getAttribute('alt')=="advogado"){
+            sobreCarreira.style.opacity="0%"
+            setTimeout(() => {
+                
+                sobreCarreira.style.opacity="100%"
+                sobreCarreira.textContent="advogado"
+            }, 200);
+        }
+        else if(element.getAttribute('alt')=="tecnico"){
+            sobreCarreira.style.opacity="0%"
+            setTimeout(() => {
+                
+                sobreCarreira.style.opacity="100%"
+                sobreCarreira.textContent="tecnico"
+            }, 200);
+        }
+        else{
+            sobreCarreira.style.opacity="0%"
+            setTimeout(() => {
+                
+                sobreCarreira.style.opacity="100%"
+                sobreCarreira.textContent="estagio"
+                
+            }, 200);
+        }
+        
+        
+    })
+    element.addEventListener("mouseout",function(){
+        
+        sobreCarreira.style.opacity="0%"
+        setTimeout(() => {
+                sobreCarreira.style.opacity="100%"
+                
+                sobreCarreira.textContent="passe o mouse"
+                
+            }, 500);
+    })
+});
 // ---------------------
 
 // VISAO
@@ -312,6 +365,7 @@ fechaCortinha.addEventListener("click", function () {
 
     cortina.classList.remove('abreCortina');
     fechaCortinha.classList.remove("visible");
+    minhaCarreira.style.opacity="0"
     arrow.style.opacity="0";
     sobreConteudo.style.opacity = "0";
     projetosClasse.style.opacity = "0";
@@ -363,3 +417,4 @@ let linha3 = document.querySelector(".linha3")
         // linha3.style.opacity="100%";
 //     }
 // })
+
