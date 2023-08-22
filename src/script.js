@@ -317,6 +317,7 @@ neon();
 
 // SCROOL REVEAL
 // 	/* ---- Scroll smooth reveal ---- */
+
 // window.sr = ScrollReveal({ reset: false });
 
 
