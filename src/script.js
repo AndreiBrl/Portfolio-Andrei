@@ -171,42 +171,48 @@ carreira.addEventListener("click", function () {
 
 
 })
-let boxCarreira = document.querySelectorAll(".box-carreira, .box-carreira h1, .box-carreira h2");
+let boxCarreira = document.querySelectorAll(".box-carreira");
+
 
 boxCarreira.forEach(element => {
     let sobreCarreira = document.querySelector(".minhaCarreira p");
     element.addEventListener("mouseover",function(){
         
+        element.classList.add('saturacao')
         if(element.getAttribute('alt')=="bacharel"){
-            sobreCarreira.style.opacity="0%"
+            
+                
+            
             setTimeout(() => {
                 
+                
                 sobreCarreira.style.opacity="100%"
-                sobreCarreira.textContent="bacha"
+                sobreCarreira.textContent="No período de 2013-2018 me formei como advogado através do Instituo Vianna Júnior, logo então em 2019 passei no exame da ordem para em 2020 começar a trabalhar na área"
             }, 200);
         }
         else if(element.getAttribute('alt')=="advogado"){
-            sobreCarreira.style.opacity="0%"
+            
             setTimeout(() => {
                 
+
                 sobreCarreira.style.opacity="100%"
-                sobreCarreira.textContent="advogado"
+                sobreCarreira.textContent="Entre 2020 e 2022 trabalhei no campo jurídico em próprio meu escritório, época em que desenvolvi habilidades de comunicação e trabalho em equipe, as quais trago comigo até hoje"
             }, 200);
         }
         else if(element.getAttribute('alt')=="tecnico"){
-            sobreCarreira.style.opacity="0%"
+            
             setTimeout(() => {
                 
                 sobreCarreira.style.opacity="100%"
-                sobreCarreira.textContent="tecnico"
+                sobreCarreira.textContent="Em julho de 2022 me matriculei no Tecnólogo Análise e Desenvolvimento de Sistemas no Insituto Vianna Júnior, neste momento já havia estudado bastante por conta propria e possuia noções básicas que me ajudaram a percorrer o curso com mais facilidade"
             }, 200);
         }
         else{
-            sobreCarreira.style.opacity="0%"
+            
             setTimeout(() => {
                 
                 sobreCarreira.style.opacity="100%"
-                sobreCarreira.textContent="estagio"
+                sobreCarreira.textContent="Em março de 2023 alcancei minha primeira vaga como estagiário dentro da secretária de comunicação da prefeitura de Juiz de Fora. Atualmente ainda me encontro neste estágio onde trabalho com desenvolvimento web nas linguagens Html, Css e JavaScript"
                 
             }, 200);
         }
@@ -214,14 +220,7 @@ boxCarreira.forEach(element => {
         
     })
     element.addEventListener("mouseout",function(){
-        
-        sobreCarreira.style.opacity="0%"
-        setTimeout(() => {
-                sobreCarreira.style.opacity="100%"
-                
-                sobreCarreira.textContent="passe o mouse"
-                
-            }, 500);
+        element.classList.remove('saturacao')
     })
 });
 // ---------------------
