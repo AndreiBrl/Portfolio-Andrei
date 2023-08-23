@@ -407,6 +407,7 @@ body {
     width: 60vw;
     padding-left: 1vw;
     border-left: 0.2vw solid #c84b31;
+    font-weight: 100;
 }
 .linha{
     margin-top: 5vw;
@@ -1255,6 +1256,7 @@ body {
 
 /* SECTION 2 */
 .principal {
+
     padding-top: 10vw;
     margin-left: 10vw;
     gap: 10vw;
@@ -1264,19 +1266,32 @@ body {
 }
 
 .principal h1 {
+    
     font-size: 4vw;
-
     font-family: Code;
     color: #ffd889;
     /* text-shadow: 0 0 6px #ffce6b; */
-
+    animation: principalh1 1s linear;
+    
 }
-
+@keyframes principalh1 {
+    0% {
+        opacity: 0;
+		transform: translateX(-50px);
+	}
+    
+	100% {
+        opacity: 1;
+		transform: translateX(0);
+	}
+}
 .principal h2 {
     font-family: Louis;
     font-size: 4vw;
     text-shadow: 0 0 5px #c84b31;
     color: #c84b31;
+    
+    
 }
 
 
