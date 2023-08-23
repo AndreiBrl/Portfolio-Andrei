@@ -1266,15 +1266,15 @@ body {
 }
 
 .principal h1 {
-    
+    opacity: 0;
     font-size: 4vw;
     font-family: Code;
     color: #ffd889;
     /* text-shadow: 0 0 6px #ffce6b; */
-    animation: principalh1 1s linear;
+    animation: principal 1s 0.5s linear forwards;
     
 }
-@keyframes principalh1 {
+@keyframes principal {
     0% {
         opacity: 0;
 		transform: translateX(-50px);
@@ -1286,17 +1286,38 @@ body {
 	}
 }
 .principal h2 {
+    
     font-family: Louis;
     font-size: 4vw;
-    text-shadow: 0 0 5px #c84b31;
-    color: #c84b31;
+    color: transparent;
+    animation: principalh2 1s 2s linear forwards;
     
     
 }
 
+@keyframes principalh2 {
+    0%{
+        
+    }
+    80%{
+        
+        text-shadow: 0 0 5px #c84b31;
+        color: #c84b31;
+    }
+    95%{
+        text-shadow: unset;
+        color: #414040;
+    }
+    100%{
+        
+        text-shadow: 0 0 5px #c84b31;
+        color: #c84b31;
+    }
+    
+}
 
 .principal img {
-
+    
     border-radius: 30%;
     width: 20vw;
     height: 25vw;
@@ -1324,15 +1345,27 @@ body {
 .redes img:hover {
     /* filter: sepia(0);    */
     transform: scale(1.1);
-
-
+    
+    
 }
 
+.wpp{
+
+    opacity: 0;
+    animation: principal 0.5s 3s linear forwards;
+}
 .git {
+    animation: principal 0.5s 3.3s linear forwards;
+    opacity: 0;
     width: 2.6vw !important;
     left: 2.7vw;
     position: absolute;
+    
+}    
 
+.linkdln{
+    opacity: 0;
+    animation: principal 0.5s 3.6s linear forwards;
 }
 
 
