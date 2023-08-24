@@ -244,7 +244,17 @@ body {
     }
 
 }
+@keyframes menuAparece {
+	0% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
 
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
 /*  INICIO SOBRE */
 #sobre {
     border-top-left-radius: 50px;
@@ -269,6 +279,8 @@ body {
     width: 4vw;
     filter: saturate(0);
     transition: all 0.3s linear;
+    animation: menuAparece 1s 4s linear forwards;
+    opacity: 0;
 }
 
 #sobre img:hover {
@@ -330,12 +342,13 @@ body {
     width: 4vw;
     filter: saturate(0);
     opacity: 70%;
-    transition: all 0.3s linear;
+    animation: menuAparece 1s 4.5s linear forwards;
+    transition: all 3s linear !important;
+    opacity: 0;
 }
 
 .alvo:hover {
     
-    opacity: 90%;
     filter: invert(0);
     transform: scale(1.2);
 }
@@ -459,11 +472,13 @@ body {
 }
 
 #visao h1 {
+    animation: menuAparece 1s 4.8s linear forwards;
+    opacity: 0;
     padding-right: 1vw;
     font-size: 2.5vw;
     transition: all 0.3s linear;
     color: whitesmoke;
-    opacity: 80%;
+
     text-shadow: 0 0 5px whitesmoke;
 }
 
@@ -496,6 +511,9 @@ body {
 }
 
 .rocket {
+    transform: rotate(-45deg);
+    animation: menuAparece 1s 5.1s linear forwards;
+    opacity: 0;
     top: 1vw;
     left: 18vw;
     position: absolute;
@@ -503,7 +521,6 @@ body {
     filter: saturate(0);
     transition: all 0.3s linear;
     z-index: 5;
-    transform: rotate(-45deg);
 }
 
 .rocket:hover {
@@ -514,6 +531,7 @@ body {
 }
 
 .chama {
+    
     transform: rotate(-45deg) !important;
     top: 4.3vw;
     left: 18.7vw;
@@ -1286,34 +1304,35 @@ body {
 	}
 }
 .principal h2 {
-    
+    opacity: 0;
     font-family: Louis;
     font-size: 4vw;
     color: transparent;
-    animation: principalh2 1s 2s linear forwards;
-    
+    animation: principal 1s 2s linear forwards;
+    text-shadow: 0 0 5px #c84b31;
+    color: #c84b31;
     
 }
-
-@keyframes principalh2 {
-    0%{
-        
-    }
-    80%{
-        
-        text-shadow: 0 0 5px #c84b31;
-        color: #c84b31;
-    }
-    95%{
-        text-shadow: unset;
-        color: #414040;
-    }
-    100%{
-        
-        text-shadow: 0 0 5px #c84b31;
-        color: #c84b31;
-    }
+.pisca{
     
+    animation: pisca 0.3s 3.5s linear forwards;
+}
+
+@keyframes pisca {
+	0%,
+	60%,
+	100% {
+		opacity: 1;
+        text-shadow: 0 0 5px #c84b31;
+    color: #c84b31;
+	}
+
+	25%,
+	75% {
+		opacity: 0;
+        text-shadow: 0 0 0px #414040;
+    color: #414040;
+	}
 }
 
 .principal img {
@@ -1324,7 +1343,23 @@ body {
     cursor: pointer;
     filter: brightness(70%);
     z-index: 0;
+    animation: aparecePrincipalimg 2s 3s linear forwards;
+    opacity: 0;
 }
+@keyframes aparecePrincipalimg {
+			
+    
+        0% {
+            
+            opacity: 0;
+        }
+    
+        100% {
+            opacity: 1;
+            
+        
+    }
+	}
 
 .redes {
     position: relative;
@@ -1395,6 +1430,8 @@ body {
     box-shadow: 3px 3px 15px 0 #FADDB8;
     transition: all 0.2s linear;
     visibility: hidden;
+    opacity: 0;
+    animation: neonAparece 1s  linear forwards;
 }
 
 
