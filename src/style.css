@@ -344,7 +344,7 @@ body {
     width: 4vw;
     filter: saturate(0);
     opacity: 70%;
-    transition: all 3s linear !important;
+    transition: all 0.3s linear !important;
 }
 
 .alvo:hover {
@@ -539,7 +539,7 @@ body {
     width: 2vw;
     /* filter: saturate(0); */
     transition: all 0.3s linear;
-    /* opacity: 0; */
+    opacity: 0;
 
 }
 
@@ -624,11 +624,11 @@ body {
     70% {
         filter: saturate(1);
         transform: rotate(-45deg);
-        top: 1vw;
+        top: -1vw;
     }
 
     100% {
-        top: 1vw;
+        top: -1vw;
         filter: saturate(0);
         transform: rotate(-45deg);
 
@@ -641,50 +641,56 @@ body {
     5% {
         opacity: 50%;
         transform: scale(1.1vw);
-
-        left: 0.5vw;
+        
     }
-
+    
     25% {
+        
         width: 3vw;
-        left: 0.5vw;
+        left: 0.2vw;
         opacity: 100%;
-        top: -5vw;
+        top: -4.8vw;
         transform: scale(1.2);
     }
     
     40% {
         width: 2vw;
         
-        left: 0vw;
+        
+        left: 0.7vw;
         opacity: 100%;
         top: -3.8vw;
         transform: scale(1.3);
     }
-
+    
     55% {
-
+        
+        left: 0.7vw;
         opacity: 100%;
         top: -4.8vw;
         transform: scale(1);
     }
-
+    
     70% {
         opacity: 100%;
-
+        left: 0.7vw;
+        
+        
         top: -3.8vw;
         transform: scale(1);
     }
-
+    
     85% {
-
+        
+        left: 0.7vw;
         top: -4.8vw;
         transform: scale(1);
         opacity: 100%;
     }
-
+    
     100% {
         opacity: 100%;
+        left: 0.7vw;
         transform: rotate(-45deg);
         transform: scale(1);
         top: -3.8vw;
@@ -709,14 +715,14 @@ body {
         opacity: 100%;
         filter: saturate(1);
         transform: rotate(-45deg);
-        top: 4.3vw;
-        left: 19.2vw;
+        top: 2.2vw;
+        left: 1.2vw;
         width: 1vw;
     }
 
     100% {
-        top: 4.3vw;
-        left: 19.7vw;
+        top: 2.2vw;
+        left: 1.6vw;
         width: 0vw;
         filter: saturate(0);
         transform: rotate(0deg);
@@ -1310,7 +1316,7 @@ body {
     font-family: Louis;
     font-size: 4vw;
     color: transparent;
-    animation: principal 1s 2s linear forwards;
+    animation: principal 1s 2.5s linear forwards;
     text-shadow: 0 0 5px #c84b31;
     color: #c84b31;
     
@@ -1345,7 +1351,7 @@ body {
     cursor: pointer;
     filter: brightness(70%);
     z-index: 0;
-    animation: aparecePrincipalimg 2s 3s linear forwards;
+    animation: aparecePrincipalimg 2s 6s linear forwards;
     opacity: 0;
 }
 @keyframes aparecePrincipalimg {
