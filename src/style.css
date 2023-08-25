@@ -214,7 +214,9 @@ body {
     }
 } */
 @media (max-width:780px) {
-
+    .cortina{
+        overflow: auto;
+    }
 
     .abreCortina {
         height: 133vw;
@@ -431,23 +433,49 @@ body {
     background-color:rgba(17, 17, 17, 0.815);
     /* transform: rotate(90deg); */
 }
+@media (max-width:500px) {
+    .minhaCarreira{
 
-/* .criaLinha{
-    animation: criaLinha 1s linear forwards;
-
+        margin-top: 6vw;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        flex-direction: column;
+        
+        
+    }
+    .minhaCarreira img{
+        width: 10vw;
+        transition: all 0.2s linear ;
+        
+        
+    }
+    .box-carreira{
+        text-align: center;
+    }
+    .minhaCarreira h1, .minhaCarreira h2{
+        text-align: center;
+        font-family: Louis;
+        font-size: 5.3vw;
+    }
+    
+    .minhaCarreira .box-carreira:nth-child(1) img{
+    
+        padding-left: 0vw;
+    }
+    .minhaCarreira .box-carreira:nth-child(3) img{
+        
+        padding-left: 0vw;
+    }
+    .minhaCarreira .box-carreira:nth-child(5) img{
+        
+        padding-left: 0vw;
+    }
+    .minhaCarreira .box-carreira:nth-child(7) img{
+        
+        padding-left: 0vw;
+    }
 }
-@keyframes criaLinha {
-    0%{
-        width: 0;
-    }
-    50%{
-        transform: rotate(720deg);
-    }
-    100%{
-        background-color: #171616b8;
-        width: 3vw;
-    }
-} */
 /*  FIM  CARREIRA */
 
 /*  INICIO VISAO */
