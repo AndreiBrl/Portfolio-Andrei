@@ -273,14 +273,14 @@ body {
     cursor: pointer;
 
 
+    animation: menuAparece 1s 4s linear forwards;
+    opacity: 0;
 }
 
 #sobre img {
     width: 4vw;
     filter: saturate(0);
     transition: all 0.3s linear;
-    animation: menuAparece 1s 4s linear forwards;
-    opacity: 0;
 }
 
 #sobre img:hover {
@@ -333,6 +333,8 @@ body {
     -moz-box-shadow: 3px 3px 15px -6.5px #1d1d1d;
     box-shadow: 3px 3px 15px -6.5px #1d1d1d; */
 
+    animation: menuAparece 1s 4.5s linear forwards;
+    opacity: 0;
 }
 
 
@@ -342,9 +344,7 @@ body {
     width: 4vw;
     filter: saturate(0);
     opacity: 70%;
-    animation: menuAparece 1s 4.5s linear forwards;
     transition: all 3s linear !important;
-    opacity: 0;
 }
 
 .alvo:hover {
@@ -468,12 +468,12 @@ body {
     transition: all 0.6s linear;
     /*     
  */
+ animation: menuAparece 1s 4.8s linear forwards;
+ opacity: 0;
 
 }
 
 #visao h1 {
-    animation: menuAparece 1s 4.8s linear forwards;
-    opacity: 0;
     padding-right: 1vw;
     font-size: 2.5vw;
     transition: all 0.3s linear;
@@ -508,19 +508,19 @@ body {
     -moz-box-shadow: 3px 3px 15px -6.5px #8f8f8f;
     box-shadow: 3px 3px 15px -6.5px #8f8f8f; */
 
+    animation: menuAparece 1s 5.1s linear forwards;
+    opacity: 0;
+    z-index: 6;
 }
 
 .rocket {
     transform: rotate(-45deg);
-    animation: menuAparece 1s 5.1s linear forwards;
-    opacity: 0;
-    top: 1vw;
-    left: 18vw;
+    top:-1vw;
+    left: 0vw;
     position: absolute;
     width: 3.5vw;
     filter: saturate(0);
     transition: all 0.3s linear;
-    z-index: 5;
 }
 
 .rocket:hover {
@@ -533,13 +533,13 @@ body {
 .chama {
     
     transform: rotate(-45deg) !important;
-    top: 4.3vw;
-    left: 18.7vw;
+    top: 2.2vw;
+    left: 0.7vw;
     position: absolute;
     width: 2vw;
     /* filter: saturate(0); */
     transition: all 0.3s linear;
-    opacity: 0;
+    /* opacity: 0; */
 
 }
 
@@ -642,19 +642,21 @@ body {
         opacity: 50%;
         transform: scale(1.1vw);
 
+        left: 0.5vw;
     }
 
     25% {
         width: 3vw;
-        left: 18.2vw;
+        left: 0.5vw;
         opacity: 100%;
         top: -5vw;
         transform: scale(1.2);
     }
-
+    
     40% {
         width: 2vw;
-        left: 18.7vw;
+        
+        left: 0vw;
         opacity: 100%;
         top: -3.8vw;
         transform: scale(1.3);
