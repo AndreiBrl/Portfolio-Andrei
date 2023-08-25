@@ -1344,7 +1344,7 @@ body {
     font-family: Louis;
     font-size: 4vw;
     color: transparent;
-    animation: principal 1s 2.5s linear forwards;
+    animation: principal 1s 2.2s linear forwards;
     text-shadow: 0 0 5px #c84b31;
     color: #c84b31;
     
@@ -1423,10 +1423,10 @@ body {
 .wpp{
 
     opacity: 0;
-    animation: principal 0.5s 3s linear forwards;
+    animation: principal 0.5s 2.6s linear forwards;
 }
 .git {
-    animation: principal 0.5s 3.3s linear forwards;
+    animation: principal 0.5s 3s linear forwards;
     opacity: 0;
     width: 2.6vw !important;
     left: 2.7vw;
@@ -1436,7 +1436,7 @@ body {
 
 .linkdln{
     opacity: 0;
-    animation: principal 0.5s 3.6s linear forwards;
+    animation: principal 0.5s 3.4s linear forwards;
 }
 
 
