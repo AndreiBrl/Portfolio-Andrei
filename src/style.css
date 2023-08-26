@@ -396,6 +396,9 @@ body {
     font-family: Louis;
     font-size: 1.3vw;
 }
+.minhaCarreira h3{
+    display: none;
+}
 .box-carreira{
     transition: all 0.2s linear ;
     
@@ -456,9 +459,13 @@ body {
     .minhaCarreira h1, .minhaCarreira h2{
         text-align: center;
         font-family: Louis;
-        font-size: 5.3vw;
+        font-size: 3.3vw;
     }
-    
+    .minhaCarreira h3{
+        display: block;
+        text-align: center;
+        font-size: 3.3vw;
+    }
     .minhaCarreira .box-carreira:nth-child(1) img{
     
         padding-left: 0vw;
@@ -474,6 +481,9 @@ body {
     .minhaCarreira .box-carreira:nth-child(7) img{
         
         padding-left: 0vw;
+    }
+    .minhaCarreira p{
+        display: none;
     }
 }
 /*  FIM  CARREIRA */
