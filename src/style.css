@@ -444,6 +444,7 @@ body {
         justify-content: center;
         position: relative;
         flex-direction: column;
+        gap: 0;
         
         
     }
@@ -455,16 +456,21 @@ body {
     }
     .box-carreira{
         text-align: center;
+        filter: saturate(1);
     }
     .minhaCarreira h1, .minhaCarreira h2{
         text-align: center;
         font-family: Louis;
         font-size: 3.3vw;
+        margin: 0;
+        padding: 0;
     }
     .minhaCarreira h3{
+        width: 80vw;
         display: block;
         text-align: center;
-        font-size: 3.3vw;
+        font-size: 3.5vw;
+        font-family: Louis;
     }
     .minhaCarreira .box-carreira:nth-child(1) img{
     
