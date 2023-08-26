@@ -471,6 +471,7 @@ body {
         text-align: center;
         font-size: 3.5vw;
         font-family: Louis;
+        padding-bottom: 5vw;
     }
     .minhaCarreira .box-carreira:nth-child(1) img{
     
@@ -490,6 +491,17 @@ body {
     }
     .minhaCarreira p{
         display: none;
+    }
+    .linha{
+        margin-top: 0vw;
+        margin-bottom: 5vw;
+        margin-left: 2vw;
+        margin-right: 2vw;
+        width: 5vw;
+        height: 0.21vw;
+        background-color:rgb(17, 17, 17);
+        transform: rotate(90deg);
+        /* transform: rotate(90deg); */
     }
 }
 /*  FIM  CARREIRA */
