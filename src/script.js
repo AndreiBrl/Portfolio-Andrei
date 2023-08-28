@@ -36,9 +36,10 @@ sobre.addEventListener("click", function () {
     rocket.classList.replace("lancaFoguete","pousaFoguete");
     chama.classList.replace("acendeChama","apagaChama");
     cortina.style.overflow="auto";
-    sobreConteudo.style.cssText ="opacity: 100%; z-index: 7;"
-    minhaCarreira.style.cssText ="opacity: 0; z-index: 1;"
-    projetosClasse.style.cssText ="opacity: 0; z-index: 1;"
+    sobreConteudo.style.cssText ="opacity: 100%; z-index: 7;";
+    minhaCarreira.style.cssText ="opacity: 0; z-index: 1;";
+    projetosClasse.style.cssText ="opacity: 0; z-index: 1;";
+    minhaVisao.style.cssText ="opacity: 0; z-index: 1;";
     
     
     
@@ -89,6 +90,7 @@ projetos.addEventListener("click", function () {
     cortina.style.overflow="hidden";
     sobreConteudo.style.cssText ="opacity: 0; z-index: 1;"
     minhaCarreira.style.cssText ="opacity: 0; z-index: 1;"
+    minhaVisao.style.cssText ="opacity: 0; z-index: 1;"
     // cortina.style.backgroundColor = "lightblue";
     cortina.classList.add('abreCortina');
     fechaCortinha.classList.add("visible");
@@ -150,6 +152,7 @@ carreira.addEventListener("click", function () {
    }
     sobreConteudo.style.cssText ="opacity: 0; z-index: 1;"
     projetosClasse.style.cssText ="opacity: 0; z-index: 1;"
+    minhaVisao.style.cssText ="opacity: 0; z-index: 1;"
     rocket.classList.replace("lancaFoguete", "pousaFoguete");
     chama.classList.replace("acendeChama", "apagaChama");
     minhaCarreira.style.cssText = "opacity: 100%; z-index:7;";
@@ -225,6 +228,7 @@ boxCarreira.forEach(element => {
 // VISAO
 let visao = document.querySelector("#visao");
 let h1Visao = document.querySelector("#visao h1");
+let minhaVisao = document.querySelector(".minhaVisao");
 
 visao.addEventListener('mouseover', function () {
     nomeMenu.textContent = "visão";
@@ -249,8 +253,15 @@ visao.addEventListener("click", function () {
     sobreConteudo.style.opacity = "0";
     minhaCarreira.style.opacity = "0";
     projetosClasse.style.opacity = "0";
+    minhaCarreira.style.cssText ="opacity: 0; z-index: 1;"
+    projetosClasse.style.cssText ="opacity: 0; z-index: 1;"
+    sobreConteudo.style.cssText ="opacity: 0; z-index: 1;"
+    minhaVisao.style.cssText ="opacity: 100%; z-index: 7;"
+    
     rocket.classList.replace("lancaFoguete", "pousaFoguete");
     chama.classList.replace("acendeChama", "apagaChama");
+
+
     setTimeout(() => {
         
         arrow.style.opacity="80%";
@@ -416,3 +427,35 @@ let linha3 = document.querySelector(".linha3")
 //     }
 // })
 
+// logica pisca letreiro
+
+let letrapisca1 = document.querySelector(".letrapisca1");
+let letrapisca2 = document.querySelector(".letrapisca2");
+
+function piscaElementos1(){
+
+        setTimeout(() => {
+            letrapisca1.classList.add("piscaElemento");
+            
+        }, 1000);
+        setTimeout(() => {
+            letrapisca1.classList.remove("piscaElemento");
+            piscaElementos1();
+            
+        }, 3000);
+    }
+    piscaElementos1();
+
+function piscaElementos2(){
+
+        setTimeout(() => {
+            letrapisca2.classList.add("piscaElemento");
+            
+        }, 1500);
+        setTimeout(() => {
+            letrapisca2.classList.remove("piscaElemento");
+            piscaElementos2();
+            
+        }, 3500);
+    }
+    piscaElementos2();

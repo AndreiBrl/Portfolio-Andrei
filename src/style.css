@@ -579,6 +579,31 @@ body {
     letter-spacing: 0.2vw;
 }
 
+.minhaVisao {
+
+    transition: all 0.3s linear;
+    opacity: 0;
+    left: 10vw;
+    text-align: center;
+    top: 0;
+    position: absolute;
+    width: 80%;
+}
+
+.minhaVisao h1 {
+    font-family: Louis;
+    font-size: 3vw;
+    color: #171616c8;
+
+}
+
+.minhaVisao p {
+    font-size: 1.5vw;
+    font-family: LouisRegular;
+    color: #171616d7;
+    text-align: justify;
+}
+
 
 /*  FIM  VISAO */
 /*  INICIO projetos */
@@ -1412,31 +1437,47 @@ body {
     font-size: 4vw;
     color: transparent;
     animation: principal 1s 1.8s linear forwards;
-    text-shadow: 0 0 5px #c84b31;
+    text-shadow:
+        0 0 4px #c84b31,
+        0 0 11px #c84b31,
+        0 0 19px #c84b31,
+        0 0 40px #c84b31,
+        0 0 50px #c84b31;
+
     color: #c84b31;
 
 }
 
-.pisca {
 
-    animation: pisca 0.3s 3.5s linear forwards;
+.piscaElemento {
+    animation: pisca 3.5s linear forwards;
+
 }
 
 @keyframes pisca {
 
     0%,
-    60%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
     100% {
         opacity: 1;
-        text-shadow: 0 0 5px #c84b31;
+        text-shadow:
+            0 0 4px #c84b31,
+            0 0 11px #c84b31,
+            0 0 19px #c84b31,
+            0 0 40px #c84b31,
+            0 0 50px #c84b31;
+
         color: #c84b31;
     }
 
-    25%,
-    75% {
-        opacity: 0;
-        text-shadow: 0 0 0px #414040;
-        color: #414040;
+    20%,
+    24%,
+    55% {
+        text-shadow: none;
     }
 }
 
