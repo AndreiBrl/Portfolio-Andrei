@@ -1440,9 +1440,8 @@ body {
     text-shadow:
         0 0 4px #c84b31,
         0 0 11px #c84b31,
-        0 0 19px #c84b31,
-        0 0 40px #c84b31,
-        0 0 50px #c84b31;
+        0 0 19px #c84b31;
+
 
     color: #c84b31;
 
@@ -1467,9 +1466,7 @@ body {
         text-shadow:
             0 0 4px #c84b31,
             0 0 11px #c84b31,
-            0 0 19px #c84b31,
-            0 0 40px #c84b31,
-            0 0 50px #c84b31;
+            0 0 19px #c84b31;
 
         color: #c84b31;
     }
@@ -1478,6 +1475,7 @@ body {
     24%,
     55% {
         text-shadow: none;
+        color: #414040;
     }
 }
 

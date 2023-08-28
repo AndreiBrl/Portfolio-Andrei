@@ -442,7 +442,7 @@ function piscaElementos1(){
             letrapisca1.classList.remove("piscaElemento");
             piscaElementos1();
             
-        }, 3000);
+        }, 5000);
     }
     piscaElementos1();
 
@@ -451,11 +451,11 @@ function piscaElementos2(){
         setTimeout(() => {
             letrapisca2.classList.add("piscaElemento");
             
-        }, 1500);
+        }, 3000);
         setTimeout(() => {
             letrapisca2.classList.remove("piscaElemento");
             piscaElementos2();
             
-        }, 3500);
+        }, 3700);
     }
     piscaElementos2();
