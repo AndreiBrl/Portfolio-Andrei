@@ -35,10 +35,11 @@ sobre.addEventListener("click", function () {
     fechaCortinha.classList.add("visible");
     rocket.classList.replace("lancaFoguete","pousaFoguete");
     chama.classList.replace("acendeChama","apagaChama");
-    sobreConteudo.style.opacity = "100%";
-    cortina.style.overflow="hidden";
-    projetosClasse.style.opacity = "0";
-    minhaCarreira.style.opacity = "0";
+    cortina.style.overflow="auto";
+    sobreConteudo.style.cssText ="opacity: 100%; z-index: 7;"
+    minhaCarreira.style.cssText ="opacity: 0; z-index: 1;"
+    projetosClasse.style.cssText ="opacity: 0; z-index: 1;"
+    
     
     
     setTimeout(() => {
@@ -85,13 +86,15 @@ projetos.addEventListener("click", function () {
     rocket.classList.add("lancaFoguete");
     chama.classList.remove("apagaChama");
     chama.classList.add("acendeChama");
-    sobreConteudo.style.opacity = "0";
-    minhaCarreira.style.opacity = "0";
+    cortina.style.overflow="hidden";
+    sobreConteudo.style.cssText ="opacity: 0; z-index: 1;"
+    minhaCarreira.style.cssText ="opacity: 0; z-index: 1;"
     // cortina.style.backgroundColor = "lightblue";
     cortina.classList.add('abreCortina');
     fechaCortinha.classList.add("visible");
 
-    projetosClasse.style.opacity = "100%";
+    
+    projetosClasse.style.cssText ="opacity: 100%; z-index: 7;"
 
     setTimeout(() => {
         arrow.style.opacity="80%";
@@ -136,12 +139,20 @@ carreira.addEventListener("click", function () {
     // cortina.style.backgroundColor = "lightgray";
     cortina.classList.add('abreCortina');
     fechaCortinha.classList.add("visible");
-    sobreConteudo.style.opacity = "0";
-    projetosClasse.style.opacity = "0";
+    if(window.innerWidth <=500){
+        
+        cortina.style.overflow="auto";
+        
+    }
+    else{
+       cortina.style.overflow="hidden";
+    
+   }
+    sobreConteudo.style.cssText ="opacity: 0; z-index: 1;"
+    projetosClasse.style.cssText ="opacity: 0; z-index: 1;"
     rocket.classList.replace("lancaFoguete", "pousaFoguete");
     chama.classList.replace("acendeChama", "apagaChama");
-    minhaCarreira.style.opacity = "100%";
-    cortina.style.overflow="auto";
+    minhaCarreira.style.cssText = "opacity: 100%; z-index:7;";
     
     linha.forEach(element => {
         
@@ -351,10 +362,11 @@ fechaCortinha.addEventListener("click", function () {
 
     cortina.classList.remove('abreCortina');
     fechaCortinha.classList.remove("visible");
-    minhaCarreira.style.opacity="0"
     arrow.style.opacity="0";
-    sobreConteudo.style.opacity = "0";
-    projetosClasse.style.opacity = "0";
+    
+    projetosClasse.style.cssText ="opacity: 0; z-index: 1;"
+    sobreConteudo.style.cssText ="opacity: 0; z-index: 1;"
+    projetosClasse.style.cssText ="opacity: 0; z-index: 1;"
     rocket.classList.replace("lancaFoguete", "pousaFoguete");
     chama.classList.replace("acendeChama", "apagaChama");
     console.log(1);
