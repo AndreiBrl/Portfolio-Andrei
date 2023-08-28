@@ -1471,7 +1471,24 @@ body {
 }
 
 
-@media (max-width:780px) {}
+@media (max-width: 500px) {}
+.linkdln{
+    opacity: 0;
+    animation: principal 0.5s 2.2s linear forwards;
+}
+.git {
+    animation: principal 0.5s 2.4s linear forwards;
+    opacity: 0;
+    width: 2.6vw !important;
+    left: 2.7vw;
+    position: absolute;
+    
+}    
+.wpp{
+
+    opacity: 0;
+    animation: principal 0.5s 2.6s linear forwards;
+}
 
 
 
