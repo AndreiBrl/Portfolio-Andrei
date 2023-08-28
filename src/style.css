@@ -791,7 +791,10 @@ body {
     transition: all 0.5s linear;
     text-align: center;
     position: absolute;
-
+    z-index: 5;
+    top: 10vw;
+    left: 35vw;
+    gap: 10vw;
 }
 
 
@@ -1372,7 +1375,7 @@ body {
     font-family: Louis;
     font-size: 4vw;
     color: transparent;
-    animation: principal 1s 2.2s linear forwards;
+    animation: principal 1s 1.8s linear forwards;
     text-shadow: 0 0 5px #c84b31;
     color: #c84b31;
     
@@ -1451,10 +1454,10 @@ body {
 .wpp{
 
     opacity: 0;
-    animation: principal 0.5s 2.6s linear forwards;
+    animation: principal 0.5s 2.2s linear forwards;
 }
 .git {
-    animation: principal 0.5s 3s linear forwards;
+    animation: principal 0.5s 2.4s linear forwards;
     opacity: 0;
     width: 2.6vw !important;
     left: 2.7vw;
@@ -1464,7 +1467,7 @@ body {
 
 .linkdln{
     opacity: 0;
-    animation: principal 0.5s 3.4s linear forwards;
+    animation: principal 0.5s 2.6s linear forwards;
 }
 
 

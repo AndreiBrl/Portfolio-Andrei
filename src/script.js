@@ -30,38 +30,21 @@ sobre.addEventListener('mouseleave', function () {
 sobre.addEventListener("click", function () {
     flagSobre++;
 
-    // if (flagSobre % 2 != 0) {
-    // sobre.classList.add('abreNav');
-    // h1Sobre.classList.add('h1CliqueSobre');
-    // sobreConteudo.classList.add('visible');
-    // principal.classList.add('opacidade');
 
     cortina.classList.add('abreCortina');
-    // cortina.style.backgroundColor = "wheat";
     fechaCortinha.classList.add("visible");
     rocket.classList.replace("lancaFoguete","pousaFoguete");
     chama.classList.replace("acendeChama","apagaChama");
     sobreConteudo.style.opacity = "100%";
+    cortina.style.overflow="hidden";
     projetosClasse.style.opacity = "0";
     minhaCarreira.style.opacity = "0";
     
+    
     setTimeout(() => {
-        
         arrow.style.opacity="80%";
     }, 1000);
 
-    // }
-    // else {
-
-    //     principal.classList.remove('opacidade');
-    //     sobreConteudo.style.opacity="0";
-    //     setTimeout(() => {
-    //         sobreConteudo.classList.remove('visible');
-    //         sobre.classList.remove('abreNav');
-    //         h1Sobre.classList.remove('h1CliqueSobre');
-
-    //     }, 100);
-    // }
 
 
 })
@@ -107,9 +90,10 @@ projetos.addEventListener("click", function () {
     // cortina.style.backgroundColor = "lightblue";
     cortina.classList.add('abreCortina');
     fechaCortinha.classList.add("visible");
+
     projetosClasse.style.opacity = "100%";
+
     setTimeout(() => {
-        
         arrow.style.opacity="80%";
     }, 1000);
     // }
@@ -157,12 +141,14 @@ carreira.addEventListener("click", function () {
     rocket.classList.replace("lancaFoguete", "pousaFoguete");
     chama.classList.replace("acendeChama", "apagaChama");
     minhaCarreira.style.opacity = "100%";
+    cortina.style.overflow="auto";
+    
     linha.forEach(element => {
         
         // element.classList.add("criaLinha");
     });
     setTimeout(() => {
-        
+
         arrow.style.opacity="80%";
     }, 1000);
     // carreira.classList.toggle('abreNav');
