@@ -30,7 +30,6 @@ sobre.addEventListener('mouseleave', function () {
 sobre.addEventListener("click", function () {
     flagSobre++;
 
-
     cortina.classList.add('abreCortina');
     fechaCortinha.classList.add("visible");
     rocket.classList.replace("lancaFoguete","pousaFoguete");
@@ -44,8 +43,9 @@ sobre.addEventListener("click", function () {
     
     
     setTimeout(() => {
+        cortina.scrollTo(0, 0);
         arrow.style.opacity="80%";
-    }, 1000);
+    }, 300);
 
 
 
@@ -94,13 +94,14 @@ projetos.addEventListener("click", function () {
     // cortina.style.backgroundColor = "lightblue";
     cortina.classList.add('abreCortina');
     fechaCortinha.classList.add("visible");
-
+    
     
     projetosClasse.style.cssText ="opacity: 100%; z-index: 7;"
-
+    
     setTimeout(() => {
+        cortina.scrollTo(0, 0);
         arrow.style.opacity="80%";
-    }, 1000);
+    }, 300);
     // }
     // else {
     //     projetosClasse.classList.remove('opacidade');
@@ -148,8 +149,8 @@ carreira.addEventListener("click", function () {
     }
     else{
        cortina.style.overflow="hidden";
-    
-   }
+       
+    }
     sobreConteudo.style.cssText ="opacity: 0; z-index: 1;"
     projetosClasse.style.cssText ="opacity: 0; z-index: 1;"
     minhaVisao.style.cssText ="opacity: 0; z-index: 1;"
@@ -162,9 +163,10 @@ carreira.addEventListener("click", function () {
         // element.classList.add("criaLinha");
     });
     setTimeout(() => {
-
+        
+        cortina.scrollTo(0, 0);
         arrow.style.opacity="80%";
-    }, 1000);
+    }, 300);
     // carreira.classList.toggle('abreNav');
     // h1Carreira.classList.toggle('h1CliqueCarreira');
 
@@ -260,12 +262,13 @@ visao.addEventListener("click", function () {
     
     rocket.classList.replace("lancaFoguete", "pousaFoguete");
     chama.classList.replace("acendeChama", "apagaChama");
-
-
+    
+    
     setTimeout(() => {
         
+        cortina.scrollTo(0, 0);
         arrow.style.opacity="80%";
-    }, 1000);
+    }, 300);
     // visao.classList.toggle('abreNav');
     // h1Visao.classList.toggle('h1CliqueVisao');
 
@@ -370,7 +373,7 @@ neon();
 
 
 fechaCortinha.addEventListener("click", function () {
-
+    
     cortina.classList.remove('abreCortina');
     fechaCortinha.classList.remove("visible");
     arrow.style.opacity="0";
@@ -380,7 +383,9 @@ fechaCortinha.addEventListener("click", function () {
     projetosClasse.style.cssText ="opacity: 0; z-index: 1;"
     rocket.classList.replace("lancaFoguete", "pousaFoguete");
     chama.classList.replace("acendeChama", "apagaChama");
-    console.log(1);
+    setTimeout(() => {
+        cortina.scrollTo(0, 0);
+    }, 1000);
 
 })
 // LOGICA MENU MOBILE
