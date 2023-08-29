@@ -1044,7 +1044,7 @@ body {
     }
 
     .sobreConteudo h1 {
-        color: black;
+        color: rgba(0, 0, 0, 0.775);
         font-size: 5vw;
         opacity: 100;
         letter-spacing: 0;
@@ -1061,7 +1061,7 @@ body {
         /* font-family: Georgia, 'Times New Roman', Times, serif !important; */
         width: 90vw !important;
         font-size: 5vw;
-        color: black;
+        color: rgba(0, 0, 0, 0.704);
         margin: 0;
         padding: 0;
         padding-left: 5vw;
@@ -1806,14 +1806,14 @@ body {
         top: 8vw;
         left: -0.5vw;
         width: 8vw !important;
-        animation: principal 0.5s 2.4s linear forwards;
+        animation: principal 0.5s 2.6s linear forwards;
     }
 
 
     .wpp {
 
         opacity: 0;
-        animation: principal 0.5s 2.6s linear forwards;
+        animation: principal 0.5s 3s linear forwards;
     }
 
     @keyframes moveLinhaRosa {
