@@ -255,6 +255,7 @@ visao.addEventListener("click", function () {
     sobreConteudo.style.opacity = "0";
     minhaCarreira.style.opacity = "0";
     projetosClasse.style.opacity = "0";
+    cortina.style.overflow="auto";
     minhaCarreira.style.cssText ="opacity: 0; z-index: 1;"
     projetosClasse.style.cssText ="opacity: 0; z-index: 1;"
     sobreConteudo.style.cssText ="opacity: 0; z-index: 1;"

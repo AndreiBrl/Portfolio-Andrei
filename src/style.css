@@ -470,9 +470,12 @@ body {
 }
 
 @media (max-width:500px) {
+    .linha{
+        display: none;
+    }
     .minhaCarreira {
 
-        margin-top: 6vw;
+        margin-top: 13vw;
         align-items: center;
         justify-content: center;
         position: relative;
@@ -494,7 +497,15 @@ body {
         filter: saturate(1);
     }
 
-    .minhaCarreira h1,
+    .minhaCarreira h1 {
+        position: absolute;
+        top: -17vw;
+        left: 37vw;
+        font-family: Louis;
+        color: #414040;
+        font-size: 7vw;
+    }
+
     .minhaCarreira h2 {
         text-align: center;
         font-family: Louis;
@@ -510,6 +521,11 @@ body {
         font-size: 3.5vw;
         font-family: Louis;
         padding-bottom: 5vw;
+    }
+    .minhaCarreira h4{
+        text-align: center;
+        font-family: Louis;
+        font-size: 4.3vw;
     }
 
     .minhaCarreira .box-carreira:nth-child(1) img {
@@ -619,7 +635,26 @@ body {
     color: #171616d7;
     text-align: justify;
 }
+@media (max-width:500px) {
+    
+    
+.minhaVisao h1 {
+    font-family: Louis;
+    font-size: 7vw;
+    color: #171616c8;
+    
 
+}
+
+.minhaVisao p {
+    font-size: 5.5vw;
+    font-family: LouisRegular;
+    color: #171616d7;
+    text-align: justify;
+}
+
+
+}
 
 /*  FIM  VISAO */
 /*  INICIO projetos */
@@ -992,7 +1027,7 @@ body {
     font-size: 5vw !important;
 }
 
-@media (max-width: 780px) {
+@media (max-width: 500px) {
     #nav {
         width: 90vw;
         height: 20vw;
@@ -1045,11 +1080,12 @@ body {
 
     .sobreConteudo h1 {
         color: rgba(0, 0, 0, 0.775);
-        font-size: 5vw;
+        font-size: 7vw;
         opacity: 100;
         letter-spacing: 0;
         width: 90vw;
         margin: 0;
+        margin-left: 3vw;
 
 
 
