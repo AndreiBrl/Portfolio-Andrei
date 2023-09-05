@@ -536,6 +536,7 @@ body {
         text-align: center;
         font-family: Louis;
         font-size: 4.3vw;
+
     }
 
     .minhaCarreira .box-carreira:nth-child(1) img {
@@ -653,14 +654,17 @@ body {
     font-size: 8vw;
     color: #171616c8;
     
-
+    
 }
 
 .minhaVisao p {
+    border-left: 2px solid #c84a31b5;
     font-size: 5.5vw;
     font-family: LouisRegular;
     color: #171616d7;
-    text-align: justify;
+    text-align: left;
+    padding-left: 3vw;
+    margin-right: 3vw;
 }
 
 
@@ -1097,7 +1101,7 @@ body {
     }
 
     .sobreConteudo h1 {
-        color: rgba(0, 0, 0, 0.775);
+        color: rgba(0, 0, 0, 0.635);
         font-size: 8vw;
         opacity: 100;
         letter-spacing: 0;
@@ -1118,9 +1122,11 @@ body {
         color: rgba(0, 0, 0, 0.704);
         margin: 0;
         padding: 0;
-        padding-left: 5vw;
-        padding-top: 5vw;
+        padding-left: 2vw;
+        margin-left: 3vw;
+        margin-top: 5vw;
         transition: all 1s linear;
+        border-left: 2.3px solid #c84a31b6;
     }
 
     /* FIM SOBRE */
