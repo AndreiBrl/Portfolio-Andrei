@@ -264,7 +264,15 @@ visao.addEventListener("click", function () {
     rocket.classList.replace("lancaFoguete", "pousaFoguete");
     chama.classList.replace("acendeChama", "apagaChama");
 
+    if (window.innerWidth <= 500) {
 
+        cortina.style.overflow = "auto";
+
+    }
+    else {
+        cortina.style.overflow = "hidden";
+
+    }
     setTimeout(() => {
 
         cortina.scrollTo(0, 0);
