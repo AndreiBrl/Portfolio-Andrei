@@ -191,7 +191,7 @@ body {
     0% {}
 
     50% {
-        transform: scale(1.1);
+        transform: translateY(2vw);
     }
 
     100% {}
@@ -223,6 +223,7 @@ body {
 @media (max-width:780px) {
     .cortina {
         overflow: auto;
+
     }
 
     .abreCortina {
@@ -475,7 +476,7 @@ body {
     }
     .minhaCarreira {
 
-        margin-top: 13vw;
+        margin-top: 20vw;
         align-items: center;
         justify-content: center;
         position: relative;
@@ -499,11 +500,11 @@ body {
 
     .minhaCarreira h1 {
         position: absolute;
-        top: -17vw;
-        left: 37vw;
+        top: -20vw;
+        left: 35vw;
         font-family: Louis;
         color: #414040;
-        font-size: 7vw;
+        font-size: 8vw;
     }
 
     .minhaCarreira h2 {
@@ -640,7 +641,7 @@ body {
     
 .minhaVisao h1 {
     font-family: Louis;
-    font-size: 7vw;
+    font-size: 8vw;
     color: #171616c8;
     
 
@@ -906,7 +907,15 @@ body {
     left: 35vw;
     gap: 10vw;
 }
+.projetos h1{
+    font-family: Louis;
+    color: #414040;
+    font-size: 3vw;
+    position: absolute;
+    top: -10vw;
+    left: 10vw;
 
+}
 
 .arquetipo img {
     width: 10vw;
@@ -1080,7 +1089,7 @@ body {
 
     .sobreConteudo h1 {
         color: rgba(0, 0, 0, 0.775);
-        font-size: 7vw;
+        font-size: 8vw;
         opacity: 100;
         letter-spacing: 0;
         width: 90vw;
@@ -1204,7 +1213,7 @@ body {
     .projetos {
         width: 100vw;
         left: 0vw;
-        top: 10vw;
+        top: 20vw;
         transform: rotate(0deg);
         justify-content: center;
         align-items: center;
@@ -1410,7 +1419,14 @@ body {
         font-size: 4vw !important;
         color: black !important;
     }
+.projetos h1{
+    font-family: Louis;
+    color: #414040;
+    font-size: 8vw;
+    position: absolute;
+    top: -20vw;
 
+}
     .arquetipo img {
         width: 30vw;
     }

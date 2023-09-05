@@ -375,8 +375,8 @@ neon();
 
 fechaCortinha.addEventListener("click", function () {
     
-    cortina.classList.remove('abreCortina');
     fechaCortinha.classList.remove("visible");
+    cortina.classList.remove('abreCortina');
     arrow.style.opacity="0";
     
     projetosClasse.style.cssText ="opacity: 0; z-index: 1;"
@@ -387,8 +387,12 @@ fechaCortinha.addEventListener("click", function () {
     setTimeout(() => {
         cortina.scrollTo(0, 0);
     }, 1000);
-
+    
 })
+// fecha cortina arrastando
+
+
+
 // LOGICA MENU MOBILE
 let contaMenu = 0;
 let menuMobile = document.querySelector(".menu-mobile");
@@ -465,3 +469,5 @@ function piscaElementos2(){
         }, 3700);
     }
     piscaElementos2();
+
+
