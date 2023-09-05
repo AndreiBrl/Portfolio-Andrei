@@ -391,7 +391,7 @@ fechaCortinha.addEventListener("click", function () {
 })
 function handleClick(event) {
 
-    if (!event.target.classList.contains('.cortina') && event.target.tagName.toLowerCase() !== 'img' && !cortina.contains(event.target)) {
+    if (!event.target.classList.contains('.cortina') && event.target.tagName.toLowerCase() !== 'img'&& event.target.tagName.toLowerCase() !== 'h1' && !cortina.contains(event.target)) {
 
         fechaCortinha.classList.remove("visible");
         cortina.classList.remove('abreCortina');
