@@ -5,7 +5,7 @@ let nomeMenu = document.querySelector(".nomeMenu h1")
 let sobre = document.querySelector("#sobre");
 let h1Sobre = document.querySelector("#sobre h1");
 let sobreConteudo = document.querySelector(".sobreConteudo");
-let minhaCarreira =document.querySelector(".minhaCarreira");
+let minhaCarreira = document.querySelector(".minhaCarreira");
 let principal = document.querySelector(".principal")
 let cortina = document.querySelector(".cortina")
 let arrow = document.querySelector(".fechaCortina img")
@@ -32,24 +32,24 @@ sobre.addEventListener("click", function () {
 
     cortina.classList.add('abreCortina');
     fechaCortinha.classList.add("visible");
-    rocket.classList.replace("lancaFoguete","pousaFoguete");
-    chama.classList.replace("acendeChama","apagaChama");
-    cortina.style.overflow="auto";
-    sobreConteudo.style.cssText ="opacity: 100%; z-index: 7;";
-    minhaCarreira.style.cssText ="opacity: 0; z-index: 1;";
-    projetosClasse.style.cssText ="opacity: 0; z-index: 1;";
-    minhaVisao.style.cssText ="opacity: 0; z-index: 1;";
-    
-    
-    
+    rocket.classList.replace("lancaFoguete", "pousaFoguete");
+    chama.classList.replace("acendeChama", "apagaChama");
+    cortina.style.overflow = "auto";
+    sobreConteudo.style.cssText = "opacity: 100%; z-index: 7;";
+    minhaCarreira.style.cssText = "opacity: 0; z-index: 1;";
+    projetosClasse.style.cssText = "opacity: 0; z-index: 1;";
+    minhaVisao.style.cssText = "opacity: 0; z-index: 1;";
+
+
     setTimeout(() => {
         cortina.scrollTo(0, 0);
-        arrow.style.opacity="80%";
+        arrow.style.opacity = "80%";
     }, 300);
 
 
 
 })
+
 // ---------------------
 
 // PROJETOS
@@ -87,20 +87,20 @@ projetos.addEventListener("click", function () {
     rocket.classList.add("lancaFoguete");
     chama.classList.remove("apagaChama");
     chama.classList.add("acendeChama");
-    cortina.style.overflow="hidden";
-    sobreConteudo.style.cssText ="opacity: 0; z-index: 1;"
-    minhaCarreira.style.cssText ="opacity: 0; z-index: 1;"
-    minhaVisao.style.cssText ="opacity: 0; z-index: 1;"
+    cortina.style.overflow = "hidden";
+    sobreConteudo.style.cssText = "opacity: 0; z-index: 1;"
+    minhaCarreira.style.cssText = "opacity: 0; z-index: 1;"
+    minhaVisao.style.cssText = "opacity: 0; z-index: 1;"
     // cortina.style.backgroundColor = "lightblue";
     cortina.classList.add('abreCortina');
     fechaCortinha.classList.add("visible");
-    
-    
-    projetosClasse.style.cssText ="opacity: 100%; z-index: 7;"
-    
+
+
+    projetosClasse.style.cssText = "opacity: 100%; z-index: 7;"
+
     setTimeout(() => {
         cortina.scrollTo(0, 0);
-        arrow.style.opacity="80%";
+        arrow.style.opacity = "80%";
     }, 300);
     // }
     // else {
@@ -142,30 +142,30 @@ carreira.addEventListener("click", function () {
     // cortina.style.backgroundColor = "lightgray";
     cortina.classList.add('abreCortina');
     fechaCortinha.classList.add("visible");
-    if(window.innerWidth <=500){
-        
-        cortina.style.overflow="auto";
-        
+    if (window.innerWidth <= 500) {
+
+        cortina.style.overflow = "auto";
+
     }
-    else{
-       cortina.style.overflow="hidden";
-       
+    else {
+        cortina.style.overflow = "hidden";
+
     }
-    sobreConteudo.style.cssText ="opacity: 0; z-index: 1;"
-    projetosClasse.style.cssText ="opacity: 0; z-index: 1;"
-    minhaVisao.style.cssText ="opacity: 0; z-index: 1;"
+    sobreConteudo.style.cssText = "opacity: 0; z-index: 1;"
+    projetosClasse.style.cssText = "opacity: 0; z-index: 1;"
+    minhaVisao.style.cssText = "opacity: 0; z-index: 1;"
     rocket.classList.replace("lancaFoguete", "pousaFoguete");
     chama.classList.replace("acendeChama", "apagaChama");
     minhaCarreira.style.cssText = "opacity: 100%; z-index:7;";
-    
+
     linha.forEach(element => {
-        
+
         // element.classList.add("criaLinha");
     });
     setTimeout(() => {
-        
+
         cortina.scrollTo(0, 0);
-        arrow.style.opacity="80%";
+        arrow.style.opacity = "80%";
     }, 300);
     // carreira.classList.toggle('abreNav');
     // h1Carreira.classList.toggle('h1CliqueCarreira');
@@ -178,50 +178,50 @@ let boxCarreira = document.querySelectorAll(".box-carreira");
 
 boxCarreira.forEach(element => {
     let sobreCarreira = document.querySelector(".minhaCarreira p");
-    element.addEventListener("mouseover",function(){
-        
-        element.classList.add('saturacao')
-        if(element.getAttribute('alt')=="bacharel"){
-            
-                
-            
-            setTimeout(() => {
-                
-                
-                sobreCarreira.style.opacity="100%"
-                sobreCarreira.textContent="No período de 2013-2018 me formei como advogado através do Instituo Vianna Júnior, logo então em 2019 passei no exame da ordem para em 2020 começar a trabalhar na área"
-            }, 200);
-        }
-        else if(element.getAttribute('alt')=="advogado"){
-            
-            setTimeout(() => {
-                
+    element.addEventListener("mouseover", function () {
 
-                sobreCarreira.style.opacity="100%"
-                sobreCarreira.textContent="Entre 2020 e 2022 trabalhei no campo jurídico em próprio meu escritório, época em que desenvolvi habilidades de comunicação e trabalho em equipe, as quais trago comigo até hoje"
-            }, 200);
-        }
-        else if(element.getAttribute('alt')=="tecnico"){
-            
+        element.classList.add('saturacao')
+        if (element.getAttribute('alt') == "bacharel") {
+
+
+
             setTimeout(() => {
-                
-                sobreCarreira.style.opacity="100%"
-                sobreCarreira.textContent="Em julho de 2022 me matriculei no Tecnólogo Análise e Desenvolvimento de Sistemas no Insituto Vianna Júnior, neste momento já havia estudado bastante por conta propria e possuia noções básicas que me ajudaram a percorrer o curso com mais facilidade"
+
+
+                sobreCarreira.style.opacity = "100%"
+                sobreCarreira.textContent = "No período de 2013-2018 me formei como advogado através do Instituo Vianna Júnior, logo então em 2019 passei no exame da ordem para em 2020 começar a trabalhar na área"
             }, 200);
         }
-        else{
-            
+        else if (element.getAttribute('alt') == "advogado") {
+
             setTimeout(() => {
-                
-                sobreCarreira.style.opacity="100%"
-                sobreCarreira.textContent="Em março de 2023 alcancei minha primeira vaga como estagiário dentro da secretária de comunicação da prefeitura de Juiz de Fora. Atualmente ainda me encontro neste estágio onde trabalho com desenvolvimento web nas linguagens Html, Css e JavaScript"
-                
+
+
+                sobreCarreira.style.opacity = "100%"
+                sobreCarreira.textContent = "Entre 2020 e 2022 trabalhei no campo jurídico em próprio meu escritório, época em que desenvolvi habilidades de comunicação e trabalho em equipe, as quais trago comigo até hoje"
             }, 200);
         }
-        
-        
+        else if (element.getAttribute('alt') == "tecnico") {
+
+            setTimeout(() => {
+
+                sobreCarreira.style.opacity = "100%"
+                sobreCarreira.textContent = "Em julho de 2022 me matriculei no Tecnólogo Análise e Desenvolvimento de Sistemas no Insituto Vianna Júnior, neste momento já havia estudado bastante por conta propria e possuia noções básicas que me ajudaram a percorrer o curso com mais facilidade"
+            }, 200);
+        }
+        else {
+
+            setTimeout(() => {
+
+                sobreCarreira.style.opacity = "100%"
+                sobreCarreira.textContent = "Em março de 2023 alcancei minha primeira vaga como estagiário dentro da secretária de comunicação da prefeitura de Juiz de Fora. Atualmente ainda me encontro neste estágio onde trabalho com desenvolvimento web nas linguagens Html, Css e JavaScript"
+
+            }, 200);
+        }
+
+
     })
-    element.addEventListener("mouseout",function(){
+    element.addEventListener("mouseout", function () {
         element.classList.remove('saturacao')
     })
 });
@@ -255,20 +255,20 @@ visao.addEventListener("click", function () {
     sobreConteudo.style.opacity = "0";
     minhaCarreira.style.opacity = "0";
     projetosClasse.style.opacity = "0";
-    cortina.style.overflow="auto";
-    minhaCarreira.style.cssText ="opacity: 0; z-index: 1;"
-    projetosClasse.style.cssText ="opacity: 0; z-index: 1;"
-    sobreConteudo.style.cssText ="opacity: 0; z-index: 1;"
-    minhaVisao.style.cssText ="opacity: 100%; z-index: 7;"
-    
+    cortina.style.overflow = "auto";
+    minhaCarreira.style.cssText = "opacity: 0; z-index: 1;"
+    projetosClasse.style.cssText = "opacity: 0; z-index: 1;"
+    sobreConteudo.style.cssText = "opacity: 0; z-index: 1;"
+    minhaVisao.style.cssText = "opacity: 100%; z-index: 7;"
+
     rocket.classList.replace("lancaFoguete", "pousaFoguete");
     chama.classList.replace("acendeChama", "apagaChama");
-    
-    
+
+
     setTimeout(() => {
-        
+
         cortina.scrollTo(0, 0);
-        arrow.style.opacity="80%";
+        arrow.style.opacity = "80%";
     }, 300);
     // visao.classList.toggle('abreNav');
     // h1Visao.classList.toggle('h1CliqueVisao');
@@ -374,22 +374,40 @@ neon();
 
 
 fechaCortinha.addEventListener("click", function () {
-    
+
     fechaCortinha.classList.remove("visible");
     cortina.classList.remove('abreCortina');
-    arrow.style.opacity="0";
-    
-    projetosClasse.style.cssText ="opacity: 0; z-index: 1;"
-    sobreConteudo.style.cssText ="opacity: 0; z-index: 1;"
-    projetosClasse.style.cssText ="opacity: 0; z-index: 1;"
+    arrow.style.opacity = "0";
+
+    projetosClasse.style.cssText = "opacity: 0; z-index: 1;"
+    sobreConteudo.style.cssText = "opacity: 0; z-index: 1;"
+    projetosClasse.style.cssText = "opacity: 0; z-index: 1;"
     rocket.classList.replace("lancaFoguete", "pousaFoguete");
     chama.classList.replace("acendeChama", "apagaChama");
     setTimeout(() => {
         cortina.scrollTo(0, 0);
     }, 1000);
-    
+
 })
-// fecha cortina arrastando
+function handleClick(event) {
+
+    if (!event.target.classList.contains('.cortina') && event.target.tagName.toLowerCase() !== 'img' && !cortina.contains(event.target)) {
+
+        fechaCortinha.classList.remove("visible");
+        cortina.classList.remove('abreCortina');
+        arrow.style.opacity = "0";
+
+        projetosClasse.style.cssText = "opacity: 0; z-index: 1;"
+        sobreConteudo.style.cssText = "opacity: 0; z-index: 1;"
+        projetosClasse.style.cssText = "opacity: 0; z-index: 1;"
+        rocket.classList.replace("lancaFoguete", "pousaFoguete");
+        chama.classList.replace("acendeChama", "apagaChama");
+        setTimeout(() => {
+            cortina.scrollTo(0, 0);
+        }, 1000);
+    }
+}
+document.body.addEventListener('click', handleClick);
 
 
 
@@ -413,27 +431,27 @@ let linha3 = document.querySelector(".linha3")
 //     contaMenu++;
 //     if (contaMenu % 2 != 0) {
 
-        // linha1.style.rotate=""+randomAngle1+"deg";
-        // linha2.style.rotate = "" + randomAngle2 + "deg";
-        // linha3.style.rotate=""+randomAngle3+"deg";
+// linha1.style.rotate=""+randomAngle1+"deg";
+// linha2.style.rotate = "" + randomAngle2 + "deg";
+// linha3.style.rotate=""+randomAngle3+"deg";
 
-    //     sobre.classList.add("mostra");
-    //     carreira.classList.add("mostra");
-    //     visao.classList.add("mostra");
-    //     projetos.classList.add("mostra");
+//     sobre.classList.add("mostra");
+//     carreira.classList.add("mostra");
+//     visao.classList.add("mostra");
+//     projetos.classList.add("mostra");
 
-    // }
-    // else {
+// }
+// else {
 
-    //     sobre.classList.remove("mostra");
-    //     carreira.classList.remove("mostra");
-    //     visao.classList.remove("mostra");
-    //     projetos.classList.remove("mostra");
+//     sobre.classList.remove("mostra");
+//     carreira.classList.remove("mostra");
+//     visao.classList.remove("mostra");
+//     projetos.classList.remove("mostra");
 
-    //     linha1.style.rotate = "deg";
-    //     linha2.style.rotate = "0deg";
-    //     linha3.style.rotate = "0deg";
-        // linha3.style.opacity="100%";
+//     linha1.style.rotate = "deg";
+//     linha2.style.rotate = "0deg";
+//     linha3.style.rotate = "0deg";
+// linha3.style.opacity="100%";
 //     }
 // })
 
@@ -442,32 +460,32 @@ let linha3 = document.querySelector(".linha3")
 let letrapisca1 = document.querySelector(".letrapisca1");
 let letrapisca2 = document.querySelector(".letrapisca2");
 
-function piscaElementos1(){
+function piscaElementos1() {
 
-        setTimeout(() => {
-            letrapisca1.classList.add("piscaElemento");
-            
-        }, 1000);
-        setTimeout(() => {
-            letrapisca1.classList.remove("piscaElemento");
-            piscaElementos1();
-            
-        }, 5000);
-    }
-    piscaElementos1();
+    setTimeout(() => {
+        letrapisca1.classList.add("piscaElemento");
 
-function piscaElementos2(){
+    }, 1000);
+    setTimeout(() => {
+        letrapisca1.classList.remove("piscaElemento");
+        piscaElementos1();
 
-        setTimeout(() => {
-            letrapisca2.classList.add("piscaElemento");
-            
-        }, 3000);
-        setTimeout(() => {
-            letrapisca2.classList.remove("piscaElemento");
-            piscaElementos2();
-            
-        }, 3700);
-    }
-    piscaElementos2();
+    }, 5000);
+}
+piscaElementos1();
+
+function piscaElementos2() {
+
+    setTimeout(() => {
+        letrapisca2.classList.add("piscaElemento");
+
+    }, 3000);
+    setTimeout(() => {
+        letrapisca2.classList.remove("piscaElemento");
+        piscaElementos2();
+
+    }, 3700);
+}
+piscaElementos2();
 
 
