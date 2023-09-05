@@ -1117,16 +1117,16 @@ body {
 
     .sobreConteudo p {
         /* font-family: Georgia, 'Times New Roman', Times, serif !important; */
-        width: 90vw !important;
-        font-size: 5vw;
+        width: 85vw !important;
+        font-size: 5.5vw;
         color: rgba(0, 0, 0, 0.704);
         margin: 0;
         padding: 0;
         padding-left: 2vw;
-        margin-left: 3vw;
+        margin-left: 5.5vw;
         margin-top: 5vw;
         transition: all 1s linear;
-        border-left: 0.7vw solid #c84a31b6;
+        /* border-left: 0.7vw solid #c84a31b6; */
         
         
     }
