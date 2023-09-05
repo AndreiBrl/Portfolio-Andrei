@@ -407,7 +407,7 @@ function handleClick(event) {
         }, 1000);
     }
 }
-document.body.addEventListener('click', handleClick);
+window.addEventListener('click', handleClick);
 
 
 
