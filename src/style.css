@@ -330,7 +330,7 @@ body {
 }
 
 .sobreConteudo H1 {
-    color: black;
+    color: #414040;
     font-size: 3vw;
     font-family: Louis;
 }
@@ -1347,7 +1347,7 @@ body {
             width: 10vw;
             left: 5.3vw;
             opacity: 100%;
-            top: -8.5vw;
+            top: -9.5vw;
             transform: scale(1.2);
         }
 
@@ -1362,7 +1362,7 @@ body {
         55% {
             width: 8vw;
             opacity: 100%;
-            top: -9vw;
+            top: -9.5vw;
             transform: scale(1);
             left: 6.2vw;
         }
@@ -1377,7 +1377,7 @@ body {
 
         85% {
             width: 8vw;
-            top: -9vw;
+            top: -9.5vw;
             transform: scale(1);
             opacity: 100%;
             left: 6.2vw;
@@ -1389,7 +1389,7 @@ body {
             transform: rotate(-45deg);
             transform: scale(1);
             left: 6.2vw;
-            top: -8vw;
+            top: -9vw;
         }
 
         /* 100% {
