@@ -44,14 +44,9 @@
 
 
 .container {
-
-
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
 /* ----------------- Primeira sessao -------------------- */
@@ -85,12 +80,13 @@
 
     &>div div div {
 
-        width: 10vw;
+        width: 14.8vw;
         border-radius: 2px;
         padding-left: 0.5vw;
         background-color: #c03654;
-        animation: sublinhaTitulo linear both;
-        animation-timeline: view(40% 50%);
+        /* animação em conflito com blibioteca GSAP */
+        /* animation:  sublinhaTitulo linear both;
+        animation-timeline: view(5% 5%); */
 
     }
 
@@ -101,6 +97,7 @@
 
 }
 
+/* 
 @keyframes sublinhaTitulo {
 
     0% {
@@ -111,7 +108,7 @@
         width: 30vw;
     }
 
-}
+} */
 
 .imgPerfil {
 
@@ -132,12 +129,14 @@
     height: 1.1vw;
     bottom: -1vw;
     left: 2vw;
-    animation: katanamove linear both;
-    animation-timeline: view(50% 40%);
+    opacity: 0;
+    /* animacao conflitante com GSAP */
+    /* animation: katanamove linear both;
+    animation-timeline: view(50% 40%); */
 
 }
 
-@keyframes katanamove {
+/* @keyframes katanamove {
 
     0% {
         opacity: 0;
@@ -150,51 +149,72 @@
         opacity: 1;
         left: 45vw;
     }
-}
+} */
 
 /* ----------------- Segunda sessao -------------------- */
 
 
 /* sessão dos titulos e redes  sociais */
-.sub_container:nth-child(2) {
-    background-color: black;
+.sub_container_2 {
+    width: 400%;
+    height: 100vh;
+    position: relative;
+    background-color: #000000;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+}
+
+.sub_container_2>div {
+
+
+    display: flex;
+    justify-content: space-around;
     width: 100%;
+    height: 100%;
+    align-items: center;
+    overflow-x: hidden;
     padding-bottom: 5vw;
 
-    &>h1 {
+
+    & h1 {
+        /* filter: blur(20px); */
+
         color: white;
         font-family: 'yeager', 'Times New Roman', Times, serif;
         text-transform: uppercase;
         font-size: 6vw;
-        animation: changeBlur linear both;
-        animation-timeline: view(60% 10%);
-        margin-top: 10vw;
+        /* animation: changeBlur linear both;
+        animation-timeline: scroll(inline); */
         margin-bottom: 0;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     }
+ 
 
-    /* div que engloba rede sociais e sub titulos */
-    &>div:nth-of-type(1) {
-        width: 50%;
-        height: 10vw;
+    /* Titulo Nome - div que engloba rede sociais e sub titulos */
+    &>div:nth-child(1) {
+
+        width: 100vw;
+        height: 100%;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
+        flex-direction: column;
 
+        /* Engloba div com sub tiutlos e menu redes */
+        &>div {
+
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+        }
 
 
         /* div menu rede sociais */
-        &>div:nth-child(1) {
+        &>div>div:nth-child(1) {
             border-radius: 5px;
             display: grid;
             grid-template-columns: 5vw 5vw 5vw;
             gap: 0.2vw;
-            margin-top: 5vw;
-            margin-bottom: 5vw;
-            perspective: 1000;
 
             & div {
                 border-radius: 5px;
@@ -205,13 +225,12 @@
                 align-items: center;
                 display: flex;
                 cursor: pointer;
-                animation: scaleRedeSociais linear both;
-                animation-timeline: view(block 70% 10%);
-                transition: all 1s linear;
+                /* animation: scaleRedeSociais linear both;
+                animation-timeline: view(block 70% 10%); */
+                transition: all 0.2s linear;
             }
 
             & div:hover {
-                transform: rotateY(105deg);
                 background-color: #c03654;
             }
 
@@ -221,7 +240,7 @@
         }
 
         & h2 {
-            color: white;
+            color: rgba(128, 128, 128, 0.432);;
             font-family: 'yeager', 'Times New Roman', Times, serif;
             text-transform: uppercase;
             font-size: 2vw;
@@ -229,12 +248,12 @@
             padding: 0;
 
 
-            animation: moveTitle linear both;
-            animation-timeline: view(block 70% 10%);
+            /* animation: moveTitle linear both;
+            animation-timeline: view(block 70% 10%); */
         }
 
         & h2:nth-of-type(1) {
-            color: #c03654;
+            color: rgba(128, 128, 128, 0.432);
 
         }
 
@@ -253,11 +272,24 @@
 
     /* div dos menus */
     &>div:nth-of-type(2) {
-
+        width: 100vw;
+        height: 100%;
+        /* background-color: blue; */
         display: flex;
         gap: 0.3vw;
         justify-content: center;
         align-self: center;
+        flex-direction: column;
+        /* transform: translateX(100vw); */
+
+
+        &>div {
+            display: flex;
+            gap: 0.3vw;
+            justify-content: center;
+            align-self: center;
+        }
+
 
     }
 
@@ -293,8 +325,8 @@
     position: relative;
     border-radius: 5px;
     cursor: pointer;
-    animation: showMenu linear both;
-    animation-timeline: view(block 70% 10%);
+    /* animation: showMenu linear both;
+    animation-timeline: view(block 70% 10%); */
 }
 
 .boxImage {
@@ -336,7 +368,7 @@
 }
 
 .box:hover::after {
-    /* filter: blur(10px); */
+    filter: blur(10px);
 }
 
 
@@ -418,4 +450,25 @@
 
 }
 
-/* sub container 2 */
+/* sub container 3 */
+
+
+
+
+
+.testeBox {
+    width: 100vw;
+    /* Largura de cada caixa */
+    height: 100%;
+    /* Altura de cada caixa */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.bloco1 {
+    height: 100vh;
+    width: 100vw;
+    background-color: green;
+}
