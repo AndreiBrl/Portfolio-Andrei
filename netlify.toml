@@ -1,5 +1,5 @@
 [build]
-  # Comando para construir o projeto
-  command = "npm run build"
-  # Diretório onde os arquivos de build são gerados
+  # Diretório onde o projeto Next.js está localizado
+  base = "portfolio-andrei"
+  command = "npm run export"
   publish = "portfolio-andrei/portfolio-andrei/out"
