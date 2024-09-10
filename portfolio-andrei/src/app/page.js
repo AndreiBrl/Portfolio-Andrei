@@ -70,6 +70,7 @@ export default function Home() {
 
         // aplicando split no titulo Andrei
         const split_tituloAndrei = new SplitType(titulo_Andrei.current, { types: 'chars', charClass: 'tituloAndrei' })
+        const split_tituloProjetos = new SplitType('.tituloProjetos', { types: 'chars', charClass: 'tituloProjeto' })
         const nomeJapa = new SplitType('.nomeJapa', { types: 'chars', charClass: 'charJapa' })
         const subTitulo = new SplitType('.subTitulo', { types: 'chars', charClass: 'charSubTitulo' })
 
@@ -91,10 +92,12 @@ export default function Home() {
 
             }
         });
+        // anime nome em japones
         gsap.to('.charJapa', {
 
             color: "#c03654",
-            // textShadow: '0 0 5px #fff,0 0 10px #fff,0 0 15px #c03654,0 0 20px #c03654,0 0 30px #c03654,0 0 40px #c03654,0 0 50px #c03654,0 0 60px #c03654',
+            textShadow: '0 0 5px #c03654, 0 0 10px #c03654, 0 0 15px #c03654',
+
             stagger: 0.05,
             delay: 0.2,
             ease: "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
@@ -102,14 +105,15 @@ export default function Home() {
                 trigger: '.divTitulos_menuRedes',
                 start: "top 200px",
                 scrub: 1,
-                end: "bottom 500px",
+                end: "bottom 300px",
 
             }
         });
+        // anima sub titulos
         gsap.to('.charSubTitulo', {
 
             color: "white",
-            // textShadow: '0 0 5px #fff, 0 0 10px #fff, 0 0 15px #c03654, 0 0 20px #c03654, 0 0 30px #c03654, 0 0 40px #c03654, 0 0 50px #c03654, 0 0 60px #c03654',
+            textShadow: '0 0 5px #fff',
 
             stagger: 0.05,
             delay: 0.2,
@@ -118,7 +122,7 @@ export default function Home() {
                 trigger: '.divTitulos_menuRedes',
                 start: "top center",
                 scrub: 1,
-                end: "bottom 500px",
+                end: "bottom 300px",
 
             }
         });
@@ -129,42 +133,101 @@ export default function Home() {
                 trigger: '.divTitulos_menuRedes',
                 start: "top center",
                 scrub: 1,
-                end: "bottom 500px",
+                end: "bottom 450px",
 
             }
         })
             .fromTo('.quadroMenuRedes', {
                 x: -150,
-
-                boxShadow: '0 0 5px rgba(192, 54, 84, 0.5)', // Neon inicial suave
+                opacity: 0,
             }, {
                 x: -10,
                 stagger: 0.05,
                 delay: 0.2,
-                boxShadow: '0 0 20px rgba(192, 54, 84, 1)', // Neon intenso
+
                 stagger: 0.1,
                 delay: 0.2,
                 ease: "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
             })
             .to('.quadroMenuRedes', {
                 x: 20,
+                opacity: 1,
                 stagger: 0.05,
                 delay: 0.2,
-                boxShadow: '0 0 15px rgba(192, 54, 84, 0.75)', // Neon moderado
                 duration: 1,
             })
 
 
             .to('.quadroMenuRedes', {
-                stagger: 0.05,
+                stagger: 0.5,
+                boxShadow: '0 0 5px #c03654, 0 0 10px #c03654, 0 0 15px #c03654,0 0 20px #c03654', // Neon intenso
                 delay: 0.2,
-                boxShadow: 'none', // Remove o shadow no final
                 duration: 1,
             });
 
+
+        // animacao div projetos
+        gsap.fromTo('.tituloProjeto', {
+            y: 50,
+            opacity: 0
+        }, {
+            y: -10,
+            opacity: 1,
+            stagger: 0.05,
+            delay: 0.2,
+            ease: "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
+            scrollTrigger: {
+                trigger: '.projetos',
+                start: "bottom -500px",
+                scrub: 1,
+                end: "bottom -800px",
+
+            }
+        });
+
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: '.projetos',
+                start: "bottom -500px",
+                scrub: 1,
+                end: "bottom 800px",
+
+            }
+        })
+            .fromTo('.home_box__f7Voq', {
+                x: -50,
+                opacity: 0,
+            }, {
+                x: -10,
+                stagger: 0.09,
+                delay: 0.2,
+
+                stagger: 0.1,
+                delay: 0.2,
+                ease: "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
+            })
+            .to('.home_box__f7Voq', {
+                x: 20,
+                opacity: 1,
+                stagger: 0.09,
+                delay: 0.2,
+                duration: 1,
+            })
+
+
+            .to('.home_box__f7Voq', {
+                stagger: 0.5,
+                boxShadow: '0 0 5px white, 0 0 10px white, 0 0 15px white,0 0 20px white', // Neon intenso
+                delay: 0.2,
+                duration: 1,
+            });
+
+
+        // home_box__f7Voq
         const totalWidth = sub_container_2.current.offsetWidth;
         gsap.to(sub_container_2_div.current, {
-            xPercent: -75, // Ajuste para o número total de caixas
+            xPercent: -55, // Ajuste para o número total de caixas
             ease: "none",
             scrollTrigger: {
                 trigger: sub_container_2.current,
@@ -261,8 +324,8 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <h1 >Projetos</h1>
+                    <div className='projetos'>
+                        <h1 className='tituloProjetos'>Projetos</h1>
                         <div>
                             <div className={styles.box}>
 
@@ -302,8 +365,8 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className={`${styles.testeBox} ${styles.yellow}`}>testeBox 3</div>
-                    <div className={`${styles.testeBox} ${styles.purple}`}> Box 4</div >
+                    {/* <div className={`${styles.testeBox} ${styles.yellow}`}>testeBox 3</div>
+                    <div className={`${styles.testeBox} ${styles.purple}`}> Box 4</div > */}
                 </div >
 
             </div >
