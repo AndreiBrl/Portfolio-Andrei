@@ -52,6 +52,28 @@ export default function Home() {
                 anticipatePin: 1 // Ajuda a evitar problemas de espaçamento
             }
         });
+
+        gsap.fromTo(sub_container_1.current, 
+            {
+                clipPath: "path('M0,520L60,500C120,480,240,450,360,470C480,490,600,520,720,520C840,520,960,490,1080,490C1200,490,1320,520,1380,530L1440,540L1440,0L0,0Z')"
+            }, 
+            {
+                clipPath: "path('M0,520L60,540C120,560,240,530,360,510C480,490,600,460,720,460C840,460,960,490,1080,490C1200,490,1320,460,1380,450L1440,440L1440,0L0,0Z')",
+                scrollTrigger: {
+                    trigger: sub_container_1.current,
+                    start: "top 100px",
+                    scrub: 1,
+                    end: "bottom 50px",
+                    anticipatePin: 1
+                }
+            }
+        );
+        
+        
+        
+
+
+
     }, []);
 
     // animacaode rolagem lateral sub_container 2
@@ -160,7 +182,7 @@ export default function Home() {
 
             .to('.quadroMenuRedes', {
                 stagger: 0.5,
-                boxShadow: '0 0 5px #c03654, 0 0 10px #c03654, 0 0 15px #c03654,0 0 20px #c03654', // Neon intenso
+                boxShadow: '0 0 5px #c03654, 0 0 10px #c03654, 0 0 15px #c03654', // Neon intenso
                 delay: 0.2,
                 duration: 1,
             });

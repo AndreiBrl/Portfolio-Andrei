@@ -47,6 +47,7 @@
     position: relative;
     width: 100%;
     overflow: hidden;
+    background-color: black;
 }
 
 /* ----------------- Primeira sessao -------------------- */
@@ -59,6 +60,7 @@
     justify-content: center;
     align-items: center;
     gap: 4vw;
+    clip-path: path("M0,500L60,480C120,460,240,420,360,440C480,460,600,500,720,500C840,500,960,460,1080,460C1200,460,1320,500,1380,520L1440,540L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z");
 
     &>div {
         display: flex;
@@ -74,6 +76,7 @@
         z-index: 2;
         background-color: transparent;
         content: 's';
+        
 
 
     }
@@ -96,6 +99,16 @@
     }
 
 }
+
+/* .sub_container:nth-child(1)::after{
+    position: absolute;
+    content: '';
+    clip-path: path("M0,160L60,180C120,200,240,240,360,220C480,200,600,160,720,160C840,160,960,200,1080,200C1200,200,1320,160,1380,140L1440,120L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z");;
+    background-color: red;
+    width: 100%;
+    z-index: 2;
+
+} */
 
 /* 
 @keyframes sublinhaTitulo {
@@ -176,8 +189,8 @@
     padding-bottom: 5vw;
 
 
-  
- 
+
+
 
     /* Titulo Nome - div que engloba rede sociais e sub titulos */
     &>div:nth-child(1) {
@@ -192,7 +205,7 @@
 
         & h1 {
             /* filter: blur(20px); */
-    
+
             color: white;
             font-family: 'yeager', 'Times New Roman', Times, serif;
             text-transform: uppercase;
@@ -200,6 +213,7 @@
             margin-bottom: 0;
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         }
+
         /* Engloba div com sub tiutlos e menu redes */
         &>div {
 
@@ -227,12 +241,12 @@
                 display: flex;
                 cursor: pointer;
                 transition: all 0.5s cubic-bezier(0.87, -0.38, 0.3, 1.54);
-                
+
             }
 
             & div:hover {
-                transform:scale(1.2) !important;
-                
+                transform: scale(1.2) !important;
+
                 background-color: #c03654;
             }
 
@@ -242,7 +256,8 @@
         }
 
         & h2 {
-            color: rgba(128, 128, 128, 0.432);;
+            color: rgba(128, 128, 128, 0.432);
+            ;
             font-family: 'yeager', 'Times New Roman', Times, serif;
             text-transform: uppercase;
             font-size: 2vw;
@@ -293,6 +308,7 @@
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 
         }
+
         &>div {
             display: flex;
             gap: 0.3vw;
