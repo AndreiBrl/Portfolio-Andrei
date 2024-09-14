@@ -19,11 +19,27 @@ export default function Home() {
     const sub_container_1 = useRef(null)
     const tituloVermelho = useRef(null)
     const katana = useRef(null)
+
     useGSAP(() => {
 
 
 
         gsap.registerPlugin(ScrollTrigger);
+
+        // home_imgEncapuzado__aG_yE
+        gsap.to('.desenhos_sub_container_1', {
+            opacity: '70%', // Ajuste para o número total de caixas
+            ease: "none",
+            scrollTrigger: {
+                trigger: sub_container_1.current,
+                start: "top top",
+                scrub: 1,
+                end: "bottom 400px",
+                // pin:true,
+                markers: true
+
+            }
+        });
 
 
         gsap.to(tituloVermelho.current, {
@@ -52,13 +68,12 @@ export default function Home() {
                 anticipatePin: 1 // Ajuda a evitar problemas de espaçamento
             }
         });
-
-        gsap.fromTo(sub_container_1.current, 
+        gsap.fromTo(sub_container_1.current,
             {
-                clipPath: "path('M0,520L60,500C120,480,240,450,360,470C480,490,600,520,720,520C840,520,960,490,1080,490C1200,490,1320,520,1380,530L1440,540L1440,0L0,0Z')"
-            }, 
+                clipPath: "path('M0,500L60,480C120,460,240,430,360,450C480,470,600,500,720,500C840,500,960,470,1080,470C1200,470,1320,500,1380,510L1440,520L1440,0L0,0Z')"
+            },
             {
-                clipPath: "path('M0,520L60,540C120,560,240,530,360,510C480,490,600,460,720,460C840,460,960,490,1080,490C1200,490,1320,460,1380,450L1440,440L1440,0L0,0Z')",
+                clipPath: "path('M0,500L60,520C120,540,240,510,360,490C480,470,600,440,720,440C840,440,960,470,1080,470C1200,470,1320,440,1380,430L1440,420L1440,0L0,0Z')",
                 scrollTrigger: {
                     trigger: sub_container_1.current,
                     start: "top 100px",
@@ -68,9 +83,10 @@ export default function Home() {
                 }
             }
         );
-        
-        
-        
+
+
+
+
 
 
 
@@ -95,6 +111,9 @@ export default function Home() {
         const split_tituloProjetos = new SplitType('.tituloProjetos', { types: 'chars', charClass: 'tituloProjeto' })
         const nomeJapa = new SplitType('.nomeJapa', { types: 'chars', charClass: 'charJapa' })
         const subTitulo = new SplitType('.subTitulo', { types: 'chars', charClass: 'charSubTitulo' })
+
+
+
 
 
         gsap.fromTo('.tituloAndrei', {
@@ -269,21 +288,63 @@ export default function Home() {
     return (
         <div className={styles.container} >
             <div className={styles.sub_container} ref={sub_container_1}>
-                {/* <div>
-                    <Image
-                        src='/img/eu.png'
-                        alt='Logo'
-                        width={200}
-                        height={200}
-                        className={styles.imgPerfil}
-                    ></Image>
-                </div> */}
+                <div>
+
+                </div>
                 <div>
                     <Image
-                        src='/img/Aimg.png'
+                        src='/img/encapuzado.png'
                         alt='Logo'
                         width={200}
                         height={200}
+                        className={`${styles.imgEncapuzado} desenhos_sub_container_1`}
+                       
+                    ></Image>
+                    <Image
+                        src='/img/livro.png'
+                        alt='Logo'
+                        width={200}
+                        height={200}
+                        className={`${styles.imgLivro} desenhos_sub_container_1`}
+                       
+                    ></Image>
+                    <Image
+                        src='/img/mochila.png'
+                        alt='Logo'
+                        width={200}
+                        height={200}
+                        className={`${styles.imgMochila} desenhos_sub_container_1`}
+                       
+                    ></Image>
+                    <Image
+                        src='/img/espada.png'
+                        alt='Logo'
+                        width={200}
+                        height={200}
+                        className={`${styles.imgEspada} desenhos_sub_container_1`}
+                       
+                    ></Image>
+                    <Image
+                        src='/img/tela.png'
+                        alt='Logo'
+                        width={200}
+                        height={200}
+                        className={`${styles.imgTela} desenhos_sub_container_1`}
+                       
+                    ></Image>
+                    <Image
+                       
+                        src='/img/celular.png'
+                        alt='Logo'
+                        width={100}
+                        height={150}
+                        className={`${styles.imgCelular} desenhos_sub_container_1`}
+                    ></Image>
+                    <Image
+                        src='/img/men.jpeg'
+                        alt='Logo'
+                        width={300}
+                        height={300}
                         className={styles.aImg}
                     ></Image>
                     <div>
