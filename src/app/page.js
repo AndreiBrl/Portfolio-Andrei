@@ -28,7 +28,7 @@ export default function Home() {
 
         // home_imgEncapuzado__aG_yE
         gsap.to('.desenhos_sub_container_1', {
-            opacity: '70%', // Ajuste para o número total de caixas
+            opacity: '80%', // Ajuste para o número total de caixas
             ease: "none",
             scrollTrigger: {
                 trigger: sub_container_1.current,
