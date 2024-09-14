@@ -293,7 +293,7 @@ export default function Home() {
                 </div>
                 <div>
                     <Image
-                        src='/img/encapuzado.png'
+                        src='/encapuzado.png'
                         alt='Logo'
                         width={200}
                         height={200}
