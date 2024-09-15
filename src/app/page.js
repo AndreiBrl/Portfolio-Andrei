@@ -15,10 +15,11 @@ gsap.registerPlugin(useGSAP);
 
 export default function Home() {
 
-    // animacao titulo vermelho no primeiro sub_container e katana
+    // animacao titulo vermelho no primeiro sub_container 
     const sub_container_1 = useRef(null)
     const tituloVermelho = useRef(null)
-    const katana = useRef(null)
+    
+
 
     useGSAP(() => {
 
@@ -27,19 +28,19 @@ export default function Home() {
         gsap.registerPlugin(ScrollTrigger);
 
         // home_imgEncapuzado__aG_yE
-        gsap.to('.desenhos_sub_container_1', {
-            opacity: '80%', // Ajuste para o número total de caixas
-            ease: "none",
-            scrollTrigger: {
-                trigger: sub_container_1.current,
-                start: "top top",
-                scrub: 1,
-                end: "bottom 400px",
-                // pin:true,
-                markers: true
+        // gsap.to('.desenhos_sub_container_1', {
+        //     opacity: '80%', // Ajuste para o número total de caixas
+        //     ease: "none",
+        //     scrollTrigger: {
+        //         trigger: sub_container_1.current,
+        //         start: "top top",
+        //         scrub: 1,
+        //         end: "bottom 400px",
+        //         // pin:true,
+        //         markers: true
 
-            }
-        });
+        //     }
+        // });
 
 
         gsap.to(tituloVermelho.current, {
@@ -54,20 +55,7 @@ export default function Home() {
                 anticipatePin: 1 // Ajuda a evitar problemas de espaçamento
             }
         });
-        gsap.to(katana.current, {
-            opacity: 1,
-            left: "45vw", // Ajuste para o número total de caixas
-            ease: "none",
 
-            scrollTrigger: {
-                trigger: sub_container_1.current,
-                start: "top 100px",
-
-                scrub: 1,
-                end: "bottom 50px", // Define o ponto final com base na largura total do conteúdo
-                anticipatePin: 1 // Ajuda a evitar problemas de espaçamento
-            }
-        });
         gsap.fromTo(sub_container_1.current,
             {
                 clipPath: "path('M0,500L60,480C120,460,240,430,360,450C480,470,600,500,720,500C840,500,960,470,1080,470C1200,470,1320,500,1380,510L1440,520L1440,0L0,0Z')"
@@ -309,11 +297,11 @@ export default function Home() {
                        
                     ></Image>
                     <Image
-                        src='/img/mochila.png'
+                        src='/img/mochila3.png'
                         alt='Logo'
                         width={200}
                         height={200}
-                        className={`${styles.imgMochila} desenhos_sub_container_1`}
+                        className={styles.imgMochila}
                        
                     ></Image>
                     <Image
@@ -354,14 +342,7 @@ export default function Home() {
                         </div>
                         <p>Aqui compartilho todas as minhas criações</p>
                     </div>
-                    <Image
-                        ref={katana}
-                        src='/img/katana.png'
-                        alt='Logo'
-                        width={200}
-                        height={200}
-                        className={styles.katana}
-                    ></Image>
+                   
                 </div>
             </div>
 

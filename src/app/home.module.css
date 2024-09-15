@@ -140,7 +140,8 @@
     right: 24vw;
     top: -5vw;
     opacity: 0;
-
+    animation: desenhoAparece 1s  cubic-bezier(0.33, 0, 0.67, 1) both ;
+    animation-delay: 800ms;
 }
 
 .imgTela {
@@ -151,7 +152,8 @@
     right: 58vw;
     top: -8vw;
     opacity: 0;
-
+    animation: desenhoAparece 1s  cubic-bezier(0.33, 0, 0.67, 1) both ;
+    animation-delay: 1s;
 }
 
 .imgLivro {
@@ -162,7 +164,8 @@
     right: 38vw;
     top: 2vw;
     opacity: 0;
-
+    animation: desenhoAparece 1s  cubic-bezier(0.33, 0, 0.67, 1) both ;
+    animation-delay: 1.2s;
 }
 
 .imgEspada {
@@ -173,7 +176,8 @@
     top: -7vw;
     opacity: 0;
     transform: rotate(90deg);
-
+    animation: desenhoAparece 1s  cubic-bezier(0.33, 0, 0.67, 1) both ;
+    animation-delay: 1.4s;
 }
 
 .imgCelular {
@@ -182,48 +186,36 @@
     left: -6vw;
     width: 5vw;
     height: 8vw;
+    opacity: 0;
+    animation: desenhoAparece 1s  cubic-bezier(0.33, 0, 0.67, 1) both ;
+    animation-delay: 1.6s;
 }
 
 .imgMochila {
     position: absolute;
-    top: -2vw;
-    left: -6vw;
-    width: 5vw;
-    height: 8vw;
+    top: 18vw;
+    left: 3vw;
+    width: 8vw;
+    height: 7vw;
 }
 
-/* .aImg {
-    width: 30vw;
-    height: 30vw;
-} */
 
-.katana {
-    position: absolute;
-    width: 11vw;
-    height: 1.1vw;
-    bottom: -1vw;
-    left: 2vw;
-    opacity: 0;
-    /* animacao conflitante com GSAP */
-    /* animation: katanamove linear both;
-    animation-timeline: view(50% 40%); */
 
-}
 
-/* @keyframes katanamove {
+@keyframes desenhoAparece {
 
     0% {
         opacity: 0;
-        bottom: -1vw;
+        
     }
 
 
 
     100% {
         opacity: 1;
-        left: 45vw;
+        
     }
-} */
+}
 
 /* ----------------- Segunda sessao -------------------- */
 
