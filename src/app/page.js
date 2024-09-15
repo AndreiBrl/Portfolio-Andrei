@@ -402,7 +402,6 @@ export default function Home() {
 
                                 <h2 className='nomeJapa'>バルブト アンドレイ</h2>
                                 <h2 className='subTitulo'>Desenvolvedor Web.</h2>
-                                <h2 className='subTitulo'>Designer.</h2>
                                 <h2 className='subTitulo'>Escritor.</h2>
                             </div>
                         </div>
