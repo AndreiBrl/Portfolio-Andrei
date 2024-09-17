@@ -137,8 +137,8 @@
 
 .imgMen {
 
-    width: 20vw;
-    height: 20vw;
+    width: 27vw;
+    height: 27vw;
     opacity: 0;
     animation: desenhoAparece 1s cubic-bezier(0.33, 0, 0.67, 1) forwards;
     animation-delay: 600ms;
@@ -151,7 +151,7 @@
     height: 8vw;
     right: 24vw;
     top: -5vw;
-    opacity: 0;
+    /* opacity: 0; */
 
     animation: desenhoAparece 1s cubic-bezier(0.33, 0, 0.67, 1) forwards;
     animation-delay: 800ms;

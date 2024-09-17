@@ -283,6 +283,8 @@ export default function Home() {
             <div className={styles.sub_container} ref={sub_container_1}>
 
                 <div>
+                    {/*
+      
                     <Image
                         src='/img/encapuzado.png'
                         alt='Logo'
@@ -330,9 +332,9 @@ export default function Home() {
                         width={100}
                         height={150}
                         className={`${styles.imgCelular} desenhos_sub_container_1`}
-                    ></Image>
+                    ></Image>*/}
                     <Image
-                        src='/img/men.jpeg'
+                        src='/img/menCompleto1.png'
                         alt='Logo'
                         width={300}
                         height={300}
