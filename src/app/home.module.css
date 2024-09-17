@@ -47,7 +47,7 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    background-color: black;
+    background-color: #fcfdf5;
 }
 
 /* ----------------- Primeira sessao -------------------- */
@@ -57,7 +57,7 @@
     /* background-color: #E7E5D9; */
     position: relative;
     background-color: #fcfdf5;
-    height: 100vh;
+    height: 60vh;
     padding-left: 15vw;
     padding-top: 10vw;
     gap: 4vw;
@@ -242,7 +242,7 @@
 /* sessão dos titulos e redes  sociais */
 .sub_container_2 {
     width: 150%;
-    height:100vh;
+    height:80vh;
     position: relative;
     background-color: #000000;
     display: flex;
