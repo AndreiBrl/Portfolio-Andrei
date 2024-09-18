@@ -6,14 +6,21 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useRef, useLayoutEffect } from 'react';
 import SplitType from 'split-type'
+import { Potta_One } from 'next/font/google';
 
 gsap.registerPlugin(useGSAP);
 
 
+const potta = Potta_One({
+    subsets: ['latin'],
+    weight: ['400']
+})
 
 
 
 export default function Home() {
+
+  
 
     // animacao titulo vermelho no primeiro sub_container 
     const sub_container_1 = useRef(null)
@@ -266,7 +273,7 @@ export default function Home() {
             scrollTrigger: {
                 trigger: sub_container_2.current,
                 start: "top top",
-                pin: true,
+                pin: sub_container_2.current,
                 scrub: 1,
                 end: () => `+=${totalWidth}`, // Define o ponto final com base na largura total do conteúdo
 
@@ -353,6 +360,8 @@ export default function Home() {
             </div>
 
             <div className={styles.sub_container_2} ref={sub_container_2}>
+
+
                 <div ref={sub_container_2_div}>
                     <div className='divTitulos_menuRedes' ref={divTitulos_menuRedes}>
                         <h1 ref={titulo_Andrei}>Andrei Barbuto.</h1>
@@ -466,7 +475,7 @@ export default function Home() {
             <div className={styles.bloco1}>
 
 
-                <h1 id='tribos'>
+                <h1 id='tribos' className={potta.className}>
                     TRIBOS ANCESTRAIS
                 </h1>
             </div>
