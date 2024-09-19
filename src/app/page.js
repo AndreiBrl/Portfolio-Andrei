@@ -4,7 +4,8 @@ import Image from 'next/image'
 import { useGSAP } from "@gsap/react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useRef, useLayoutEffect } from 'react';
+import ScrollToPlugin from 'gsap/ScrollToPlugin';
+import { useRef } from 'react';
 import SplitType from 'split-type'
 import { Potta_One } from 'next/font/google';
 
@@ -20,7 +21,8 @@ const potta = Potta_One({
 
 export default function Home() {
 
-  
+
+
 
     // animacao titulo vermelho no primeiro sub_container 
     const sub_container_1 = useRef(null)
@@ -31,8 +33,24 @@ export default function Home() {
     useGSAP(() => {
 
 
+        gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
-        gsap.registerPlugin(ScrollTrigger);
+
+
+
+
+        // gsap.to(window, {
+        //     scrollTo: { y: '+=900', autoKill: false },
+        //     scrollTrigger: {
+        //         markers: true,
+        //         trigger: sub_container_1.current,
+        //         start: 'top 500px',
+        //         end: '+=600',
+        //         onEnter: () => {
+        //             console.log('Jump triggered!');
+        //         },
+        //     },
+        // });
 
         // home_imgEncapuzado__aG_yE
         // gsap.to('.desenhos_sub_container_1', {
@@ -168,18 +186,18 @@ export default function Home() {
             }
         });
 
-
+        // anima redes sociais
         gsap.timeline({
             scrollTrigger: {
                 trigger: '.divTitulos_menuRedes',
                 start: "top center",
                 scrub: 1,
-                end: "bottom 450px",
+                end: "bottom 550px",
 
             }
         })
             .fromTo('.quadroMenuRedes', {
-                x: -150,
+                x: -100,
                 opacity: 0,
             }, {
                 x: -10,
@@ -196,6 +214,7 @@ export default function Home() {
                 stagger: 0.05,
                 delay: 0.2,
                 duration: 1,
+
             })
 
 
@@ -259,7 +278,7 @@ export default function Home() {
 
             .to('.home_box__f7Voq', {
                 stagger: 0.5,
-                boxShadow: '0 0 5px white, 0 0 10px white, 0 0 15px white,0 0 20px white', // Neon intenso
+                boxShadow: '0 0 5px white, 0 0 10px white, 0 0 15px white', // Neon intenso
                 delay: 0.2,
                 duration: 1,
             });
@@ -290,56 +309,7 @@ export default function Home() {
             <div className={styles.sub_container} ref={sub_container_1}>
 
                 <div>
-                    {/*
-      
-                    <Image
-                        src='/img/encapuzado.png'
-                        alt='Logo'
-                        width={200}
-                        height={200}
-                        className={`${styles.imgEncapuzado} desenhos_sub_container_1`}
-
-                    ></Image>
-                    <Image
-                        src='/img/livro.png'
-                        alt='Logo'
-                        width={200}
-                        height={200}
-                        className={`${styles.imgLivro} desenhos_sub_container_1`}
-
-                    ></Image>
-                    <Image
-                        src='/img/mochila3.png'
-                        alt='Logo'
-                        width={200}
-                        height={200}
-                        className={styles.imgMochila}
-
-                    ></Image>
-                    <Image
-                        src='/img/espada.png'
-                        alt='Logo'
-                        width={200}
-                        height={200}
-                        className={`${styles.imgEspada} desenhos_sub_container_1`}
-
-                    ></Image>
-                    <Image
-                        src='/img/tela.png'
-                        alt='Logo'
-                        width={200}
-                        height={200}
-                        className={`${styles.imgTela} desenhos_sub_container_1`}
-
-                    ></Image>
-                    <Image
-
-                        src='/img/celular.png'
-                        alt='Logo'
-                        width={100}
-                        height={150}
-                        className={`${styles.imgCelular} desenhos_sub_container_1`}
-                    ></Image>*/}
+                    
                     <Image
                         src='/img/menCompleto1.png'
                         alt='Logo'
@@ -377,19 +347,24 @@ export default function Home() {
                                             alt='Logo'
                                             width={200}
                                             height={200}
+                                            quality={100}
                                             className={styles.menuRedesGit}
 
                                         ></Image>
                                     </a></div>
-                                <div className='quadroMenuRedes' ><Image
-                                    src='/img/wpp.png'
-                                    alt='Logo'
-                                    width={200}
-                                    height={200}
-                                    className={styles.menuRedesWpp}
-                                ></Image>
+                                <a href="/curriculo.pdf" download>
+                                    <div className='quadroMenuRedes' >
+                                        <Image
+                                            src='/img/wpp.png'
+                                            alt='Logo'
+                                            width={200}
+                                            height={200}
+                                            quality={100}
+                                            className={styles.menuRedesWpp}
+                                        ></Image>
 
-                                </div>
+                                    </div>
+                                </a>
                                 <div className='quadroMenuRedes'>
                                     <a href='https://www.linkedin.com/in/andreibarbuto/' target='blank'>
 
@@ -398,6 +373,7 @@ export default function Home() {
                                             alt='Logo'
                                             width={200}
                                             height={200}
+                                            quality={100}
                                             className={styles.menuRedesWpp}
                                         ></Image>
                                     </a>
