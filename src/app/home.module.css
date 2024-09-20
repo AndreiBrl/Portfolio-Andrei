@@ -89,6 +89,7 @@
 
     }
 
+    /* Div do titulo vermelho */
     &>div div div {
 
         width: 14.8vw;
@@ -114,28 +115,7 @@
 
 }
 
-/* .sub_container:nth-child(1)::after{
-    position: absolute;
-    content: '';
-    clip-path: path("M0,160L60,180C120,200,240,240,360,220C480,200,600,160,720,160C840,160,960,200,1080,200C1200,200,1320,160,1380,140L1440,120L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z");;
-    background-color: red;
-    width: 100%;
-    z-index: 2;
 
-} */
-
-/* 
-@keyframes sublinhaTitulo {
-
-    0% {
-        width: 14.8vw;
-    }
-
-    100% {
-        width: 30vw;
-    }
-
-} */
 
 .imgMen {
 
@@ -146,81 +126,6 @@
     animation-delay: 600ms;
 
 }
-
-.imgEncapuzado {
-    position: absolute;
-    width: 8vw;
-    height: 8vw;
-    right: 24vw;
-    top: -5vw;
-    /* opacity: 0; */
-
-    animation: desenhoAparece 1s cubic-bezier(0.33, 0, 0.67, 1) forwards;
-    animation-delay: 800ms;
-}
-
-.imgTela {
-    position: absolute;
-    width: 8vw;
-    height: 8vw;
-    height: 8vw;
-    right: 58vw;
-    top: -8vw;
-    opacity: 0;
-    animation: desenhoAparece 1s cubic-bezier(0.33, 0, 0.67, 1) forwards;
-    animation-delay: 1s;
-}
-
-.imgLivro {
-    position: absolute;
-    width: 8vw;
-    height: 8vw;
-    height: 8vw;
-    right: 38vw;
-    top: 2vw;
-    opacity: 0;
-    animation: desenhoAparece 1s cubic-bezier(0.33, 0, 0.67, 1) forwards;
-    animation-delay: 1.2s;
-}
-
-.imgEspada {
-    position: absolute;
-    width: 5vw;
-    height: 24vw;
-    right: 58vw;
-    top: -7vw;
-    opacity: 0;
-    transform: rotate(90deg);
-    animation: desenhoAparece 1s cubic-bezier(0.33, 0, 0.67, 1) forwards;
-    animation-delay: 1.4s;
-    z-index: 2;
-}
-
-.imgCelular {
-    position: absolute;
-    top: -2%;
-    left: -6%;
-    width: 5vw;
-    height: 8vw;
-    opacity: 0;
-    animation: desenhoAparece 1s cubic-bezier(0.33, 0, 0.67, 1) forwards;
-    animation-delay: 1.6s;
-}
-
-.imgMochila {
-    position: absolute;
-    top: 68%;
-    left: 1%;
-    width: 8vw;
-    height: 7vw;
-    z-index: 2;
-    animation: desenhoAparece 1s cubic-bezier(0.33, 0, 0.67, 1) forwards;
-    animation-delay: 600ms;
-    opacity: 0;
-
-}
-
-
 
 
 @keyframes desenhoAparece {
@@ -354,8 +259,8 @@
     }
 
     .menuRedesGit {
-        width: 4vw;
-        height: 4vw;
+        width: 3vw;
+        height: 3vw;
     }
 
     .menuRedesWpp {
@@ -486,14 +391,14 @@
     opacity: 0;
     height: 0;
     overflow: hidden;
-    transition: all 1s ease;
+    transition: all 0.7s ease;
 
     &>h1 {
         font-size: 1vw;
         color: white;
         font-family: 'geist';
         opacity: 0;
-        transition: all 0.7s ease .5s;
+        transition: all 1s ease .5s;
     }
 }
 
@@ -591,21 +496,179 @@
 
 
 
-
-
-.testeBox {
-    width: 100vw;
-    /* Largura de cada caixa */
-    height: 100%;
-    /* Altura de cada caixa */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-}
-
-.bloco1 {
+.sub_container_3 {
     height: 100vh;
     width: 100vw;
     background-color: #f2e3d0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &>h1 {
+        color: #5a4432;
+
+    }
+
+    &>div {
+        display: flex;
+        gap: 3vw;
+
+    }
+
+}
+
+.infosGeraisTribos {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+
+    /* pega div que engloba introdução e concepção */
+    &>div:nth-of-type(2) {
+        display: flex;
+        gap: 1vw;
+        width: 100%;
+    }
+}
+
+.projetoTribos {
+    width: 100%;
+    padding: .5vw 0vw .5vw 0vw;
+    height: 4vw;
+    border-radius: 10px;
+    background-color: #594431;
+    color: white;
+    font-size: 1.3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.introTribos {
+    background-color: #967151;
+    border-radius: 10px;
+    padding: 1vw;
+
+}
+
+.concepTribos {
+    background-color: #967151;
+    border-radius: 10px;
+    padding: 1vw;
+}
+
+.tecTribos {
+
+    background-color: #a6b78e;
+    border-radius: 10px;
+    padding: 1vw;
+
+    &>div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+    }
+}
+
+.tribosImg {
+    width: 30vw;
+    height: 30vw;
+    border-radius: 20px;
+    box-shadow: 0 0 5px #8d8d8d, 0 0 10px #8d8d8d;
+
+
+}
+
+/* ############################ */
+/* ######## MOBILE ############ */
+/* ############################ */
+
+@media (max-width: 768px) {
+
+    .sub_container:nth-child(1) {
+        width: 100%;
+        padding: 0 !important;
+        /* background-color: #E7E5D9; */
+        position: relative;
+        background-color: #fcfdf5;
+        height: 100vh;
+        /* clip-path: path("M0,500L60,480C120,460,240,420,360,440C480,460,600,500,720,500C840,500,960,460,1080,460C1200,460,1320,500,1380,520L1440,540L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"); */
+
+
+
+        &>div {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            gap: 4vw;
+            padding: 1vw;
+            flex-direction: column-reverse;
+
+
+
+        }
+
+        /* div intermediaria que contem tanto titulo e subtitulo */
+        &>div div {
+            width: 100%;
+            margin-left: 7vw;
+
+
+        }
+
+       
+
+        &>div div div {
+
+            width: 40vw;
+            border-radius: 2px;
+            padding-left: 0.5vw;
+            background-color: #c03654;
+            animation: desenhoAparece 1s cubic-bezier(0.33, 0, 0.67, 1) forwards;
+            animation-delay: 600ms;
+            opacity: 0;
+            /* animação em conflito com blibioteca GSAP */
+            /* animation:  sublinhaTitulo linear both;
+            animation-timeline: view(5% 5%); */
+
+        }
+        & h1 {
+            width: 100vw;
+            font-size: 6.5vw;
+            font-family: 'geist';
+            text-transform: uppercase;
+            background-color: transparent;
+            animation: desenhoAparece 1s cubic-bezier(0.33, 0, 0.67, 1) forwards;
+            animation-delay: 600ms;
+            opacity: 0;
+
+
+        }
+
+        & p {
+            font-size: 3.5vw;
+            animation: desenhoAparece 1s cubic-bezier(0.33, 0, 0.67, 1) forwards;
+            animation-delay: 600ms;
+            opacity: 0;
+            margin-left: 7vw;
+
+        }
+
+    }
+
+    .imgMen {
+
+        width: 70vw;
+        height: 70vw;
+        opacity: 0;
+        animation: desenhoAparece 1s cubic-bezier(0.33, 0, 0.67, 1) forwards;
+        animation-delay: 600ms;
+
+    }
+
+
 }
