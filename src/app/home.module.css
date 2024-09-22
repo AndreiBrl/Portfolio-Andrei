@@ -21,6 +21,15 @@
 }
 
 @font-face {
+    font-family: 'yeagerLight';
+    src: url('/fontes/Yeager/Yeager-Light.otf') format('opentype');
+
+    /* url('fonts/MyCustomFont.otf') format('opentype'); */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'kouzan';
     src: url('/fontes/jap/kouzan.otf') format('opentype');
     /* url('fonts/MyCustomFont.otf') format('opentype'); */
@@ -496,10 +505,47 @@
 
 
 
+/* background:
+        linear-gradient(to right,
+            #3f2a1a 0%,
+            #352621 25%,
+            #2b2322 50%,
+            #242021 75%,
+            #1f1f1f 100%),
+        repeating-radial-gradient(circle at 0 0,
+            rgba(255, 255, 255, 0.03),
+            rgba(255, 255, 255, 0.03) 1px,
+            transparent 1px,
+            transparent 100%); */
+
+
 .sub_container_3 {
     height: 100vh;
     width: 100vw;
-    background-color: #f2e3d0;
+    background-color: black;
+
+    /* background: linear-gradient(to right, 
+
+    #64301a 0%,  
+    #3f2a1a 40%,  
+    #1f1f1f 100%  
+); */
+
+    /* background:
+        linear-gradient(to right,
+            #3f2a1a 0%,
+            #352621 25%,
+            #2b2322 50%,
+            #242021 75%,
+            #1f1f1f 100%),
+        repeating-radial-gradient(circle at 0 0,
+            rgba(255, 255, 255, 0.03),
+            rgba(255, 255, 255, 0.03) 1px,
+            transparent 1px,
+            transparent 100%); */
+
+
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -524,51 +570,82 @@
     justify-content: center;
     align-items: center;
     width: 40vw;
+    /* display: none; */
 
     /* pega div que engloba introdução e concepção */
     &>div:nth-of-type(2) {
         display: flex;
         gap: 1vw;
         width: 100%;
+
     }
 }
 
 .projetoTribos {
     width: 100%;
-    padding: .5vw 0vw .5vw 0vw;
-    height: 4vw;
     border-radius: 10px;
-    background-color: #594431;
-    color: white;
-    font-size: 1.3vw;
+    /* background-color: #594431; */
+    color: #F5F5DC;
+    font-size: 1.8vw;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    /* align-items: left; */
+    flex-direction: column;
+    font-family: 'geist';
+
+    &>h6 {
+        color: #F5F5DC;
+        font-size: 1vw;
+        font-family: 'yeagerLight';
+        margin: 0;
+        padding: 0;
+
+    }
 }
 
 .introTribos {
-    background-color: #967151;
+    /* background-color: #967151; */
     border-radius: 10px;
     padding: 1vw;
+    color: black;
+
+    &>p {
+
+        color: #F5F5DC;
+    }
 
 }
 
 .concepTribos {
-    background-color: #967151;
+    color: #D4AF37;
+    /* background-color: #967151; */
     border-radius: 10px;
     padding: 1vw;
+    font-size: 1vw;
+
+    &>p {
+
+        width: 27vw;
+        /* text-align: center; */
+        font-size: .9vw;
+        color: #F5F5DC;
+    }
 }
 
 .tecTribos {
 
-    background-color: #a6b78e;
+    color: #D4AF37;
     border-radius: 10px;
-    padding: 1vw;
 
     &>div {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        text-align: center;
+        text-align: left;
+
+        &>p {
+            color: #F5F5DC;
+            margin: 0;
+        }
     }
 }
 
@@ -576,9 +653,10 @@
     width: 30vw;
     height: 30vw;
     border-radius: 20px;
-    box-shadow: 0 0 5px #8d8d8d, 0 0 10px #8d8d8d;
+    transform: rotateY(180deg);
+    /* box-shadow: 0 0 5px #8d8d8d, 0 0 10px #8d8d8d; */
 
-
+    /* display: none; */
 }
 
 /* ############################ */
@@ -620,7 +698,7 @@
 
         }
 
-       
+
 
         &>div div div {
 
@@ -636,6 +714,7 @@
             animation-timeline: view(5% 5%); */
 
         }
+
         & h1 {
             width: 100vw;
             font-size: 6.5vw;
