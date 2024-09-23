@@ -750,4 +750,355 @@
     }
 
 
+    /* ----------------- Segunda sessao -------------------- */
+
+
+    /* sessão dos titulos e redes  sociais */
+    .sub_container_2 {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        background-color: #000000;
+
+    }
+
+    .sub_container_2>div {
+
+
+        display: flex;
+        justify-content: unset;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        /* overflow-x: hidden; */
+      
+
+
+
+
+
+
+        /* Titulo Nome - div que engloba rede sociais e sub titulos */
+        &>div:nth-child(1) {
+
+            height: 30vh;
+            display: flex;
+            flex-direction: column;
+            margin-top: 0;
+            
+
+
+            & h1 {
+                /* filter: blur(20px); */
+
+                color: white;
+                font-family: 'yeager', 'Times New Roman', Times, serif;
+                text-transform: uppercase;
+                font-size: 10vw;
+                margin: 0;
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            }
+
+            /* Engloba div com sub tiutlos e menu redes */
+            &>div {
+
+                width: 70%;
+                display: flex;
+                justify-content: space-between;
+                /* flex-direction: column; */
+            }
+
+
+            /* div menu rede sociais */
+            &>div>div:nth-child(1) {
+                border-radius: 5px;
+                display: grid;
+                grid-template-columns: 5vw 5vw 5vw;
+                gap: 0.2vw;
+                perspective: 500px;
+
+                & div {
+                    border-radius: 5px;
+                    width: 10vw;
+                    height: 10vw;
+                    background-color: #0D1117;
+                    justify-content: center;
+                    align-items: center;
+                    display: flex;
+                    cursor: pointer;
+                    transition: all 0.5s cubic-bezier(0.87, -0.38, 0.3, 1.54);
+
+                }
+
+                & div:hover {
+                    transform: scale(1.2) !important;
+
+                    background-color: #c03654;
+                }
+
+
+
+
+            }
+
+            & h2 {
+                color: rgba(128, 128, 128, 0.432);
+                ;
+                font-family: 'yeager', 'Times New Roman', Times, serif;
+                text-transform: uppercase;
+                font-size: 2vw;
+                margin: 0;
+                padding: 0;
+
+
+                /* animation: moveTitle linear both;
+            animation-timeline: view(block 70% 10%); */
+            }
+
+            & h2:nth-of-type(1) {
+                color: rgba(128, 128, 128, 0.432);
+
+            }
+
+        }
+
+        .menuRedesGit {
+            width: 3vw;
+            height: 3vw;
+        }
+
+        .menuRedesWpp {
+            width: 2vw;
+            height: 2vw;
+        }
+
+
+        /* div dos projetos */
+        &>div:nth-of-type(2) {
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            gap: 0.2vw;
+            /* justify-content: center; */
+            /* align-items: center; */
+            flex-direction: column;
+            margin: 0;
+
+
+
+
+            /* estilo titulo projetos */
+            &>h1 {
+
+                color: white;
+                font-family: 'yeager', 'Times New Roman', Times, serif;
+                text-transform: uppercase;
+                font-size: 10vw;
+                margin-bottom: 0;
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+            }
+
+            &>div {
+                display: flex;
+                margin-left: 3.5vw;
+                /* justify-content: center;
+            align-self: center; */
+            }
+
+
+        }
+
+        &>div:nth-of-type(2):hover .box {
+            filter: grayscale(1);
+        }
+
+        &>div:nth-of-type(2):hover .box:hover {
+
+            width: 14vw;
+            /* Increase the width of the box */
+            /* height: 17vw; */
+            /* Maintain the height of the box */
+            /* transform: scale(1.5);  */
+            filter: grayscale(0);
+            /* clip-path: polygon(100% 25.3%, 100% 40%, 100% 55%, 100% 74.3%, 100% 100%, 0% 100%, 0% 0%, 100% 0%, 100% 12.3%) !important; */
+
+
+        }
+    }
+
+    .box {
+        width: 6vw;
+        height: 15vw;
+        /* overflow: hidden; */
+        /* Hide the overflow of the image */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.6s cubic-bezier(0.87, -0.38, 0.3, 1.54);
+        /* clip-path: polygon(100% 25.3%, 100% 40%, 100% 55%, 100% 74.3%, 100% 100%, 0% 100%, 0% 0%, 100% 0%, 100% 12.3%) !important; */
+        position: relative;
+        border-radius: 5px;
+        cursor: pointer;
+        /* animation: showMenu linear both;
+    animation-timeline: view(block 70% 10%); */
+    }
+
+    .boxImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin: 5vw;
+        border-radius: 5px;
+
+    }
+
+    .box::after,
+    .box::before {
+        content: 'bb';
+        width: 100%;
+        height: 100%;
+        transition: all 0.6s cubic-bezier(0.87, -0.38, 0.3, 1.54);
+        z-index: -1;
+        position: absolute;
+    }
+
+    .box:hover::after,
+    .box:hover::before {
+        --ang-angle: 0deg;
+        /* background-image: conic-gradient(from var(--ang-angle), var(--cor-color), #0000ff); */
+        /* background-color: white; */
+        animation: rotacao 3s linear infinite;
+        z-index: -1;
+        border-radius: inherit;
+        padding: 1px;
+        /* box-sizing: unset; */
+    }
+
+    .box:nth-child(3):hover::after,
+    .box:nth-child(3):hover::before {
+
+        /* background-color: white !important; */
+
+    }
+
+    .box:hover::after {
+        filter: blur(10px);
+    }
+
+    .infoProjetos {
+        position: absolute;
+        background-color: #0000009e;
+        bottom: 0;
+        padding-left: .5vw;
+        width: 97%;
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.7s ease;
+
+        &>h1 {
+            font-size: 1vw;
+            color: white;
+            font-family: 'geist';
+            opacity: 0;
+            transition: all 1s ease .5s;
+        }
+    }
+
+    .box:hover .infoProjetos {
+        height: 5vw;
+        opacity: 1;
+        overflow: visible;
+    }
+
+    .box:hover .infoProjetos h1 {
+
+        opacity: 1;
+
+    }
+
+    @keyframes moveTitle {
+
+        0% {
+            opacity: 0;
+            -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+
+        }
+
+
+
+
+        100% {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+
+
+        }
+    }
+
+    @keyframes changeBlur {
+        0% {
+            filter: blur(20px);
+
+
+        }
+
+        100% {
+
+            filter: blur(0px);
+
+        }
+    }
+
+    @keyframes scaleRedeSociais {
+        0% {
+            opacity: 0;
+            -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+
+
+        }
+
+        100% {
+            opacity: 1;
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+
+        }
+    }
+
+    @keyframes rotacao {
+        to {
+            --ang-angle: 360deg;
+        }
+    }
+
+    @keyframes showMenu {
+        0% {
+            /* opacity: 0; */
+            -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+
+        }
+
+
+
+
+        100% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+
+
+        }
+
+
+    }
+
+
+
 }

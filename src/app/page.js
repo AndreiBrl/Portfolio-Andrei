@@ -247,77 +247,145 @@ export default function Home() {
 
 
         // animacao div projetos
-        gsap.fromTo('.tituloProjeto', {
-            y: 50,
-            opacity: 0
-        }, {
-            y: -10,
-            opacity: 1,
-            stagger: 0.05,
-            delay: 0.2,
-            ease: "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
-            scrollTrigger: {
-                trigger: '.projetos',
-                start: "bottom -500px",
-                scrub: 1,
-                end: "bottom -800px",
+        gsap.matchMedia().add("(min-width: 769px)", () => {
 
-            }
-        });
-
-
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: '.projetos',
-                start: "bottom -500px",
-                scrub: 1,
-                end: "bottom 800px",
-
-            }
-        })
-            .fromTo('.home_box__f7Voq', {
-                x: -50,
-                opacity: 0,
+            gsap.fromTo('.tituloProjeto', {
+                y: 50,
+                opacity: 0
             }, {
-                x: -10,
-                stagger: 0.09,
-                delay: 0.2,
-
-                stagger: 0.1,
+                y: -10,
+                opacity: 1,
+                stagger: 0.05,
                 delay: 0.2,
                 ease: "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
-            })
-            .to('.home_box__f7Voq', {
-                x: 20,
-                opacity: 1,
-                stagger: 0.09,
-                delay: 0.2,
-                duration: 1,
-            })
+                scrollTrigger: {
+                    trigger: '.projetos',
+                    start: "bottom -500px",
+                    scrub: 1,
+                    end: "bottom -800px",
 
-
-            .to('.home_box__f7Voq', {
-                stagger: 0.5,
-                boxShadow: '0 0 5px white, 0 0 10px white, 0 0 15px white', // Neon intenso
-                delay: 0.2,
-                duration: 1,
+                }
             });
 
 
-        // home_box__f7Voq
-        const totalWidth = sub_container_2.current.offsetWidth;
-        gsap.to(sub_container_2_div.current, {
-            xPercent: -55, // Ajuste para o número total de caixas
-            ease: "none",
-            scrollTrigger: {
-                trigger: sub_container_2.current,
-                start: "top top",
-                pin: sub_container_2.current,
-                scrub: 1,
-                end: () => `+=${totalWidth}`, // Define o ponto final com base na largura total do conteúdo
 
-            }
-        });
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.projetos',
+                    start: "bottom -500px",
+                    scrub: 1,
+                    end: "bottom 800px",
+
+                }
+            })
+                .fromTo('.home_box__f7Voq', {
+                    x: -50,
+                    opacity: 0,
+                }, {
+                    x: -10,
+                    stagger: 0.09,
+                    delay: 0.2,
+
+                    stagger: 0.1,
+                    delay: 0.2,
+                    ease: "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
+                })
+                .to('.home_box__f7Voq', {
+                    x: 20,
+                    opacity: 1,
+                    stagger: 0.09,
+                    delay: 0.2,
+                    duration: 1,
+                })
+
+
+                .to('.home_box__f7Voq', {
+                    stagger: 0.5,
+                    boxShadow: '0 0 5px white, 0 0 10px white, 0 0 15px white', // Neon intenso
+                    delay: 0.2,
+                    duration: 1,
+                });
+
+        })
+        // animacao div projetos
+        gsap.matchMedia().add("(max-width: 769px)", () => {
+
+            gsap.fromTo('.tituloProjeto', {
+                y: 50,
+                opacity: 0
+            }, {
+                y: -10,
+                opacity: 1,
+                stagger: 0.05,
+                delay: 0.2,
+                ease: "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
+                scrollTrigger: {
+                    trigger: '.projetos',
+                    start: "top center",
+                    scrub: 1,
+                    end: "bottom 300px",
+
+                }
+            });
+
+
+
+            gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.projetos',
+                    start: "top center",
+                    scrub: 1,
+                    end: "bottom 300px",
+
+                }
+            })
+                .fromTo('.home_box__f7Voq', {
+                    x: -50,
+                    opacity: 0,
+                }, {
+                    x: -10,
+                    stagger: 0.09,
+                    delay: 0.2,
+
+                    stagger: 0.1,
+                    delay: 0.2,
+                    ease: "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
+                })
+                .to('.home_box__f7Voq', {
+                    x: 20,
+                    opacity: 1,
+                    stagger: 0.09,
+                    delay: 0.2,
+                    duration: 1,
+                })
+
+
+                .to('.home_box__f7Voq', {
+                    stagger: 0.5,
+                    boxShadow: '0 0 5px white, 0 0 10px white, 0 0 15px white', // Neon intenso
+                    delay: 0.2,
+                    duration: 1,
+                });
+
+        })
+
+        
+        gsap.matchMedia().add("(min-width: 769px)", () => {
+            // home_box__f7Voq
+            const totalWidth = sub_container_2.current.offsetWidth;
+            gsap.to(sub_container_2_div.current, {
+                xPercent: -55, // Ajuste para o número total de caixas
+                ease: "none",
+                scrollTrigger: {
+                    trigger: sub_container_2.current,
+                    start: "top top",
+                    pin: sub_container_2.current,
+                    scrub: 1,
+                    end: () => `+=${totalWidth}`, // Define o ponto final com base na largura total do conteúdo
+
+                }
+            });
+        })
 
     }, []);
 
