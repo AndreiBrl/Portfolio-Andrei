@@ -759,6 +759,9 @@
         height: 100vh;
         position: relative;
         background-color: #000000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
     }
 
@@ -768,13 +771,14 @@
         display: flex;
         justify-content: unset;
         width: 100%;
-        height: 100%;
+        height: fit-content;
         align-items: center;
         flex-direction: column;
         padding: 0;
         margin: 0;
+        gap: 20vw;
         /* overflow-x: hidden; */
-      
+
 
 
 
@@ -784,11 +788,11 @@
         /* Titulo Nome - div que engloba rede sociais e sub titulos */
         &>div:nth-child(1) {
 
-            height: 30vh;
+            height: fit-content;
             display: flex;
             flex-direction: column;
             margin-top: 0;
-            
+
 
 
             & h1 {
@@ -805,7 +809,7 @@
             /* Engloba div com sub tiutlos e menu redes */
             &>div {
 
-                width: 70%;
+                width: 90%;
                 display: flex;
                 justify-content: space-between;
                 /* flex-direction: column; */
@@ -814,10 +818,11 @@
 
             /* div menu rede sociais */
             &>div>div:nth-child(1) {
+                width: fit-content;
                 border-radius: 5px;
                 display: grid;
-                grid-template-columns: 5vw 5vw 5vw;
-                gap: 0.2vw;
+                grid-template-columns: 10vw 10vw 10vw;
+                gap: 1vw;
                 perspective: 500px;
 
                 & div {
@@ -846,10 +851,9 @@
 
             & h2 {
                 color: rgba(128, 128, 128, 0.432);
-                ;
                 font-family: 'yeager', 'Times New Roman', Times, serif;
                 text-transform: uppercase;
-                font-size: 2vw;
+                font-size: 4vw;
                 margin: 0;
                 padding: 0;
 
@@ -866,27 +870,26 @@
         }
 
         .menuRedesGit {
-            width: 3vw;
-            height: 3vw;
+            width: 6vw;
+            height: 6vw;
         }
 
         .menuRedesWpp {
-            width: 2vw;
-            height: 2vw;
+            width: 4vw;
+            height: 4vw;
         }
 
 
         /* div dos projetos */
         &>div:nth-of-type(2) {
-            width: fit-content;
+            width: 100%;
             height: fit-content;
             display: flex;
             gap: 0.2vw;
-            /* justify-content: center; */
-            /* align-items: center; */
+            justify-content: center;
+            align-items: center;
             flex-direction: column;
             margin: 0;
-
 
 
 
@@ -905,8 +908,9 @@
             &>div {
                 display: flex;
                 margin-left: 3.5vw;
-                /* justify-content: center;
-            align-self: center; */
+                justify-content: center;
+                align-self: center;
+                width: 100%;
             }
 
 
@@ -918,7 +922,7 @@
 
         &>div:nth-of-type(2):hover .box:hover {
 
-            width: 14vw;
+            width: 20vw;
             /* Increase the width of the box */
             /* height: 17vw; */
             /* Maintain the height of the box */
@@ -931,8 +935,8 @@
     }
 
     .box {
-        width: 6vw;
-        height: 15vw;
+        width: 12vw;
+        height: 30vw;
         /* overflow: hidden; */
         /* Hide the overflow of the image */
         display: flex;
