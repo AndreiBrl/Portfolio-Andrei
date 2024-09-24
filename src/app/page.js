@@ -68,8 +68,9 @@ export default function Home() {
                     start: "top top",
                     pin: true,
                     scrub: 1,
-                    end: "bottom 200px",
-                    anticipatePin: 1
+                    end: "bottom 800px",
+                    anticipatePin: 1,
+                    markers:true
                 }
             });
         });
