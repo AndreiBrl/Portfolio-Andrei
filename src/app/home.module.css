@@ -766,7 +766,7 @@
 
             & h1 {
                 /* filter: blur(20px); */
-
+                padding-top: 2vw;
                 color: white;
                 font-family: 'yeager', 'Times New Roman', Times, serif;
                 text-transform: uppercase;
