@@ -360,7 +360,8 @@ export default function Home() {
     const  animationRef = useRef()
     const element = animationRef.current;
     useEffect(() => {
-  
+        console.log('arrastou');
+        
       const handleTouchStart = (e) => {
         setStartX(e.touches[0].clientX); // Pega a posição inicial do toque
       };
@@ -374,6 +375,9 @@ export default function Home() {
   
         if (deltaX > 50) {
           // Swipe para a direita
+          console.log(deltaX);
+          console.log('AE AE');
+          
           gsap.to(element, { x: 200, duration: 1 });
         } else if (deltaX < -50) {
           // Swipe para a esquerda
