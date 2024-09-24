@@ -851,7 +851,7 @@
 
         /* div dos projetos */
         &>div:nth-of-type(2) {
-            width: 100%;
+            width: 100% !important;
             height: fit-content;
             display: flex;
             gap: 0.2vw;
@@ -966,8 +966,7 @@
         height: 0;
         overflow: hidden;
         transition: all 0.7s ease;
-        animation: infoTeste 3s linear infinite;
-        /* animation-timeline: view(70% 5%); */
+
 
         &>h1 {
             font-size: 1vw;
@@ -978,20 +977,7 @@
         }
     }
 
-    @keyframes infoTeste {
-
-        from{
-            opacity: 0;
-            overflow: hidden;
-            height: 0;
-        }
-        to{
-            height: 20vw;
-            opacity: 1;
-            overflow: visible;
-        }
-        
-    }
+  
     .box:hover .infoProjetos {
         height: 0vw;
         opacity: 0;

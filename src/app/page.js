@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useGSAP } from "@gsap/react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useRef } from 'react';
+import { useRef,useEffect,useState } from 'react';
 import SplitType from 'split-type'
 import { Potta_One } from 'next/font/google';
 
@@ -355,6 +355,50 @@ export default function Home() {
     }, []);
 
 
+    const [startX, setStartX] = useState(0);
+    const [endX, setEndX] = useState(0);
+  
+    const element = animationRef.current;
+    useEffect(() => {
+  
+      const handleTouchStart = (e) => {
+        setStartX(e.touches[0].clientX); // Pega a posição inicial do toque
+      };
+  
+      const handleTouchEnd = (e) => {
+        setEndX(e.changedTouches[0].clientX); // Pega a posição final do toque
+      };
+  
+      const handleSwipe = () => {
+        const deltaX = endX - startX;
+  
+        if (deltaX > 50) {
+          // Swipe para a direita
+          gsap.to(element, { x: 200, duration: 1 });
+        } else if (deltaX < -50) {
+          // Swipe para a esquerda
+          gsap.to(element, { x: -200, duration: 1 });
+        }
+      };
+  
+      if (element) {
+        element.addEventListener('touchstart', handleTouchStart);
+        element.addEventListener('touchend', handleTouchEnd);
+      }
+  
+      // Verifica se houve um swipe após o touchend
+      handleSwipe();
+  
+      return () => {
+        // Remove os event listeners na desmontagem do componente
+        if (element) {
+          element.removeEventListener('touchstart', handleTouchStart);
+          element.removeEventListener('touchend', handleTouchEnd);
+        }
+      };
+    }, [endX, startX]); // Re-executa o efeito quando startX ou endX mudarem
+  
+
     // animacoes subcontainer 3
     
     useGSAP(() => {
@@ -590,7 +634,7 @@ export default function Home() {
                                 >
 
                                 </Image>
-                                <div className={styles.infoProjetos}>
+                                <div ref={animationRef} className={styles.infoProjetos}>
                                     <h1>teste</h1>
                                 </div>
                             </div>
