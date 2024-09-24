@@ -298,7 +298,7 @@ export default function Home() {
                     start: "top center",
                     scrub: 1,
                     end: "top 300px",
-                    markers:true
+                    
 
                 }
             });
@@ -322,23 +322,9 @@ export default function Home() {
                     opacity:1,
                     stagger: 0.1,
                     delay: 0.2,
-                    ease: "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
+                    ease: "none",
                 })
-                // .to('.home_box__f7Voq', {
-                //     x: 20,
-                //     opacity: 1,
-                //     stagger: 0.09,
-                //     delay: 0.2,
-                //     duration: 1,
-                // })
-
-
-                // .to('.home_box__f7Voq', {
-                //     stagger: 0.5,
-                //     boxShadow: '0 0 5px white, 0 0 10px white, 0 0 15px white', // Neon intenso
-                //     delay: 0.2,
-                //     duration: 1,
-                // });
+           
 
         })
 

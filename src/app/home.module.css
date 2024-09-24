@@ -873,6 +873,7 @@
                 clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
                 text-align: center;
                 width: 100%;
+                background-color: red;
 
             }
 
@@ -909,7 +910,7 @@
         position: relative;
         border-radius: 44vw;
         cursor: pointer;
-        padding: 1vw;
+        
     }
 
     .boxImage {
