@@ -357,7 +357,7 @@ export default function Home() {
 
     const [startX, setStartX] = useState(0);
     const [endX, setEndX] = useState(0);
-  
+    const  animationRef = useRef()
     const element = animationRef.current;
     useEffect(() => {
   

@@ -730,12 +730,13 @@
         align-items: center;
         justify-content: center;
         padding-top: 20vw;
+        background-color: red;
 
     }
 
     .sub_container_2>div {
 
-
+        background-color: blue;
         display: flex;
         justify-content: unset;
         width: 100%;
@@ -851,7 +852,7 @@
 
         /* div dos projetos */
         &>div:nth-of-type(2) {
-            width: 100% !important;
+            width: 100% ;
             height: fit-content;
             display: flex;
             gap: 0.2vw;
@@ -859,7 +860,7 @@
             align-items: center;
             flex-direction: column;
             margin: 0;
-            background-color: blue;
+
 
 
 
