@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { useGSAP } from "@gsap/react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import ScrollToPlugin from 'gsap/ScrollToPlugin';
 import { useRef } from 'react';
 import SplitType from 'split-type'
 import { Potta_One } from 'next/font/google';
@@ -34,39 +33,13 @@ export default function Home() {
     useGSAP(() => {
 
 
-        gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
+        gsap.registerPlugin(ScrollTrigger);
 
 
 
 
 
-        // gsap.to(window, {
-        //     scrollTo: { y: '+=900', autoKill: false },
-        //     scrollTrigger: {
-        //         markers: true,
-        //         trigger: sub_container_1.current,
-        //         start: 'top 500px',
-        //         end: '+=600',
-        //         onEnter: () => {
-        //             console.log('Jump triggered!');
-        //         },
-        //     },
-        // });
 
-        // home_imgEncapuzado__aG_yE
-        // gsap.to('.desenhos_sub_container_1', {
-        //     opacity: '80%', // Ajuste para o número total de caixas
-        //     ease: "none",
-        //     scrollTrigger: {
-        //         trigger: sub_container_1.current,
-        //         start: "top top",
-        //         scrub: 1,
-        //         end: "bottom 400px",
-        //         // pin:true,
-        //         markers: true
-
-        //     }
-        // });
 
 
         gsap.matchMedia().add("(min-width: 768px)", () => {
@@ -212,7 +185,7 @@ export default function Home() {
                 trigger: '.divTitulos_menuRedes',
                 start: "top center",
                 scrub: 1,
-                end: "bottom 550px",
+                end: "top 10%",
 
             }
         })
@@ -369,7 +342,7 @@ export default function Home() {
 
         })
 
-        
+
         gsap.matchMedia().add("(min-width: 769px)", () => {
             // home_box__f7Voq
             const totalWidth = sub_container_2.current.offsetWidth;
@@ -387,59 +360,141 @@ export default function Home() {
             });
         })
 
+           // Removendo todos os ScrollTriggers ao desmontar o componente
+           return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
+
+
     }, []);
 
 
     // animacoes subcontainer 3
-
+    
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
-
+        
 
         // home_sub_container_3__ccy7G
-        // background:
-        //     `linear-gradient(to right,
-        // #3f2a1a 0%,
-        // #352621 25%,
-        // #2b2322 50%,
-        // #242021 75%,
-        // #1f1f1f 100%)`,
+
         gsap.timeline({
             scrollTrigger: {
                 trigger: '.home_sub_container_3__ccy7G',
-                start: "top 500px",
+                start: "top 50%",
                 scrub: 1,
-                end: "bottom bottom",
+                end: "top 15%",
+                
+
 
             }
         })
-            .fromTo('.home_sub_container_3__ccy7G', {
+            .fromTo('.sub_container_3_gradiente', {
                 backgroundColor: 'black'
             }, {
                 backgroundImage: 'linear-gradient(to right, #64301a 0%, #3f2a1a 10%, #0b0b0b 100%)',
-                duration: 1,
+                duration: 3,
                 ease: 'none'
             })
-            .to('.home_sub_container_3__ccy7G', {
+            .to('.sub_container_3_gradiente', {
                 backgroundImage: 'linear-gradient(to right, #64301a 0%, #3f2a1a 30%, #0b0b0b 100%)',
-                duration: 1,
+                duration: 3,
                 ease: 'none'
             })
-            .to('.home_sub_container_3__ccy7G', {
+            .to('.sub_container_3_gradiente', {
                 backgroundImage: 'linear-gradient(to right, #64301a 0%, #3f2a1a 40%, #0b0b0b 100%)',
-                duration: 1,
+                duration: 3,
                 ease: 'none'
             })
-            .to('.home_sub_container_3__ccy7G', {
+            .to('.sub_container_3_gradiente', {
                 backgroundImage: 'linear-gradient(to right, #64301a 0%, #3f2a1a 50%, #0b0b0b 100%)',
-                duration: 1,
+                duration: 3,
                 ease: 'none'
             });
 
 
 
+            // animation gorila3
+            gsap.fromTo('.home_tribosImg__awwvm', {
+                
+                opacity:0
+            }, {
 
+                opacity:1,
+                duration:1,
+                
+                ease: "none",
+                scrollTrigger: {
+                    trigger: '.home_sub_container_3__ccy7G',
+                    start: "top 50%",
+                    scrub: 1,
+                    end: "top 15%",
+                    
+                    
 
+                }
+            });
+            // animation titulo tribos
+            gsap.fromTo('.home_projetoTribos__ngsMJ', {
+                scale:0.5,
+                opacity:0
+            }, {
+                
+                scale:1,
+                opacity:1,
+                duration:1,
+                
+                ease: "none",
+                scrollTrigger: {
+                    trigger: '.home_sub_container_3__ccy7G',
+                    start: "top 50%",
+                    scrub: 1,
+                    end: "top 15%",
+                    
+
+                }
+            });
+            // animation titulo tribos
+            gsap.fromTo('.home_concepTribos__8VPX6', {
+                scale:0.5,
+                opacity:0
+            }, {
+                
+                scale:1,
+                opacity:1,
+                duration:1,
+                
+                ease: "none",
+                scrollTrigger: {
+                    trigger: '.home_sub_container_3__ccy7G',
+                    start: "top 40%",
+                    scrub: 1,
+                    end: "top 15%",
+                    
+
+                }
+            });
+            // animation titulo tribos
+            gsap.fromTo('.home_tecTribos__qm5OJ', {
+                scale:0.5,
+                opacity:0
+            }, {
+                
+                scale:1,
+                opacity:1,
+                duration:1,
+                
+                ease: "none",
+                scrollTrigger: {
+                    trigger: '.home_sub_container_3__ccy7G',
+                    start: "top 30%",
+                    scrub: 1,
+                    end: "top 15%",
+                    
+                    
+
+                }
+            });
+     
 
     }, []);
 
@@ -550,7 +605,7 @@ export default function Home() {
 
                                 </Image>
                                 <div className={styles.infoProjetos}>
-                                    <h1>Projeto Tribos Ancestrais</h1>
+                                    <h1>teste</h1>
                                 </div>
                             </div>
                             <div className={styles.box}>
@@ -566,7 +621,7 @@ export default function Home() {
 
                                 </Image>
                                 <div className={styles.infoProjetos}>
-                                    <h1>Projeto Tribos Ancestrais</h1>
+                                    <h1>teste</h1>
                                 </div>
                             </div>
 
@@ -596,14 +651,14 @@ export default function Home() {
             </div >
             <div className={styles.sub_container_3}>
 
-                <div>
+                <div className='sub_container_3_gradiente'>
 
                     {/* <h1  className={potta.className}>
                         TRIBOS ANCESTRAIS
                     </h1> */}
                     <img id='tribos'
                         loading='lazy'
-                        src='/img/gorila2.png'
+                        src='/img/gorila3.png'
                         alt='Logo'
                         className={styles.tribosImg}
                     ></img>

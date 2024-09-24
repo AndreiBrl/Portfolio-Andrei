@@ -284,9 +284,9 @@
         height: 100%;
         display: flex;
         gap: 0.2vw;
-        margin-top: 19vw;
-        /* justify-content: center; */
-        /* align-items: center; */
+        padding-bottom: 9vw;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
 
 
@@ -306,7 +306,6 @@
 
         &>div {
             display: flex;
-            margin-left: 3.5vw;
             /* justify-content: center;
             align-self: center; */
         }
@@ -401,6 +400,8 @@
     height: 0;
     overflow: hidden;
     transition: all 0.7s ease;
+    display: flex;
+    align-items: center;
 
     &>h1 {
         font-size: 1vw;
@@ -505,23 +506,10 @@
 
 
 
-/* background:
-        linear-gradient(to right,
-            #3f2a1a 0%,
-            #352621 25%,
-            #2b2322 50%,
-            #242021 75%,
-            #1f1f1f 100%),
-        repeating-radial-gradient(circle at 0 0,
-            rgba(255, 255, 255, 0.03),
-            rgba(255, 255, 255, 0.03) 1px,
-            transparent 1px,
-            transparent 100%); */
-
 
 .sub_container_3 {
     height: 100vh;
-    width: 100vw;
+    padding: 6vw;
     background-color: black;
 
     /* background: linear-gradient(to right, 
@@ -556,8 +544,14 @@
     }
 
     &>div {
+        width: 100%;
+        height: 100%;
         display: flex;
         gap: 3vw;
+        border-radius: 45px;
+        justify-content: center;
+        align-items: center;
+
 
     }
 
@@ -568,7 +562,7 @@
     flex-direction: column;
     gap: 1vw;
     justify-content: center;
-    align-items: center;
+    
     width: 40vw;
     /* display: none; */
 
@@ -639,7 +633,7 @@
 
     &>div {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 13vw 13vw;
         text-align: left;
 
         &>p {
