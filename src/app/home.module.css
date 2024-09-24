@@ -864,7 +864,7 @@
 
             /* estilo titulo projetos */
             &>h1 {
-
+                padding-top: 2vw;
                 color: white;
                 font-family: 'yeager', 'Times New Roman', Times, serif;
                 text-transform: uppercase;
@@ -891,21 +891,21 @@
         }
 
         &>div:nth-of-type(2):hover .box:hover {
-            width: 50vw;
+            width: 83vw;
             filter: grayscale(0);
         }
     }
 
     .box {
-        width: 50vw;
-        height: 71vw;
+        width: 83vw;
+        height: 147vw;
         overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
         transition: unset;
         position: relative;
-        border-radius: 20vw;
+        border-radius: 44vw;
         cursor: pointer;
     }
 

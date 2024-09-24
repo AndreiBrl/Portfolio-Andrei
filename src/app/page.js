@@ -68,9 +68,9 @@ export default function Home() {
                     start: "top top",
                     pin: true,
                     scrub: 1,
-                    end: "bottom 800px",
-                    anticipatePin: 1,
-                    markers:true
+                    end: "bottom 500px",
+                    anticipatePin: 1
+                    
                 }
             });
         });
@@ -297,7 +297,8 @@ export default function Home() {
                     trigger: '.projetos',
                     start: "top center",
                     scrub: 1,
-                    end: "bottom 300px",
+                    end: "top 300px",
+                    markers:true
 
                 }
             });
