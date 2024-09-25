@@ -4,9 +4,10 @@ import Image from 'next/image'
 import { useGSAP } from "@gsap/react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useRef,useEffect,useState } from 'react';
+import { useRef, useState } from 'react';
 import SplitType from 'split-type'
 import { Potta_One } from 'next/font/google';
+import { motion } from 'framer-motion';
 
 
 gsap.registerPlugin(useGSAP);
@@ -22,7 +23,19 @@ const potta = Potta_One({
 export default function Home() {
 
 
+    const [isExpanded, setIsExpanded] = useState(false);
 
+    const handleDragEnd = (event, info) => {
+        // Verifica se o arrasto foi suficiente para expandir
+        if (info.offset.x > 100) {
+            console.log('direita');
+            
+            setIsExpanded(true); // Expande a div se arrastada para a direita
+        } else if (info.offset.x < -100) {
+            console.log('esquerda');
+            setIsExpanded(false); // Retorna ao tamanho inicial se arrastada para a esquerda
+        }
+    };
 
     // animacao titulo vermelho no primeiro sub_container 
     const sub_container_1 = useRef(null)
@@ -34,12 +47,6 @@ export default function Home() {
 
 
         gsap.registerPlugin(ScrollTrigger);
-
-
-
-
-
-
 
 
         gsap.matchMedia().add("(min-width: 768px)", () => {
@@ -70,7 +77,7 @@ export default function Home() {
                     scrub: 1,
                     end: "bottom 500px",
                     anticipatePin: 1
-                    
+
                 }
             });
         });
@@ -298,7 +305,7 @@ export default function Home() {
                     start: "top center",
                     scrub: 1,
                     end: "top 300px",
-                    
+
 
                 }
             });
@@ -315,16 +322,16 @@ export default function Home() {
                 }
             })
                 .fromTo('.home_box__f7Voq', {
-                    
+
                     opacity: 0,
                 }, {
-                   
-                    opacity:1,
+
+                    opacity: 1,
                     stagger: 0.1,
                     delay: 0.2,
                     ease: "none",
                 })
-           
+
 
         })
 
@@ -346,8 +353,8 @@ export default function Home() {
             });
         })
 
-           // Removendo todos os ScrollTriggers ao desmontar o componente
-           return () => {
+        // Removendo todos os ScrollTriggers ao desmontar o componente
+        return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };
 
@@ -355,59 +362,12 @@ export default function Home() {
     }, []);
 
 
-    const [startX, setStartX] = useState(0);
-    const [endX, setEndX] = useState(0);
-    const  animationRef = useRef()
-    const element = animationRef.current;
-    useEffect(() => {
-        console.log('arrastou');
-        
-      const handleTouchStart = (e) => {
-        setStartX(e.touches[0].clientX); // Pega a posição inicial do toque
-      };
-  
-      const handleTouchEnd = (e) => {
-        setEndX(e.changedTouches[0].clientX); // Pega a posição final do toque
-      };
-  
-      const handleSwipe = () => {
-        const deltaX = endX - startX;
-  
-        if (deltaX > 50) {
-          // Swipe para a direita
-          console.log(deltaX);
-          console.log('AE AE');
-          
-          gsap.to(element, { x: 200, duration: 1 });
-        } else if (deltaX < -50) {
-          // Swipe para a esquerda
-          gsap.to(element, { x: -200, duration: 1 });
-        }
-      };
-  
-      if (element) {
-        element.addEventListener('touchstart', handleTouchStart);
-        element.addEventListener('touchend', handleTouchEnd);
-      }
-  
-      // Verifica se houve um swipe após o touchend
-      handleSwipe();
-  
-      return () => {
-        // Remove os event listeners na desmontagem do componente
-        if (element) {
-          element.removeEventListener('touchstart', handleTouchStart);
-          element.removeEventListener('touchend', handleTouchEnd);
-        }
-      };
-    }, [endX, startX]); // Re-executa o efeito quando startX ou endX mudarem
-  
 
     // animacoes subcontainer 3
-    
+
     useGSAP(() => {
         gsap.registerPlugin(ScrollTrigger);
-        
+
 
         // home_sub_container_3__ccy7G
 
@@ -417,7 +377,7 @@ export default function Home() {
                 start: "top 50%",
                 scrub: 1,
                 end: "top 15%",
-                
+
 
 
             }
@@ -447,88 +407,88 @@ export default function Home() {
 
 
 
-            // animation gorila3
-            gsap.fromTo('.home_tribosImg__awwvm', {
-                
-                opacity:0
-            }, {
+        // animation gorila3
+        gsap.fromTo('.home_tribosImg__awwvm', {
 
-                opacity:1,
-                duration:1,
-                
-                ease: "none",
-                scrollTrigger: {
-                    trigger: '.home_sub_container_3__ccy7G',
-                    start: "top 50%",
-                    scrub: 1,
-                    end: "top 15%",
-                    
-                    
+            opacity: 0
+        }, {
 
-                }
-            });
-            // animation titulo tribos
-            gsap.fromTo('.home_projetoTribos__ngsMJ', {
-                scale:0.5,
-                opacity:0
-            }, {
-                
-                scale:1,
-                opacity:1,
-                duration:1,
-                
-                ease: "none",
-                scrollTrigger: {
-                    trigger: '.home_sub_container_3__ccy7G',
-                    start: "top 50%",
-                    scrub: 1,
-                    end: "top 15%",
-                    
+            opacity: 1,
+            duration: 1,
 
-                }
-            });
-            // animation titulo tribos
-            gsap.fromTo('.home_concepTribos__8VPX6', {
-                scale:0.5,
-                opacity:0
-            }, {
-                
-                scale:1,
-                opacity:1,
-                duration:1,
-                
-                ease: "none",
-                scrollTrigger: {
-                    trigger: '.home_sub_container_3__ccy7G',
-                    start: "top 40%",
-                    scrub: 1,
-                    end: "top 15%",
-                    
+            ease: "none",
+            scrollTrigger: {
+                trigger: '.home_sub_container_3__ccy7G',
+                start: "top 50%",
+                scrub: 1,
+                end: "top 15%",
 
-                }
-            });
-            // animation titulo tribos
-            gsap.fromTo('.home_tecTribos__qm5OJ', {
-                scale:0.5,
-                opacity:0
-            }, {
-                
-                scale:1,
-                opacity:1,
-                duration:1,
-                
-                ease: "none",
-                scrollTrigger: {
-                    trigger: '.home_sub_container_3__ccy7G',
-                    start: "top 30%",
-                    scrub: 1,
-                    end: "top 15%",
-                    
-                    
 
-                }
-            });
-     
+
+            }
+        });
+        // animation titulo tribos
+        gsap.fromTo('.home_projetoTribos__ngsMJ', {
+            scale: 0.5,
+            opacity: 0
+        }, {
+
+            scale: 1,
+            opacity: 1,
+            duration: 1,
+
+            ease: "none",
+            scrollTrigger: {
+                trigger: '.home_sub_container_3__ccy7G',
+                start: "top 50%",
+                scrub: 1,
+                end: "top 15%",
+
+
+            }
+        });
+        // animation titulo tribos
+        gsap.fromTo('.home_concepTribos__8VPX6', {
+            scale: 0.5,
+            opacity: 0
+        }, {
+
+            scale: 1,
+            opacity: 1,
+            duration: 1,
+
+            ease: "none",
+            scrollTrigger: {
+                trigger: '.home_sub_container_3__ccy7G',
+                start: "top 40%",
+                scrub: 1,
+                end: "top 15%",
+
+
+            }
+        });
+        // animation titulo tribos
+        gsap.fromTo('.home_tecTribos__qm5OJ', {
+            scale: 0.5,
+            opacity: 0
+        }, {
+
+            scale: 1,
+            opacity: 1,
+            duration: 1,
+
+            ease: "none",
+            scrollTrigger: {
+                trigger: '.home_sub_container_3__ccy7G',
+                start: "top 30%",
+                scrub: 1,
+                end: "top 15%",
+
+
+
+            }
+        });
+
 
     }, []);
 
@@ -626,22 +586,31 @@ export default function Home() {
                     <div className='projetos'>
                         <h1 className='tituloProjetos'>Projetos</h1>
                         <div>
-                            <div className={styles.box}>
+                            <motion.div
+                                drag="x" // Permite arrastar apenas na direção horizontal
+                                dragConstraints={{ left: 0, right:0 }} // Limita o arrasto
+                                onDragEnd={handleDragEnd}
+                                style={{ cursor: 'grab' }}
+                            >
+                                <div className={styles.box}>
 
-                                <Image
-                                    loading='lazy'
-                                    src='/img/teste.jpeg'
-                                    alt='Logo'
-                                    width={200}
-                                    height={200}
-                                    className={styles.boxImage}
-                                >
+                                    <Image
+                                        loading='lazy'
+                                        src='/img/teste.jpeg'
+                                        alt='Logo'
+                                        width={200}
+                                        height={200}
+                                        className={styles.boxImage}
+                                    >
 
-                                </Image>
-                                <div ref={animationRef} className={styles.infoProjetos}>
-                                    <h1>teste</h1>
+                                    </Image>
+
+                                    
+                                        <div className={styles.infoProjetos}>
+                                            <h1>teste</h1>
+                                        </div>
                                 </div>
-                            </div>
+                            </motion.div>
                             <div className={styles.box}>
 
                                 <Image

@@ -962,7 +962,7 @@
         background-color: #0000009e;
         bottom: 0;
         padding-left: .5vw;
-        width: 97%;
+        /* width: 97%; */
         opacity: 1;
         height:30vw;
         overflow: visible;
