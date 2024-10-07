@@ -7,7 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useRef, useState } from 'react';
 import SplitType from 'split-type'
 import { Potta_One } from 'next/font/google';
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 
 
 gsap.registerPlugin(useGSAP);
@@ -29,7 +29,7 @@ export default function Home() {
         // Verifica se o arrasto foi suficiente para expandir
         if (info.offset.x > 100) {
             console.log('direita');
-            
+
             setIsExpanded(true); // Expande a div se arrastada para a direita
         } else if (info.offset.x < -100) {
             console.log('esquerda');
@@ -180,7 +180,7 @@ export default function Home() {
             ease: "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
             scrollTrigger: {
                 trigger: '.divTitulos_menuRedes',
-                start: "top center",
+                start: "top 50px",
                 scrub: 1,
                 end: "bottom 300px",
 
@@ -282,7 +282,7 @@ export default function Home() {
 
                 .to('.home_box__f7Voq', {
                     stagger: 0.5,
-                    boxShadow: '0 0 5px white, 0 0 10px white, 0 0 15px white', // Neon intenso
+                    // boxShadow: '0 0 5px white, 0 0 10px white, 0 0 15px white', // Neon intenso
                     delay: 0.2,
                     duration: 1,
                 });
@@ -492,6 +492,103 @@ export default function Home() {
 
     }, []);
 
+    // animacoes subcontainer 4
+
+    useGSAP(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+
+        // gsap.fromTo('.sub_container_4_gradiente', {
+        //     backgroundColor: 'black',
+        //     opacity:0
+        // }, {
+        //     opacity:1,
+        //     backgroundColor: '#eeeeee',
+        //     duration: 3,
+        //     ease: 'none',
+        //     scrollTrigger: {
+        //         trigger: '.home_sub_container_4__UgBRJ',
+        //         start: "top 50%",
+        //         scrub: 1,
+        //         end: "top 15%",
+
+
+
+        //     }
+        // })
+
+
+        // animation sistemaCesama1
+        gsap.fromTo('.sistemaCesama1', {
+            opacity: 0,
+            y: 200
+        }, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "none", // Easing mais suave
+            scrollTrigger: {
+                trigger: '.home_sub_container_4__UgBRJ',
+                start: "top 50%",
+                scrub: 0.5, // Suaviza a animação com um scrub menor
+                end: "top 15%",
+            }
+        });
+
+        // animation sistemaCesama2
+        gsap.fromTo('.sistemaCesama2', {
+            opacity: 0,
+            y: 150 // Distância ajustada
+        }, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "none",
+            scrollTrigger: {
+                trigger: '.home_sub_container_4__UgBRJ',
+                start: "top 30%",
+                scrub: 0.5,
+                end: "top 10%",
+            }
+        });
+
+        // animation sistemaCesama3
+        gsap.fromTo('.sistemaCesama3', {
+            opacity: 0,
+            y: 100 // Distância ajustada
+        }, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "none",
+            scrollTrigger: {
+                trigger: '.home_sub_container_4__UgBRJ',
+                start: "top 25%",
+                scrub: 0.5,
+                end: "top 5%",
+            }
+        });
+
+        // animation sistemaCesama4
+        gsap.fromTo('.sistemaCesama4', {
+            opacity: 0,
+            y: 50 // Distância ajustada
+        }, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "none",
+            scrollTrigger: {
+                trigger: '.home_sub_container_4__UgBRJ',
+                start: "top 20%",
+                scrub: 0.5,
+                end: "top 0%",
+            }
+        });
+
+
+    }, []);
+
     return (
         <div className={styles.container} >
             <div className={styles.sub_container} ref={sub_container_1}>
@@ -516,6 +613,21 @@ export default function Home() {
                     </div>
 
                 </div>
+                <div>
+
+                    <h1>SCROLL DOWN</h1>
+                    <Image
+                        loading='lazy'
+                        src='/img/scrowArrow.png'
+                        alt=''
+                        width={200}
+                        height={200}
+                        className={styles.scrowArrow}
+                    >
+
+
+                    </Image>
+                </div>
             </div>
 
             <div className={styles.sub_container_2} ref={sub_container_2}>
@@ -525,7 +637,6 @@ export default function Home() {
                     <div className='divTitulos_menuRedes' ref={divTitulos_menuRedes}>
                         <h1 ref={titulo_Andrei}>Andrei Barbuto.</h1>
                         <div>
-
 
                             <div >
                                 <div className='quadroMenuRedes' title='GitHub' >
@@ -586,13 +697,8 @@ export default function Home() {
                     <div className='projetos'>
                         <h1 className='tituloProjetos'>Projetos</h1>
                         <div>
-                            <motion.div
-                                drag="x" // Permite arrastar apenas na direção horizontal
-                                dragConstraints={{ left: 0, right:0 }} // Limita o arrasto
-                                onDragEnd={handleDragEnd}
-                                style={{ cursor: 'grab' }}
-                            >
-                                <div className={styles.box}>
+
+                            {/* <div className={styles.box}>
 
                                     <Image
                                         loading='lazy'
@@ -605,28 +711,32 @@ export default function Home() {
 
                                     </Image>
 
-                                    
-                                        <div className={styles.infoProjetos}>
-                                            <h1>teste</h1>
-                                        </div>
-                                </div>
-                            </motion.div>
-                            <div className={styles.box}>
 
-                                <Image
-                                    loading='lazy'
-                                    src='/img/teste.jpeg'
-                                    alt='Logo'
-                                    width={200}
-                                    height={200}
-                                    className={styles.boxImage}
-                                >
-
-                                </Image>
-                                <div className={styles.infoProjetos}>
-                                    <h1>teste</h1>
+                                    <div className={styles.infoProjetos}>
+                                        <h1>teste</h1>
+                                    </div>
                                 </div>
-                            </div>
+                             */}
+                            <a href='#sistemaCesama'>
+
+                                <div className={styles.box}>
+
+                                    <Image
+                                        loading='lazy'
+                                        src='/img/ete_cesama.png'
+                                        alt='Logo'
+                                        width={200}
+                                        height={200}
+                                        quality={100}
+                                        className={styles.boxImage}
+                                    >
+
+                                    </Image>
+                                    <div className={styles.infoProjetos}>
+                                        <h1>Sistema para Estação de Esgoto</h1>
+                                    </div>
+                                </div>
+                            </a>
 
                             <a href='#tribos'>
                                 <div className={styles.box}>
@@ -652,14 +762,89 @@ export default function Home() {
                 </div >
 
             </div >
-            <div className={styles.sub_container_3}>
+            <div className={styles.sub_container_4} id='sistemaCesama'>
+                <div className='sub_container_4_gradiente'>
+                    <Image
+                        loading='lazy'
+                        src='/img/cesamaLogo.png'
+                        alt='Logo'
+                        width={150}
+                        height={100}
+                        // className={styles.boxImage}
+                        quality={100}
+                    ></Image>
+                    <div>
+
+                        <div className='sistemaCesama1'>
+                            <div>
+
+                                <h6 >O Sistema</h6>
+                                <h1 >Gerenciamento de Análises </h1>
+                            </div>
+                            <iframe width="430" height="215" src="https://www.youtube.com/embed/SbKSVSMG33Y?si=eu1nfMV0ejGvk9GO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div className='sistemaCesama2'>
+                            <div>
+
+                                <h1>Panorama Geral </h1>
+                            </div>
+                            <p>O software foi criado para modernizar e agilizar o trabalho dos funcionários das Estações de Tratamento de Esgoto (ETEs) da Cesama, automatizando a análise de amostras e o registro de dados, antes feito manualmente. Com telas intuitivas, painéis de relatórios e filtros de busca avançados, o sistema facilita as atividades diárias, reduz erros e otimiza o tempo de trabalho. Assim, os usuários têm mais dados organizados, maior eficiência e mais tempo para análise.</p>
+                        </div>
+                        <div className='sistemaCesama3'>
+
+                            <div>
+
+                                <h1>Telas / Funcionalidades </h1>
+                            </div>
+                            <div>
+
+                                <p><b>Home:</b> Usuário visualiza as rotinas pendentes e os parâmetros ainda não preenchidos. Podendo acessar cada rotina que seja criador para poder editá-la</p>
+
+                                <p><b>Rotinas (Laboratório e Operação):</b> Usuário preenche os dados de forma flexível e dinâmica, podendo criar observações para cada amostra e adicionar colunas conforme necessário. Cada parâmetro possui sua regra de cálculo.</p>
+
+                                <p><b>Consulta de Rotinas:</b> Usuário pode filtrar de forma avançada e acessar facilmente rotinas pendentes ou finalizadas. </p>
+
+                                <p><b>Relatórios:</b> Usuário cria relatórios externos, podendo preenchê-los de forma aleatória e adicionar observações.</p>
+
+                                <p><b>Consulta de Relatórios:</b> Usuário consulta os relatórios já criados atráves de filtros avançados e dinâmicos.</p>
+
+                                <p><b>Rotina Finalizada:</b> Usuário acessa todos os dados da rotina interna e dos relatórios externos, permitindo comparações e análise simples de dados. (em desenvolvimento).</p>
+
+                            </div>
+                        </div>
+                        <div className='sistemaCesama4'>
+
+                            <div>
+
+                                <h1>Tecnologias / FrameWorks</h1>
+                            </div>
+                            <div>
+
+                                <p><b>Python:</b> Utilizada no backend para construir a lógica do sistema de forma eficiente e escalável.</p>
+
+                                <p><b>Django:</b> Framework web que permite o desenvolvimento interativo e ágil, facilitando a criação de aplicações robustas.</p>
+
+                                <p><b>HTML/CSS:</b> Linguagens essenciais para a marcação e estilização do conteúdo, proporcionando uma interface visual atraente e responsiva.</p>
+
+                                <p><b>JavaScript:</b> Usada para manipulação do DOM e chamadas assíncronas ao backend, permitindo interações dinâmicas na interface do usuário.</p>
+
+                                <p><b>Git:</b> Sistema de versionamento de código que possibilita o controle de alterações e colaboração eficiente entre desenvolvedores.</p>
+
+                                <p><b>SQL Server:</b> Banco de dados relacional utilizado para armazenar e gerenciar dados de maneira segura e eficiente.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div className={styles.sub_container_3} id='tribos'>
 
                 <div className='sub_container_3_gradiente'>
 
                     {/* <h1  className={potta.className}>
                         TRIBOS ANCESTRAIS
                     </h1> */}
-                    <img id='tribos'
+                    <img
                         loading='lazy'
                         src='/img/gorila3.png'
                         alt='Logo'

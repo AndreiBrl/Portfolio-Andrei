@@ -68,60 +68,100 @@
     /* background-color: #E7E5D9; */
     position: relative;
     background-color: #fcfdf5;
-    height: 65vh;
-    padding-left: 15vw;
-    padding-top: 10vw;
-    gap: 4vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+    /* padding-left: 15vw;
+    
+    padding-top: 10vw; */
+    /* gap: 4vw; */
     /* clip-path: path("M0,500L60,480C120,460,240,420,360,440C480,460,600,500,720,500C840,500,960,460,1080,460C1200,460,1320,500,1380,520L1440,540L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"); */
 
-
-    &>div {
+    /* div que contem imagem e Bem vindo */
+    &>div:nth-child(1) {
         display: flex;
         align-items: center;
         position: relative;
         padding: 1vw;
 
+        & h1 {
+            width: 30vw;
+            font-size: 2.5vw;
+            font-family: 'geist';
+            text-transform: uppercase;
+            z-index: 2;
+            background-color: transparent;
+            content: 's';
+            animation: desenhoAparece 1s cubic-bezier(0.33, 0, 0.67, 1) forwards;
+            animation-delay: 600ms;
+            opacity: 0;
+
+
+        }
+
+        /* Div do titulo vermelho */
+        &>div div {
+            width: 14.8vw;
+            border-radius: 2px;
+            padding-left: 0.5vw;
+            background-color: #c03654;
+            animation: desenhoAparece 1s cubic-bezier(0.33, 0, 0.67, 1) forwards;
+            animation-delay: 600ms;
+            opacity: 0;
+            /* animação em conflito com blibioteca GSAP */
+            /* animation:  sublinhaTitulo linear both;
+            animation-timeline: view(5% 5%); */
+
+        }
+
+        & p {
+            font-size: 2vw;
+            animation: desenhoAparece 1s cubic-bezier(0.33, 0, 0.67, 1) forwards;
+            animation-delay: 600ms;
+            opacity: 0;
+
+        }
     }
 
-    & h1 {
-        width: 30vw;
-        font-size: 2.5vw;
-        font-family: 'geist';
-        text-transform: uppercase;
-        z-index: 2;
-        background-color: transparent;
-        content: 's';
+    /* div do scroll down */
+    &>div:nth-child(2) {
+        opacity: 0;
         animation: desenhoAparece 1s cubic-bezier(0.33, 0, 0.67, 1) forwards;
         animation-delay: 600ms;
-        opacity: 0;
+        width: 20vw;
+        text-align: center;
 
+        & h1 {
+            color: #656565;
+            font-size: 1vw;
+        }
+    }
+
+    .scrowArrow {
+        width: 2.5vw;
+        height: 2.5vw;
+        animation: moveArrow 2s ease-in-out infinite;
 
     }
 
-    /* Div do titulo vermelho */
-    &>div div div {
 
-        width: 14.8vw;
-        border-radius: 2px;
-        padding-left: 0.5vw;
-        background-color: #c03654;
-        animation: desenhoAparece 1s cubic-bezier(0.33, 0, 0.67, 1) forwards;
-        animation-delay: 600ms;
-        opacity: 0;
-        /* animação em conflito com blibioteca GSAP */
-        /* animation:  sublinhaTitulo linear both;
-        animation-timeline: view(5% 5%); */
+}
 
+@keyframes moveArrow {
+    0% {
+        transform: translateY(0);
     }
 
-    & p {
-        font-size: 2vw;
-        animation: desenhoAparece 1s cubic-bezier(0.33, 0, 0.67, 1) forwards;
-        animation-delay: 600ms;
-        opacity: 0;
-
+    50% {
+        transform: translateY(15px);
     }
 
+    100% {
+        transform: translateY(0);
+    }
 }
 
 
@@ -247,8 +287,8 @@
         }
 
         & h2 {
-            color: rgba(128, 128, 128, 0.432);
-            ;
+            /* color: rgba(128, 128, 128, 0.432); */
+            color: #000000;
             font-family: 'yeager', 'Times New Roman', Times, serif;
             text-transform: uppercase;
             font-size: 2vw;
@@ -261,7 +301,8 @@
         }
 
         & h2:nth-of-type(1) {
-            color: rgba(128, 128, 128, 0.432);
+            /* color: rgba(128, 128, 128, 0.432); */
+            color: black;
 
         }
 
@@ -313,13 +354,13 @@
 
     }
 
-    &>div:nth-of-type(2):hover .box {
+    &>div:nth-of-type(2) div:hover .box {
         filter: grayscale(1);
     }
 
-    &>div:nth-of-type(2):hover .box:hover {
+    &>div:nth-of-type(2) div:hover .box:hover {
 
-        width: 14vw;
+        width: 20vw;
         /* Increase the width of the box */
         /* height: 17vw; */
         /* Maintain the height of the box */
@@ -332,8 +373,8 @@
 }
 
 .box {
-    width: 6vw;
-    height: 15vw;
+    width: 7vw;
+    height: 20vw;
     /* overflow: hidden; */
     /* Hide the overflow of the image */
     display: flex;
@@ -392,23 +433,26 @@
 
 .infoProjetos {
     position: absolute;
-    background-color: #0000009e;
+    background-color: #000000e0;
     bottom: 0;
     padding-left: .5vw;
     width: 97%;
     opacity: 0;
     height: 0;
     overflow: hidden;
-    transition: all 0.7s ease;
+    transition: all .2s ease;
+
     display: flex;
     align-items: center;
+    justify-content: center;
 
     &>h1 {
-        font-size: 1vw;
+        font-size: 1.3vw;
         color: white;
         font-family: 'geist';
         opacity: 0;
-        transition: all 1s ease .5s;
+        transition: all .3s ease .5s;
+
     }
 }
 
@@ -535,7 +579,7 @@
     flex-direction: column;
     gap: 1vw;
     justify-content: center;
-    
+
     width: 40vw;
     /* display: none; */
 
@@ -624,6 +668,155 @@
     /* box-shadow: 0 0 5px #8d8d8d, 0 0 10px #8d8d8d; */
 
     /* display: none; */
+}
+
+
+.sub_container_4 {
+    /* width: 100vw; */
+    height: fit-content;
+    padding: 6vw;
+    background-color: black;
+    position: relative;
+
+    /* div container cinza e imagem logo Cesa */
+    &>div {
+        width: 90%;
+        height: 100%;
+        border-radius: 45px;
+        background-color: #eeeeee;
+        padding: 0vw 5vw 5vw 5vw;
+        text-align: center;
+
+
+
+        /* div que contem os cards brancos */
+        &>div {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2vw;
+
+            &>div {
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+
+            }
+
+            /* div youtube e titulo */
+            &>div:nth-child(1) {
+
+                font-family: 'geist';
+
+                /* div cor do background titulo */
+                &>div {
+                    background-color: #92bddfb3;
+                    /* background-color: #96c99c; */
+                    border-radius: 10px 10px 0px 0px;
+                    text-align: left;
+                    padding: 1vw 0vw .5vw 1vw;
+                }
+
+                & h1 {
+                    margin-bottom: 0vw;
+
+                }
+
+                & h6 {
+                    font-size: 1vw;
+                    margin: 0;
+                }
+            }
+
+            /* Paranora */
+            &>div:nth-child(2) {
+
+                &>div {
+                    border-radius: 10px 10px 0px 0px;
+                    text-align: center;
+                    padding: 1vw 0vw .5vw 1vw;
+                    background-color: #6fb489c7;
+
+                    & h1 {
+                        font-family: 'geist';
+                        margin-bottom: 1vw;
+                    }
+                }
+
+                & p {
+                    padding: 1vw;
+                    text-align: justify;
+                    font-size: 1.3vw;
+                    margin: 0;
+                }
+            }
+
+                /* Telas E funcionalidades */
+                &>div:nth-child(3) {
+
+                   
+
+                    &>div:nth-child(1) {
+                        border-radius: 10px 10px 0px 0px;
+                        text-align: center;
+                        padding: 1vw 0vw .5vw 1vw;
+                        background-color: #cbcc53a8;
+    
+                        & h1 {
+                            font-family: 'geist';
+                            margin-bottom: 1vw;
+                        }
+                    }
+    
+                    &>div:nth-child(2) {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+
+                        & p {
+                            padding: 1vw;
+                            text-align: center;
+                            font-size: 1.1vw;
+                            margin: 0;
+                        }
+                    }
+                }
+                /* Tecnologias e FrameWorks */
+                &>div:nth-child(4) {
+
+                   
+
+                    &>div:nth-child(1) {
+                        border-radius: 10px 10px 0px 0px;
+                        text-align: center;
+                        padding: 1vw 0vw .5vw 1vw;
+                        background-color: #acacaca8;
+    
+                        & h1 {
+                            font-family: 'geist';
+                            margin-bottom: 1vw;
+                        }
+                    }
+    
+                    &>div:nth-child(2) {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+
+                        & p {
+                            padding: 1vw;
+                            text-align: center;
+                            font-size: 1.1vw;
+                            margin: 0;
+                        }
+                    }
+                }
+        }
+
+    }
+
+    & iframe {
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+        border-radius: 10px;
+    }
 }
 
 /* ############################ */
@@ -852,7 +1045,7 @@
 
         /* div dos projetos */
         &>div:nth-of-type(2) {
-            width: 100vw ;
+            width: 100vw;
             height: fit-content;
             display: flex;
             gap: 0.2vw;
@@ -912,7 +1105,7 @@
         position: relative;
         border-radius: 44vw;
         cursor: pointer;
-        
+
     }
 
     .boxImage {
@@ -964,7 +1157,7 @@
         padding-left: .5vw;
         /* width: 97%; */
         opacity: 1;
-        height:30vw;
+        height: 30vw;
         overflow: visible;
         transition: all 0.7s ease;
 
@@ -978,7 +1171,7 @@
         }
     }
 
-  
+
     .box:hover .infoProjetos {
         height: 30vw;
         opacity: 1;
@@ -1011,9 +1204,9 @@
         }
     }
 
-  
 
- 
+
+
 
     @keyframes rotacao {
         to {
