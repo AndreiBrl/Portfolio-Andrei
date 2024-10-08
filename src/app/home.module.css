@@ -836,7 +836,7 @@
 
 
 
-        &>div {
+        &>div:nth-child(1) {
             height: 100%;
             display: flex;
             align-items: center;
@@ -860,7 +860,7 @@
 
 
 
-        &>div div div {
+        &>div div  {
 
             width: 40vw;
             border-radius: 2px;
@@ -896,6 +896,26 @@
             margin-left: 7vw;
 
         }
+           /* div do scroll down */
+    &>div:nth-child(2) {
+        opacity: 0;
+        animation: desenhoAparece 1s cubic-bezier(0.33, 0, 0.67, 1) forwards;
+        animation-delay: 600ms;
+        width: 20vw;
+        text-align: center;
+
+        & h1 {
+            color: #656565;
+            font-size: 3vw;
+        }
+    }
+
+    .scrowArrow {
+        width: 6.5vw;
+        height: 6.5vw;
+        animation: moveArrow 2s ease-in-out infinite;
+
+    }
 
     }
 
