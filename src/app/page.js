@@ -531,7 +531,7 @@ export default function Home() {
                 trigger: '.home_sub_container_4__UgBRJ',
                 start: "top 50%",
                 scrub: 0.5, // Suaviza a animação com um scrub menor
-                end: "top 15%",
+                end: "top 5%",
             }
         });
 
@@ -548,7 +548,7 @@ export default function Home() {
                 trigger: '.home_sub_container_4__UgBRJ',
                 start: "top 30%",
                 scrub: 0.5,
-                end: "top 10%",
+                end: "top top",
             }
         });
 
@@ -786,7 +786,7 @@ export default function Home() {
                         <div className='sistemaCesama2'>
                             <div>
 
-                                <h1>Panorama Geral </h1>
+                                <h1>Visão Geral </h1>
                             </div>
                             <p>O software foi criado para modernizar e agilizar o trabalho dos funcionários das Estações de Tratamento de Esgoto (ETEs) da Cesama, automatizando a análise de amostras e o registro de dados, antes feito manualmente. Com telas intuitivas, painéis de relatórios e filtros de busca avançados, o sistema facilita as atividades diárias, reduz erros e otimiza o tempo de trabalho. Assim, os usuários têm mais dados organizados, maior eficiência e mais tempo para análise.</p>
                         </div>
