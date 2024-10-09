@@ -913,8 +913,8 @@
         }
 
         .scrowArrow {
-            width: 14.5;
-            height: 14.5;
+            width: 14.5vw;
+            height: 14.5vw;
             animation: moveArrow 2s ease-in-out infinite;
 
         }
@@ -1035,7 +1035,7 @@
             }
 
             & h2 {
-                color: rgba(128, 128, 128, 0.432);
+                color:black;
                 font-family: 'yeager', 'Times New Roman', Times, serif;
                 text-transform: uppercase;
                 font-size: 4vw;
@@ -1048,7 +1048,7 @@
             }
 
             & h2:nth-of-type(1) {
-                color: rgba(128, 128, 128, 0.432);
+                color:black;
 
             }
 
@@ -1098,7 +1098,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 100%;
+                width: 50%;
                 flex-direction: column;
                 gap: 15vw;
             }
@@ -1107,35 +1107,34 @@
         }
 
         &>div:nth-of-type(2):hover .box {
-            filter: grayscale(0);
+            filter: grayscale(1);
         }
 
         &>div:nth-of-type(2):hover .box:hover {
-            width: 83vw;
-            filter: grayscale(0);
+            width: 100%;
+            filter: grayscale(1);
         }
     }
 
     .box {
-        width: 83vw;
-        height: 147vw;
-        overflow: hidden;
+        width: 100%;
+        height: 37vw;
+        overflow: visible;
         display: flex;
         justify-content: center;
         align-items: center;
         transition: unset;
         position: relative;
-        border-radius: 44vw;
         cursor: pointer;
-
+        
     }
-
+    
     .boxImage {
-        width: 100%;
+        border-radius: 20vw;
+        width: 20vw;
         height: 100%;
         object-fit: cover;
         margin: 5vw;
-        border-radius: 5px;
 
     }
 
@@ -1173,23 +1172,37 @@
     }
 
     .infoProjetos {
-        position: absolute;
-        background-color: #0000009e;
-        bottom: 0;
-        padding-left: .5vw;
+        position: relative;
+        bottom: unset;
+        width: fit-content;
         /* width: 97%; */
         opacity: 1;
         height: 30vw;
         overflow: visible;
         transition: all 0.7s ease;
+        flex-direction: column;
+        gap: 8vw;
 
-
+       
         &>h1 {
-            font-size: 1vw;
+            font-size: 4vw;
             color: white;
             font-family: 'geist';
-            opacity: 0;
+            opacity: 1;
             transition: all 1s ease .5s;
+        }
+        
+    }
+    .btnAcessar{
+        background-color: white;
+        border-radius: 5px;
+        padding: 2vw;
+
+        & h1{
+            font-size: 6vw;
+            text-decoration: none;
+            color: inherit; 
+
         }
     }
 

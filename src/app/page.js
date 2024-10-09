@@ -717,7 +717,7 @@ export default function Home() {
                                     </div>
                                 </div>
                              */}
-                            <a href='#sistemaCesama'>
+                            <a href='#sistemaCesama' style={{ textDecoration: 'none', color: 'inherit' }}>
 
                                 <div className={styles.box}>
 
@@ -734,11 +734,16 @@ export default function Home() {
                                     </Image>
                                     <div className={styles.infoProjetos}>
                                         <h1>Sistema para Estação de Esgoto</h1>
+                                        {window.innerWidth < 769 ? (
+                                            <div className={styles.btnAcessar}>
+                                                <h1>Acessar</h1>
+                                            </div>
+                                        ) : null}
                                     </div>
                                 </div>
                             </a>
 
-                            <a href='#tribos'>
+                            <a href='#tribos' style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <div className={styles.box}>
 
 
@@ -753,6 +758,11 @@ export default function Home() {
                                     ></Image>
                                     <div className={styles.infoProjetos}>
                                         <h1>Projeto Tribos Ancestrais</h1>
+                                        {window.innerWidth < 769 ? (
+                                            <div className={styles.btnAcessar}>
+                                                <h1>Acessar</h1>
+                                            </div>
+                                        ) : null}
                                     </div>
                                 </div>
                             </a>
