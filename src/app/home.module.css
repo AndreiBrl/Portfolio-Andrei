@@ -455,7 +455,8 @@
 
     }
 }
-.btnAcessar{
+
+.btnAcessar {
     display: none;
 }
 
@@ -672,6 +673,7 @@
 
     /* display: none; */
 }
+
 /* sub_container_4 */
 
 .sub_container_4 {
@@ -854,7 +856,7 @@
 
 
             /* div intermediaria que contem tanto titulo e subtitulo */
-            &>div  {
+            &>div {
                 width: 100%;
                 margin-left: 7vw;
 
@@ -1038,7 +1040,7 @@
             }
 
             & h2 {
-                color:black;
+                color: black;
                 font-family: 'yeager', 'Times New Roman', Times, serif;
                 text-transform: uppercase;
                 font-size: 4vw;
@@ -1051,7 +1053,7 @@
             }
 
             & h2:nth-of-type(1) {
-                color:black;
+                color: black;
 
             }
 
@@ -1131,9 +1133,9 @@
         transition: unset;
         position: relative;
         cursor: pointer;
-        
+
     }
-    
+
     .boxImage {
         border-radius: 20vw;
         width: 20vw;
@@ -1188,7 +1190,7 @@
         flex-direction: column;
         gap: 8vw;
 
-       
+
         &>h1 {
             font-size: 4vw;
             color: white;
@@ -1196,18 +1198,19 @@
             opacity: 1;
             transition: all 1s ease .5s;
         }
-        
+
     }
-    .btnAcessar{
+
+    .btnAcessar {
         display: block;
         background-color: white;
         border-radius: 5px;
         padding: 2vw;
 
-        & h1{
+        & h1 {
             font-size: 6vw;
             text-decoration: none;
-            color: inherit; 
+            color: inherit;
 
         }
     }
@@ -1244,7 +1247,8 @@
 
         }
     }
-/* terceira sessão embora tenha 4 como numero */
+
+    /* terceira sessão embora tenha 4 como numero */
 
     .sub_container_4 {
         /* width: 100vw; */
@@ -1252,7 +1256,7 @@
         padding: 6vw;
         background-color: black;
         position: relative;
-    
+
         /* div container cinza e imagem logo Cesa */
         &>div {
             width: 90%;
@@ -1261,29 +1265,30 @@
             background-color: #eeeeee;
             padding: 0vw 5vw 5vw 5vw;
             text-align: center;
-    
-    
-    
+
+
+
             /* div que contem os cards brancos */
             &>div {
                 display: grid;
-                grid-template-columns: 1fr ;
+                grid-template-columns: 1fr;
                 gap: 5vw;
-    
+
                 &>div {
                     background-color: white;
                     border-radius: 10px;
                     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
                     width: 80vw;
-    
+
                 }
-    
+
                 /* div youtube e titulo */
 
                 &>div:nth-child(1) {
-                    
-    
+
+
                     font-family: 'geist';
+
                     /* div cor do background titulo */
                     &>div {
                         background-color: #92bddfb3;
@@ -1292,38 +1297,38 @@
                         text-align: left;
                         padding: 1vw 0vw .5vw 1vw;
                     }
-    
+
                     & h1 {
                         margin-bottom: 0vw;
                         font-size: 5vw;
                         width: fit-content;
-                       
-    
+
+
                     }
-    
+
                     & h6 {
                         font-size: 3vw;
                         margin: 0;
                     }
                 }
-    
+
                 /* Visao Geral */
                 &>div:nth-child(2) {
-                   
-    
+
+
                     &>div {
                         border-radius: 10px 10px 0px 0px;
                         text-align: center;
                         padding: 1vw 0vw .5vw 1vw;
                         background-color: #6fb489c7;
-    
+
                         & h1 {
                             font-family: 'geist';
                             margin-bottom: 1vw;
                             font-size: 5vw;
                         }
                     }
-                    
+
                     & p {
                         font-size: 3vw;
                         padding: 2vw;
@@ -1331,29 +1336,29 @@
                         margin: 0;
                     }
                 }
-    
+
                 /* Telas E funcionalidades */
                 &>div:nth-child(3) {
-    
-    
-    
+
+
+
                     &>div:nth-child(1) {
                         border-radius: 10px 10px 0px 0px;
                         text-align: center;
                         padding: 1vw 0vw .5vw 1vw;
                         background-color: #cbcc53a8;
-    
+
                         & h1 {
                             font-family: 'geist';
                             margin-bottom: 1vw;
                             font-size: 5vw;
                         }
                     }
-    
+
                     &>div:nth-child(2) {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
-    
+
                         & p {
                             padding: 1vw;
                             text-align: center;
@@ -1362,29 +1367,29 @@
                         }
                     }
                 }
-    
+
                 /* Tecnologias e FrameWorks */
                 &>div:nth-child(4) {
-    
-    
-    
+
+
+
                     &>div:nth-child(1) {
                         border-radius: 10px 10px 0px 0px;
                         text-align: center;
                         padding: 1vw 0vw .5vw 1vw;
                         background-color: #acacaca8;
-    
+
                         & h1 {
                             font-family: 'geist';
                             margin-bottom: 1vw;
                             font-size: 5vw;
                         }
                     }
-    
+
                     &>div:nth-child(2) {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
-    
+
                         & p {
                             padding: 1vw;
                             text-align: center;
@@ -1394,9 +1399,9 @@
                     }
                 }
             }
-    
+
         }
-    
+
         & iframe {
             margin-top: 1vw;
             margin-bottom: 1vw;
@@ -1408,6 +1413,153 @@
     }
 
 
+    /* ---------------------------------------- sub container-------------------------- 3 */
+
+
+
+
+    .sub_container_3 {
+        height: fit-content;
+        padding: 6vw;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &>h1 {
+            color: #5a4432;
+
+        }
+
+        &>div {
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            gap: 3vw;
+            padding: 7vw;
+            border-radius: 45px;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column-reverse;
+        }
+
+    }
+
+    .infosGeraisTribos {
+        display: flex;
+        flex-direction: column;
+        gap: 1vw;
+        justify-content: center;
+        margin-top: 3vw;
+        width: 100%;
+
+        /* display: none; */
+        /* pega div que engloba introdução e concepção */
+        &>div:nth-of-type(2) {
+            display: flex;
+            gap: 1vw;
+            width: 100%;
+
+
+        }
+    }
+
+    .projetoTribos {
+        width: 100%;
+        border-radius: 10px;
+        /* background-color: #594431; */
+        color: #F5F5DC;
+        display: flex;
+        justify-content: left;
+        /* align-items: left; */
+        flex-direction: column;
+        font-family: 'geist';
+
+        &>h1 {
+
+            font-size: 7vw;
+        }
+
+        &>h6 {
+            color: #F5F5DC;
+            font-size: 3vw;
+            font-family: 'yeagerLight';
+            margin: 0;
+            padding: 0;
+
+        }
+    }
+
+    .introTribos {
+        /* background-color: #967151; */
+        border-radius: 10px;
+        padding: 1vw;
+        color: black;
+
+        &>h1 {
+            font-size: 3vw;
+        }
+
+        &>p {
+            font-size: 5vw;
+            color: #F5F5DC;
+        }
+
+    }
+
+    .concepTribos {
+        color: #D4AF37;
+        /* background-color: #967151; */
+        border-radius: 10px;
+        padding: 1vw;
+        font-size: 1vw;
+
+        &>h1 {
+            font-size: 6vw;
+        }
+
+        &>p {
+            width: 100%;
+            font-size: 3vw;
+            color: #F5F5DC;
+        }
+    }
+
+    .tecTribos {
+
+        color: #D4AF37;
+        border-radius: 10px;
+
+        &>h1 {
+            font-size: 7vw;
+        }
+
+        &>div {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            text-align: left;
+            gap: 1vw;
+
+
+
+
+            &>p {
+                color: #F5F5DC;
+                font-size: 3vw;
+                margin: 0;
+            }
+        }
+    }
+
+    .tribosImg {
+        width: 60vw;
+        height: 60vw;
+        border-radius: 20px;
+        transform: rotateY(180deg);
+        /* box-shadow: 0 0 5px #8d8d8d, 0 0 10px #8d8d8d; */
+
+        /* display: none; */
+    }
 
     @keyframes rotacao {
         to {
