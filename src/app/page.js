@@ -23,7 +23,7 @@ const potta = Potta_One({
 export default function Home() {
 
 
-    
+
 
     // animacao titulo vermelho no primeiro sub_container 
     const sub_container_1 = useRef(null)
@@ -140,39 +140,78 @@ export default function Home() {
 
             }
         });
-        // anime nome em japones
-        gsap.to('.charJapa', {
+        gsap.matchMedia().add("(min-width: 768px)", () => {
+            // anime nome em japones
+            gsap.to('.charJapa', {
 
-            color: "#c03654",
-            textShadow: '0 0 5px #c03654, 0 0 10px #c03654, 0 0 15px #c03654',
+                color: "#c03654",
+                textShadow: '0 0 5px #c03654, 0 0 10px #c03654, 0 0 15px #c03654',
 
-            stagger: 0.05,
-            delay: 0.2,
-            ease: "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
-            scrollTrigger: {
-                trigger: '.divTitulos_menuRedes',
-                start: "top 200px",
-                scrub: 1,
-                end: "bottom 300px",
+                stagger: 0.05,
+                delay: 0.2,
+                ease: "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
+                scrollTrigger: {
+                    trigger: '.divTitulos_menuRedes',
+                    start: "top 200px",
+                    scrub: 1,
+                    end: "bottom 300px",
 
-            }
+                }
+            });
+            // anima sub titulos
+            gsap.to('.charSubTitulo', {
+
+                color: "white",
+                textShadow: '0 0 5px #fff',
+
+                stagger: 0.05,
+                delay: 0.2,
+                ease: "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
+                scrollTrigger: {
+                    trigger: '.divTitulos_menuRedes',
+                    start: "top 50px",
+                    scrub: 1,
+                    end: "bottom 300px",
+
+                }
+            });
         });
-        // anima sub titulos
-        gsap.to('.charSubTitulo', {
 
-            color: "white",
-            textShadow: '0 0 5px #fff',
+        // anime nome em japones
+        gsap.matchMedia().add("(max-width: 768px)", () => {
+            gsap.to('.charJapa', {
 
-            stagger: 0.05,
-            delay: 0.2,
-            ease: "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
-            scrollTrigger: {
-                trigger: '.divTitulos_menuRedes',
-                start: "top 50px",
-                scrub: 1,
-                end: "bottom 300px",
+                color: "#c03654",
+                textShadow: '0 0 5px #c03654, 0 0 10px #c03654, 0 0 15px #c03654',
 
-            }
+                stagger: 0.05,
+                delay: 0.2,
+                ease: "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
+                scrollTrigger: {
+                    trigger: '.divTitulos_menuRedes',
+                    start: "top center",
+                    scrub: 1,
+                    end: "bottom 300px",
+
+                }
+            });
+            // anima sub titulos
+            gsap.to('.charSubTitulo', {
+
+                color: "white",
+                textShadow: '0 0 5px #fff',
+
+                stagger: 0.05,
+                delay: 0.2,
+                ease: "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
+                scrollTrigger: {
+                    trigger: '.divTitulos_menuRedes',
+                    start: "top 400px",
+                    scrub: 1,
+                    end: "bottom 300px",
+
+                }
+            });
         });
 
         // anima redes sociais
@@ -722,11 +761,11 @@ export default function Home() {
                                     </Image>
                                     <div className={styles.infoProjetos}>
                                         <h1>Sistema para Estação de Esgoto</h1>
-                                        
-                                            <div className={styles.btnAcessar}>
-                                                <h1>Acessar</h1>
-                                            </div>
-                                     
+
+                                        <div className={styles.btnAcessar}>
+                                            <h1>Acessar</h1>
+                                        </div>
+
                                     </div>
                                 </div>
                             </a>
@@ -746,11 +785,11 @@ export default function Home() {
                                     ></Image>
                                     <div className={styles.infoProjetos}>
                                         <h1>Projeto Tribos Ancestrais</h1>
-                                        
-                                            <div className={styles.btnAcessar}>
-                                                <h1>Acessar</h1>
-                                            </div>
-                                        
+
+                                        <div className={styles.btnAcessar}>
+                                            <h1>Acessar</h1>
+                                        </div>
+
                                     </div>
                                 </div>
                             </a>
