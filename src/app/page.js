@@ -23,19 +23,7 @@ const potta = Potta_One({
 export default function Home() {
 
 
-    const [isExpanded, setIsExpanded] = useState(false);
-
-    const handleDragEnd = (event, info) => {
-        // Verifica se o arrasto foi suficiente para expandir
-        if (info.offset.x > 100) {
-            console.log('direita');
-
-            setIsExpanded(true); // Expande a div se arrastada para a direita
-        } else if (info.offset.x < -100) {
-            console.log('esquerda');
-            setIsExpanded(false); // Retorna ao tamanho inicial se arrastada para a esquerda
-        }
-    };
+    
 
     // animacao titulo vermelho no primeiro sub_container 
     const sub_container_1 = useRef(null)
@@ -734,11 +722,11 @@ export default function Home() {
                                     </Image>
                                     <div className={styles.infoProjetos}>
                                         <h1>Sistema para Estação de Esgoto</h1>
-                                        {window.innerWidth < 769 ? (
+                                        
                                             <div className={styles.btnAcessar}>
                                                 <h1>Acessar</h1>
                                             </div>
-                                        ) : null}
+                                     
                                     </div>
                                 </div>
                             </a>
@@ -758,11 +746,11 @@ export default function Home() {
                                     ></Image>
                                     <div className={styles.infoProjetos}>
                                         <h1>Projeto Tribos Ancestrais</h1>
-                                        {window.innerWidth < 769 ? (
+                                        
                                             <div className={styles.btnAcessar}>
                                                 <h1>Acessar</h1>
                                             </div>
-                                        ) : null}
+                                        
                                     </div>
                                 </div>
                             </a>
