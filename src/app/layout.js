@@ -6,14 +6,22 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Portfólio",
   description: "Criado por Andrei Barbuto",
+  openGraph: {
+    images: [
+      {
+        url: "https://andreibarbuto.vercel.app/img/menCompleto1.png",
+        width: 800,
+        height: 600,
+        alt: "Imagem de Andrei Barbuto",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
-        <meta property="og:image" content="https://andreibarbuto.vercel.app/img/menCompleto1.png" />
-      </Head>
+
       <body className={inter.className}>{children}</body>
     </html>
   );
