@@ -150,19 +150,7 @@
 
     }
 
-    @keyframes moveArrow {
-        0% {
-            transform: translateY(0);
-        }
 
-        50% {
-            transform: translateY(15px);
-        }
-
-        100% {
-            transform: translateY(0);
-        }
-    }
 
 
 
@@ -937,13 +925,12 @@
             }
 
             /* Engloba div com sub tiutlos e menu redes */
-            &>div {
+            & > div {
 
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
                
-                /* flex-direction: column; */
             }
 
 
@@ -1578,5 +1565,18 @@
         transform: translateX(0);
 
 
+    }
+}
+@keyframes moveArrow {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(15px);
+    }
+
+    100% {
+        transform: translateY(0);
     }
 }
