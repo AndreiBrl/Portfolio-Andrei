@@ -950,7 +950,7 @@
                     height: 10vw;
                     background-color: #0D1117;
                     justify-content: center;
-                    align-items: center;
+                    align-items: center !important;
                     display: flex !important;
                     cursor: pointer;
                     transition: all 0.5s cubic-bezier(0.87, -0.38, 0.3, 1.54);
@@ -1003,11 +1003,11 @@
         &>div:nth-of-type(2) {
             width: 100vw;
             height: fit-content;
-            display: grid;
-            grid-template-columns: 1fr;
+            display: flex !important;
+            flex-direction: column;
             gap: 0.2vw;
             justify-content: center;
-            align-items: center;
+            align-items: center !important;
             margin: 0;
             margin-bottom: 38vw;
 
@@ -1031,13 +1031,14 @@
             }
 
             &>div {
-                display: grid;
+                display: flex !important;
+                flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                width: 70%;
-                grid-template-columns: 1fr;
+                width: fit-content;
+               
                 gap: 15vw;
-                margin-left: 14vw;
+                
             }
 
 
