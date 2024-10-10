@@ -930,6 +930,7 @@
 
                 display: grid;
                 grid-template-columns: 1fr 1fr;
+                gap: 5vw;
 
             }
 
@@ -1002,11 +1003,10 @@
         &>div:nth-of-type(2) {
             width: 100vw;
             height: fit-content;
-            display: flex;
+            display: grid;
             gap: 0.2vw;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
             margin: 0;
             margin-bottom: 38vw;
 
@@ -1030,11 +1030,11 @@
             }
 
             &>div {
-                display: flex;
+                display: grid;
                 justify-content: center;
                 align-items: center;
                 width: 70%;
-                flex-direction: column;
+                grid-template-columns: 1fr;
                 gap: 15vw;
             }
 
