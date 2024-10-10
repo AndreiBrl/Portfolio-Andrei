@@ -951,7 +951,7 @@
                     background-color: #0D1117;
                     justify-content: center;
                     align-items: center;
-                    display: flex;
+                    display: flex !important;
                     cursor: pointer;
                     transition: all 0.5s cubic-bezier(0.87, -0.38, 0.3, 1.54);
 
@@ -1004,6 +1004,7 @@
             width: 100vw;
             height: fit-content;
             display: grid;
+            grid-template-columns: 1fr;
             gap: 0.2vw;
             justify-content: center;
             align-items: center;
@@ -1036,6 +1037,7 @@
                 width: 70%;
                 grid-template-columns: 1fr;
                 gap: 15vw;
+                margin-left: 14vw;
             }
 
 
