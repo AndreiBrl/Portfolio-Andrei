@@ -927,7 +927,7 @@
             /* Engloba div com sub tiutlos e menu redes */
             & > div {
 
-               
+               display: flex;
                
             }
 
