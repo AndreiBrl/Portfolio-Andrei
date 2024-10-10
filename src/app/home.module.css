@@ -907,8 +907,7 @@
         &>div:nth-child(1) {
 
             height: fit-content;
-            display: flex;
-            flex-direction: column;
+            text-align: center;
             margin-top: 0;
             padding-top: 5vw;
 
