@@ -644,7 +644,7 @@ export default function Home() {
                 <div ref={sub_container_2_div}>
                     <div className='divTitulos_menuRedes' ref={divTitulos_menuRedes}>
                         <h1 ref={titulo_Andrei}>Andrei Barbuto.</h1>
-                        <div className={styles.sub_divTitulos_menuRedes}>
+                        <div style={{ display: 'flex' }}>
 
                             <div >
                                 <div className='quadroMenuRedes' title='GitHub' >
