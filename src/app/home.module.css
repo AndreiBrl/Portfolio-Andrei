@@ -446,7 +446,7 @@
 
     }
 
-   
+
 
 
 
@@ -793,6 +793,7 @@
                 width: 100%;
                 margin-left: 7vw;
             }
+
             &>div div {
 
                 width: 40vw;
@@ -924,12 +925,7 @@
                 clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
             }
 
-            /* Engloba div com sub tiutlos e menu redes */
-            & > div {
 
-               display: flex;
-               
-            }
 
 
             /* div menu rede sociais */
@@ -982,6 +978,13 @@
                 color: black;
 
             }
+
+        }
+
+        /* Engloba div com sub tiutlos e menu redes */
+        .sub_divTitulos_menuRedes {
+
+            display: flex;
 
         }
 
@@ -1531,6 +1534,7 @@
 
 
 }
+
 @keyframes desenhoAparece {
 
     0% {
@@ -1565,6 +1569,7 @@
 
     }
 }
+
 @keyframes moveArrow {
     0% {
         transform: translateY(0);
