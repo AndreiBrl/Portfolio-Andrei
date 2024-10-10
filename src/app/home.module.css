@@ -957,9 +957,9 @@
                 }
 
                 & div:hover {
-                    transform: scale(1.2) !important;
+                    transform: scale(0) !important;
 
-                    background-color: #c03654;
+                    background-color: #0D1117;
                 }
 
 
