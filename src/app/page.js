@@ -525,25 +525,6 @@ export default function Home() {
         gsap.registerPlugin(ScrollTrigger);
 
 
-        // gsap.fromTo('.sub_container_4_gradiente', {
-        //     backgroundColor: 'black',
-        //     opacity:0
-        // }, {
-        //     opacity:1,
-        //     backgroundColor: '#eeeeee',
-        //     duration: 3,
-        //     ease: 'none',
-        //     scrollTrigger: {
-        //         trigger: '.home_sub_container_4__UgBRJ',
-        //         start: "top 50%",
-        //         scrub: 1,
-        //         end: "top 15%",
-
-
-
-        //     }
-        // })
-
 
         // animation sistemaCesama1
         gsap.fromTo('.sistemaCesama1', {
@@ -565,7 +546,7 @@ export default function Home() {
         // animation sistemaCesama2
         gsap.fromTo('.sistemaCesama2', {
             opacity: 0,
-            y: 150 // Distância ajustada
+            y: 175 // Distância ajustada
         }, {
             opacity: 1,
             y: 0,
@@ -592,7 +573,7 @@ export default function Home() {
                 trigger: '.home_sub_container_4__UgBRJ',
                 start: "top 25%",
                 scrub: 0.5,
-                end: "top 5%",
+                end: "top top",
             }
         });
 
@@ -609,7 +590,7 @@ export default function Home() {
                 trigger: '.home_sub_container_4__UgBRJ',
                 start: "top 20%",
                 scrub: 0.5,
-                end: "top 0%",
+                end: "top -10%",
             }
         });
 

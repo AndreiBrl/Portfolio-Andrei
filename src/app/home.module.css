@@ -837,7 +837,7 @@
         /* background-color: #E7E5D9; */
         position: relative;
         background-color: #fcfdf5;
-        height: 100vh;
+        height: 90vh;
         /* clip-path: path("M0,500L60,480C120,460,240,420,360,440C480,460,600,500,720,500C840,500,960,460,1080,460C1200,460,1320,500,1380,520L1440,540L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"); */
 
 
@@ -1204,11 +1204,11 @@
     .btnAcessar {
         display: block;
         background-color: white;
-        border-radius: 5px;
+        border-radius: 15px;
         padding: 2vw;
 
         & h1 {
-            font-size: 6vw;
+            font-size: 4vw;
             text-decoration: none;
             color: inherit;
 
@@ -1316,6 +1316,7 @@
                 &>div:nth-child(2) {
 
 
+
                     &>div {
                         border-radius: 10px 10px 0px 0px;
                         text-align: center;
@@ -1331,7 +1332,7 @@
 
                     & p {
                         font-size: 3vw;
-                        padding: 2vw;
+                        padding: 3vw;
                         text-align: justify;
                         margin: 0;
                     }
@@ -1360,8 +1361,8 @@
                         grid-template-columns: 1fr 1fr;
 
                         & p {
-                            padding: 1vw;
-                            text-align: center;
+                            padding: 3vw;
+                            text-align: left;
                             font-size: 3vw;
                             margin: 0;
                         }
@@ -1391,8 +1392,8 @@
                         grid-template-columns: 1fr 1fr;
 
                         & p {
-                            padding: 1vw;
-                            text-align: center;
+                            padding: 3vw;
+                            text-align: left;
                             font-size: 3vw;
                             margin: 0;
                         }
@@ -1403,11 +1404,11 @@
         }
 
         & iframe {
-            margin-top: 1vw;
-            margin-bottom: 1vw;
+            margin-top: 5vw;
+            margin-bottom: 5vw;
             border-radius: 10px;
-            width: 60vw;
-            height: 30vw;
+            width: 75vw;
+            height: 40vw;
 
         }
     }
