@@ -11,6 +11,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <Head>
+        <meta property="og:image" content="https://andreibarbuto.vercel.app/img/menCompleto1.png" />
+      </Head>
       <body className={inter.className}>{children}</body>
     </html>
   );
