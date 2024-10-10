@@ -927,10 +927,7 @@
             /* Engloba div com sub tiutlos e menu redes */
             & > div {
 
-                justify-content: space-between;
-                width: 100%;
-                display: flex;
-                background-color: red;
+               
                
             }
 
