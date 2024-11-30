@@ -884,7 +884,7 @@ export default function Home() {
                                 <h1 className={potta.className}>Concepção e Futuro</h1>
                                 <p> O projeto Tribos Ancestrais é uma obra literária de Ficção Científica em construção escrita por mim, a obra é
                                     baseada em toda cultura geek que já vivencei até hoje. A concepção da ideia se deu 2022 onde comecei a escrever de fato.
-                                    No final do ano de 2023 decidi divulgar alguns capítulos e para isso iniciei a construção em React.<br></br> <br></br>  O futuro do projeto agora tomará novos rumos, o site será refeito utilizando tecnologias melhores para acomodação de imagens vizando desempenho e usabilidade. Além disso, um novo design de leitura será criado para que os usuários possam ler com facilidade tanto pelo celular quanto pelo computador.  </p>
+                                    No final do ano de 2023 decidi divulgar alguns capítulos e para isso iniciei a construção em React.<br></br> <br></br>  O futuro do projeto agora tomará novos rumos, o site foi refatorado utilizando tecnologias melhores para acomodação de imagens vizando desempenho e usabilidade. Além disso, um novo design de leitura será foi criado para que os usuários possam ler com facilidade tanto pelo celular quanto pelo computador.  </p>
                             </div>
                         </div>
                         <div className={styles.tecTribos}>
