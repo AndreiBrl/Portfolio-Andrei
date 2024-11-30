@@ -576,6 +576,32 @@
         }
     }
 
+
+    .btnAcessarTribos {
+        width: fit-content;
+        transition: all 0.5s cubic-bezier(0.65, -0.25, 0.25, 1.25);
+        
+
+        &>a {
+
+            cursor: pointer;
+            text-decoration: none;
+
+            &>h1 {
+                background-color: white;
+                border-radius: 10px;
+                padding: 0.5vw;
+                font-size: 1.5vw;
+                color: black;
+            }
+        }
+    }
+
+    .btnAcessarTribos:hover {
+        transform: scale(1.1);
+    }
+
+
     .tecTribos {
 
         color: #D4AF37;
@@ -1037,9 +1063,9 @@
                 justify-content: center;
                 align-items: center;
                 width: fit-content;
-               
+
                 gap: 15vw;
-                
+
             }
 
 
@@ -1442,6 +1468,29 @@
             font-size: 3vw;
             color: #F5F5DC;
         }
+    }
+    .btnAcessarTribos {
+        width: fit-content;
+        transition: all 0.5s cubic-bezier(0.65, -0.25, 0.25, 1.25);
+        
+
+        &>a {
+
+            cursor: pointer;
+            text-decoration: none;
+
+            &>h1 {
+                background-color: white;
+                border-radius: 10px;
+                padding: 1.5vw;
+                font-size: 5vw;
+                color: black;
+            }
+        }
+    }
+
+    .btnAcessarTribos:hover {
+        transform: scale(1.1);
     }
 
     .tecTribos {
