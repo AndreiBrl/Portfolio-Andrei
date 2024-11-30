@@ -515,6 +515,27 @@ export default function Home() {
 
             }
         });
+        // animation titulo tribos
+        gsap.fromTo('.home_btnAcessarTribos__tDpGt', {
+            scale: 0.5,
+            opacity: 0
+        }, {
+
+            scale: 1,
+            opacity: 1,
+            duration: 1,
+
+            ease: "none",
+            scrollTrigger: {
+                trigger: '.home_sub_container_3__ccy7G',
+                start: "top 30%",
+                scrub: 1,
+                end: "top 15%",
+
+
+
+            }
+        });
 
 
     }, []);
