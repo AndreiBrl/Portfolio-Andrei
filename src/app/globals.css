@@ -1,44 +1,63 @@
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: "geist";
+	src: url("/fontes/Geist/Geist-1.3.0/Geist-1.3.0/statics-otf/Geist-UltraBlack.otf")
+		format("opentype"),
+		url("/fontes/Geist/Geist-1.3.0/Geist-1.3.0/statics-ttf/Geist-UltraBlack.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "yeager";
+	src: url("/fontes/Yeager/Yeager-Bold.otf") format("opentype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "yeagerLight";
+	src: url("/fontes/Yeager/Yeager-Light.otf") format("opentype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "kouzan";
+	src: url("/fontes/jap/kouzan.otf") format("opentype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@property --cor-color {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: rgb(226, 48, 206);
+}
+
+@property --ang-angle {
+	syntax: "<angle>";
+	inherits: true;
+	initial-value: 0deg;
+}
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--font-geist: "geist";
+	--font-yeager: "yeager";
+	--font-yeager-light: "yeagerLight";
+	--font-kouzan: "kouzan";
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-} */
 html {
-  scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
-h1{
-  margin: 0;
+
+h1 {
+	margin: 0;
 }
