@@ -1,7 +1,7 @@
 "use client";
 
 import { HERO_DATA } from "@/data/portfolio";
-import { gsap, useGSAP } from "@/lib/gsap";
+import { useHeroAnimation } from "@/hooks/useHeroAnimation";
 import Image from "next/image";
 import { useRef } from "react";
 
@@ -9,42 +9,7 @@ export function HeroSection() {
 	const sectionRef = useRef<HTMLElement>(null);
 	const redBarRef = useRef<HTMLDivElement>(null);
 
-	useGSAP(
-		() => {
-			const mm = gsap.matchMedia();
-
-			mm.add("(min-width: 768px)", () => {
-				gsap.to(redBarRef.current, {
-					width: "30vw",
-					ease: "none",
-					scrollTrigger: {
-						trigger: sectionRef.current,
-						start: "top top",
-						pin: true,
-						scrub: 1,
-						end: "bottom 200px",
-						anticipatePin: 1,
-					},
-				});
-			});
-
-			mm.add("(max-width: 767px)", () => {
-				gsap.to(redBarRef.current, {
-					width: "78vw",
-					ease: "none",
-					scrollTrigger: {
-						trigger: sectionRef.current,
-						start: "top top",
-						pin: true,
-						scrub: 1,
-						end: "bottom 500px",
-						anticipatePin: 1,
-					},
-				});
-			});
-		},
-		{ scope: sectionRef },
-	);
+	useHeroAnimation({ sectionRef, redBarRef });
 
 	return (
 		<section
