@@ -44,7 +44,7 @@ body {
 	height: 100dvh;
 	overflow: hidden;
 	font-family: var(--font-body), "M PLUS Rounded 1c", sans-serif;
-	background: var(--sky-zenith);
+	background: var(--asphalt-dark);
 	color: var(--train-ink);
 	user-select: none;
 	-webkit-font-smoothing: antialiased;
@@ -392,7 +392,7 @@ body {
 }
 
 /* ==========================================================================
-   3. RELÓGIO MINIMALISTA NO TOPO DIREITO + 2 BOTÕES DE COMANDO ABAIXO DELE
+   3. RELÓGIO MINIMALISTA NO TOPO DIREITO + BOTÃO DE CONFIGURAÇÃO
    ========================================================================== */
 .ghibli-clock-widget {
 	position: absolute;
@@ -402,6 +402,34 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
+}
+
+.clock-header-bar {
+	display: flex;
+	align-items: center;
+	gap: 0.65rem;
+}
+
+.clock-config-btn {
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.92);
+	color: var(--train-ink);
+	border: 2px solid var(--train-ink);
+	box-shadow: 0 3px 0 var(--train-ink), 0 6px 14px rgba(0, 0, 0, 0.22);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: transform 0.25s ease, background 0.2s ease;
+	flex-shrink: 0;
+}
+
+.clock-config-btn:hover,
+.clock-config-btn.is-active {
+	background: var(--train-yellow);
+	transform: rotate(35deg) translateY(-1px);
 }
 
 .clock-minimal-trigger {
@@ -448,10 +476,12 @@ body {
 }
 
 .station-command-buttons {
-	margin-top: 0.5rem;
 	display: flex;
 	align-items: center;
 	gap: 0.55rem;
+	padding: 0.45rem 0;
+	border-top: 1px dashed rgba(28, 38, 46, 0.14);
+	border-bottom: 1px dashed rgba(28, 38, 46, 0.14);
 }
 
 .signal-hand-btn {
@@ -649,6 +679,7 @@ body {
 	left: 0;
 	width: 100%;
 	height: 185px;
+	overflow: visible;
 	pointer-events: none;
 	z-index: 5;
 }
@@ -824,10 +855,17 @@ body {
 	clip-path: polygon(45% 0%, 55% 0%, 100% 100%, 0% 100%);
 }
 
-.shelter-hanging-sign {
+.shelter-signs-group {
 	position: absolute;
 	top: 15px;
-	right: 12%;
+	right: 8%;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	z-index: 4;
+}
+
+.shelter-hanging-sign {
 	background: #5ca2c7;
 	color: #ffffff;
 	border: 1.5px solid var(--train-ink);
@@ -836,8 +874,19 @@ body {
 	font-size: 0.58rem;
 	font-weight: 800;
 	letter-spacing: 0.08em;
-	z-index: 4;
 	box-shadow: 0 0 calc(14px * var(--night-opacity)) rgba(255, 235, 160, 0.65);
+}
+
+.shelter-digital-clock-sign {
+	background: #18232c;
+	color: #ffe58f;
+	border: 1.5px solid var(--train-ink);
+	padding: 0.15rem 0.52rem;
+	font-family: var(--font-body), monospace;
+	font-size: 0.62rem;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	box-shadow: 0 0 calc(14px * var(--night-opacity)) rgba(255, 229, 143, 0.6);
 }
 
 .shelter-pillars-row {
@@ -1889,7 +1938,7 @@ body {
 	}
 
 	.power-lines-svg {
-		width: 136%;
+		width: 100%;
 	}
 
 	.station-backdrop {

@@ -564,7 +564,8 @@ export function GhibliStationExperience() {
 		resizeCanvas();
 		window.addEventListener("resize", resizeCanvas);
 
-		physicsRef.current.trainX = window.innerWidth * 0.65;
+		// Começa já visível no início do lado esquerdo tanto no desktop quanto no celular
+		physicsRef.current.trainX = window.innerWidth <= 768 ? 35 : 110;
 		let animFrameId = 0;
 
 		const isTrainAlignedWithStation = () => {
@@ -977,7 +978,11 @@ export function GhibliStationExperience() {
 					<div className="ocean-shimmer" />
 				</div>
 
-				<StationBackdrop shelterRef={shelterRef} passengersLayerRef={passengersLayerRef} />
+				<StationBackdrop
+					shelterRef={shelterRef}
+					passengersLayerRef={passengersLayerRef}
+					digitalTime={digitalTime}
+				/>
 
 				<canvas id="chimneySteamCanvas" ref={steamCanvasRef} aria-hidden="true" />
 

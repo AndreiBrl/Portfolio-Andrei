@@ -7,7 +7,7 @@ export function SkyIdentity() {
 					<br />
 					BARBUTO
 				</h1>
-				<p className="cloud-role-subtitle">Desenvolvedor Web &amp; Escritor</p>
+				<p className="cloud-role-subtitle">Desenvolvedor Full-Stack &amp; Escritor</p>
 
 				<nav className="sky-social-actions" aria-label="Currículo e LinkedIn">
 					<a href="/curriculo.pdf" download className="btn-curriculo-dl" title="Baixar Currículo PDF">

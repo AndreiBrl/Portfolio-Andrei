@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, M_PLUS_Rounded_1c, Zen_Maru_Gothic } from "next/font/google";
 import type { ReactNode } from "react";
 import "./globals.css";
@@ -21,6 +21,11 @@ const zenMaruGothic = Zen_Maru_Gothic({
 	weight: ["500", "700", "900"],
 	variable: "--font-cloud",
 });
+
+export const viewport: Viewport = {
+	themeColor: "#55595c",
+	viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://andreibarbuto.vercel.app"),
