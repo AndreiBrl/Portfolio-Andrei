@@ -645,10 +645,10 @@ body {
 
 .power-lines-svg {
 	position: absolute;
-	top: -45px;
+	bottom: 2.7rem;
 	left: 0;
 	width: 100%;
-	height: 130px;
+	height: 185px;
 	pointer-events: none;
 	z-index: 5;
 }
@@ -1812,7 +1812,7 @@ body {
 	}
 
 	.ghibli-clock-widget {
-		top: 2rem;
+		top: 2.8rem;
 		right: 1rem;
 	}
 
@@ -1821,50 +1821,50 @@ body {
 	}
 
 	.clock-poetic-phrase {
-		font-size: 0.88rem;
+		font-size: 0.96rem;
 	}
 
 	.clock-ghibli-time {
-		font-size: 1.55rem;
+		font-size: 1.72rem;
 	}
 
 	.station-command-buttons {
-		margin-top: 0.4rem;
-		gap: 0.45rem;
+		margin-top: 0.45rem;
+		gap: 0.5rem;
 	}
 
 	.signal-hand-btn {
-		width: 34px;
-		height: 34px;
+		width: 36px;
+		height: 36px;
 	}
 
 	.signal-face svg {
+		width: 17px;
+		height: 17px;
+	}
+
+	.add-passenger-btn {
+		height: 36px;
+		padding: 0 0.74rem;
+		font-size: 0.75rem;
+		gap: 0.32rem;
+	}
+
+	.add-passenger-btn svg {
 		width: 16px;
 		height: 16px;
 	}
 
-	.add-passenger-btn {
-		height: 34px;
-		padding: 0 0.68rem;
-		font-size: 0.72rem;
-		gap: 0.3rem;
-	}
-
-	.add-passenger-btn svg {
-		width: 15px;
-		height: 15px;
-	}
-
 	.passenger-count-badge {
-		font-size: 0.64rem;
-		padding: 0.06rem 0.38rem;
+		font-size: 0.66rem;
+		padding: 0.06rem 0.4rem;
 		min-width: 18px;
 	}
 
 	.clock-drawer {
-		width: 248px;
-		padding: 0.85rem 1rem;
-		gap: 0.58rem;
+		width: 270px;
+		padding: 0.95rem 1.12rem;
+		gap: 0.65rem;
 	}
 
 	.cumulus-right {
@@ -1889,12 +1889,11 @@ body {
 	}
 
 	.power-lines-svg {
-		top: -18px;
-		height: 92px;
+		width: 136%;
 	}
 
 	.station-backdrop {
-		transform: scale(0.64);
+		transform: scale(0.74);
 		transform-origin: bottom left;
 		bottom: 0;
 	}
@@ -1904,11 +1903,11 @@ body {
 	}
 
 	.railway-corridor {
-		bottom: 2.1rem;
-		height: 96px;
-		transform: scale(0.66);
+		bottom: 2.15rem;
+		height: 102px;
+		transform: scale(0.76);
 		transform-origin: bottom left;
-		width: 152vw;
+		width: 132vw;
 	}
 
 	.station-platform-floor {

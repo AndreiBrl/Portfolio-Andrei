@@ -58,7 +58,7 @@ interface WaitingPassenger {
 
 type TrainState = "CRUISING" | "BRAKING" | "STOPPED" | "ACCELERATING";
 
-const getCruiseSpeed = () => (typeof window !== "undefined" && window.innerWidth <= 768 ? 1.18 : 1.55);
+const getCruiseSpeed = () => (typeof window !== "undefined" && window.innerWidth <= 768 ? 1.38 : 1.55);
 
 export function GhibliStationExperience() {
 	// Refs de elementos DOM
@@ -759,7 +759,7 @@ export function GhibliStationExperience() {
 				p.trainX -= p.currentSpeed;
 
 				const isMobile = window.innerWidth <= 768;
-				const scaleFactor = isMobile ? 0.66 : 1;
+				const scaleFactor = isMobile ? 0.76 : 1;
 				if (p.trainX * scaleFactor <= -trainWidth * scaleFactor) {
 					p.trainX = window.innerWidth / scaleFactor;
 					clearTrainWindowRiders();
@@ -976,17 +976,6 @@ export function GhibliStationExperience() {
 				<div className="ocean-horizon" aria-hidden="true">
 					<div className="ocean-shimmer" />
 				</div>
-
-				<svg className="power-lines-svg" viewBox="0 0 1920 260" preserveAspectRatio="none" aria-hidden="true">
-					<title>Fios elétricos</title>
-					<path d="M 0,92 Q 190,68 370,38" fill="none" stroke="#23313B" strokeWidth="1.5" opacity="0.82" />
-					<path d="M 0,106 Q 190,82 370,50" fill="none" stroke="#23313B" strokeWidth="1.3" opacity="0.82" />
-					<path d="M 0,120 Q 190,96 370,62" fill="none" stroke="#23313B" strokeWidth="1.2" opacity="0.82" />
-
-					<path d="M 370,38 Q 1120,86 1920,52" fill="none" stroke="#23313B" strokeWidth="1.6" opacity="0.82" />
-					<path d="M 370,50 Q 1120,98 1920,64" fill="none" stroke="#23313B" strokeWidth="1.3" opacity="0.82" />
-					<path d="M 370,62 Q 1120,110 1920,76" fill="none" stroke="#23313B" strokeWidth="1.2" opacity="0.82" />
-				</svg>
 
 				<StationBackdrop shelterRef={shelterRef} passengersLayerRef={passengersLayerRef} />
 

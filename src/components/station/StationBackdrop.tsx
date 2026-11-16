@@ -8,6 +8,22 @@ interface StationBackdropProps {
 export function StationBackdrop({ shelterRef, passengersLayerRef }: StationBackdropProps) {
 	return (
 		<div className="station-backdrop" aria-hidden="true">
+			<svg
+				className="power-lines-svg"
+				viewBox="0 0 1000 185"
+				preserveAspectRatio="none"
+				aria-hidden="true"
+			>
+				<title>Fios elétricos</title>
+				<path d="M 0,44 Q 96,28 192,16" fill="none" stroke="#23313B" strokeWidth="1.3" opacity="0.82" />
+				<path d="M 0,54 Q 96,38 192,23" fill="none" stroke="#23313B" strokeWidth="1.15" opacity="0.82" />
+				<path d="M 0,64 Q 96,48 192,30" fill="none" stroke="#23313B" strokeWidth="1.05" opacity="0.82" />
+
+				<path d="M 192,16 Q 600,48 1000,22" fill="none" stroke="#23313B" strokeWidth="1.35" opacity="0.82" />
+				<path d="M 192,23 Q 600,55 1000,29" fill="none" stroke="#23313B" strokeWidth="1.15" opacity="0.82" />
+				<path d="M 192,30 Q 600,62 1000,36" fill="none" stroke="#23313B" strokeWidth="1.05" opacity="0.82" />
+			</svg>
+
 			<div className="utility-pole">
 				<div className="pole-crossbar" />
 				<div className="pole-lantern">
