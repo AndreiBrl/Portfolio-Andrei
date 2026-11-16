@@ -1,0 +1,701 @@
+/* ==========================================================================
+   ULTRA-MINIMALIST CYBERPUNK — TRUE 60 / 30 / 10 COLOR ARCHITECTURE
+   60% Dominant Night Indigo-Black
+   30% Visible Secondary Structure (Cyan Panels, Blocks, Kanji & Borders)
+   10% Spicy Laser Accent (Hot Magenta / Acid Yellow)
+   ========================================================================== */
+
+@font-face {
+	font-family: "geist";
+	src:
+		url("../fontes/Geist/Geist-1.3.0/Geist-1.3.0/statics-otf/Geist-UltraBlack.otf")
+		format("opentype"),
+		url("../fontes/Geist/Geist-1.3.0/Geist-1.3.0/statics-ttf/Geist-UltraBlack.ttf")
+		format("truetype");
+}
+
+@font-face {
+	font-family: "yeager";
+	src: url("../fontes/Yeager/Yeager-Bold.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "kouzan";
+	src: url("../fontes/jap/kouzan.otf") format("opentype");
+}
+
+/* --------------------------------------------------------------------------
+   TRIOS DE CORES CYBERPUNK MAIS UTILIZADOS (60 - 30 - 10 REAL E VISÍVEL)
+   -------------------------------------------------------------------------- */
+
+/* TRIO 01 (PADRÃO): NEON DYSTOPIA (O trio cyberpunk mais clássico do mundo)
+   60%: #0A0D18 (Deep Midnight Indigo)
+   30%: #00F0FF & #0B2535 (Electric Cyan — 30% real da tela em blocos e estrutura)
+   10%: #FF0055 (Hot Laser Pink — A cor picante que rasga a tela) */
+:root,
+[data-trio="dystopia"] {
+	--c-60: #0a0d18;
+	--c-30-surface: #0b2636;
+	--c-30-solid: #00f0ff;
+	--c-30-muted: rgba(0, 240, 255, 0.45);
+	--c-30-kanji: rgba(0, 240, 255, 0.12);
+	--c-10-spicy: #ff0055;
+	--c-10-text: #ffffff;
+	--c-white: #f4f7fb;
+}
+
+/* TRIO 02: NIGHT CITY 2077
+   60%: #0D0D12 (Obsidian Asphalt)
+   30%: #1A1438 & #7B2CBF (Ultraviolet / Cyber Purple — 30% da composição)
+   10%: #FCEE0A (Acid Cyber Yellow — 10% picante) */
+[data-trio="nightcity"] {
+	--c-60: #0d0d12;
+	--c-30-surface: #1d1438;
+	--c-30-solid: #9d4edd;
+	--c-30-muted: rgba(157, 78, 221, 0.5);
+	--c-30-kanji: rgba(157, 78, 221, 0.15);
+	--c-10-spicy: #fcee0a;
+	--c-10-text: #0d0d12;
+	--c-white: #f6f4fb;
+}
+
+/* TRIO 03: AKIRA / NEO-TOKYO
+   60%: #0B090E (Pitch Carbon)
+   30%: #2A0E1B & #E62E5C (Samurai Crimson — 30% da composição)
+   10%: #00FF9D (Toxic Matrix Mint — 10% picante) */
+[data-trio="akira"] {
+	--c-60: #0b090e;
+	--c-30-surface: #2b0f1c;
+	--c-30-solid: #ff2a5f;
+	--c-30-muted: rgba(255, 42, 95, 0.5);
+	--c-30-kanji: rgba(255, 42, 95, 0.14);
+	--c-10-spicy: #00ff9d;
+	--c-10-text: #090d0b;
+	--c-white: #faf5f7;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	background-color: var(--c-60);
+	color: var(--c-white);
+	font-family: "Inter", -apple-system, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   BARRA FIXA MINIMALISTA COM INDICADOR 60-30-10
+   -------------------------------------------------------------------------- */
+.topbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 52px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 4vw;
+	background: rgba(10, 13, 24, 0.85);
+	backdrop-filter: blur(10px);
+	border-bottom: 1px solid var(--c-30-muted);
+	z-index: 100;
+	font-family: "JetBrains Mono", monospace;
+	font-size: 11px;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+}
+
+.topbar-left {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+
+.swatch-pill {
+	display: inline-flex;
+	height: 14px;
+	width: 90px;
+	border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.swatch-60 {
+	width: 60%;
+	background: var(--c-60);
+}
+.swatch-30 {
+	width: 30%;
+	background: var(--c-30-solid);
+}
+.swatch-10 {
+	width: 10%;
+	background: var(--c-10-spicy);
+}
+
+.trio-selector {
+	display: flex;
+	gap: 18px;
+}
+
+.trio-btn {
+	background: none;
+	border: none;
+	color: rgba(255, 255, 255, 0.5);
+	font-family: "JetBrains Mono", monospace;
+	font-size: 11px;
+	letter-spacing: 0.1em;
+	cursor: pointer;
+	text-transform: uppercase;
+	padding: 4px 0;
+	border-bottom: 2px solid transparent;
+	transition: all 0.2s ease;
+}
+
+.trio-btn.active,
+.trio-btn:hover {
+	color: var(--c-10-spicy);
+	border-bottom-color: var(--c-10-spicy);
+}
+
+/* KANJIS DE FUNDO NA COR 30% (VISÍVEIS E ELEGANTES) */
+.kanji-bg {
+	position: absolute;
+	font-family: "kouzan", "Noto Sans JP", sans-serif;
+	font-size: clamp(14rem, 26vw, 34rem);
+	line-height: 0.85;
+	color: var(--c-30-kanji);
+	user-select: none;
+	pointer-events: none;
+	z-index: 0;
+	white-space: nowrap;
+}
+
+.tag-mono {
+	font-family: "JetBrains Mono", monospace;
+	font-size: 12px;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: var(--c-30-solid);
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.tag-mono span.badge-10 {
+	background: var(--c-10-spicy);
+	color: var(--c-10-text);
+	font-weight: 700;
+	padding: 2px 8px;
+}
+
+/* ==========================================================================
+   SESSÃO 1: HERO (SEM IMAGEM — ARQUITETURA 60 / 30 / 10 PURA)
+   Animação 1: Barra 10% expande + Coluna 30% desliza no scroll
+   ========================================================================== */
+.sec-hero {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	display: grid;
+	/* Proporção literal na tela: 70% Base Escura + 30% Painel Secundário Ciano */
+	grid-template-columns: 70% 30%;
+	overflow: hidden;
+	border-bottom: 2px solid var(--c-30-solid);
+}
+
+.hero-left-60 {
+	position: relative;
+	background: var(--c-60);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0 8vw;
+	z-index: 2;
+}
+
+/* O 30% VISÍVEL DE VERDADE: Coluna Arquitetônica de 30% da Tela */
+.hero-right-30 {
+	position: relative;
+	background: var(--c-30-surface);
+	border-left: 2px solid var(--c-30-solid);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 90px 3vw 48px;
+	z-index: 2;
+}
+
+.hero-kanji-vertical {
+	writing-mode: vertical-rl;
+	font-family: "kouzan", "Noto Sans JP", sans-serif;
+	font-size: clamp(3.5rem, 6vw, 7rem);
+	color: var(--c-30-solid);
+	letter-spacing: 0.15em;
+	line-height: 1;
+	margin: auto;
+	opacity: 0.9;
+}
+
+/* A BARRA 10% PICANTE QUE EXPANDE NO SCROLL */
+.hero-bar-wrap {
+	margin: 24px 0 28px;
+	position: relative;
+}
+
+.hero-spicy-bar {
+	width: 14vw;
+	min-width: 180px;
+	background: var(--c-10-spicy);
+	padding: 10px 20px;
+	box-shadow: 0 0 35px rgba(255, 0, 85, 0.35);
+}
+
+.hero-main-title {
+	font-family: "geist", sans-serif;
+	font-size: clamp(2.4rem, 4.4vw, 5.6rem);
+	text-transform: uppercase;
+	color: var(--c-white);
+	white-space: nowrap;
+	line-height: 1;
+	letter-spacing: -0.02em;
+}
+
+.hero-sub {
+	font-size: clamp(1.1rem, 1.5vw, 1.6rem);
+	color: var(--c-30-solid);
+	max-width: 520px;
+	font-weight: 400;
+	border-left: 3px solid var(--c-10-spicy);
+	padding-left: 18px;
+}
+
+.scroll-cue {
+	font-family: "JetBrains Mono", monospace;
+	font-size: 11px;
+	letter-spacing: 0.25em;
+	color: var(--c-30-solid);
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.scroll-cue-dot {
+	width: 10px;
+	height: 10px;
+	background: var(--c-10-spicy);
+}
+
+/* ==========================================================================
+   SESSÃO 2: IDENTIDADE & PROJETOS (ANIMAÇÃO 2: ROLAGEM HORIZONTAL GSAP)
+   ========================================================================== */
+.sec-horizontal {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: var(--c-60);
+	overflow: hidden;
+	border-bottom: 2px solid var(--c-30-solid);
+}
+
+/* Faixa estrutural inferior de 30% da altura da seção na cor 30% */
+.horizontal-band-30 {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 30%;
+	background: var(--c-30-surface);
+	border-top: 2px solid var(--c-30-solid);
+	z-index: 1;
+}
+
+/* Linha de progresso 10% que cruza a seção horizontal */
+.horizontal-laser-line {
+	position: absolute;
+	bottom: 30%;
+	left: 0;
+	height: 4px;
+	width: 0%;
+	background: var(--c-10-spicy);
+	z-index: 3;
+	box-shadow: 0 0 20px var(--c-10-spicy);
+}
+
+.h-track {
+	position: relative;
+	z-index: 2;
+	display: flex;
+	width: 200vw;
+	height: 100%;
+}
+
+.h-slide {
+	width: 100vw;
+	height: 100%;
+	padding: 90px 8vw 48px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.big-display-name {
+	font-family: "yeager", serif;
+	font-size: clamp(4rem, 8vw, 10rem);
+	text-transform: uppercase;
+	line-height: 0.9;
+	color: var(--c-white);
+	margin-top: 16px;
+}
+
+.jp-signature-10 {
+	font-family: "kouzan", "Noto Sans JP", sans-serif;
+	font-size: clamp(1.8rem, 3vw, 3.6rem);
+	color: var(--c-10-spicy);
+	letter-spacing: 0.12em;
+	margin-top: 12px;
+}
+
+.slide-bottom-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 24%;
+}
+
+.minimal-roles {
+	display: flex;
+	gap: 40px;
+	font-family: "yeager", serif;
+	font-size: clamp(1.4rem, 2.2vw, 2.6rem);
+	color: var(--c-30-solid);
+	text-transform: uppercase;
+}
+
+.social-row {
+	display: flex;
+	gap: 14px;
+}
+
+.social-btn {
+	width: 58px;
+	height: 58px;
+	background: var(--c-60);
+	border: 1.5px solid var(--c-30-solid);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.25s ease;
+}
+
+.social-btn img {
+	width: 24px;
+	height: 24px;
+	object-fit: contain;
+}
+
+.social-btn:hover {
+	background: var(--c-10-spicy);
+	border-color: var(--c-10-spicy);
+	transform: translateY(-5px);
+}
+
+/* SLIDE 2: PROJETOS MINIMALISTAS */
+.projects-showcase-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 32px;
+	height: 58%;
+	margin: auto 0;
+}
+
+.project-card-minimal {
+	position: relative;
+	border: 2px solid var(--c-30-solid);
+	background: var(--c-30-surface);
+	overflow: hidden;
+	text-decoration: none;
+	color: var(--c-white);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 28px;
+	transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.project-card-minimal img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0.4;
+	filter: grayscale(60%);
+	transition: transform 0.5s ease, opacity 0.4s ease, filter 0.4s ease;
+}
+
+.project-card-minimal:hover {
+	border-color: var(--c-10-spicy);
+	transform: translateY(-6px);
+}
+
+.project-card-minimal:hover img {
+	transform: scale(1.05);
+	opacity: 0.7;
+	filter: grayscale(0%);
+}
+
+.project-card-info {
+	position: relative;
+	z-index: 2;
+}
+
+.project-card-info h3 {
+	font-family: "geist", sans-serif;
+	font-size: clamp(1.4rem, 2vw, 2.2rem);
+	text-transform: uppercase;
+	margin: 8px 0 12px;
+}
+
+.cta-chip-10 {
+	display: inline-block;
+	background: var(--c-10-spicy);
+	color: var(--c-10-text);
+	font-family: "JetBrains Mono", monospace;
+	font-size: 11px;
+	font-weight: 700;
+	padding: 6px 14px;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+/* ==========================================================================
+   SESSÃO 3: PROJETO CESAMA (ANIMAÇÃO 3: BARRA SCANNER + REVEAL PROGRESSIVO)
+   ========================================================================== */
+.sec-cesama {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 35% 65%;
+	background: var(--c-60);
+	border-bottom: 2px solid var(--c-30-solid);
+	overflow: hidden;
+}
+
+/* Coluna esquerda 30% Ciano */
+.cesama-left-30 {
+	background: var(--c-30-surface);
+	border-right: 2px solid var(--c-30-solid);
+	padding: 96px 4vw 48px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+	z-index: 2;
+}
+
+/* Barra vertical 10% que desce com o scroll na divisória */
+.cesama-scanner-bar {
+	position: absolute;
+	top: 0;
+	right: -3px;
+	width: 5px;
+	height: 0%;
+	background: var(--c-10-spicy);
+	box-shadow: 0 0 20px var(--c-10-spicy);
+	z-index: 5;
+}
+
+.cesama-title {
+	font-family: "geist", sans-serif;
+	font-size: clamp(1.8rem, 2.8vw, 3.2rem);
+	text-transform: uppercase;
+	line-height: 1.05;
+	margin: 14px 0 20px;
+}
+
+.cesama-video-box {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	border: 2px solid var(--c-30-solid);
+	background: #000;
+}
+
+.cesama-video-box iframe {
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+.cesama-right-60 {
+	padding: 96px 6vw 48px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 24px;
+	position: relative;
+	z-index: 2;
+}
+
+.cesama-step-card {
+	background: rgba(255, 255, 255, 0.02);
+	border: 1px solid var(--c-30-muted);
+	border-left: 4px solid var(--c-10-spicy);
+	padding: 24px 28px;
+}
+
+.cesama-step-card h3 {
+	font-family: "geist", sans-serif;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	color: var(--c-30-solid);
+	margin-bottom: 10px;
+}
+
+.cesama-step-card p {
+	font-size: 0.95rem;
+	line-height: 1.6;
+	color: rgba(244, 247, 251, 0.82);
+}
+
+.cesama-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-top: 8px;
+}
+
+.cesama-tags span {
+	font-family: "JetBrains Mono", monospace;
+	font-size: 11px;
+	padding: 5px 12px;
+	background: var(--c-30-surface);
+	border: 1px solid var(--c-30-solid);
+	color: var(--c-30-solid);
+}
+
+/* ==========================================================================
+   SESSÃO 4: TRIBOS ANCESTRAIS (ANIMAÇÃO 4: PORTAL QUE ABRE NO SCROLL)
+   ========================================================================== */
+.sec-tribos {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: var(--c-60);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+/* O Portal na cor 30% que se expande de 45% até 92% da tela no scroll */
+.tribos-portal-30 {
+	position: relative;
+	width: 50vw;
+	height: 62vh;
+	background: var(--c-30-surface);
+	border: 2px solid var(--c-30-solid);
+	display: grid;
+	grid-template-columns: 38% 62%;
+	align-items: center;
+	padding: 4vw;
+	gap: 4vw;
+	overflow: hidden;
+	z-index: 2;
+}
+
+.tribos-img-wrap {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	border: 2px solid var(--c-10-spicy);
+	overflow: hidden;
+	background: var(--c-60);
+}
+
+.tribos-img-wrap img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transform: rotateY(180deg);
+}
+
+.tribos-info {
+	display: flex;
+	flex-direction: column;
+	gap: 18px;
+}
+
+.tribos-heading {
+	font-family: "geist", sans-serif;
+	font-size: clamp(2rem, 3.6vw, 4.2rem);
+	text-transform: uppercase;
+	line-height: 1;
+}
+
+.tribos-desc {
+	font-size: 0.98rem;
+	line-height: 1.65;
+	color: rgba(244, 247, 251, 0.85);
+	max-width: 580px;
+}
+
+.btn-spicy-10 {
+	display: inline-flex;
+	align-items: center;
+	gap: 14px;
+	width: fit-content;
+	background: var(--c-10-spicy);
+	color: var(--c-10-text);
+	font-family: "JetBrains Mono", monospace;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 15px 28px;
+	box-shadow: 6px 6px 0 var(--c-30-solid);
+	transition: transform 0.2s ease;
+}
+
+.btn-spicy-10:hover {
+	transform: translate(-3px, -3px);
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+	.sec-hero,
+	.sec-cesama,
+	.tribos-portal-30,
+	.projects-showcase-row {
+		grid-template-columns: 1fr;
+		height: auto;
+	}
+	.hero-right-30 {
+		display: none;
+	}
+	.sec-hero {
+		min-height: 90vh;
+	}
+	.sec-horizontal {
+		height: auto;
+	}
+	.h-track {
+		width: 100%;
+		flex-direction: column;
+	}
+	.h-slide {
+		width: 100%;
+		height: auto;
+		gap: 40px;
+	}
+	.tribos-portal-30 {
+		width: 92vw;
+		padding: 28px;
+	}
+}

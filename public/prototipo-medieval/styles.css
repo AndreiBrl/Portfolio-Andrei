@@ -1,0 +1,1055 @@
+/* ==========================================================================
+   CODEX ARCANUM — MEDIEVAL RPG / DARK FANTASY EDITORIAL (60 / 30 / 10)
+   Inspirado em Elden Ring, Diablo IV & Awwwards Neo-Gothic Web Design
+   - 60% Dominante: #090807 (Obsidiana Abissal & Penumbra de Santuário)
+   - 30% O Charme:  #C8A86B / #261E15 (Ouro Velho Imperial, Filigrana & Pergaminho)
+   - 10% Picante:   #E61938 (Carmesim Sangue Real & Brasa de Fogo)
+   ========================================================================== */
+
+:root {
+  /* 60% Dominante — Escuridão de Catedral / Obsidiana */
+  --bg-obsidian: #090807;
+  --bg-crypt: #0e0c0a;
+
+  /* 30% Secundária (O Charme) — Ouro Velho, Bronze & Pergaminho Nobre */
+  --gold-imperial: #c8a86b;
+  --gold-bright: #e5c98b;
+  --gold-dim: rgba(200, 168, 107, 0.32);
+  --gold-hairline: rgba(200, 168, 107, 0.22);
+  --parchment-surface: linear-gradient(155deg, rgba(44, 34, 22, 0.92) 0%, rgba(20, 16, 11, 0.96) 100%);
+  --parchment-card: linear-gradient(180deg, rgba(50, 39, 25, 0.88) 0%, rgba(19, 15, 11, 0.95) 100%);
+  --bone-ivory: #f2eadf;
+  --bone-muted: #b8ab99;
+
+  /* 10% Acento (A Cor Picante) — Carmesim Sangue Real & Fogo */
+  --crimson-flame: #e61938;
+  --crimson-deep: #9e0b22;
+  --ember-glow: rgba(230, 25, 56, 0.55);
+
+  /* Tipografia Editorial & Gótica */
+  --font-gothic: "UnifrakturMaguntia", serif;
+  --font-display: "Cinzel Decorative", "Cinzel", serif;
+  --font-roman: "Cinzel", serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--bg-obsidian);
+  color: var(--bone-ivory);
+  font-family: var(--font-serif);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   ATMOSFERA: LUZ DE VELA, GRANULAÇÃO & BRASAS FLUTUANTES
+   ========================================================================== */
+#emberCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.75;
+}
+
+.candlelight-vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(200, 168, 107, 0.11) 0%, rgba(42, 30, 18, 0.05) 45%, rgba(9, 8, 7, 0.92) 95%);
+}
+
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 95;
+  opacity: 0.04;
+  background-image: radial-gradient(rgba(229, 201, 139, 0.7) 1px, transparent 0);
+  background-size: 3px 3px;
+}
+
+/* ==========================================================================
+   MOLDURA DIEGÉTICA DE SANTUÁRIO (30% Ouro Velho Filigrana)
+   ========================================================================== */
+.sanctuary-frame {
+  position: fixed;
+  inset: 18px;
+  border: 1px solid var(--gold-hairline);
+  pointer-events: none;
+  z-index: 90;
+  box-shadow: inset 0 0 0 4px rgba(9, 8, 7, 0.6), inset 0 0 0 5px rgba(200, 168, 107, 0.08);
+}
+
+.corner-ornament {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  color: var(--gold-imperial);
+}
+
+.corner-ornament.tl {
+  top: -2px;
+  left: -2px;
+}
+.corner-ornament.tr {
+  top: -2px;
+  right: -2px;
+  transform: scaleX(-1);
+}
+.corner-ornament.bl {
+  bottom: -2px;
+  left: -2px;
+  transform: scaleY(-1);
+}
+.corner-ornament.br {
+  bottom: -2px;
+  right: -2px;
+  transform: scale(-1, -1);
+}
+
+.frame-top-bar {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  background: var(--bg-obsidian);
+  padding: 0 1.6rem;
+  border-left: 1px solid var(--gold-dim);
+  border-right: 1px solid var(--gold-dim);
+  font-family: var(--font-roman);
+  font-size: 0.68rem;
+  letter-spacing: 0.26em;
+  color: var(--gold-imperial);
+  white-space: nowrap;
+}
+
+.frame-compass {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--bone-ivory);
+  font-weight: 700;
+}
+
+.compass-diamond {
+  color: var(--crimson-flame);
+  font-size: 0.65rem;
+  text-shadow: 0 0 8px var(--ember-glow);
+}
+
+/* Caligrafia Gótica Monumental de Background (30% Ouro translúcido) */
+.gothic-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-gothic);
+  font-size: clamp(9rem, 21vw, 24rem);
+  color: rgba(200, 168, 107, 0.055);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 0;
+  letter-spacing: 0.02em;
+}
+
+/* Elementos reutilizáveis de capítulo */
+.chapter-roman {
+  font-family: var(--font-roman);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.34em;
+  color: var(--gold-imperial);
+  text-transform: uppercase;
+}
+
+.ornate-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  margin: 0.55rem 0;
+}
+
+.ornate-divider .line {
+  width: 70px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-imperial), transparent);
+}
+
+.ornate-divider .sigil {
+  color: var(--crimson-flame);
+  font-size: 0.9rem;
+  text-shadow: 0 0 10px var(--ember-glow);
+}
+
+/* ==========================================================================
+   CAPÍTULO I — HERO: ALTAR CENTRAL & ASTROLÁBIO DOURADO (Sem Avatar)
+   ========================================================================== */
+.hero-sanctuary {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 2rem;
+  z-index: 5;
+}
+
+/* Astrolábio Dourado (30% Ouro Velho) que emoldura o centro */
+.astrolabe-ring {
+  position: absolute;
+  width: min(74vw, 680px);
+  height: min(74vw, 680px);
+  color: var(--gold-imperial);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.astrolabe-ring svg {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-altar {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 1080px;
+  width: 100%;
+}
+
+.altar-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.chapter-subtitle {
+  font-family: var(--font-roman);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  color: var(--bone-muted);
+}
+
+/* Palco do Título com Máscara Carmesim (10%) */
+.hero-title-stage {
+  position: relative;
+  display: inline-block;
+  padding: 1.1rem 2.4rem;
+  margin-bottom: 2rem;
+}
+
+.hero-title-base,
+.hero-title-lit {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6.8vw, 6.6rem);
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  display: block;
+}
+
+.hero-title-base {
+  color: var(--bone-ivory);
+  text-shadow: 0 10px 35px rgba(0, 0, 0, 0.9);
+}
+
+/* Estandarte Carmesim (10% Cor Picante) que acende no Scroll */
+.crimson-decree-mask {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #e61938 0%, #a80c24 55%, #e61938 100%);
+  border: 1px solid var(--gold-bright);
+  box-shadow:
+    0 0 45px rgba(230, 25, 56, 0.55),
+    inset 0 0 25px rgba(255, 190, 120, 0.25);
+  clip-path: inset(0 100% 0 0);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.crimson-decree-inner {
+  padding: 1.1rem 2.4rem;
+}
+
+.hero-title-lit {
+  color: var(--bone-ivory);
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.65);
+}
+
+/* Placa de Pergaminho Escuro & Ouro (30% O Charme Visível) */
+.parchment-plaque {
+  background: var(--parchment-surface);
+  border: 1px solid var(--gold-imperial);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.75),
+    inset 0 0 0 4px rgba(9, 8, 7, 0.7),
+    inset 0 0 0 5px var(--gold-dim);
+  padding: 1.5rem 2.6rem;
+  max-width: 760px;
+  position: relative;
+}
+
+.parchment-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.15rem, 1.65vw, 1.45rem);
+  color: var(--bone-ivory);
+  line-height: 1.5;
+  margin-bottom: 0.9rem;
+}
+
+.plaque-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  font-family: var(--font-roman);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--gold-bright);
+}
+
+.crimson-dot {
+  color: var(--crimson-flame);
+  text-shadow: 0 0 8px var(--ember-glow);
+}
+
+.scroll-wax-prompt {
+  margin-top: 2.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-roman);
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  color: var(--gold-imperial);
+}
+
+.wax-seal-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--crimson-flame), var(--crimson-deep));
+  border: 1px solid var(--gold-bright);
+  box-shadow: 0 0 14px var(--ember-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+/* ==========================================================================
+   CAPÍTULO II — HORIZONTAL SCROLL: SALÃO DAS RELÍQUIAS & CARTAS DE TAROT
+   ========================================================================== */
+.reliquary-horizontal {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg-obsidian);
+  border-top: 1px solid var(--gold-dim);
+  border-bottom: 1px solid var(--gold-dim);
+  z-index: 5;
+}
+
+.watermark-horizontal {
+  top: 54%;
+}
+
+/* Fio de Sangue/Brasa no topo (10%) */
+.bloodline-track {
+  position: absolute;
+  top: 38px;
+  left: 5vw;
+  right: 5vw;
+  height: 2px;
+  background: rgba(200, 168, 107, 0.2);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+}
+
+.bloodline-fill {
+  width: 100%;
+  height: 100%;
+  background: var(--crimson-flame);
+  box-shadow: 0 0 16px var(--crimson-flame);
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+
+.bloodline-label {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  font-family: var(--font-roman);
+  font-size: 0.65rem;
+  letter-spacing: 0.24em;
+  color: var(--gold-imperial);
+}
+
+.reliquary-track {
+  display: flex;
+  width: max-content;
+  height: 100vh;
+  align-items: center;
+  padding: 0 6vw;
+  gap: 6vw;
+  position: relative;
+  z-index: 5;
+}
+
+.reliquary-panel {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Painel 1: Monólito de Tarot do Artífice (30% Pergaminho & Ouro Velho) */
+.panel-guildmaster {
+  width: min(86vw, 760px);
+}
+
+.tarot-monolith {
+  width: 100%;
+  background: var(--parchment-surface);
+  border: 1.5px solid var(--gold-imperial);
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.85),
+    inset 0 0 0 6px rgba(9, 8, 7, 0.75),
+    inset 0 0 0 7px var(--gold-dim);
+  padding: clamp(2rem, 3.5vw, 3.4rem);
+  position: relative;
+}
+
+.tarot-arch-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--gold-dim);
+  padding-bottom: 0.9rem;
+  margin-bottom: 1.4rem;
+}
+
+.arcana-num {
+  font-family: var(--font-roman);
+  font-size: 0.76rem;
+  letter-spacing: 0.26em;
+  color: var(--gold-bright);
+  font-weight: 700;
+}
+
+.arcana-rank {
+  font-family: var(--font-roman);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  padding: 0.25rem 0.75rem;
+  background: var(--crimson-flame);
+  color: var(--bone-ivory);
+  box-shadow: 0 0 14px var(--ember-glow);
+  font-weight: 700;
+}
+
+.guildmaster-name {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 3.6vw, 3.4rem);
+  color: var(--bone-ivory);
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.guildmaster-lore {
+  font-size: clamp(1.08rem, 1.35vw, 1.28rem);
+  line-height: 1.65;
+  color: var(--bone-muted);
+  margin-bottom: 1.8rem;
+}
+
+/* Atributos RPG (30% Ouro + 10% Carmesim) */
+.rpg-attributes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+  margin-bottom: 1.8rem;
+}
+
+.attr-box {
+  background: rgba(9, 8, 7, 0.65);
+  border: 1px solid var(--gold-dim);
+  padding: 0.75rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.attr-box.attr-crimson {
+  border-color: var(--crimson-flame);
+  background: rgba(230, 25, 56, 0.12);
+  box-shadow: inset 0 0 15px rgba(230, 25, 56, 0.2);
+}
+
+.attr-name {
+  font-family: var(--font-roman);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  color: var(--gold-imperial);
+}
+
+.attr-val {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--bone-ivory);
+}
+
+.covenant-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.covenant-seal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.65rem 1.2rem;
+  background: rgba(9, 8, 7, 0.8);
+  border: 1px solid var(--gold-imperial);
+  color: var(--gold-bright);
+  text-decoration: none;
+  font-family: var(--font-roman);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  transition: all 0.25s ease;
+}
+
+.covenant-seal img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.covenant-seal:hover {
+  background: var(--crimson-flame);
+  border-color: var(--bone-ivory);
+  color: var(--bone-ivory);
+  box-shadow: 0 0 22px var(--ember-glow);
+  transform: translateY(-2px);
+}
+
+/* Painel 2: As 3 Cartas de Tarot / Relíquias (30% Ouro Velho) */
+.panel-tarot-deck {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.6rem;
+}
+
+.deck-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid var(--gold-dim);
+  padding-bottom: 0.8rem;
+}
+
+.deck-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 2.6vw, 2.5rem);
+  color: var(--bone-ivory);
+  letter-spacing: 0.06em;
+  margin-top: 0.25rem;
+}
+
+.deck-hint {
+  font-style: italic;
+  color: var(--gold-imperial);
+  font-size: 1.05rem;
+}
+
+.tarot-cards-grid {
+  display: flex;
+  gap: 2.2rem;
+}
+
+.tarot-card {
+  width: 330px;
+  background: var(--parchment-card);
+  border: 1.5px solid var(--gold-imperial);
+  padding: 10px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.tarot-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--crimson-flame);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9), 0 0 28px rgba(230, 25, 56, 0.35);
+}
+
+.tarot-card-border {
+  border: 1px solid var(--gold-dim);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 1.1rem;
+}
+
+.tarot-roman {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.85rem;
+  z-index: 3;
+  background: rgba(9, 8, 7, 0.88);
+  border: 1px solid var(--gold-imperial);
+  padding: 0.2rem 0.6rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  color: var(--gold-bright);
+}
+
+/* Janela em Arco Gótico para a imagem do projeto */
+.tarot-art-window {
+  position: relative;
+  width: 100%;
+  height: 195px;
+  overflow: hidden;
+  border: 1px solid var(--gold-imperial);
+  border-radius: 90px 90px 4px 4px;
+  margin-bottom: 1.1rem;
+}
+
+.tarot-art-window img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: sepia(0.28) contrast(1.08);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.tarot-card:hover .tarot-art-window img {
+  transform: scale(1.06);
+  filter: sepia(0.05) contrast(1.12);
+}
+
+.tarot-art-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(18, 14, 10, 0.85) 0%, transparent 60%);
+}
+
+.tarot-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.tarot-type {
+  font-family: var(--font-roman);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  color: var(--gold-imperial);
+  margin-bottom: 0.35rem;
+}
+
+.tarot-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--bone-ivory);
+  margin-bottom: 0.5rem;
+}
+
+.tarot-desc {
+  font-size: 1.02rem;
+  line-height: 1.5;
+  color: var(--bone-muted);
+  margin-bottom: 1.1rem;
+  flex: 1;
+}
+
+.tarot-footer {
+  border-top: 1px solid var(--gold-hairline);
+  padding-top: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.crimson-badge {
+  font-family: var(--font-roman);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--crimson-flame);
+  font-weight: 700;
+  text-shadow: 0 0 10px var(--ember-glow);
+}
+
+.gold-badge {
+  font-family: var(--font-roman);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--gold-imperial);
+}
+
+/* ==========================================================================
+   CAPÍTULO III — CESAMA: MANUSCRITO ILUMINADO & ESPELHO DE VIDENTE
+   ========================================================================== */
+.manuscript-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4vw 6vw;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.manuscript-layout {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1380px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 4.5vw;
+  align-items: center;
+}
+
+.scrying-header {
+  margin-bottom: 1.2rem;
+}
+
+.scrying-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.4vw, 3.2rem);
+  color: var(--bone-ivory);
+  letter-spacing: 0.05em;
+  margin-top: 0.3rem;
+}
+
+/* Moldura de Espelho Arcano em Ouro Velho (30%) */
+.scrying-mirror-frame {
+  position: relative;
+  background: var(--parchment-surface);
+  border: 2px solid var(--gold-imperial);
+  padding: 14px;
+  box-shadow:
+    0 25px 65px rgba(0, 0, 0, 0.85),
+    inset 0 0 0 4px rgba(9, 8, 7, 0.8);
+}
+
+.mirror-corner {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--crimson-flame);
+  box-shadow: 0 0 10px var(--ember-glow);
+  z-index: 4;
+}
+.mc-tl { top: 6px; left: 6px; border-right: none; border-bottom: none; }
+.mc-tr { top: 6px; right: 6px; border-left: none; border-bottom: none; }
+.mc-bl { bottom: 6px; left: 6px; border-right: none; border-top: none; }
+.mc-br { bottom: 6px; right: 6px; border-left: none; border-top: none; }
+
+.scrying-video {
+  width: 100%;
+  height: clamp(240px, 42vh, 410px);
+  object-fit: cover;
+  display: block;
+  border: 1px solid var(--gold-dim);
+}
+
+.mirror-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.75rem;
+  font-family: var(--font-roman);
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  color: var(--gold-imperial);
+}
+
+.crimson-pulse {
+  color: var(--crimson-flame);
+  font-weight: 700;
+  text-shadow: 0 0 10px var(--ember-glow);
+}
+
+/* Coluna Rúnica Carmesim (10%) + 3 Pergaminhos Dourados (30%) */
+.manuscript-scrolls-area {
+  position: relative;
+  padding-left: 2.4rem;
+}
+
+.rune-spine-track {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  background: rgba(200, 168, 107, 0.2);
+}
+
+.rune-spine-fill {
+  width: 100%;
+  height: 100%;
+  background: var(--crimson-flame);
+  box-shadow: 0 0 18px var(--crimson-flame);
+  transform-origin: top center;
+  transform: scaleY(0);
+}
+
+.scrolls-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.illuminated-scroll {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  background: var(--parchment-surface);
+  border: 1px solid var(--gold-imperial);
+  padding: 1.35rem 1.6rem;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.65);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.illuminated-scroll.is-ignited {
+  border-color: var(--crimson-flame);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.8),
+    -4px 0 0 var(--crimson-flame),
+    0 0 25px rgba(230, 25, 56, 0.22);
+}
+
+.scroll-wax-number {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--crimson-flame), var(--crimson-deep));
+  border: 1px solid var(--gold-bright);
+  box-shadow: 0 0 14px var(--ember-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--bone-ivory);
+}
+
+.scroll-latin {
+  display: block;
+  font-family: var(--font-roman);
+  font-size: 0.62rem;
+  letter-spacing: 0.24em;
+  color: var(--gold-imperial);
+  margin-bottom: 0.2rem;
+}
+
+.scroll-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.28rem;
+  color: var(--bone-ivory);
+  margin-bottom: 0.35rem;
+}
+
+.scroll-content p {
+  font-size: 1.04rem;
+  line-height: 1.5;
+  color: var(--bone-muted);
+}
+
+/* ==========================================================================
+   CAPÍTULO IV — TRIBOS ANCESTRAIS: PORTAL DO SANTUÁRIO (Vitral Gótico)
+   ========================================================================== */
+.sanctum-finale {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4vw 6vw;
+  overflow: hidden;
+  border-top: 1px solid var(--gold-dim);
+  z-index: 5;
+}
+
+/* Cofre/Altar Principal em Ouro Velho & Pergaminho (30%) */
+.sanctum-gate-vault {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1340px;
+  background: var(--parchment-surface);
+  border: 2px solid var(--gold-imperial);
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.9),
+    inset 0 0 0 6px rgba(9, 8, 7, 0.8),
+    inset 0 0 0 7px var(--gold-dim);
+  padding: clamp(2rem, 4vw, 4rem);
+}
+
+.sanctum-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4vw;
+  align-items: center;
+}
+
+.sanctum-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.crimson-wax-pill {
+  background: var(--crimson-flame);
+  color: var(--bone-ivory);
+  font-family: var(--font-roman);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  padding: 0.35rem 0.9rem;
+  box-shadow: 0 0 18px var(--ember-glow);
+}
+
+.gold-year {
+  font-family: var(--font-roman);
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  color: var(--gold-imperial);
+}
+
+.sanctum-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4.8vw, 4.6rem);
+  line-height: 1.02;
+  color: var(--bone-ivory);
+  letter-spacing: 0.04em;
+  margin-bottom: 1.3rem;
+}
+
+.sanctum-description {
+  font-size: clamp(1.1rem, 1.4vw, 1.32rem);
+  line-height: 1.65;
+  color: var(--bone-muted);
+  margin-bottom: 2.2rem;
+  max-width: 580px;
+}
+
+/* Botão 10% Carmesim Real */
+.crimson-royal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 2.2rem;
+  background: linear-gradient(135deg, var(--crimson-flame) 0%, var(--crimson-deep) 100%);
+  border: 1.5px solid var(--gold-bright);
+  color: var(--bone-ivory);
+  text-decoration: none;
+  font-family: var(--font-roman);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  box-shadow: 0 0 30px var(--ember-glow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.crimson-royal-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 45px rgba(230, 25, 56, 0.85);
+}
+
+.btn-ornament {
+  color: var(--gold-bright);
+}
+
+/* Moldura em Arco de Vitral Gótico Dourado (30%) */
+.sanctum-arch-showcase {
+  display: flex;
+  justify-content: center;
+}
+
+.gothic-arch-frame {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  height: clamp(280px, 50vh, 430px);
+  border-radius: 220px 220px 8px 8px;
+  border: 2px solid var(--gold-imperial);
+  overflow: hidden;
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.85);
+}
+
+.gothic-arch-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.arch-inner-border {
+  position: absolute;
+  inset: 8px;
+  border-radius: 212px 212px 4px 4px;
+  border: 1px solid rgba(229, 201, 139, 0.55);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .manuscript-layout,
+  .sanctum-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .rpg-attributes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .frame-latin {
+    display: none;
+  }
+}

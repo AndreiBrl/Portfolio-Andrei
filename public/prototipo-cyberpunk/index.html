@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-trio="dystopia">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Andrei Barbuto — Cyberpunk Minimalista 60/30/10</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&family=Noto+Sans+JP:wght@700;900&display=swap"
+		rel="stylesheet"
+	/>
+	<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+	<!-- TOPBAR MINIMALISTA COM OS 3 TRIOS DE CORES MAIS FAMOSOS DO CYBERPUNK -->
+	<header class="topbar">
+		<div class="topbar-left">
+			<div class="swatch-pill" title="60% Base / 30% Secundária / 10% Picante">
+				<span class="swatch-60"></span>
+				<span class="swatch-30"></span>
+				<span class="swatch-10"></span>
+			</div>
+			<span>60 / 30 / 10 — ANDREI BARBUTO</span>
+		</div>
+
+		<div class="trio-selector">
+			<button class="trio-btn active" data-set-trio="dystopia">
+				01. Neon Dystopia (Indigo 60 + Cyan 30 + Pink 10)
+			</button>
+			<button class="trio-btn" data-set-trio="nightcity">
+				02. Night City (Obsidian 60 + Violet 30 + Yellow 10)
+			</button>
+			<button class="trio-btn" data-set-trio="akira">
+				03. Neo-Tokyo (Carbon 60 + Crimson 30 + Mint 10)
+			</button>
+		</div>
+	</header>
+
+	<!-- ======================================================================
+	     SESSÃO 1: HERO (SEM IMAGEM — PURO MINIMALISMO + ANIMAÇÃO DA BARRA 10%)
+	     ====================================================================== -->
+	<section class="sec-hero" id="sec-hero">
+		<!-- 60% LADO DOMINANTE -->
+		<div class="hero-left-60">
+			<div class="kanji-bg" id="hero-kanji-bg" style="bottom: -5%; left: -2%;">
+				歓迎・創造
+			</div>
+
+			<div class="tag-mono">
+				<span class="badge-10">01</span>
+				<span>// ようこそ — SYSTEM READY</span>
+			</div>
+
+			<div class="hero-bar-wrap">
+				<div class="hero-spicy-bar" id="hero-spicy-bar">
+					<h1 class="hero-main-title">Bem vindo, Visitante</h1>
+				</div>
+			</div>
+
+			<p class="hero-sub">
+				Aqui compartilho todas as minhas criações.
+			</p>
+		</div>
+
+		<!-- 30% PAINEL ESTRUTURAL SECUNDÁRIO (TORNA O 30% IMEDIATAMENTE VISÍVEL) -->
+		<div class="hero-right-30" id="hero-panel-30">
+			<div class="tag-mono">
+				<span>// ARCHIVE 2077</span>
+			</div>
+
+			<div class="hero-kanji-vertical">
+				創造者アンドレイ
+			</div>
+
+			<div class="scroll-cue">
+				<span class="scroll-cue-dot"></span>
+				<span>SCROLL DOWN // 下へ</span>
+			</div>
+		</div>
+	</section>
+
+	<!-- ======================================================================
+	     SESSÃO 2: IDENTIDADE & PROJETOS (ANIMAÇÃO 2: ROLAGEM HORIZONTAL + LASER 10%)
+	     ====================================================================== -->
+	<section class="sec-horizontal" id="sec-horizontal">
+		<!-- Kanji Gigante na cor 30% -->
+		<div class="kanji-bg" id="h-kanji-bg" style="top: 8%; left: 6%;">
+			開発者・作品集
+		</div>
+
+		<!-- Faixa inferior ocupando 30% da tela na cor 30% -->
+		<div class="horizontal-band-30"></div>
+		<!-- Linha 10% picante que preenche durante a rolagem horizontal -->
+		<div class="horizontal-laser-line" id="h-laser-line"></div>
+
+		<div class="h-track" id="h-track">
+			<!-- SLIDE 1: ANDREI BARBUTO -->
+			<div class="h-slide">
+				<div>
+					<div class="tag-mono">
+						<span class="badge-10">02</span>
+						<span>// IDENTITY — 個人情報</span>
+					</div>
+					<h2 class="big-display-name">Andrei Barbuto.</h2>
+					<div class="jp-signature-10">バルブト アンドレイ</div>
+				</div>
+
+				<div class="slide-bottom-row">
+					<div class="minimal-roles">
+						<span>Desenvolvedor Web.</span>
+						<span>Escritor.</span>
+					</div>
+
+					<div class="social-row">
+						<a
+							href="https://github.com/AndreiBrl"
+							target="_blank"
+							rel="noreferrer"
+							class="social-btn"
+							title="GitHub"
+						>
+							<img src="../img/github.png" alt="GitHub" />
+						</a>
+						<a
+							href="../curriculo.pdf"
+							download
+							class="social-btn"
+							title="Currículo"
+						>
+							<img src="../img/curriculo.png" alt="Currículo" />
+						</a>
+						<a
+							href="https://www.linkedin.com/in/andreibarbuto/"
+							target="_blank"
+							rel="noreferrer"
+							class="social-btn"
+							title="LinkedIn"
+						>
+							<img src="../img/linkedin.png" alt="LinkedIn" />
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- SLIDE 2: PROJETOS -->
+			<div class="h-slide">
+				<div>
+					<div class="tag-mono">
+						<span class="badge-10">02.B</span>
+						<span>// SELECTED WORKS — 作品一覧</span>
+					</div>
+				</div>
+
+				<div class="projects-showcase-row">
+					<a href="#sistemaCesama" class="project-card-minimal">
+						<img src="../img/ete_cesama.png" alt="Sistema Cesama" />
+						<div class="project-card-info">
+							<div class="tag-mono">01 // 水処理</div>
+							<h3>Sistema para Estação de Esgoto</h3>
+							<span class="cta-chip-10">Explorar &rarr;</span>
+						</div>
+					</a>
+
+					<a href="#tribos" class="project-card-minimal">
+						<img src="../img/gorila.jpeg" alt="Tribos Ancestrais" />
+						<div class="project-card-info">
+							<div class="tag-mono">02 // 祖先部族</div>
+							<h3>Projeto Tribos Ancestrais</h3>
+							<span class="cta-chip-10">Explorar &rarr;</span>
+						</div>
+					</a>
+				</div>
+
+				<div class="slide-bottom-row">
+					<div class="minimal-roles">
+						<span>PROJETOS // ARQUIVOS</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ======================================================================
+	     SESSÃO 3: PROJETO CESAMA (ANIMAÇÃO 3: PIN + BARRA SCANNER 10% + REVEAL)
+	     ====================================================================== -->
+	<section class="sec-cesama" id="sistemaCesama">
+		<div class="kanji-bg" style="bottom: -6%; right: -2%;">
+			水質分析
+		</div>
+
+		<!-- Coluna 30% Fixa com Vídeo -->
+		<div class="cesama-left-30">
+			<!-- Barra 10% que desce escaneando a seção conforme o scroll -->
+			<div class="cesama-scanner-bar" id="cesama-scanner"></div>
+
+			<div>
+				<div class="tag-mono">
+					<span class="badge-10">03</span>
+					<span>// CESAMA — 水処理システム</span>
+				</div>
+				<h2 class="cesama-title">Gerenciamento de Análises (ETEs)</h2>
+			</div>
+
+			<div class="cesama-video-box">
+				<iframe
+					src="https://www.youtube.com/embed/SbKSVSMG33Y?si=eu1nfMV0ejGvk9GO"
+					title="YouTube video player"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					referrerpolicy="strict-origin-when-cross-origin"
+					allowfullscreen
+				></iframe>
+			</div>
+
+			<div class="tag-mono">
+				<span>STATUS: EM PRODUÇÃO</span>
+			</div>
+		</div>
+
+		<!-- Coluna 60% onde os 3 blocos entram progressivamente durante o pin -->
+		<div class="cesama-right-60">
+			<div class="cesama-step-card" data-cesama-step>
+				<h3>01 // Visão Geral</h3>
+				<p>
+					Criado para modernizar e agilizar o trabalho das Estações de Tratamento de Esgoto (ETEs) da Cesama, automatizando a análise de amostras e o registro de dados com painéis intuitivos, relatórios dinâmicos e filtros avançados.
+				</p>
+			</div>
+
+			<div class="cesama-step-card" data-cesama-step>
+				<h3>02 // Funcionalidades Principais</h3>
+				<p>
+					<strong>Home &amp; Painel:</strong> Controle de rotinas pendentes. &bull;
+					<strong>Laboratório &amp; Operação:</strong> Cálculo automático por parâmetro. &bull;
+					<strong>Relatórios &amp; Consultas:</strong> Busca avançada e cruzamento de dados internos e externos.
+				</p>
+			</div>
+
+			<div class="cesama-step-card" data-cesama-step>
+				<h3>03 // Stack &amp; Arquitetura</h3>
+				<div class="cesama-tags">
+					<span>PYTHON</span>
+					<span>DJANGO</span>
+					<span>JAVASCRIPT</span>
+					<span>HTML / CSS</span>
+					<span>SQL SERVER</span>
+					<span>GIT</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ======================================================================
+	     SESSÃO 4: TRIBOS ANCESTRAIS (ANIMAÇÃO 4: PORTAL 30% QUE EXPANDE NO SCROLL)
+	     ====================================================================== -->
+	<section class="sec-tribos" id="tribos">
+		<div class="kanji-bg" style="top: 8%; left: -2%;">
+			祖先部族
+		</div>
+
+		<div class="tribos-portal-30" id="tribos-portal">
+			<div class="tribos-img-wrap">
+				<img src="../img/gorila3.png" alt="Tribos Ancestrais" />
+			</div>
+
+			<div class="tribos-info">
+				<div class="tag-mono">
+					<span class="badge-10">04</span>
+					<span>// SCI-FI WORK — 未来小説</span>
+				</div>
+
+				<h2 class="tribos-heading">Tribos Ancestrais</h2>
+
+				<p class="tribos-desc">
+					Obra literária de Ficção Científica iniciada em 2022 e publicada na web em React/Next.js. Refatorada com foco em performance de imagem e experiência de leitura imersiva no mobile.
+				</p>
+
+				<div class="cesama-tags">
+					<span>REACT</span>
+					<span>NEXT.JS</span>
+					<span>GSAP</span>
+					<span>GIT</span>
+					<span>PHOTOSHOP</span>
+				</div>
+
+				<a
+					href="https://www.tribosancestrais.com.br"
+					target="_blank"
+					rel="noreferrer"
+					class="btn-spicy-10"
+				>
+					<span>Acessar Projeto</span>
+					<span>&rarr;</span>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+	<script src="./app.js"></script>
+</body>
+</html>

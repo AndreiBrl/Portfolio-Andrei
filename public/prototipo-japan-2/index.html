@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrei Barbuto — Estação Ghibli II // Portfólio Interativo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <main class="ghibli-world" id="ghibliWorld">
+
+    <!-- 1. CÉU DINÂMICO: ESTRELAS + ASTROS (SOL & LUA REAL) + RASTROS + NUVENS -->
+    <div class="sky-canvas" aria-hidden="true">
+
+      <!-- Campo de Estrelas Cintilantes -->
+      <div class="stars-field" id="starsField"></div>
+
+      <!-- Órbita do Sol e da Lua -->
+      <div class="celestial-layer" id="celestialLayer">
+        <div class="celestial-sun" id="celestialSun">
+          <div class="sun-halo"></div>
+          <div class="sun-core"></div>
+        </div>
+
+        <div class="celestial-moon" id="celestialMoon">
+          <div class="moon-halo"></div>
+          <svg class="moon-svg" viewBox="0 0 100 100" id="moonSvg">
+            <defs>
+              <radialGradient id="moonSurfaceGrad" cx="38%" cy="35%" r="65%">
+                <stop offset="0%" stop-color="#FFFDF5" />
+                <stop offset="70%" stop-color="#F6EBC1" />
+                <stop offset="100%" stop-color="#E5D296" />
+              </radialGradient>
+              <clipPath id="moonDiskClip">
+                <circle cx="50" cy="50" r="42" />
+              </clipPath>
+            </defs>
+            <circle cx="50" cy="50" r="42" fill="rgba(210, 228, 255, 0.12)" />
+            <g clip-path="url(#moonDiskClip)">
+              <path id="moonLitPath" d="" fill="url(#moonSurfaceGrad)" />
+              <circle cx="38" cy="36" r="6.5" fill="rgba(205, 185, 130, 0.28)" />
+              <circle cx="62" cy="44" r="9" fill="rgba(205, 185, 130, 0.22)" />
+              <circle cx="46" cy="64" r="5" fill="rgba(205, 185, 130, 0.25)" />
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Rastros brancos curvos de avião -->
+      <svg class="sky-contrails" id="skyContrails" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <path
+          d="M -80,175 Q 680,10 1980,42"
+          fill="none"
+          stroke="rgba(255, 255, 255, 0.85)"
+          stroke-width="2.2"
+          stroke-linecap="round"
+        />
+        <path
+          d="M -60,330 Q 430,485 1100,500"
+          fill="none"
+          stroke="rgba(255, 255, 255, 0.68)"
+          stroke-width="1.4"
+          stroke-linecap="round"
+        />
+        <path
+          d="M -40,820 Q 880,780 1890,715"
+          fill="none"
+          stroke="rgba(255, 255, 255, 0.5)"
+          stroke-width="5"
+          stroke-linecap="round"
+          stroke-dasharray="2 3"
+        />
+      </svg>
+
+      <!-- Gaivotas -->
+      <div class="seagulls-flock flock-upper" id="seagullsUpper">
+        <svg viewBox="0 0 120 70" class="seagull-svg">
+          <path d="M25,18 Q32,8 39,16 Q46,8 53,18" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M18,28 Q24,20 30,27 Q36,20 42,28" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M48,26 Q53,19 58,25 Q63,19 68,26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+          <path d="M30,44 Q35,37 40,43 Q45,37 50,44" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round"/>
+          <path d="M6,58 Q11,51 16,57 Q21,51 26,58" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <div class="seagulls-flock flock-lower" id="seagullsLower">
+        <svg viewBox="0 0 100 50" class="seagull-svg">
+          <path d="M10,28 Q16,19 22,26 Q28,19 34,28" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M38,20 Q44,12 50,19 Q56,12 62,20" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M72,22 Q77,15 82,21 Q87,15 92,22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Nuvens Cumulus no Horizonte -->
+      <div class="horizon-cumulus cumulus-right">
+        <svg viewBox="0 0 680 420" fill="none">
+          <path
+            class="cloud-svg-shade"
+            d="M140,420 C120,360 175,310 230,315 C245,255 315,220 380,235 C415,155 510,125 585,155 C625,115 680,130 680,130 L680,420 Z"
+            fill="var(--cumulus-shade, #B8E7FA)"
+            opacity="0.78"
+          />
+          <path
+            class="cloud-svg-body"
+            d="M80,420 C65,365 115,320 175,325 C195,260 270,225 335,245 C365,150 475,105 565,135 C610,85 680,95 680,95 L680,420 Z"
+            fill="var(--cumulus-body, #FFFFFF)"
+            opacity="0.96"
+          />
+        </svg>
+      </div>
+
+      <div class="horizon-cumulus cumulus-left">
+        <svg viewBox="0 0 500 260" fill="none">
+          <path
+            class="cloud-svg-body"
+            d="M0,120 C55,110 110,140 135,175 C185,155 250,175 275,215 C330,195 410,215 445,260 L0,260 Z"
+            fill="var(--cumulus-body, #FFFFFF)"
+            opacity="0.88"
+          />
+        </svg>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         2. IDENTIDADE NO CÉU (Sem escritos em japonês; apenas Currículo DL + LinkedIn Azul)
+         ======================================================================= -->
+    <header class="sky-identity">
+      <div class="cloud-name-container">
+        <h1 class="cloud-signature-name">
+          ANDREI<br />BARBUTO
+        </h1>
+        <p class="cloud-role-subtitle">
+          Desenvolvedor Web &amp; Escritor
+        </p>
+
+        <!-- Apenas Currículo DL + Botão LinkedIn (fundo azul e ícone branco) -->
+        <nav class="sky-social-actions" aria-label="Currículo e LinkedIn">
+          <a href="../curriculo.pdf" download class="btn-curriculo-dl" title="Baixar Currículo PDF">
+            <span>Currículo</span>
+            <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 3v10m0 0l-4-4m4 4l4-4M4 17h12" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/andreibarbuto/" target="_blank" rel="noreferrer" class="btn-icon-linkedin" aria-label="LinkedIn" title="LinkedIn">
+            <img src="../img/linkedin.png" alt="LinkedIn" />
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- =======================================================================
+         3. RELÓGIO MINIMALISTA NO TOPO DIREITO + 2 BOTÕES DE COMANDO DA ESTAÇÃO:
+         - Botão 1: Mão de Sinalização (Verde = Livre / Flip Suave Vermelha = Pare)
+         - Botão 2: Adicionar Passageiros na Estação (Crianças, Idosos, Atletas, etc.)
+         ======================================================================= -->
+    <aside class="ghibli-clock-widget" id="clockWidget" aria-label="Relógio e Controles da Estação">
+      <button type="button" class="clock-minimal-trigger" id="clockTrigger" title="Clique para alterar o horário do dia">
+        <span class="clock-poetic-phrase" id="clockPeriodLabel">Manhã na estação</span>
+        <span class="clock-ghibli-time" id="clockDigitalDisplay">08:45</span>
+      </button>
+
+      <!-- Dois Botões embaixo do Relógio: 1) Sinal de Mão (Flip Verde/Vermelho) e 2) + Passageiro -->
+      <div class="station-command-buttons">
+        <!-- Botão 1: Placa/Mão de Sinal de Trânsito Ferroviário (Flip 3D Verde <-> Vermelho) -->
+        <button
+          type="button"
+          class="signal-hand-btn"
+          id="signalHandBtn"
+          aria-label="Sinal do Trem: Verde (Andando) ou Vermelho (Parado)"
+          title="Clique para parar ou liberar o trem"
+        >
+          <div class="signal-flip-card" id="signalFlipCard">
+            <!-- Face Verde (Trem Livre) -->
+            <div class="signal-face signal-face-green">
+              <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor">
+                <path d="M18 8.5V4a1.5 1.5 0 0 0-3 0v4.5h-.5V2.5a1.5 1.5 0 0 0-3 0V8.5H11V3.5a1.5 1.5 0 0 0-3 0v6.5h-.5V6a1.5 1.5 0 0 0-3 0v8.5A6.5 6.5 0 0 0 11 21h1.5a6.5 6.5 0 0 0 6.5-6.5v-4.5a1.5 1.5 0 0 0-1-1.5Z"/>
+              </svg>
+            </div>
+            <!-- Face Vermelha (Trem Parado) -->
+            <div class="signal-face signal-face-red">
+              <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor">
+                <path d="M18 8.5V4a1.5 1.5 0 0 0-3 0v4.5h-.5V2.5a1.5 1.5 0 0 0-3 0V8.5H11V3.5a1.5 1.5 0 0 0-3 0v6.5h-.5V6a1.5 1.5 0 0 0-3 0v8.5A6.5 6.5 0 0 0 11 21h1.5a6.5 6.5 0 0 0 6.5-6.5v-4.5a1.5 1.5 0 0 0-1-1.5Z"/>
+              </svg>
+            </div>
+          </div>
+        </button>
+
+        <!-- Botão 2: Adicionar Passageiro na Estação -->
+        <button
+          type="button"
+          class="add-passenger-btn"
+          id="addPassengerBtn"
+          aria-label="Adicionar passageiro na estação"
+          title="Adicionar passageiro na estação (o trem vai parar para buscá-los!)"
+        >
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="10" cy="7" r="4" />
+            <path d="M3 20v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1" />
+            <line x1="19" y1="8" x2="19" y2="14" />
+            <line x1="16" y1="11" x2="22" y2="11" />
+          </svg>
+          <span class="passenger-count-badge" id="passengerCountBadge">0</span>
+        </button>
+      </div>
+
+      <!-- Gaveta que abre ao clicar no relógio -->
+      <div class="clock-drawer" id="clockDrawer" aria-hidden="true">
+        <div class="drawer-moon-row" id="clockMoonBadge">
+          <span class="moon-phase-icon" id="moonPhaseEmoji">🌕</span>
+          <span class="moon-phase-name" id="moonPhaseName">Lua Cheia</span>
+        </div>
+
+        <label class="drawer-slider-label" for="timeScrubber">Viajar no tempo (24h):</label>
+        <div class="clock-slider-row">
+          <input
+            type="range"
+            id="timeScrubber"
+            class="time-scrubber"
+            min="0"
+            max="1439"
+            step="1"
+            aria-label="Explorar horário do dia"
+          />
+        </div>
+
+        <button type="button" class="clock-sync-btn is-synced" id="clockSyncBtn">
+          ● Sincronizado com o PC
+        </button>
+      </div>
+    </aside>
+
+    <!-- =======================================================================
+         4. PALCO COSTEIRO: MAR + ESTAÇÃO COM PASSAGEIROS + TREM
+         ======================================================================= -->
+    <div class="seaside-stage">
+
+      <!-- Mar no Horizonte -->
+      <div class="ocean-horizon" aria-hidden="true">
+        <div class="ocean-shimmer" id="oceanShimmer"></div>
+      </div>
+
+      <!-- Fios Elétricos -->
+      <svg class="power-lines-svg" viewBox="0 0 1920 260" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M 0,92 Q 190,68 370,38" fill="none" stroke="#23313B" stroke-width="1.5" opacity="0.82" />
+        <path d="M 0,106 Q 190,82 370,50" fill="none" stroke="#23313B" stroke-width="1.3" opacity="0.82" />
+        <path d="M 0,120 Q 190,96 370,62" fill="none" stroke="#23313B" stroke-width="1.2" opacity="0.82" />
+
+        <path d="M 370,38 Q 1120,86 1920,52" fill="none" stroke="#23313B" stroke-width="1.6" opacity="0.82" />
+        <path d="M 370,50 Q 1120,98 1920,64" fill="none" stroke="#23313B" stroke-width="1.3" opacity="0.82" />
+        <path d="M 370,62 Q 1120,110 1920,76" fill="none" stroke="#23313B" stroke-width="1.2" opacity="0.82" />
+      </svg>
+
+      <!-- Estação Shimonada + Camada de Passageiros Esperando -->
+      <div class="station-backdrop" aria-hidden="true">
+        <div class="utility-pole">
+          <div class="pole-crossbar"></div>
+          <div class="pole-lantern">
+            <div class="pole-lantern-bulb"></div>
+            <div class="pole-light-cone"></div>
+          </div>
+          <div class="pole-control-box"></div>
+        </div>
+
+        <div class="station-shelter" id="stationShelter">
+          <div class="shelter-roof">
+            <div class="roof-corrugation"></div>
+          </div>
+
+          <div class="station-night-spots">
+            <div class="station-spot spot-1">
+              <div class="spot-bulb"></div>
+              <div class="spot-cone"></div>
+            </div>
+            <div class="station-spot spot-2">
+              <div class="spot-bulb"></div>
+              <div class="spot-cone"></div>
+            </div>
+            <div class="station-spot spot-3">
+              <div class="spot-bulb"></div>
+              <div class="spot-cone"></div>
+            </div>
+          </div>
+
+          <div class="shelter-hanging-sign">
+            <span>ESTAÇÃO: BARBUTO</span>
+          </div>
+
+          <div class="shelter-pillars-row">
+            <div class="shelter-pillar">
+              <div class="pillar-base"></div>
+              <div class="station-bush bush-left"></div>
+            </div>
+            <div class="shelter-pillar">
+              <div class="pillar-base"></div>
+            </div>
+            <div class="shelter-pillar">
+              <div class="pillar-base"></div>
+              <div class="station-bush bush-right"></div>
+            </div>
+          </div>
+
+          <div class="station-benches">
+            <div class="station-bench"></div>
+            <div class="station-bench"></div>
+          </div>
+
+          <!-- Camada onde os Passageiros (Crianças, Idosos, Atletas, Viajantes) ficam na estação! -->
+          <div class="station-passengers-layer" id="stationPassengersLayer"></div>
+        </div>
+      </div>
+
+      <!-- Canvas de Fumaça da Chaminé -->
+      <canvas id="chimneySteamCanvas" aria-hidden="true"></canvas>
+
+      <!-- O TREM + MAQUINISTA + JANELAS COM PASSAGEIROS A BORDO -->
+      <div class="railway-corridor">
+        <div class="train-assembly" id="ghibliTrain">
+
+          <!-- LOCOMOTIVA -->
+          <div class="train-locomotive" id="trainLocomotive">
+            <div class="loco-headlight-beam" aria-hidden="true"></div>
+
+            <!-- Balão de Fala do Maquinista (1 fala por parada e 1 por partida) -->
+            <div class="driver-status-bubble" id="driverBubble" aria-live="polite">
+              <span id="driverBubbleText">Segura o trem, sô!</span>
+            </div>
+
+            <div class="locomotive-chimney" id="trainChimney">
+              <div class="chimney-rim"></div>
+            </div>
+
+            <div class="loco-roof"></div>
+
+            <div class="loco-body">
+              <div class="driver-cab-window" title="Maquinista Ghibli">
+                <svg class="maquinista-svg" id="maquinistaSvg" viewBox="0 0 110 78">
+                  <rect x="0" y="0" width="110" height="78" class="cab-interior-bg" fill="#233746" />
+                  <circle cx="55" cy="40" r="38" class="cab-warm-glow" fill="rgba(255, 232, 163, 0.2)" />
+
+                  <g class="whistle-cord-group" id="whistleCordGroup">
+                    <line x1="34" y1="0" x2="34" y2="28" stroke="#f2cd5c" stroke-width="2.2" />
+                    <circle cx="34" cy="29" r="3.8" fill="#e65100" stroke="#1e2830" stroke-width="1.2" />
+                  </g>
+
+                  <rect x="6" y="48" width="28" height="30" rx="3" fill="#37474f" stroke="#141b20" stroke-width="1.5" />
+
+                  <g class="brake-lever-group" id="brakeLeverGroup">
+                    <line x1="20" y1="54" x2="14" y2="26" stroke="#cfd8dc" stroke-width="3.2" stroke-linecap="round" />
+                    <circle cx="14" cy="25" r="4.8" fill="#ff5252" stroke="#141b20" stroke-width="1.4" />
+                  </g>
+
+                  <g class="driver-character" id="driverCharacter">
+                    <path d="M44,76 C44,54 52,48 64,48 C76,48 82,55 82,76 Z" fill="#1e3a5f" stroke="#121a21" stroke-width="1.6" />
+                    <polygon points="58,48 66,48 62,57" fill="#f2cd5c" />
+                    <circle cx="62" cy="34" r="12.5" fill="#ffe0bd" stroke="#121a21" stroke-width="1.6" />
+                    <circle cx="56" cy="34" r="2.1" fill="#121a21" />
+                    <circle cx="56.7" cy="33.3" r="0.7" fill="#ffffff" />
+                    <ellipse cx="60" cy="38" rx="2.8" ry="1.5" fill="#ff8a80" opacity="0.65" />
+                    <path d="M51,39 Q55,37 59,40" fill="none" stroke="#3e2723" stroke-width="2" stroke-linecap="round" />
+                    <path d="M46,25 L76,25 L73,15 L51,15 Z" fill="#162c46" stroke="#121a21" stroke-width="1.5" />
+                    <rect x="48" y="22" width="26" height="3" fill="#f2cd5c" />
+                    <path d="M42,25 L56,25 L52,28 L42,27 Z" fill="#121a21" />
+                    <circle cx="58" cy="19" r="2" fill="#f2cd5c" />
+
+                    <g class="driver-arm" id="driverArm">
+                      <path d="M56,54 Q38,52 18,32" fill="none" stroke="#1e3a5f" stroke-width="6.5" stroke-linecap="round" />
+                      <circle cx="18" cy="32" r="4.2" fill="#ffffff" stroke="#121a21" stroke-width="1.4" />
+                    </g>
+                  </g>
+                </svg>
+              </div>
+
+              <div class="loco-cabin-door">
+                <div class="door-glass"></div>
+              </div>
+              <div class="jr-emblem">JR // 26</div>
+              <div class="loco-yellow-stripe"></div>
+              <div class="loco-headlight"></div>
+            </div>
+
+            <div class="train-undercarriage">
+              <div class="wheel-bogie">
+                <div class="train-wheel"></div>
+                <div class="train-wheel"></div>
+              </div>
+              <div class="wheel-bogie">
+                <div class="train-wheel"></div>
+                <div class="train-wheel"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wagon-coupler"></div>
+
+          <!-- VAGÃO 1: PROJETO CESAMA -->
+          <article class="train-wagon" data-project-id="cesama">
+            <button type="button" class="wagon-project-sign" data-sign="cesama" aria-label="Abrir projeto Sistema Cesama">
+              <span class="sign-pin left"></span>
+              <span class="sign-pin right"></span>
+              <span class="sign-tag">VAGÃO 01 // ETE CESAMA</span>
+              <strong class="sign-title">PROJETO CESAMA</strong>
+              <span class="sign-cta">☁ Clique para abrir</span>
+            </button>
+
+            <div class="wagon-roof">
+              <div class="roof-ac-unit"></div>
+            </div>
+
+            <div class="wagon-body">
+              <div class="wagon-door">
+                <div class="door-window"></div>
+                <div class="door-window"></div>
+              </div>
+              <div class="wagon-windows-row">
+                <div class="passenger-window"><div class="window-rider"></div></div>
+                <div class="passenger-window"><div class="window-rider"></div></div>
+                <div class="passenger-window"><div class="window-rider"></div></div>
+              </div>
+              <div class="wagon-door">
+                <div class="door-window"></div>
+                <div class="door-window"></div>
+              </div>
+              <div class="jr-mini-mark">JR</div>
+              <div class="wagon-yellow-stripe"></div>
+            </div>
+
+            <div class="train-undercarriage">
+              <div class="wheel-bogie">
+                <div class="train-wheel"></div>
+                <div class="train-wheel"></div>
+              </div>
+              <div class="wheel-bogie">
+                <div class="train-wheel"></div>
+                <div class="train-wheel"></div>
+              </div>
+            </div>
+          </article>
+
+          <div class="wagon-coupler"></div>
+
+          <!-- VAGÃO 2: PROJETO TRIBOS ANCESTRAIS -->
+          <article class="train-wagon" data-project-id="tribos">
+            <button type="button" class="wagon-project-sign" data-sign="tribos" aria-label="Abrir projeto Tribos Ancestrais">
+              <span class="sign-pin left"></span>
+              <span class="sign-pin right"></span>
+              <span class="sign-tag">VAGÃO 02 // SCI-FI &amp; WEB</span>
+              <strong class="sign-title">TRIBOS ANCESTRAIS</strong>
+              <span class="sign-cta">☁ Clique para abrir</span>
+            </button>
+
+            <div class="wagon-roof">
+              <div class="roof-ac-unit"></div>
+            </div>
+
+            <div class="wagon-body">
+              <div class="wagon-door">
+                <div class="door-window"></div>
+                <div class="door-window"></div>
+              </div>
+              <div class="wagon-windows-row">
+                <div class="passenger-window"><div class="window-rider"></div></div>
+                <div class="passenger-window"><div class="window-rider"></div></div>
+                <div class="passenger-window"><div class="window-rider"></div></div>
+              </div>
+              <div class="wagon-door">
+                <div class="door-window"></div>
+                <div class="door-window"></div>
+              </div>
+              <div class="jr-mini-mark">JR</div>
+              <div class="wagon-yellow-stripe"></div>
+            </div>
+
+            <div class="train-undercarriage">
+              <div class="wheel-bogie">
+                <div class="train-wheel"></div>
+                <div class="train-wheel"></div>
+              </div>
+              <div class="wheel-bogie">
+                <div class="train-wheel"></div>
+                <div class="train-wheel"></div>
+              </div>
+            </div>
+          </article>
+
+          <div class="wagon-coupler"></div>
+
+          <!-- VAGÃO 3: SOBRE MIM & PROJETOS -->
+          <article class="train-wagon" data-project-id="sobre">
+            <button type="button" class="wagon-project-sign" data-sign="sobre" aria-label="Abrir Sobre Andrei Barbuto">
+              <span class="sign-pin left"></span>
+              <span class="sign-pin right"></span>
+              <span class="sign-tag">VAGÃO 03 // O AUTOR</span>
+              <strong class="sign-title">SOBRE &amp; STACK</strong>
+              <span class="sign-cta">☁ Clique para abrir</span>
+            </button>
+
+            <div class="wagon-roof">
+              <div class="roof-ac-unit"></div>
+            </div>
+
+            <div class="wagon-body">
+              <div class="wagon-door">
+                <div class="door-window"></div>
+                <div class="door-window"></div>
+              </div>
+              <div class="wagon-windows-row">
+                <div class="passenger-window"><div class="window-rider"></div></div>
+                <div class="passenger-window"><div class="window-rider"></div></div>
+                <div class="passenger-window"><div class="window-rider"></div></div>
+              </div>
+              <div class="wagon-door">
+                <div class="door-window"></div>
+                <div class="door-window"></div>
+              </div>
+              <div class="jr-mini-mark">JR</div>
+              <div class="wagon-yellow-stripe"></div>
+            </div>
+
+            <div class="train-undercarriage">
+              <div class="wheel-bogie">
+                <div class="train-wheel"></div>
+                <div class="train-wheel"></div>
+              </div>
+              <div class="wheel-bogie">
+                <div class="train-wheel"></div>
+                <div class="train-wheel"></div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Piso da Plataforma e Asfalto -->
+      <div class="station-platform-floor" aria-hidden="true"></div>
+      <div class="station-asphalt-edge" aria-hidden="true"></div>
+
+    </div>
+
+    <!-- =======================================================================
+         5. MODAL EM ESTILO DE NUVEM STUDIO GHIBLI
+         ======================================================================= -->
+    <div class="ghibli-cloud-overlay" id="cloudModalOverlay" aria-hidden="true">
+      <div class="ghibli-cloud-dialog" id="cloudDialog" role="dialog" aria-modal="true">
+
+        <svg class="cloud-shape-bg" viewBox="0 0 1200 780" preserveAspectRatio="none" aria-hidden="true">
+          <path
+            d="M 95,720
+               C 25,715 5,640 28,565
+               C -5,485 10,360 55,305
+               C 30,210 85,115 185,115
+               C 235,40 365,20 465,68
+               C 545,15 685,15 765,68
+               C 865,20 995,40 1045,115
+               C 1145,115 1195,210 1170,305
+               C 1210,375 1205,495 1168,565
+               C 1195,645 1165,720 1090,720
+               Z"
+            fill="#CDECFB"
+          />
+          <path
+            d="M 105,698
+               C 35,692 15,620 38,545
+               C 5,465 20,345 65,290
+               C 40,195 95,102 195,102
+               C 245,30 375,12 470,58
+               C 550,8 685,8 765,58
+               C 860,12 985,30 1035,102
+               C 1135,102 1185,195 1160,290
+               C 1200,360 1195,475 1158,545
+               C 1185,625 1155,698 1080,698
+               Z"
+            fill="#FFFFFF"
+          />
+        </svg>
+
+        <div class="cloud-inner-wrapper">
+          <div class="cloud-top-bar">
+            <span class="cloud-wagon-pill" id="cloudWagonPill">VAGÃO 01</span>
+            <button type="button" class="close-cloud-btn" id="closeCloudBtn" aria-label="Fechar nuvem" title="Fechar nuvem">
+              ✕
+            </button>
+          </div>
+
+          <div class="cloud-inner-content" id="cloudInnerContent"></div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

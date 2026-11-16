@@ -1,0 +1,1025 @@
+/* ==========================================================================
+   ESTAÇÃO STUDIO GHIBLI MINIMALISTA — PORTFÓLIO EM TELA ÚNICA
+   Inspirado diretamente na referência f4df6b028926a8814b2224465750b2f0.jpg
+   (Estação Shimonada à beira-mar + Céu Azul + Trem Infinito + Nuvens Ghibli)
+   ========================================================================== */
+
+:root {
+  /* Paleta Studio Ghibli Seaside (60% Céu/Mar Azul, 30% Branco Nuvem/Creme, 10% Amarelo Sol/Trem) */
+  --sky-zenith: #268ec2;
+  --sky-mid: #47b0df;
+  --sky-horizon: #86d5f5;
+
+  --cloud-pure: #ffffff;
+  --cloud-shade: #d2effc;
+  --cloud-deep-shade: #a6dcf5;
+
+  --ocean-deep: #3299c9;
+  --ocean-surface: #69c5eb;
+
+  --train-cream: #f2efe6;
+  --train-yellow: #f2cd5c;
+  --train-yellow-dark: #dfb338;
+  --train-roof: #4f5b63;
+  --train-ink: #1e2830;
+
+  --station-steel: #4a5c66;
+  --station-roof: #6d7f8a;
+  --platform-concrete: #e6e2d3;
+  --asphalt-dark: #5a5d60;
+
+  /* Tipografia */
+  --font-cloud: "Zen Maru Gothic", "M PLUS Rounded 1c", sans-serif;
+  --font-serif-jp: "Noto Serif JP", "Cormorant Garamond", serif;
+  --font-body: "M PLUS Rounded 1c", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: var(--font-body);
+  background: var(--sky-zenith);
+  color: var(--train-ink);
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   MUNDO EM TELA ÚNICA (100vw x 100vh)
+   ========================================================================== */
+.ghibli-world {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    var(--sky-zenith) 0%,
+    var(--sky-mid) 54%,
+    var(--sky-horizon) 82%,
+    var(--ocean-surface) 82.5%,
+    var(--ocean-deep) 100%
+  );
+}
+
+/* ==========================================================================
+   1. CÉU AZUL, RASTROS DE AVIÃO, GAIVOTAS E NUVENS CUMULUS
+   ========================================================================== */
+.sky-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.sky-contrails {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.seagulls-flock {
+  position: absolute;
+  pointer-events: none;
+  animation: floatGulls 9s ease-in-out infinite alternate;
+}
+
+.flock-upper {
+  top: 46%;
+  left: 22%;
+  width: 115px;
+}
+
+.flock-lower {
+  top: 63%;
+  left: 66%;
+  width: 90px;
+  animation-delay: -4s;
+}
+
+@keyframes floatGulls {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-14px, -8px);
+  }
+}
+
+.horizon-cumulus {
+  position: absolute;
+  pointer-events: none;
+}
+
+.cumulus-right {
+  right: -20px;
+  bottom: 17.5vh;
+  width: min(46vw, 650px);
+  animation: breatheCloud 14s ease-in-out infinite alternate;
+}
+
+.cumulus-left {
+  left: -30px;
+  bottom: 17.5vh;
+  width: min(32vw, 420px);
+  animation: breatheCloud 18s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes breatheCloud {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  100% {
+    transform: translateY(-8px) scale(1.02);
+  }
+}
+
+/* ==========================================================================
+   2. NOME EM PORTUGUÊS NO CÉU EM COR DE NUVENS
+   ========================================================================== */
+.sky-identity {
+  position: absolute;
+  top: 7vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.1rem;
+  pointer-events: none;
+}
+
+.cloud-name-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: skyNameFloat 6s ease-in-out infinite alternate;
+}
+
+@keyframes skyNameFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-7px);
+  }
+}
+
+.sky-jp-whisper {
+  font-family: var(--font-cloud);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 0.35rem;
+  text-shadow: 0 2px 10px rgba(24, 108, 155, 0.25);
+}
+
+.cloud-signature-name {
+  font-family: var(--font-cloud);
+  font-size: clamp(3rem, 6.2vw, 5.8rem);
+  font-weight: 900;
+  line-height: 0.96;
+  letter-spacing: 0.06em;
+  color: var(--cloud-pure);
+  /* Efeito orgânico de nuvem branca fofa no céu azul */
+  text-shadow:
+    0 4px 0 rgba(210, 239, 252, 0.95),
+    0 10px 28px rgba(19, 98, 142, 0.28),
+    0 0 40px rgba(255, 255, 255, 0.45);
+}
+
+.cloud-role-subtitle {
+  margin-top: 0.65rem;
+  font-family: var(--font-cloud);
+  font-size: clamp(1rem, 1.45vw, 1.3rem);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(4px);
+  padding: 0.35rem 1.3rem;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+}
+
+.breeze-instruction {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: rgba(255, 255, 255, 0.92);
+  color: #1c5a7d;
+  padding: 0.45rem 1.15rem;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(18, 92, 134, 0.18);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.breeze-dot {
+  font-size: 1.05rem;
+}
+
+/* Links rápidos no canto superior direito em formato de nuvem */
+.sky-quick-links {
+  position: absolute;
+  top: 2.2rem;
+  right: 2.5rem;
+  z-index: 15;
+  display: flex;
+  gap: 0.65rem;
+}
+
+.cloud-pill-link {
+  background: rgba(255, 255, 255, 0.9);
+  color: #1c5a7d;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  box-shadow: 0 4px 0 var(--cloud-shade), 0 6px 16px rgba(15, 83, 122, 0.18);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.cloud-pill-link:hover {
+  transform: translateY(-2px);
+  background: #ffffff;
+}
+
+/* ==========================================================================
+   3. PALCO COSTEIRO: MAR + FIOS ELÉTRICOS + TREM + ESTAÇÃO SHIMONADA
+   ========================================================================== */
+.seaside-stage {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 36vh;
+  min-height: 290px;
+  z-index: 10;
+}
+
+/* Mar Azul no Horizonte */
+.ocean-horizon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4.2rem;
+  height: 11.5vh;
+  min-height: 85px;
+  background: linear-gradient(180deg, #35a0d1 0%, #58bce8 55%, #7ad0f2 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.55);
+  z-index: 1;
+}
+
+.ocean-shimmer {
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(ellipse at 30% 40%, rgba(255, 255, 255, 0.35) 0%, transparent 60%);
+}
+
+/* Fios Elétricos Superiores */
+.power-lines-svg {
+  position: absolute;
+  top: -85px;
+  left: 0;
+  width: 100%;
+  height: 190px;
+  pointer-events: none;
+  z-index: 12;
+}
+
+/* Canvas de Fumaça da Chaminé */
+#chimneySteamCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 25;
+}
+
+/* ==========================================================================
+   O TREM E SEUS VAGÕES COM PLACAS INTERATIVAS
+   ========================================================================== */
+.railway-corridor {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4.1rem;
+  height: 175px;
+  z-index: 8;
+  pointer-events: auto;
+}
+
+.train-assembly {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+  will-change: transform;
+}
+
+/* LOCOMOTIVA FRONTAL COM CHAMINÉ */
+.train-locomotive {
+  position: relative;
+  width: 240px;
+  height: 112px;
+  flex-shrink: 0;
+}
+
+.locomotive-chimney {
+  position: absolute;
+  top: -26px;
+  left: 34px;
+  width: 22px;
+  height: 28px;
+  background: linear-gradient(90deg, #323d45, #52616b, #2b353c);
+  border: 2px solid var(--train-ink);
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+  z-index: 3;
+}
+
+.chimney-rim {
+  position: absolute;
+  top: -5px;
+  left: -4px;
+  right: -4px;
+  height: 6px;
+  background: var(--train-yellow);
+  border: 2px solid var(--train-ink);
+  border-radius: 3px;
+}
+
+.loco-roof,
+.wagon-roof {
+  height: 10px;
+  background: var(--train-roof);
+  border: 2px solid var(--train-ink);
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  margin: 0 6px;
+  position: relative;
+}
+
+.roof-ac-unit {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 76px;
+  height: 6px;
+  background: #8c99a1;
+  border: 1.5px solid var(--train-ink);
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+}
+
+.loco-body,
+.wagon-body {
+  position: relative;
+  height: 88px;
+  background: var(--train-cream);
+  border: 2.5px solid var(--train-ink);
+  border-radius: 6px 6px 3px 3px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px 18px;
+  gap: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 4px 0 rgba(255, 255, 255, 0.8);
+}
+
+.loco-front-window {
+  width: 28px;
+  height: 36px;
+  background: linear-gradient(180deg, #273742, #4b6c82);
+  border: 2px solid var(--train-ink);
+  border-radius: 3px;
+}
+
+.loco-cabin-door,
+.wagon-door {
+  width: 38px;
+  height: 62px;
+  background: #d8d5ca;
+  border: 2px solid var(--train-ink);
+  border-radius: 3px;
+  display: flex;
+  gap: 3px;
+  padding: 5px 4px;
+  align-self: flex-end;
+  margin-bottom: 2px;
+  z-index: 2;
+}
+
+.door-glass,
+.door-window {
+  flex: 1;
+  height: 28px;
+  background: linear-gradient(180deg, #263540, #557991);
+  border: 1.5px solid var(--train-ink);
+  border-radius: 2px;
+}
+
+.loco-side-window {
+  width: 68px;
+  height: 34px;
+  background: linear-gradient(180deg, #24333d 0%, #496b80 100%);
+  border: 2px solid var(--train-ink);
+  border-radius: 3px;
+}
+
+.jr-emblem,
+.jr-mini-mark {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #296894;
+  letter-spacing: 0.05em;
+}
+
+.loco-yellow-stripe,
+.wagon-yellow-stripe {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 22px;
+  background: var(--train-yellow);
+  border-top: 2px solid var(--train-ink);
+  z-index: 1;
+}
+
+.loco-headlight {
+  position: absolute;
+  left: 4px;
+  bottom: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff9d2;
+  border: 1.5px solid var(--train-ink);
+  box-shadow: -8px 0 14px rgba(255, 248, 185, 0.9);
+  z-index: 3;
+}
+
+/* ENGATE ENTRE VAGÕES */
+.wagon-coupler {
+  width: 14px;
+  height: 18px;
+  background: #303940;
+  border-top: 2px solid var(--train-ink);
+  border-bottom: 2px solid var(--train-ink);
+  margin-bottom: 18px;
+  flex-shrink: 0;
+}
+
+/* VAGÕES DE PROJETO */
+.train-wagon {
+  position: relative;
+  width: 340px;
+  height: 112px;
+  flex-shrink: 0;
+}
+
+.wagon-windows-row {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+  justify-content: center;
+}
+
+.passenger-window {
+  width: 54px;
+  height: 36px;
+  background: linear-gradient(180deg, #22313b 0%, #3d5d73 55%, #668fa8 100%);
+  border: 2px solid var(--train-ink);
+  border-radius: 3px;
+  position: relative;
+}
+
+/* Divisória horizontal da janela (como na imagem de referência) */
+.passenger-window::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 52%;
+  height: 2px;
+  background: var(--train-ink);
+}
+
+/* RODAS E TRUQUES DO TREM */
+.train-undercarriage {
+  height: 14px;
+  background: #2b333a;
+  border-left: 2px solid var(--train-ink);
+  border-right: 2px solid var(--train-ink);
+  margin: 0 12px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 18px;
+  align-items: center;
+}
+
+.wheel-bogie {
+  display: flex;
+  gap: 14px;
+}
+
+.train-wheel {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #8b99a3 28%, #262e34 32%, #3e4a52 65%, #161b1f 70%);
+  border: 2px solid #14191d;
+}
+
+/* ==========================================================================
+   PLACA DO PROJETO EM CADA VAGÃO (Nuvem / Tabuleta Ghibli)
+   ========================================================================== */
+.wagon-project-sign {
+  position: absolute;
+  top: -86px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 268px;
+  background: var(--cloud-pure);
+  border: 2.5px solid var(--train-ink);
+  border-radius: 22px;
+  padding: 0.65rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  cursor: pointer;
+  box-shadow:
+    0 6px 0 var(--cloud-shade),
+    0 8px 0 var(--train-ink),
+    0 14px 26px rgba(19, 82, 118, 0.28);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, background 0.3s ease;
+  z-index: 20;
+}
+
+.wagon-project-sign:hover,
+.wagon-project-sign.is-active {
+  transform: translateX(-50%) translateY(-8px) scale(1.05);
+  background: #fffef9;
+  box-shadow:
+    0 8px 0 var(--train-yellow),
+    0 10px 0 var(--train-ink),
+    0 20px 35px rgba(19, 82, 118, 0.38);
+}
+
+/* Hastes metálicas que prendem a placa ao teto do vagão */
+.sign-pin {
+  position: absolute;
+  bottom: -14px;
+  width: 4px;
+  height: 14px;
+  background: var(--train-ink);
+}
+.sign-pin.left {
+  left: 48px;
+}
+.sign-pin.right {
+  right: 48px;
+}
+
+.sign-tag {
+  font-family: var(--font-body);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #2979a8;
+  text-transform: uppercase;
+}
+
+.sign-title {
+  font-family: var(--font-cloud);
+  font-size: 1.12rem;
+  font-weight: 900;
+  color: var(--train-ink);
+  letter-spacing: 0.03em;
+}
+
+.sign-cta {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #5b788a;
+}
+
+/* ==========================================================================
+   ABRIGO DA ESTAÇÃO SHIMONADA EM PRIMEIRO PLANO (Idêntico à referência)
+   ========================================================================== */
+.station-foreground {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 14;
+}
+
+/* Poste à Esquerda */
+.utility-pole {
+  position: absolute;
+  left: 17.8%;
+  bottom: 4.1rem;
+  width: 13px;
+  height: 270px;
+  background: linear-gradient(90deg, #dedcd0 0%, #b7b5a8 100%);
+  border: 1.8px solid var(--train-ink);
+  z-index: 15;
+}
+
+.pole-crossbar {
+  position: absolute;
+  top: 22px;
+  left: -18px;
+  width: 46px;
+  height: 6px;
+  background: #8f9ba3;
+  border: 1.5px solid var(--train-ink);
+  transform: rotate(14deg);
+}
+
+.pole-vertical-sign {
+  position: absolute;
+  bottom: 46px;
+  left: 1px;
+  writing-mode: vertical-rl;
+  background: #245785;
+  color: #fff;
+  font-size: 0.55rem;
+  font-weight: 700;
+  padding: 4px 1px;
+  border: 1px solid var(--train-ink);
+}
+
+.pole-control-box {
+  position: absolute;
+  bottom: 32px;
+  right: -12px;
+  width: 12px;
+  height: 18px;
+  background: #f0efe6;
+  border: 1.5px solid var(--train-ink);
+}
+
+/* Cobertura da Estação Shimonada */
+.station-shelter {
+  position: absolute;
+  left: 17.2%;
+  bottom: 4.1rem;
+  width: min(62vw, 790px);
+  height: 162px;
+  z-index: 14;
+}
+
+.shelter-roof {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 22px;
+  background: linear-gradient(180deg, #8fa0ab 0%, #445560 45%, #37464f 100%);
+  border: 2px solid var(--train-ink);
+  border-radius: 3px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+}
+
+.roof-corrugation {
+  height: 7px;
+  background: repeating-linear-gradient(
+    90deg,
+    #b7c4cc 0px,
+    #b7c4cc 6px,
+    #647682 6px,
+    #647682 12px
+  );
+  border-bottom: 1.5px solid var(--train-ink);
+}
+
+/* Placa Azul Pendurada na Estação (Onde na ref está escrito BY:NARD) */
+.shelter-Hanging-Sign {
+  position: absolute;
+  top: 22px;
+   right: 13%;
+  background: #5ca2c7;
+  color: #ffffff;
+  border: 2px solid var(--train-ink);
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.65);
+  padding: 0.25rem 0.95rem;
+  font-family: var(--font-cloud);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.shelter-pillars-row {
+  position: absolute;
+  top: 22px;
+  bottom: 0;
+  left: 8%;
+  right: 9%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.shelter-pillar {
+  position: relative;
+  width: 12px;
+  height: 100%;
+  background: #617480;
+  border-left: 1.8px solid var(--train-ink);
+  border-right: 1.8px solid var(--train-ink);
+}
+
+.pillar-base {
+  position: absolute;
+  bottom: 0;
+  left: -12px;
+  width: 34px;
+  height: 36px;
+  background: #778994;
+  border: 1.8px solid var(--train-ink);
+}
+
+/* Arbustos Verdes na Base dos Pilares (Como na referência) */
+.station-bush {
+  position: absolute;
+  bottom: 0;
+  width: 44px;
+  height: 26px;
+  background: radial-gradient(circle at 40% 35%, #5fd138 0%, #248f15 70%, #14540b 100%);
+  border: 1.8px solid var(--train-ink);
+  border-radius: 50% 50% 20% 20%;
+}
+
+.bush-left {
+  left: -52px;
+}
+
+.bush-right {
+  right: -52px;
+}
+
+/* Bancos da Estação */
+.station-benches {
+  position: absolute;
+  bottom: 0;
+  left: 12%;
+  right: 12%;
+  display: flex;
+  justify-content: space-around;
+  gap: 3rem;
+}
+
+.station-bench {
+  width: 210px;
+  height: 20px;
+  border-top: 6px solid #8ea0ab;
+  border-left: 6px solid #6b7c87;
+  border-right: 6px solid #6b7c87;
+  outline: 1.8px solid var(--train-ink);
+}
+
+/* Piso da Plataforma e Asfalto */
+.station-platform-floor {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1.5rem;
+  height: 2.6rem;
+  background: linear-gradient(180deg, #efece0 0%, #d8d4c5 100%);
+  border-top: 2px solid var(--train-ink);
+  border-bottom: 2px solid #8c897e;
+}
+
+.station-asphalt-edge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.5rem;
+  background: var(--asphalt-dark);
+}
+
+/* ==========================================================================
+   4. MODAL EM ESTILO DE NUVEM STUDIO GHIBLI (Abre ao frear o trem)
+   ========================================================================== */
+.ghibli-cloud-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(24, 108, 155, 0.24);
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ghibli-cloud-overlay.is-open {
+  pointer-events: auto;
+}
+
+.ghibli-cloud-dialog {
+  position: relative;
+  width: min(92vw, 880px);
+  min-height: 470px;
+  padding: clamp(3rem, 5vw, 4.4rem) clamp(2.5rem, 5.5vw, 5.2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  filter: drop-shadow(0 24px 48px rgba(15, 75, 112, 0.32));
+}
+
+.cloud-shape-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Botão Fechar Nuvem (Aciona fumaça na chaminé e partida com inércia) */
+.close-cloud-btn {
+  position: absolute;
+  top: 34px;
+  right: 68px;
+  z-index: 5;
+  background: var(--train-yellow);
+  color: var(--train-ink);
+  border: 2.5px solid var(--train-ink);
+  border-radius: 999px;
+  padding: 0.55rem 1.25rem;
+  font-family: var(--font-cloud);
+  font-size: 0.85rem;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 4px 0 var(--train-ink);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.close-cloud-btn:hover {
+  transform: translateY(-2px);
+  background: #ffe07d;
+}
+
+/* Conteúdo Interno da Nuvem */
+.cloud-inner-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.cloud-project-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.cloud-wagon-pill {
+  background: #e1f5fe;
+  color: #166996;
+  border: 2px solid #81d4fa;
+  padding: 0.25rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.cloud-project-title {
+  font-family: var(--font-cloud);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 900;
+  color: var(--train-ink);
+  line-height: 1.05;
+}
+
+.cloud-project-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 1.6rem;
+  align-items: center;
+}
+
+.cloud-media-box {
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 2.5px solid var(--train-ink);
+  box-shadow: 0 6px 0 var(--cloud-shade);
+  background: #0f1922;
+  aspect-ratio: 16 / 10;
+}
+
+.cloud-media-box iframe,
+.cloud-media-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+  display: block;
+}
+
+.cloud-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.cloud-desc {
+  font-size: 0.96rem;
+  line-height: 1.55;
+  color: #2c4251;
+  font-weight: 500;
+}
+
+.cloud-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.cloud-tech-tags span {
+  background: #f0f9ff;
+  border: 1.5px solid #bae6fd;
+  color: #0369a1;
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 0.22rem 0.65rem;
+  border-radius: 999px;
+}
+
+.cloud-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.35rem;
+}
+
+.cloud-primary-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #2790c4;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.65rem 1.35rem;
+  border-radius: 999px;
+  border: 2px solid var(--train-ink);
+  font-weight: 800;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 0 var(--train-ink);
+  transition: transform 0.2s ease;
+}
+
+.cloud-primary-cta:hover {
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width: 860px) {
+  .cloud-project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ghibli-cloud-dialog {
+    padding: 3.2rem 2rem;
+  }
+
+  .close-cloud-btn {
+    top: 16px;
+    right: 24px;
+  }
+
+  .sky-quick-links {
+    display: none;
+  }
+}

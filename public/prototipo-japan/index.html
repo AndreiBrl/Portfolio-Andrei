@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrei Barbuto — Estação Ghibli // Portfólio Interativo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Tipografia poética estilo Studio Ghibli / Cartaz de Verão Japonês -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Noto+Serif+JP:wght@500;700;900&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- =========================================================================
+       CENA ÚNICA (100vw x 100vh) — ESTAÇÃO À BEIRA-MAR STUDIO GHIBLI
+       Inspirada diretamente na referência f4df6b028926a8814b2224465750b2f0.jpg
+       ========================================================================= -->
+  <main class="ghibli-world" id="ghibliWorld">
+
+    <!-- 1. GRANDE CÉU AZUL DE VERÃO + RASTROS DE AVIÃO + GAIVOTAS -->
+    <div class="sky-canvas" aria-hidden="true">
+      <!-- Rastros brancos curvos no céu (idênticos à imagem de referência) -->
+      <svg class="sky-contrails" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <path
+          d="M -80,190 Q 680,15 1980,45"
+          fill="none"
+          stroke="rgba(255, 255, 255, 0.88)"
+          stroke-width="2.6"
+          stroke-linecap="round"
+        />
+        <path
+          d="M -60,340 Q 420,485 1120,498"
+          fill="none"
+          stroke="rgba(255, 255, 255, 0.72)"
+          stroke-width="1.6"
+          stroke-linecap="round"
+        />
+        <!-- Rastro de vapor suave próximo ao horizonte -->
+        <path
+          d="M -40,775 Q 880,735 1860,670"
+          fill="none"
+          stroke="rgba(255, 255, 255, 0.55)"
+          stroke-width="6"
+          stroke-linecap="round"
+          stroke-dasharray="2 3"
+        />
+      </svg>
+
+      <!-- Gaivotas brancas minimalistas no céu -->
+      <div class="seagulls-flock flock-upper">
+        <svg viewBox="0 0 120 70" class="seagull-svg">
+          <path d="M25,18 Q32,8 39,16 Q46,8 53,18" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M18,28 Q24,20 30,27 Q36,20 42,28" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M48,26 Q53,19 58,25 Q63,19 68,26" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M30,44 Q35,37 40,43 Q45,37 50,44" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round"/>
+          <path d="M6,58 Q11,51 16,57 Q21,51 26,58" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <div class="seagulls-flock flock-lower">
+        <svg viewBox="0 0 100 50" class="seagull-svg">
+          <path d="M10,28 Q16,19 22,26 Q28,19 34,28" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M38,20 Q44,12 50,19 Q56,12 62,20" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M72,22 Q77,15 82,21 Q87,15 92,22" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Grandes Nuvens Cumulus Pintadas à Mão (Direita e Esquerda Baixa, como na referência) -->
+      <div class="horizon-cumulus cumulus-right">
+        <svg viewBox="0 0 680 420" fill="none">
+          <!-- Sombra cel-shaded azul-clara da nuvem -->
+          <path
+            d="M140,420 C120,360 175,310 230,315 C245,255 315,220 380,235 C415,155 510,125 585,155 C625,115 680,130 680,130 L680,420 Z"
+            fill="#B8E7FA"
+            opacity="0.75"
+          />
+          <!-- Corpo branco volumoso da nuvem -->
+          <path
+            d="M80,420 C65,365 115,320 175,325 C195,260 270,225 335,245 C365,150 475,105 565,135 C610,85 680,95 680,95 L680,420 Z"
+            fill="#FFFFFF"
+            opacity="0.95"
+          />
+        </svg>
+      </div>
+
+      <div class="horizon-cumulus cumulus-left">
+        <svg viewBox="0 0 500 260" fill="none">
+          <path
+            d="M0,120 C55,110 110,140 135,175 C185,155 250,175 275,215 C330,195 410,215 445,260 L0,260 Z"
+            fill="#FFFFFF"
+            opacity="0.88"
+          />
+        </svg>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         2. NOME EM PORTUGUÊS NO GRANDE CÉU AZUL EM COR DE NUVENS
+         ======================================================================= -->
+    <header class="sky-identity">
+      <div class="cloud-name-container">
+        <span class="sky-jp-whisper">バルブト・アンドレイ</span>
+        <h1 class="cloud-signature-name">
+          ANDREI<br />BARBUTO
+        </h1>
+        <p class="cloud-role-subtitle">
+          Desenvolvedor Web &amp; Escritor
+        </p>
+      </div>
+
+      <!-- Dica sutil flutuando como brisa -->
+      <div class="breeze-instruction" id="breezeHint">
+        <span class="breeze-dot">☁</span>
+        <span>Passe o mouse sobre a placa de um vagão para frear o trem e abrir a nuvem do projeto</span>
+      </div>
+    </header>
+
+    <!-- Links Rápidos Discretos no Topo Direito (Estilo Placa de Estação) -->
+    <nav class="sky-quick-links" aria-label="Links diretos">
+      <a href="https://github.com/AndreiBrl" target="_blank" rel="noreferrer" class="cloud-pill-link">GitHub</a>
+      <a href="https://www.linkedin.com/in/andreibarbuto/" target="_blank" rel="noreferrer" class="cloud-pill-link">LinkedIn</a>
+      <a href="../curriculo.pdf" download class="cloud-pill-link">Currículo PDF</a>
+    </nav>
+
+    <!-- =======================================================================
+         3. OCEANO NO HORIZONTE + ESTAÇÃO SHIMONADA + TREM INFINITO
+         ======================================================================= -->
+    <div class="seaside-stage">
+
+      <!-- Mar Azul Calmo ao Fundo -->
+      <div class="ocean-horizon" aria-hidden="true">
+        <div class="ocean-shimmer"></div>
+      </div>
+
+      <!-- Poste e Fios Elétricos (Idênticos à referência) -->
+      <svg class="power-lines-svg" viewBox="0 0 1920 360" preserveAspectRatio="none" aria-hidden="true">
+        <!-- Fios que vêm da esquerda até o poste -->
+        <path d="M 0,108 Q 180,82 355,48" fill="none" stroke="#23313B" stroke-width="2" />
+        <path d="M 0,126 Q 180,98 355,62" fill="none" stroke="#23313B" stroke-width="1.8" />
+        <path d="M 0,144 Q 180,115 355,76" fill="none" stroke="#23313B" stroke-width="1.6" />
+
+        <!-- Fios longos que cruzam toda a tela da estação para a direita -->
+        <path d="M 355,48 Q 1120,105 1920,64" fill="none" stroke="#23313B" stroke-width="2.2" />
+        <path d="M 355,62 Q 1120,118 1920,78" fill="none" stroke="#23313B" stroke-width="1.8" />
+        <path d="M 355,76 Q 1120,132 1920,92" fill="none" stroke="#23313B" stroke-width="1.6" />
+      </svg>
+
+      <!-- Canvas de Fumaça/Vapor Ghibli (Sai da chaminé quando a nuvem é fechada!) -->
+      <canvas id="chimneySteamCanvas" aria-hidden="true"></canvas>
+
+      <!-- =====================================================================
+           O TREM (Vem da Direita -> Esquerda em Loop Infinito)
+           Freia com inércia ao passar a mão em uma placa;
+           Solta fumaça na chaminé e acelera com inércia ao fechar a nuvem.
+           ===================================================================== -->
+      <div class="railway-corridor">
+        <div class="train-assembly" id="ghibliTrain">
+
+          <!-- LOCOMOTIVA FRONTAL COM CHAMINÉ (Puxando o trem da direita para a esquerda) -->
+          <div class="train-locomotive">
+            <!-- Chaminé da Locomotiva (Ponto de origem da fumaça!) -->
+            <div class="locomotive-chimney" id="trainChimney">
+              <div class="chimney-rim"></div>
+            </div>
+
+            <div class="loco-roof"></div>
+
+            <div class="loco-body">
+              <div class="loco-front-window"></div>
+              <div class="loco-cabin-door">
+                <div class="door-glass"></div>
+              </div>
+              <div class="loco-side-window"></div>
+              <div class="jr-emblem">JR // 26</div>
+              <div class="loco-yellow-stripe"></div>
+              <div class="loco-headlight"></div>
+            </div>
+
+            <div class="train-undercarriage">
+              <div class="wheel-bogie">
+                <div class="train-wheel"></div>
+                <div class="train-wheel"></div>
+              </div>
+              <div class="wheel-bogie">
+                <div class="train-wheel"></div>
+                <div class="train-wheel"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wagon-coupler"></div>
+
+          <!-- VAGÃO 1: PROJETO CESAMA -->
+          <article class="train-wagon" data-project-id="cesama">
+            <!-- PLACA DO PROJETO NO VAGÃO (Interativa ao passar o mouse / clicar) -->
+            <button type="button" class="wagon-project-sign" data-sign="cesama" aria-label="Abrir projeto Sistema Cesama">
+              <span class="sign-pin left"></span>
+              <span class="sign-pin right"></span>
+              <span class="sign-tag">VAGÃO 01 // SISTEMA WEB</span>
+              <strong class="sign-title">PROJETO CESAMA</strong>
+              <span class="sign-cta">☁ Passe a mão para abrir</span>
+            </button>
+
+            <div class="wagon-roof">
+              <div class="roof-ac-unit"></div>
+            </div>
+
+            <div class="wagon-body">
+              <div class="wagon-door">
+                <div class="door-window"></div>
+                <div class="door-window"></div>
+              </div>
+              <div class="wagon-windows-row">
+                <div class="passenger-window"></div>
+                <div class="passenger-window"></div>
+                <div class="passenger-window"></div>
+              </div>
+              <div class="wagon-door">
+                <div class="door-window"></div>
+                <div class="door-window"></div>
+              </div>
+              <div class="jr-mini-mark">JR</div>
+              <div class="wagon-yellow-stripe"></div>
+            </div>
+
+            <div class="train-undercarriage">
+              <div class="wheel-bogie">
+                <div class="train-wheel"></div>
+                <div class="train-wheel"></div>
+              </div>
+              <div class="wheel-bogie">
+                <div class="train-wheel"></div>
+                <div class="train-wheel"></div>
+              </div>
+            </div>
+          </article>
+
+          <div class="wagon-coupler"></div>
+
+          <!-- VAGÃO 2: PROJETO TRIBOS ANCESTRAIS -->
+          <article class="train-wagon" data-project-id="tribos">
+            <button type="button" class="wagon-project-sign" data-sign="tribos" aria-label="Abrir projeto Tribos Ancestrais">
+              <span class="sign-pin left"></span>
+              <span class="sign-pin right"></span>
+              <span class="sign-tag">VAGÃO 02 // SCI-FI &amp; REACT</span>
+              <strong class="sign-title">TRIBOS ANCESTRAIS</strong>
+              <span class="sign-cta">☁ Passe a mão para abrir</span>
+            </button>
+
+            <div class="wagon-roof">
+              <div class="roof-ac-unit"></div>
+            </div>
+
+            <div class="wagon-body">
+              <div class="wagon-door">
+                <div class="door-window"></div>
+                <div class="door-window"></div>
+              </div>
+              <div class="wagon-windows-row">
+                <div class="passenger-window"></div>
+                <div class="passenger-window"></div>
+                <div class="passenger-window"></div>
+              </div>
+              <div class="wagon-door">
+                <div class="door-window"></div>
+                <div class="door-window"></div>
+              </div>
+              <div class="jr-mini-mark">JR</div>
+              <div class="wagon-yellow-stripe"></div>
+            </div>
+
+            <div class="train-undercarriage">
+              <div class="wheel-bogie">
+                <div class="train-wheel"></div>
+                <div class="train-wheel"></div>
+              </div>
+              <div class="wheel-bogie">
+                <div class="train-wheel"></div>
+                <div class="train-wheel"></div>
+              </div>
+            </div>
+          </article>
+
+          <div class="wagon-coupler"></div>
+
+          <!-- VAGÃO 3: SOBRE MIM, CURRÍCULO & REDES -->
+          <article class="train-wagon" data-project-id="sobre">
+            <button type="button" class="wagon-project-sign" data-sign="sobre" aria-label="Abrir Sobre Andrei Barbuto">
+              <span class="sign-pin left"></span>
+              <span class="sign-pin right"></span>
+              <span class="sign-tag">VAGÃO 03 // O AUTOR</span>
+              <strong class="sign-title">SOBRE &amp; CURRÍCULO</strong>
+              <span class="sign-cta">☁ Passe a mão para abrir</span>
+            </button>
+
+            <div class="wagon-roof">
+              <div class="roof-ac-unit"></div>
+            </div>
+
+            <div class="wagon-body">
+              <div class="wagon-door">
+                <div class="door-window"></div>
+                <div class="door-window"></div>
+              </div>
+              <div class="wagon-windows-row">
+                <div class="passenger-window"></div>
+                <div class="passenger-window"></div>
+                <div class="passenger-window"></div>
+              </div>
+              <div class="wagon-door">
+                <div class="door-window"></div>
+                <div class="door-window"></div>
+              </div>
+              <div class="jr-mini-mark">JR</div>
+              <div class="wagon-yellow-stripe"></div>
+            </div>
+
+            <div class="train-undercarriage">
+              <div class="wheel-bogie">
+                <div class="train-wheel"></div>
+                <div class="train-wheel"></div>
+              </div>
+              <div class="wheel-bogie">
+                <div class="train-wheel"></div>
+                <div class="train-wheel"></div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           ABRIGO DA ESTAÇÃO SHIMONADA (Em primeiro plano, idêntico à referência)
+           ===================================================================== -->
+      <div class="station-foreground" aria-hidden="true">
+        <!-- Poste de Concreto à Esquerda -->
+        <div class="utility-pole">
+          <div class="pole-crossbar"></div>
+          <div class="pole-vertical-sign">しもなだ</div>
+          <div class="pole-control-box"></div>
+        </div>
+
+        <!-- Cobertura e Bancos da Estação -->
+        <div class="station-shelter">
+          <div class="shelter-roof">
+            <div class="roof-corrugation"></div>
+          </div>
+
+          <div class="shelter-Hanging-Sign">
+            <span>ESTAÇÃO: BARBUTO 🚉</span>
+          </div>
+
+          <div class="shelter-pillars-row">
+            <div class="shelter-pillar">
+              <div class="pillar-base"></div>
+              <div class="station-bush bush-left"></div>
+            </div>
+            <div class="shelter-pillar">
+              <div class="pillar-base"></div>
+            </div>
+            <div class="shelter-pillar">
+              <div class="pillar-base"></div>
+              <div class="station-bush bush-right"></div>
+            </div>
+          </div>
+
+          <div class="station-benches">
+            <div class="station-bench"></div>
+            <div class="station-bench"></div>
+          </div>
+        </div>
+
+        <!-- Plataforma de Concreto e Trilho -->
+        <div class="station-platform-floor"></div>
+        <div class="station-asphalt-edge"></div>
+      </div>
+
+    </div>
+
+    <!-- =======================================================================
+         4. MODAL EM ESTILO DE NUVEM STUDIO GHIBLI (Abre graciosamente ao frear)
+         Ao clicar em "Fechar Nuvem", ela se desfaz, o trem solta fumaça na
+         chaminé e volta a andar com inércia real!
+         ======================================================================= -->
+    <div class="ghibli-cloud-overlay" id="cloudModalOverlay" aria-hidden="true">
+      <div class="ghibli-cloud-dialog" id="cloudDialog" role="dialog" aria-modal="true">
+
+        <!-- Contorno Volumoso de Nuvem Cumulus Ghibli em SVG no Fundo do Card -->
+        <svg class="cloud-shape-bg" viewBox="0 0 1000 660" preserveAspectRatio="none" aria-hidden="true">
+          <!-- Sombra suave azul-celeste na base da nuvem -->
+          <path
+            d="M 110,590
+               C 40,585 15,515 45,455
+               C 5,390 25,295 95,265
+               C 85,175 165,105 260,125
+               C 315,50 445,35 525,95
+               C 605,35 735,50 785,130
+               C 875,110 955,175 935,270
+               C 990,315 990,425 935,475
+               C 965,545 910,600 835,595
+               Z"
+            fill="#D4F0FC"
+          />
+          <!-- Corpo principal branco puro da nuvem Ghibli -->
+          <path
+            d="M 120,570
+               C 50,565 25,495 55,435
+               C 15,375 35,280 105,250
+               C 95,165 175,95 270,115
+               C 325,40 450,25 530,85
+               C 610,25 735,40 780,120
+               C 870,100 945,165 925,260
+               C 980,305 980,410 925,460
+               C 955,525 900,580 825,575
+               Z"
+            fill="#FFFFFF"
+          />
+        </svg>
+
+        <!-- Botão de Fechar Nuvem (Dispara a fumaça na chaminé + inércia do trem) -->
+        <button type="button" class="close-cloud-btn" id="closeCloudBtn" aria-label="Fechar nuvem e partir com o trem">
+          <span>✕ Fechar Nuvem &amp; Partir</span>
+        </button>
+
+        <!-- Conteúdo Dinâmico do Projeto dentro da Nuvem -->
+        <div class="cloud-inner-content" id="cloudInnerContent">
+          <!-- Preenchido dinamicamente via app.js -->
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

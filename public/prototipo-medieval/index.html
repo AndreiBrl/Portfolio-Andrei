@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrei Barbuto — Codex Arcanum (Medieval RPG Prototype)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Textura de Granulação Atmosférica + Vinheta de Luz de Vela -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+  <div class="candlelight-vignette" aria-hidden="true"></div>
+  <canvas id="emberCanvas" aria-hidden="true"></canvas>
+
+  <!-- Moldura Diegética Fixa (Estilo Elden Ring / Grimoire Filigree - 30% Ouro Velho) -->
+  <div class="sanctuary-frame" aria-hidden="true">
+    <!-- Cantoneiras Ornamentais em SVG -->
+    <svg class="corner-ornament tl" viewBox="0 0 80 80" fill="none">
+      <path d="M2 78V18C2 9.163 9.163 2 18 2H78" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M8 62V22C8 14.268 14.268 8 22 8H62" stroke="currentColor" stroke-width="0.75" stroke-dasharray="3 3"/>
+      <polygon points="18,12 24,18 18,24 12,18" fill="currentColor"/>
+      <circle cx="18" cy="18" r="2" fill="#090807"/>
+    </svg>
+    <svg class="corner-ornament tr" viewBox="0 0 80 80" fill="none">
+      <path d="M2 78V18C2 9.163 9.163 2 18 2H78" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M8 62V22C8 14.268 14.268 8 22 8H62" stroke="currentColor" stroke-width="0.75" stroke-dasharray="3 3"/>
+      <polygon points="18,12 24,18 18,24 12,18" fill="currentColor"/>
+      <circle cx="18" cy="18" r="2" fill="#090807"/>
+    </svg>
+    <svg class="corner-ornament bl" viewBox="0 0 80 80" fill="none">
+      <path d="M2 78V18C2 9.163 9.163 2 18 2H78" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M8 62V22C8 14.268 14.268 8 22 8H62" stroke="currentColor" stroke-width="0.75" stroke-dasharray="3 3"/>
+      <polygon points="18,12 24,18 18,24 12,18" fill="currentColor"/>
+      <circle cx="18" cy="18" r="2" fill="#090807"/>
+    </svg>
+    <svg class="corner-ornament br" viewBox="0 0 80 80" fill="none">
+      <path d="M2 78V18C2 9.163 9.163 2 18 2H78" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M8 62V22C8 14.268 14.268 8 22 8H62" stroke="currentColor" stroke-width="0.75" stroke-dasharray="3 3"/>
+      <polygon points="18,12 24,18 18,24 12,18" fill="currentColor"/>
+      <circle cx="18" cy="18" r="2" fill="#090807"/>
+    </svg>
+
+    <div class="frame-top-bar">
+      <span class="frame-latin">CODEX ARCANUM // MMXXVI</span>
+      <div class="frame-compass">
+        <span class="compass-diamond">◆</span>
+        <span>ANDREI BARBUTO</span>
+        <span class="compass-diamond">◆</span>
+      </div>
+      <span class="frame-latin">ORDO ARTIFICUM</span>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       CAPÍTULO I — HERO: ALTAR CENTRAL & ARCO GÓTICO (Sem imagem de avatar)
+       Animação 1: O Estandarte Carmesim (10%) acende e revela "BEM VINDO, VISITANTE"
+       enquanto o astrolábio dourado (30%) gira ao rolar a página
+       ========================================================================= -->
+  <section class="hero-sanctuary" id="cap-1">
+    <!-- Caligrafia Gótica Monumental de Fundo -->
+    <div class="gothic-watermark" aria-hidden="true">Sanctuarium</div>
+
+    <!-- Astrolábio / Rosácea Gótica em Ouro Velho (30%) que gira com o Scroll -->
+    <div class="astrolabe-ring" id="heroAstrolabe" aria-hidden="true">
+      <svg viewBox="0 0 600 600" fill="none">
+        <circle cx="300" cy="300" r="280" stroke="currentColor" stroke-width="1" stroke-dasharray="6 8" opacity="0.45"/>
+        <circle cx="300" cy="300" r="240" stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+        <circle cx="300" cy="300" r="195" stroke="currentColor" stroke-width="0.75" opacity="0.35"/>
+        <!-- Estrela de 8 pontas / Geometria Sacra -->
+        <rect x="130" y="130" width="340" height="340" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>
+        <rect x="130" y="130" width="340" height="340" transform="rotate(45 300 300)" stroke="currentColor" stroke-width="0.8" opacity="0.35"/>
+        <line x1="300" y1="5" x2="300" y2="595" stroke="currentColor" stroke-width="0.75" opacity="0.3"/>
+        <line x1="5" y1="300" x2="595" y2="300" stroke="currentColor" stroke-width="0.75" opacity="0.3"/>
+      </svg>
+    </div>
+
+    <!-- Altar Central com Moldura de Arco Gótico e Pergaminho Escuro (30%) -->
+    <div class="hero-altar">
+      <div class="altar-header">
+        <span class="chapter-roman">CAPÍTULO I</span>
+        <div class="ornate-divider">
+          <span class="line"></span>
+          <span class="sigil">❖</span>
+          <span class="line"></span>
+        </div>
+        <span class="chapter-subtitle">CRÔNICAS DE ENGENHARIA &amp; ARTE DIGITAL</span>
+      </div>
+
+      <!-- Título Principal Monumental -->
+      <div class="hero-title-stage">
+        <h1 class="hero-title-base">
+          BEM VINDO,<br />VISITANTE
+        </h1>
+
+        <!-- A COR 10% (Estandarte de Fogo Carmesim que desenrola no Scroll) -->
+        <div class="crimson-decree-mask" id="heroCrimsonMask" aria-hidden="true">
+          <div class="crimson-decree-inner">
+            <span class="hero-title-lit">
+              BEM VINDO,<br />VISITANTE
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pergaminho Dourado de Subtítulo (30% Charme) -->
+      <div class="parchment-plaque">
+        <p class="parchment-quote">
+          “Onde a precisão da arquitetura de software encontra a estética atemporal das relíquias forjadas à mão.”
+        </p>
+        <div class="plaque-meta">
+          <span>LVL 99 ARQUITETO FRONT-END</span>
+          <span class="crimson-dot">✦</span>
+          <span>FULL-STACK ALCHEMIST</span>
+          <span class="crimson-dot">✦</span>
+          <span>JUIZ DE FORA, MG</span>
+        </div>
+      </div>
+
+      <!-- Indicador de Scroll com Selo de Cera Carmesim (10%) -->
+      <div class="scroll-wax-prompt">
+        <div class="wax-seal-icon">🩸</div>
+        <span>ROLE PARA QUEBRAR O SELO</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       CAPÍTULO II — HORIZONTAL SCROLL: SALÃO DAS RELÍQUIAS & CARTAS DE TAROT
+       Animação 2: Rolagem Horizontal com GSAP + Fio de Sangue/Brasa (10%) que
+       percorre as relíquias douradas (30%)
+       ========================================================================= -->
+  <section class="reliquary-horizontal" id="cap-2">
+    <div class="gothic-watermark watermark-horizontal" aria-hidden="true">Reliquiarium</div>
+
+    <!-- Fio de Sangue/Brasa (10%) no topo da galeria horizontal -->
+    <div class="bloodline-track">
+      <div class="bloodline-fill" id="horizontalBloodline"></div>
+      <span class="bloodline-label">FIO DO DESTINO // ARCANOS MAIORES</span>
+    </div>
+
+    <div class="reliquary-track" id="reliquaryTrack">
+
+      <!-- PAINEL 1: A CARTA DO ARTÍFICE (Identidade do Andrei em Moldura de Tarot Dourada 30%) -->
+      <div class="reliquary-panel panel-guildmaster">
+        <div class="tarot-monolith">
+          <div class="tarot-arch-header">
+            <span class="arcana-num">ARCANO I — O ARTÍFICE</span>
+            <span class="arcana-rank">CLASSE S+</span>
+          </div>
+
+          <h2 class="guildmaster-name">ANDREI BARBUTO</h2>
+          <p class="guildmaster-lore">
+            Mestre de forja digital especializado em criar interfaces imersivas, sistemas escaláveis e experiências interativas de alto impacto. Cada projeto é tratado como um artefato único — unindo performance impecável e direção de arte memorável.
+          </p>
+
+          <!-- Atributos estilo Elden Ring / RPG (30% Ouro & Pergaminho + 10% Carmesim) -->
+          <div class="rpg-attributes">
+            <div class="attr-box">
+              <span class="attr-name">INT // FRONT-END</span>
+              <span class="attr-val">99</span>
+            </div>
+            <div class="attr-box">
+              <span class="attr-name">ARC // GSAP &amp; UI</span>
+              <span class="attr-val">96</span>
+            </div>
+            <div class="attr-box">
+              <span class="attr-name">STR // BACK-END</span>
+              <span class="attr-val">92</span>
+            </div>
+            <div class="attr-box attr-crimson">
+              <span class="attr-name">FÉ // CRAFT</span>
+              <span class="attr-val">100</span>
+            </div>
+          </div>
+
+          <!-- Pactos / Redes Sociais -->
+          <div class="covenant-links">
+            <a href="https://github.com/Barbuto26" target="_blank" rel="noreferrer" class="covenant-seal">
+              <img src="../img/github.png" alt="GitHub" />
+              <span>TOMO GITHUB</span>
+            </a>
+            <a href="https://www.linkedin.com/in/andrei-barbuto-567740238/" target="_blank" rel="noreferrer" class="covenant-seal">
+              <img src="../img/linkedin.png" alt="LinkedIn" />
+              <span>ALIANÇA LINKEDIN</span>
+            </a>
+            <a href="https://www.instagram.com/andreibarbuto/" target="_blank" rel="noreferrer" class="covenant-seal">
+              <img src="../img/insta.png" alt="Instagram" />
+              <span>CRÔNICAS INSTA</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAINEL 2: AS TRÊS RELÍQUIAS (Cartas de Tarot Douradas 30% com Selos Carmesim 10%) -->
+      <div class="reliquary-panel panel-tarot-deck">
+        <div class="deck-header">
+          <div>
+            <span class="chapter-roman">CAPÍTULO II // ACERVO REAL</span>
+            <h2 class="deck-title">RELÍQUIAS FORJADAS</h2>
+          </div>
+          <p class="deck-hint">Inspecione as cartas arcanas abaixo</p>
+        </div>
+
+        <div class="tarot-cards-grid">
+          <!-- Carta II: Cesama -->
+          <article class="tarot-card">
+            <div class="tarot-card-border">
+              <div class="tarot-roman">II</div>
+              <div class="tarot-art-window">
+                <img src="../img/ete_cesama.png" alt="Cesama" />
+                <div class="tarot-art-vignette"></div>
+              </div>
+              <div class="tarot-card-body">
+                <span class="tarot-type">ARTEFATO DE INFRAESTRUTURA</span>
+                <h3 class="tarot-title">CESAMA</h3>
+                <p class="tarot-desc">Sistema inteligente de gestão hídrica e chamados operacionais com rastreio em tempo real.</p>
+                <div class="tarot-footer">
+                  <span class="crimson-badge">✦ OBRA COMPLETA</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Carta III: Tribos Ancestrais -->
+          <article class="tarot-card">
+            <div class="tarot-card-border">
+              <div class="tarot-roman">III</div>
+              <div class="tarot-art-window">
+                <img src="../img/gorila.jpeg" alt="Tribos Ancestrais" />
+                <div class="tarot-art-vignette"></div>
+              </div>
+              <div class="tarot-card-body">
+                <span class="tarot-type">GRIMÓRIO DE MUNDO ABERTO</span>
+                <h3 class="tarot-title">TRIBOS ANCESTRAIS</h3>
+                <p class="tarot-desc">Portal imersivo e universo de jogo de tabuleiro com lore viva, animações e regras interativas.</p>
+                <div class="tarot-footer">
+                  <span class="crimson-badge">✦ EM DESTAQUE</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Carta IV: Em Breve -->
+          <article class="tarot-card tarot-card-locked">
+            <div class="tarot-card-border">
+              <div class="tarot-roman">IV</div>
+              <div class="tarot-art-window">
+                <img src="../img/breve1.png" alt="Relíquia Selada" />
+                <div class="tarot-art-vignette"></div>
+              </div>
+              <div class="tarot-card-body">
+                <span class="tarot-type">PROFECIA OCULTA</span>
+                <h3 class="tarot-title">RELÍQUIA SELADA</h3>
+                <p class="tarot-desc">Um novo artefato está sendo forjado nas chamas. O selo será rompido em breve.</p>
+                <div class="tarot-footer">
+                  <span class="gold-badge">❖ EM FORJA</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       CAPÍTULO III — CESAMA: MANUSCRITO ILUMINADO & ESPELHO DE VIDENTE
+       Animação 3: A Lâmina/Chama Carmesim (10%) desce pela coluna rúnica e
+       acende os 3 pergaminhos dourados (30%) em sincronia com o scroll
+       ========================================================================= -->
+  <section class="manuscript-section" id="cap-3">
+    <div class="gothic-watermark" aria-hidden="true">Aquaeductum</div>
+
+    <div class="manuscript-layout">
+      <!-- Lado Esquerdo: Espelho Arcano em Moldura de Ouro Velho (30%) -->
+      <div class="scrying-altar">
+        <div class="scrying-header">
+          <span class="chapter-roman">CAPÍTULO III // CRÔNICA TÉCNICA</span>
+          <h2 class="scrying-title">PROJETO CESAMA</h2>
+        </div>
+
+        <div class="scrying-mirror-frame">
+          <div class="mirror-corner mc-tl"></div>
+          <div class="mirror-corner mc-tr"></div>
+          <div class="mirror-corner mc-bl"></div>
+          <div class="mirror-corner mc-br"></div>
+          <video
+            class="scrying-video"
+            src="../img/videoCesama.mp4"
+            autoplay
+            loop
+            muted
+            playsinline
+          ></video>
+          <div class="mirror-caption">
+            <span>VISÃO DO ORÁCULO // OPERAÇÃO EM TEMPO REAL</span>
+            <span class="crimson-pulse">● ATIVO</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lado Direito: Coluna Rúnica Carmesim (10%) + 3 Pergaminhos Dourados (30%) -->
+      <div class="manuscript-scrolls-area">
+        <div class="rune-spine-track">
+          <div class="rune-spine-fill" id="cesamaRuneSpine"></div>
+        </div>
+
+        <div class="scrolls-stack">
+          <article class="illuminated-scroll" data-scroll-card="0">
+            <div class="scroll-wax-number">I</div>
+            <div class="scroll-content">
+              <span class="scroll-latin">ORDO ADMINISTRATIONIS</span>
+              <h3>Ordem de Serviço</h3>
+              <p>Otimização completa da gestão de chamados com rastreamento em tempo real, relatórios analíticos e fluxo de aprovação rigoroso.</p>
+            </div>
+          </article>
+
+          <article class="illuminated-scroll" data-scroll-card="1">
+            <div class="scroll-wax-number">II</div>
+            <div class="scroll-content">
+              <span class="scroll-latin"> ARCHITECTURA ROBUSTA</span>
+              <h3>Sistemas Robustos</h3>
+              <p>Arquitetura moderna construída para alta disponibilidade, segurança de dados críticos e integração fluida entre equipes de campo.</p>
+            </div>
+          </article>
+
+          <article class="illuminated-scroll" data-scroll-card="2">
+            <div class="scroll-wax-number">III</div>
+            <div class="scroll-content">
+              <span class="scroll-latin">EXPERIENTIA FLUIDA</span>
+              <h3>Interface Intuitiva</h3>
+              <p>Experiência de usuário clara e responsiva que reduz o tempo de atendimento e elimina ruídos operacionais no dia a dia.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       CAPÍTULO IV — TRIBOS ANCESTRAIS: PORTAL DO SANTUÁRIO (Vitral Gótico)
+       Animação 4: O Portal de Ouro Velho (30%) se abre no scroll revelando a
+       arte sagrada e o Decreto Carmesim (10%) para acessar o reino
+       ========================================================================= -->
+  <section class="sanctum-finale" id="cap-4">
+    <div class="gothic-watermark" aria-hidden="true">Ancestralis</div>
+
+    <!-- Moldura de Vitral / Altar Final (30% Ouro & Pergaminho) que expande no Scroll -->
+    <div class="sanctum-gate-vault" id="tribosGateVault">
+      <div class="sanctum-grid">
+        <!-- Coluna de Lore -->
+        <div class="sanctum-lore">
+          <div class="sanctum-badge-row">
+            <span class="crimson-wax-pill">CAPÍTULO IV // OBRA MAGNA</span>
+            <span class="gold-year">ANNO MMXXVI</span>
+          </div>
+
+          <h2 class="sanctum-title">TRIBOS<br />ANCESTRAIS</h2>
+
+          <p class="sanctum-description">
+            Explore o universo místico de Tribos Ancestrais — um jogo de tabuleiro original onde estratégia, relíquias e sabedoria ancestral colidem. Descubra um portal digital forjado com animações cinematográficas e imersão profunda.
+          </p>
+
+          <!-- Botão Principal 10% Carmesim Real / Fogo de Dragão -->
+          <div class="sanctum-cta-row">
+            <a
+              href="https://tribos-ancestrais.vercel.app"
+              target="_blank"
+              rel="noreferrer"
+              class="crimson-royal-btn"
+            >
+              <span class="btn-ornament">❖</span>
+              <span>ATRAVESSAR O PORTAL</span>
+              <span class="btn-ornament">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Coluna do Artefato Visual em Arco Gótico Dourado (30%) -->
+        <div class="sanctum-arch-showcase">
+          <div class="gothic-arch-frame">
+            <img src="../img/gorila3.png" alt="Tribos Ancestrais" />
+            <div class="arch-inner-border"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
