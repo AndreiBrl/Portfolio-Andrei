@@ -11,7 +11,7 @@ export interface ProjectModalData {
 	mediaType: "youtube" | "image";
 	mediaSrc: string;
 	mediaAlt: string;
-	imageStyle?: "contain-dark" | "cover";
+	imageStyle?: "contain-dark" | "cover" | "avatar";
 	description: string;
 	featuresTitle: string;
 	features: ProjectFeatureItem[];
@@ -134,13 +134,12 @@ export const PROJECTS_CONTENT: Record<ProjectId, ProjectModalData> = {
 
 	sobre: {
 		wagonLabel: "VAGÃO 03 // O AUTOR",
-		title: "Andrei Barbuto — Dev Web & Escritor",
+		title: "Andrei Barbuto — Dev Full-Stack & Escritor",
 		mediaType: "image",
-		mediaSrc: "/img/ete_cesama.png",
-		mediaAlt: "Projetos de Andrei Barbuto",
-		imageStyle: "cover",
-		description:
-			"Desenvolvedor Full-Stack e Escritor em Juiz de Fora, MG. Criando sistemas robustos e experiências digitais com identidade visual única.",
+		mediaSrc: "/img/perfil.png",
+		mediaAlt: "Andrei Barbuto",
+		imageStyle: "avatar",
+		description: "Desenvolvedor Full-Stack e Escritor.",
 		featuresTitle: "Especialidades",
 		features: [
 			{

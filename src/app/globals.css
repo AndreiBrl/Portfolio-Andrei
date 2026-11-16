@@ -1690,6 +1690,17 @@ body {
 	aspect-ratio: 16 / 9;
 }
 
+.cloud-media-box.is-avatar {
+	width: 152px;
+	height: 152px;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	margin: 0 auto;
+	border: 3px solid var(--train-ink);
+	box-shadow: 0 5px 0 var(--cloud-shade);
+	background: #e1f5fe;
+}
+
 .cloud-media-box iframe,
 .cloud-media-box img {
 	width: 100%;
@@ -2015,6 +2026,13 @@ body {
 	.cloud-media-box {
 		max-height: 175px;
 		aspect-ratio: 16 / 9;
+	}
+
+	.cloud-media-box.is-avatar {
+		width: 122px;
+		height: 122px;
+		max-height: 122px;
+		aspect-ratio: 1 / 1;
 	}
 
 	.cloud-project-title {

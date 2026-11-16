@@ -83,7 +83,9 @@ export function CloudModal({
 							<h2 className="cloud-project-title">{data.title}</h2>
 							<div className="cloud-project-grid">
 								<div className="cloud-media-col">
-									<div className="cloud-media-box">
+									<div
+										className={`cloud-media-box${data.imageStyle === "avatar" ? " is-avatar" : ""}`}
+									>
 										{data.mediaType === "youtube" ? (
 											<iframe
 												src={data.mediaSrc}
@@ -102,7 +104,12 @@ export function CloudModal({
 																background: "radial-gradient(circle, #2a6f97, #112a38)",
 																padding: "8px",
 															}
-														: undefined
+														: data.imageStyle === "avatar"
+															? {
+																	objectFit: "cover",
+																	objectPosition: "top center",
+																}
+															: undefined
 												}
 											/>
 										)}
