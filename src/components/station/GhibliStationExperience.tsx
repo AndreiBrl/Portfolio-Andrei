@@ -58,7 +58,7 @@ interface WaitingPassenger {
 
 type TrainState = "CRUISING" | "BRAKING" | "STOPPED" | "ACCELERATING";
 
-const CRUISE_SPEED = 1.18;
+const getCruiseSpeed = () => (typeof window !== "undefined" && window.innerWidth <= 768 ? 1.18 : 1.55);
 
 export function GhibliStationExperience() {
 	// Refs de elementos DOM
@@ -99,7 +99,7 @@ export function GhibliStationExperience() {
 	// Refs mutáveis para física em 60fps sem re-renders desnecessários
 	const physicsRef = useRef({
 		trainX: 700,
-		currentSpeed: CRUISE_SPEED,
+		currentSpeed: 1.55,
 		wheelAngle: 0,
 		trainState: "CRUISING" as TrainState,
 		isMouseOverTrain: false,
@@ -704,6 +704,7 @@ export function GhibliStationExperience() {
 		const step = () => {
 			const p = physicsRef.current;
 			const trainEl = trainRef.current;
+			const targetCruiseSpeed = getCruiseSpeed();
 			if (trainEl) {
 				const trainWidth = trainEl.offsetWidth || 960;
 
@@ -711,7 +712,7 @@ export function GhibliStationExperience() {
 				checkCompulsoryPassengerStop();
 
 				if (p.trainState === "CRUISING") {
-					p.currentSpeed += (CRUISE_SPEED - p.currentSpeed) * 0.04;
+					p.currentSpeed += (targetCruiseSpeed - p.currentSpeed) * 0.04;
 					if (Math.random() < 0.026) spawnChimneyPuff({ burst: false });
 				} else if (p.trainState === "BRAKING") {
 					p.currentSpeed *= 0.952;
@@ -743,13 +744,13 @@ export function GhibliStationExperience() {
 					}
 				} else if (p.trainState === "ACCELERATING") {
 					const accelForce = 0.0055 + p.currentSpeed * 0.016;
-					p.currentSpeed = Math.min(CRUISE_SPEED, p.currentSpeed + accelForce);
+					p.currentSpeed = Math.min(targetCruiseSpeed, p.currentSpeed + accelForce);
 
 					p.chugTimer++;
 					if (p.chugTimer % 14 === 0) spawnChimneyPuff({ burst: true });
 
-					if (p.currentSpeed >= CRUISE_SPEED - 0.03) {
-						p.currentSpeed = CRUISE_SPEED;
+					if (p.currentSpeed >= targetCruiseSpeed - 0.03) {
+						p.currentSpeed = targetCruiseSpeed;
 						p.trainState = "CRUISING";
 						trainEl.classList.remove("is-whistling");
 					}
@@ -768,7 +769,7 @@ export function GhibliStationExperience() {
 				if (p.trainState === "BRAKING") {
 					pitchDeg = -p.currentSpeed * 0.32;
 				} else if (p.trainState === "ACCELERATING") {
-					pitchDeg = (CRUISE_SPEED - p.currentSpeed) * 0.25;
+					pitchDeg = (targetCruiseSpeed - p.currentSpeed) * 0.25;
 				}
 
 				trainEl.style.transform = `translate3d(${p.trainX.toFixed(2)}px, 0, 0) rotate(${pitchDeg.toFixed(2)}deg)`;
