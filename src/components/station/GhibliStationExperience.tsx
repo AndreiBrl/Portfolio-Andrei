@@ -564,8 +564,9 @@ export function GhibliStationExperience() {
 		resizeCanvas();
 		window.addEventListener("resize", resizeCanvas);
 
-		// Começa já visível no início do lado esquerdo tanto no desktop quanto no celular
-		physicsRef.current.trainX = window.innerWidth <= 768 ? 35 : 110;
+		// Começa entrando logo no início do lado direito tanto no desktop quanto no celular
+		const initialScale = window.innerWidth <= 768 ? 0.76 : 1;
+		physicsRef.current.trainX = window.innerWidth / initialScale - 90;
 		let animFrameId = 0;
 
 		const isTrainAlignedWithStation = () => {
